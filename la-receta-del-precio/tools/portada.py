@@ -165,6 +165,8 @@ const KEY = 'lrdp-portada-v1';
 let S = {...EJEMPLO};
 try { const s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s) S = {...S, ...s}; } catch (e) {}
 let foto = null;
+// plan-videos.html abre la plantilla con el guion en el hash: #{"titulo": ...}
+try { const h = decodeURIComponent(location.hash.slice(1)); if (h.startsWith('{')) S = {...EJEMPLO, ...JSON.parse(h)}; } catch (e) {}
 
 const $ = id => document.getElementById(id);
 const cv = $('cv'), ctx = cv.getContext('2d');

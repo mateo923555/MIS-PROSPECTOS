@@ -5,6 +5,7 @@ Marca independiente para TikTok: costos, precios y ganancia para emprendedores d
 ## Abrir primero
 - `comparar-conceptos.html`: los 3 conceptos en grande, en el recorte circular (200/110/56/32 px) y en un perfil de TikTok claro y oscuro, más la decisión.
 - `plantilla-portada.html`: **editor de portadas para TikTok** (1080×1920). Escribís el título, elegís el fondo (cacao, harina, margen o foto) y descargás el PNG. Funciona sin internet porque las fuentes van incrustadas. Hay ejemplos en `export/portadas/`.
+- `plan-videos.html`: **plan de 5 videos por día**. Incluye la estructura de retención, los 5 formatos fijos, la grabación en lote, 35 guiones (una semana) con un botón para copiar y otro para abrir la portada, y 30 hooks extra. Los guiones se editan en `videos/guiones.py`.
 - `guia-visual.html`: mini guía con colores, tipografías, reglas del logo y aplicaciones en video 9:16.
 
 ## Conceptos (`logos/concepto-*`)
@@ -38,4 +39,5 @@ python3 tools/pages.py      # HTML
 node tools/export.cjs       # PNG (requiere playwright)
 python3 tools/portada.py    # plantilla de portada
 node tools/export-portadas.cjs  # portadas de ejemplo
+python3 tools/videos.py     # plan de videos y guiones.json
 ```

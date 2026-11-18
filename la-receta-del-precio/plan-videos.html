@@ -1,0 +1,1152 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plan de videos</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,600,100,1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--cacao:#24140F;--harina:#F4EADB;--margen:#FF5A1F;--lima:#C8F03C;--gris:#8C7F74;--linea:#E2D5C2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--harina);color:var(--cacao);font:500 15px/1.5 'Bricolage Grotesque',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.cond{font-variation-settings:'wdth' 75;font-weight:800;letter-spacing:-.01em;line-height:.95}
+.it{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-variation-settings:'SOFT' 100,'WONK' 1}
+.mono{font-family:'Space Mono',monospace}
+.k{font:700 12px 'Space Mono';letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+section{padding:52px 0;border-bottom:1px solid var(--linea)}
+h1{font-size:clamp(46px,8vw,104px)}
+h2{font-size:clamp(34px,5vw,56px);margin:10px 0 14px}
+.lead{max-width:680px;font-size:18px}
+.hero{background:var(--cacao);color:var(--harina);border:0;padding:64px 0 56px}
+.hero .k{color:#bfae9c}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+.kpi{border:1px solid #4a3329;border-radius:10px;padding:16px}
+.kpi b{display:block;font:700 34px 'Space Mono';color:var(--margen)}
+.kpi span{font-size:14px;color:#d8c9b6}
+.tl{display:grid;grid-template-columns:1.2fr 1.4fr 3.6fr 1.5fr 1.3fr;margin-top:26px;border-radius:10px;overflow:hidden;font-size:13px}
+.tl div{padding:14px 10px;min-height:150px;border-right:2px solid var(--harina)}
+.tl b{display:block;font:700 12px 'Space Mono';margin-bottom:6px}
+.tl .t1{background:var(--margen)}.tl .t2{background:#ffb18f}.tl .t3{background:#fff}.tl .t4{background:var(--cacao);color:var(--harina)}.tl .t5{background:var(--lima)}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.rules div{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:16px;font-size:14px}
+.rules b{display:block;font-size:16px;margin-bottom:4px}
+.fmts{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.fmt{background:#fff;border-radius:10px;padding:16px;border-top:6px solid var(--c);display:flex;flex-direction:column;gap:8px}
+.fmt h3{font-size:24px}.fmt p{font-size:14px;flex:1}.fmt .hr{font-size:22px;font-weight:700}.fmt .obj{font-size:11px;color:var(--gris)}
+.s1{--c:#FF5A1F}.s2{--c:#24140F}.s3{--c:#C8F03C}.s4{--c:#ffb18f}.s5{--c:#8C7F74}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:16px;font-size:13px}
+.week div{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:12px;min-height:104px}
+.week b{display:block;font:700 12px 'Space Mono';margin-bottom:6px}
+.week .rec{background:var(--cacao);color:var(--harina);border-color:var(--cacao)}
+.tabs{position:sticky;top:0;z-index:5;background:var(--harina);padding:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--linea)}
+.tabs button{font:700 13px 'Space Mono';border:2px solid var(--cacao);background:#fff;border-radius:99px;padding:7px 14px;cursor:pointer;color:var(--cacao)}
+.tabs button span{font-weight:400;opacity:.6;font-size:11px}
+.tabs button[aria-pressed=true]{background:var(--cacao);color:var(--harina)}
+.prog{margin-left:auto;font:700 13px 'Space Mono'}
+.prog i{display:inline-block;width:120px;height:8px;border-radius:9px;background:#fff;vertical-align:middle;margin-left:8px;overflow:hidden;border:1px solid var(--linea)}
+.prog i b{display:block;height:100%;background:var(--margen);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;margin-top:20px}
+.card{background:#fff;border-radius:12px;border-top:6px solid var(--c);padding:18px;display:flex;flex-direction:column;gap:12px}
+.card.done{opacity:.55}
+.card header{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--gris)}
+.card .vid{color:var(--cacao);font-weight:700}
+.hooktxt{font-size:30px;background:var(--cacao);color:var(--harina);padding:14px 16px;border-radius:8px}
+.script{list-style:none;display:grid;gap:9px;font-size:14.5px}
+.script .t,.cap .t{display:block;font:700 10.5px 'Space Mono';letter-spacing:.08em;color:var(--gris);margin-bottom:1px}
+.script .hk{font-weight:700;font-size:15.5px}
+.script .pr{background:#fff3ec;border-left:3px solid var(--margen);padding:6px 10px;border-radius:0 6px 6px 0}
+.script .po{background:#f3fbd9;border-left:3px solid #9cc31a;padding:6px 10px;border-radius:0 6px 6px 0;font-weight:700}
+.cap{font-size:13.5px;color:#5a4a40;border-top:1px dashed var(--linea);padding-top:10px}
+.card footer{margin-top:auto;display:grid;gap:10px}
+.acts{display:flex;gap:6px;flex-wrap:wrap}
+.b{font:700 11.5px 'Space Mono';border:2px solid var(--cacao);background:var(--harina);color:var(--cacao);border-radius:99px;padding:6px 11px;cursor:pointer;text-decoration:none}
+.b.o{background:var(--margen);border-color:var(--margen)}
+.b.ok{background:var(--lima);border-color:var(--lima)}
+.st{display:flex;gap:14px;font-size:13px}
+.st label{display:flex;gap:5px;align-items:center;cursor:pointer}
+.st input{accent-color:var(--margen);width:16px;height:16px}
+.hooks{columns:2;gap:24px;list-style:none;margin-top:16px}
+.hooks li{break-inside:avoid;margin-bottom:8px}
+.hb{all:unset;cursor:pointer;display:block;background:#fff;border:1px solid var(--linea);border-radius:8px;padding:10px 12px;font-size:14.5px}
+.hb:hover{border-color:var(--cacao)}
+.hb.ok{background:var(--lima)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.metrics div{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:16px;font-size:14px}
+.metrics b{display:block;font:700 24px 'Space Mono';color:var(--margen)}
+.note{background:#fff;border-left:4px solid var(--margen);border-radius:0 10px 10px 0;padding:14px 16px;font-size:14px;margin-top:16px;max-width:820px}
+@media (max-width:900px){.wrap{padding:0 16px}.kpis,.rules,.metrics{grid-template-columns:1fr 1fr}.fmts{grid-template-columns:1fr 1fr}.week{grid-template-columns:repeat(2,1fr)}.tl{grid-template-columns:1fr}.tl div{min-height:0;border-right:0;border-bottom:2px solid var(--harina)}.hooks{columns:1}.cards{grid-template-columns:1fr}.prog{margin-left:0;width:100%}}
+</style></head><body>
+
+<section class="hero"><div class="wrap">
+  <div class="k">La Receta del Precio · TikTok · plan de contenido</div>
+  <h1 class="cond">5 videos por día.<br><span class="it" style="color:var(--margen)">Cada uno</span> se mira hasta el final.</h1>
+  <p class="lead" style="margin-top:18px">Volumen para que el algoritmo encuentre a las pasteleras correctas, y una estructura fija para que cada video retenga: un hook que duele, una promesa que obliga a quedarse, números en pantalla y un remate que resuelve el problema de verdad. Cuatro videos dan valor y uno vende el ebook.</p>
+  <div class="kpis">
+    <div class="kpi"><b>35</b><span>guiones listos: la primera semana completa</span></div>
+    <div class="kpi"><b>30–45 s</b><span>duración objetivo de cada video</span></div>
+    <div class="kpi"><b>4 : 1</b><span>videos de valor por cada video de venta</span></div>
+    <div class="kpi"><b>2 × 2,5 h</b><span>de grabación en lote por semana</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="k">01 · Anatomía de un video que se ve completo</div>
+  <h2 class="cond">El orden no se negocia.</h2>
+  <div class="tl">
+    <div class="t1"><b>0–2 s</b>HOOK<br>Texto en pantalla + frase que nombra un dolor.</div>
+    <div class="t2"><b>2–5 s</b>PROMESA<br>“Al final te muestro…”: el loop abierto.</div>
+    <div class="t3"><b>5–34 s · DESARROLLO</b>3–4 golpes. Uno cada 4–6 s, siempre con un número nuevo en pantalla. Cambio de plano o de texto en cada golpe.</div>
+    <div class="t4"><b>REMATE</b>La cifra o la respuesta que cierra el loop.</div>
+    <div class="t5"><b>CIERRE</b>Seguime o link al ebook. Máx. 4 s.</div>
+  </div>
+  <div class="rules">
+    <div><b>El hook nombra a la pastelera</b>Que se reconozca en el primer segundo: “si cobrás x3…”, “si te dijeron caro…”. Nada de “hola chicas”.</div>
+    <div><b>La promesa se cumple al final, no antes</b>La cifra más importante va al final. Si la decís en el segundo 10, se van en el 11.</div>
+    <div><b>Un video, un problema</b>Si da para dos, son dos videos. A 5 por día, el contenido sobra: lo que importa es la claridad.</div>
+    <div><b>Números siempre en pantalla</b>En Space Mono, sobre tarjeta Harina. Quien mira sin sonido tiene que entender todo.</div>
+    <div><b>Sin intro, sin logo al inicio</b>El símbolo vive arriba a la derecha todo el video. La marca se reconoce por el formato, no por una intro.</div>
+    <div><b>Los números son ejemplos</b>Antes de grabar, reemplazá los montos por precios actuales de tu zona. Las cuentas están verificadas.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="k">02 · Los 5 formatos fijos del día</div>
+  <h2 class="cond">Mismo horario, mismo formato, todos los días.</h2>
+  <p class="lead">La repetición crea hábito: tu audiencia aprende que a las 12:30 hay cuenta paso a paso. Los horarios son un punto de partida (Argentina). A las dos semanas, mirá en TikTok Studio a qué hora está activa tu audiencia y movelos.</p>
+  <div class="fmts" style="margin-top:22px"><div class="fmt s1"><div class="mono hr">08:30</div>
+  <h3 class="cond">El error que te cuesta plata</h3><p>Un error concreto + cuánta plata te hace perder. El dolor engancha; la cifra retiene.</p><div class="mono obj">OBJETIVO · ALCANCE</div></div><div class="fmt s2"><div class="mono hr">12:30</div>
+  <h3 class="cond">Calculamos juntas</h3><p>Un cálculo real paso a paso, con números en pantalla. Es el video que se guarda.</p><div class="mono obj">OBJETIVO · GUARDADOS</div></div><div class="fmt s3"><div class="mono hr">15:30</div>
+  <h3 class="cond">Mito vs. realidad</h3><p>Una creencia del rubro, desarmada con números. Genera debate y comentarios.</p><div class="mono obj">OBJETIVO · COMENTARIOS</div></div><div class="fmt s4"><div class="mono hr">19:00</div>
+  <h3 class="cond">La clienta me dijo…</h3><p>Una situación que toda pastelera vivió + cómo responder. Se comparte y se manda a amigas.</p><div class="mono obj">OBJETIVO · COMPARTIDOS</div></div><div class="fmt s5"><div class="mono hr">21:30</div>
+  <h3 class="cond">La fórmula</h3><p>Un atajo o checklist completo y CTA directo al ebook. Es el único video que vende fuerte.</p><div class="mono obj">OBJETIVO · VENTAS</div></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="k">03 · Producción en lote</div>
+  <h2 class="cond">35 videos por semana sin vivir grabando.</h2>
+  <div class="week">
+    <div class="rec"><b>DOMINGO</b>Elegís los 35 guiones de la semana siguiente y ajustás los precios.</div>
+    <div class="rec"><b>LUNES · 2,5 h</b>Grabás días 1 a 4 (20 videos). Misma ropa y misma luz: ~6 min por video.</div>
+    <div><b>MARTES</b>Edición con la plantilla de subtítulos y números. Portadas desde este plan.</div>
+    <div class="rec"><b>JUEVES · 2,5 h</b>Grabás días 5 a 7 (15 videos) + repeticiones de los que funcionaron.</div>
+    <div><b>VIERNES</b>Edición + programación desde TikTok Studio en la compu.</div>
+    <div><b>TODOS LOS DÍAS</b>15 min: responder comentarios (con video si la pregunta es buena).</div>
+    <div><b>SÁBADO</b>Revisión de métricas: ¿qué hooks retuvieron? Esos se repiten la semana siguiente con otro ángulo.</div>
+  </div>
+  <p class="note"><b>Toma rápida:</b> grabá cada guion en 3 tomas cortas (hook / desarrollo / remate) en lugar de una larga. Si el hook no sale perfecto, repetís 5 segundos, no 40. Grabá 2 versiones del hook de cada video: así tenés material para probar cuál retiene más.</p>
+</div></section>
+
+<section style="border:0;padding-bottom:20px"><div class="wrap">
+  <div class="k">04 · Guiones de la semana 1</div>
+  <h2 class="cond">35 guiones listos para grabar.</h2>
+  <p class="lead">Cada tarjeta tiene el guion con tiempos, el texto del primer segundo, el caption y el botón para abrir la portada ya cargada en la plantilla. Marcá el avance: se guarda en este navegador.</p>
+</div></section>
+<div class="wrap">
+  <div class="tabs" id="tabs"><button data-d="0">Todos</button><button data-d="1">Lun <span>Día 1</span></button><button data-d="2">Mar <span>Día 2</span></button><button data-d="3">Mié <span>Día 3</span></button><button data-d="4">Jue <span>Día 4</span></button><button data-d="5">Vie <span>Día 5</span></button><button data-d="6">Sáb <span>Día 6</span></button><button data-d="7">Dom <span>Día 7</span></button><div class="prog" id="prog">0/35<i><b></b></i></div></div>
+  <div class="cards" id="cards">
+<article class="card s1" data-id="V01" data-dia="1">
+  <header>
+    <span class="slot mono">08:30 · El error que te cuesta plata</span>
+    <span class="vid mono">V01</span>
+  </header>
+  <div class="hooktxt cond">¿Cobrás ingredientes x3? Mirá esto</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si calculás tu precio multiplicando los ingredientes por tres, frená: estás trabajando casi gratis.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te muestro con una torta real cuánto te queda en el bolsillo… y el número te va a doler.</li>
+    <li><span class="t">5–12 s</span>Ingredientes de la torta: $10.000. Por tres: cobrás $30.000. Parece un montón.</li><li><span class="t">12–20 s</span>Pero sumá lo que no estás contando: packaging $2.000, gas y luz $1.000, merma $800.</li><li><span class="t">20–28 s</span>Y tu tiempo: 4 horas a $4.000 la hora = $16.000.</li><li><span class="t">28–34 s</span>Costo real: $29.800.</li>
+    <li class="po"><span class="t">REMATE</span>Cobrando $30.000 te quedan $200 de ganancia. Con un margen del 40% el precio correcto es $49.700.</li>
+    <li class="ct"><span class="t">CIERRE</span>Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>La regla del x3 es el error más caro de la pastelería 😮‍💨 ¿Vos la usabas?</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Multiplicar x3\nlos ingredientes\n*te deja sin ganancia*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;ERRORES&quot;, &quot;episodio&quot;: &quot;01&quot;, &quot;datoLabel&quot;: &quot;TU GANANCIA REAL&quot;, &quot;dato&quot;: &quot;$ 200&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s2" data-id="V02" data-dia="1">
+  <header>
+    <span class="slot mono">12:30 · Calculamos juntas</span>
+    <span class="vid mono">V02</span>
+  </header>
+  <div class="hooktxt cond">Calculá esto antes de tu próximo pedido</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si no sabés cuánto te cuesta un gramo de harina, no sabés cuánto te cuesta tu torta.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>En 30 segundos te enseño la cuenta que te sirve para TODOS los ingredientes.</li>
+    <li><span class="t">5–12 s</span>Paquete de harina: $1.200 por 1.000 gramos. Precio dividido gramos: $1,20 el gramo.</li><li><span class="t">12–20 s</span>Tu receta usa 350 g: 350 × $1,20 = $420 de harina.</li><li><span class="t">20–28 s</span>Manteca: pan de 200 g a $3.000 = $15 el gramo. Usás 100 g: $1.500.</li><li><span class="t">28–34 s</span>Huevos: maple de 30 a $6.000 = $200 cada huevo.</li>
+    <li class="po"><span class="t">REMATE</span>Precio del paquete ÷ gramos del paquete × gramos que usás. Hacelo una vez por ingrediente y tenés el costo exacto de cualquier receta.</li>
+    <li class="ct"><span class="t">CIERRE</span>Guardalo para hacerlo con tus ingredientes. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>La cuenta más importante de tu emprendimiento y nadie te la enseña 🧮 Guardalo.</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Cuánto te cuesta\n*1 gramo*\nde harina&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CÁLCULO&quot;, &quot;episodio&quot;: &quot;02&quot;, &quot;datoLabel&quot;: &quot;HARINA POR GRAMO&quot;, &quot;dato&quot;: &quot;$ 1,20&quot;, &quot;variante&quot;: &quot;harina&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s3" data-id="V03" data-dia="1">
+  <header>
+    <span class="slot mono">15:30 · Mito vs. realidad</span>
+    <span class="vid mono">V03</span>
+  </header>
+  <div class="hooktxt cond">MITO: si subís el precio perdés clientas</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>“Si subo el precio no me compra nadie.” Te muestro por qué esto es falso con números.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Al final vas a ver por qué vender MENOS te puede hacer ganar casi el doble.</li>
+    <li><span class="t">5–12 s</span>Opción A: vendés 10 tortas y te quedan $3.000 de ganancia en cada una. Total: $30.000.</li><li><span class="t">12–20 s</span>Subís el precio. Perdés 3 clientas. Vendés 7, pero ahora ganás $8.000 por torta.</li><li><span class="t">20–28 s</span>7 × $8.000 = $56.000.</li>
+    <li class="po"><span class="t">REMATE</span>Ganás $26.000 más trabajando 3 tortas menos. Las clientas que se van por precio no eran tu negocio.</li>
+    <li class="ct"><span class="t">CIERRE</span>¿Te animás a subir? Contame en comentarios. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Vender menos y ganar más no es magia, es matemática 📈</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;“Si subo el precio\n*no me compran*”&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;MITOS&quot;, &quot;episodio&quot;: &quot;03&quot;, &quot;datoLabel&quot;: &quot;GANANCIA CON 7 TORTAS&quot;, &quot;dato&quot;: &quot;$ 56.000&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s4" data-id="V04" data-dia="1">
+  <header>
+    <span class="slot mono">19:00 · La clienta me dijo…</span>
+    <span class="vid mono">V04</span>
+  </header>
+  <div class="hooktxt cond">“¿Tan caro? Es solo un bizcochuelo”</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Una clienta me dice: “¿tan caro? Si es solo un bizcochuelo”. Esto es lo que le contestaría.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te desarmo el “solo un bizcochuelo” peso por peso para que no vuelvas a dudar.</li>
+    <li><span class="t">5–12 s</span>Ingredientes: $4.500. Horno, gas y luz: $600. Caja y base: $500.</li><li><span class="t">12–20 s</span>Dos horas de trabajo, a $4.000 la hora: $8.000.</li><li><span class="t">20–28 s</span>Costo real: $13.600. Y todavía no ganaste nada.</li>
+    <li class="po"><span class="t">REMATE</span>Con un 40% de margen, ese “solo un bizcochuelo” vale $22.700. No es caro: es lo que cuesta.</li>
+    <li class="ct"><span class="t">CIERRE</span>Mandáselo a esa clienta 😅 Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Para la próxima vez que te digan “es solo un bizcochuelo” 🍰</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;“Es *solo* un\nbizcochuelo”&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CLIENTAS&quot;, &quot;episodio&quot;: &quot;04&quot;, &quot;datoLabel&quot;: &quot;PRECIO JUSTO&quot;, &quot;dato&quot;: &quot;$ 22.700&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s5" data-id="V05" data-dia="1">
+  <header>
+    <span class="slot mono">21:30 · La fórmula</span>
+    <span class="vid mono">V05</span>
+  </header>
+  <div class="hooktxt cond">La fórmula que usan las que SÍ ganan</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Esta es la única fórmula de precio que necesitás, y casi nadie la usa bien.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te muestro la fórmula y el error que hace que, aunque “le sumes ganancia”, ganes menos de lo que creés.</li>
+    <li><span class="t">5–12 s</span>Precio = costo total dividido (1 menos el margen que querés).</li><li><span class="t">12–20 s</span>Costo $10.000 y querés ganar el 40% del precio: $10.000 ÷ 0,60 = $16.667.</li><li><span class="t">20–28 s</span>Lo que hace casi todo el mundo: $10.000 + 40% = $14.000. Eso te deja solo un 28,6%.</li>
+    <li class="po"><span class="t">REMATE</span>Usá siempre “dividido (1 − margen)”. Con la misma torta pasás de ganar $4.000 a ganar $6.667.</li>
+    <li class="ct"><span class="t">CIERRE</span>Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Sumar 40% no es ganar 40% ⚠️ La fórmula completa en el ebook (link en perfil).</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;La fórmula del\nprecio en\n*una sola línea*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;FÓRMULA&quot;, &quot;episodio&quot;: &quot;05&quot;, &quot;datoLabel&quot;: &quot;PRECIO = COSTO ÷&quot;, &quot;dato&quot;: &quot;(1 − MARGEN)&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s1" data-id="V06" data-dia="2">
+  <header>
+    <span class="slot mono">08:30 · El error que te cuesta plata</span>
+    <span class="vid mono">V06</span>
+  </header>
+  <div class="hooktxt cond">Le sumás 50%… y ganás 33%</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si le sumás un 50% al costo pensando que ganás la mitad, te estoy por arruinar el día.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Quedate, porque al final te digo cuánto tendrías que cobrar de verdad.</li>
+    <li><span class="t">5–12 s</span>Torta con costo de $20.000. Le sumás 50%: la vendés a $30.000.</li><li><span class="t">12–20 s</span>Ganancia: $10.000. Pero $10.000 sobre $30.000 es el 33% del precio, no el 50%.</li><li><span class="t">20–28 s</span>El margen se mide sobre lo que cobrás, no sobre lo que gastás.</li>
+    <li class="po"><span class="t">REMATE</span>Para ganar de verdad la mitad del precio: $20.000 ÷ 0,50 = $40.000. Diez mil pesos de diferencia por torta.</li>
+    <li class="ct"><span class="t">CIERRE</span>Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Margen y recargo no son lo mismo y te está costando plata 💸</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Sumarle 50%\n*no es ganar\n50%*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;ERRORES&quot;, &quot;episodio&quot;: &quot;06&quot;, &quot;datoLabel&quot;: &quot;TU MARGEN REAL&quot;, &quot;dato&quot;: &quot;33 %&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s2" data-id="V07" data-dia="2">
+  <header>
+    <span class="slot mono">12:30 · Calculamos juntas</span>
+    <span class="vid mono">V07</span>
+  </header>
+  <div class="hooktxt cond">Calculá cuánto vale TU hora</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si no le ponés precio a tu hora, la estás regalando. Vamos a calcularla juntas.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>En tres pasos vas a tener el número exacto que tenés que sumar a cada pedido.</li>
+    <li><span class="t">5–12 s</span>Paso 1: ¿cuánto querés ganar por mes? Ejemplo: $800.000.</li><li><span class="t">12–20 s</span>Paso 2: ¿cuántas horas trabajás por mes? 25 días × 6 horas = 150 horas.</li><li><span class="t">20–28 s</span>Paso 3: $800.000 ÷ 150 = $5.333 la hora.</li>
+    <li class="po"><span class="t">REMATE</span>Cada pedido lleva: horas que le dedicás × $5.333. Una torta de 4 horas suma $21.332 solo de tu trabajo.</li>
+    <li class="ct"><span class="t">CIERRE</span>Hacé tu cuenta y decime en comentarios cuánto te dio. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Tu tiempo es un ingrediente más ⏱️ ¿Cuánto vale tu hora?</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;¿Cuánto vale\n*tu hora*\nde trabajo?&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CÁLCULO&quot;, &quot;episodio&quot;: &quot;07&quot;, &quot;datoLabel&quot;: &quot;TU HORA&quot;, &quot;dato&quot;: &quot;$ 5.333&quot;, &quot;variante&quot;: &quot;harina&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s3" data-id="V08" data-dia="2">
+  <header>
+    <span class="slot mono">15:30 · Mito vs. realidad</span>
+    <span class="vid mono">V08</span>
+  </header>
+  <div class="hooktxt cond">¿Cobrás lo mismo que la de al lado?</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Cobrás lo mismo que la pastelera de tu barrio porque “así está el mercado”. Error.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te muestro por qué con el MISMO precio ella gana casi el doble que vos.</li>
+    <li><span class="t">5–12 s</span>Las dos venden la torta a $25.000.</li><li><span class="t">12–20 s</span>Ella compra por mayor y produce de a varias: su costo es $12.000.</li><li><span class="t">20–28 s</span>Vos comprás por menor y hacés una por vez: tu costo es $18.000.</li>
+    <li class="po"><span class="t">REMATE</span>Ella gana $13.000 y vos $7.000. El precio de otra no te dice nada de TUS costos. Partí siempre de los tuyos.</li>
+    <li class="ct"><span class="t">CIERRE</span>¿Vos mirás los precios de otras? Contame. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Mismo precio, distinta ganancia 👀</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Copiar el precio\nde la competencia\n*te funde*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;MITOS&quot;, &quot;episodio&quot;: &quot;08&quot;, &quot;datoLabel&quot;: &quot;ELLA GANA / VOS&quot;, &quot;dato&quot;: &quot;$ 13.000 / $ 7.000&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s4" data-id="V09" data-dia="2">
+  <header>
+    <span class="slot mono">19:00 · La clienta me dijo…</span>
+    <span class="vid mono">V09</span>
+  </header>
+  <div class="hooktxt cond">40 tortas en diciembre… y casi nada de plata</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Esto le pasa a muchísimas pasteleras: diciembre explotado de pedidos y en enero no hay plata.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Hagamos las cuentas de ese diciembre, porque el resultado explica todo.</li>
+    <li><span class="t">5–12 s</span>40 tortas a $25.000: facturó un millón de pesos. Suena bárbaro.</li><li><span class="t">12–20 s</span>Costo real de cada torta: $22.000. Por 40: $880.000.</li><li><span class="t">20–28 s</span>Ganancia: $120.000. Por unas 160 horas de trabajo.</li>
+    <li class="po"><span class="t">REMATE</span>$120.000 ÷ 160 horas = $750 la hora. Facturar mucho no es ganar mucho: lo que manda es el margen.</li>
+    <li class="ct"><span class="t">CIERRE</span>Guardalo y miralo antes de armar tu lista de fiestas. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Facturar ≠ ganar. Que no te pase este diciembre 🎄</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Vendió 40 tortas\nen diciembre y\n*ganó $750 la hora*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;HISTORIAS&quot;, &quot;episodio&quot;: &quot;09&quot;, &quot;datoLabel&quot;: &quot;POR HORA DE TRABAJO&quot;, &quot;dato&quot;: &quot;$ 750&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s5" data-id="V10" data-dia="2">
+  <header>
+    <span class="slot mono">21:30 · La fórmula</span>
+    <span class="vid mono">V10</span>
+  </header>
+  <div class="hooktxt cond">Si te falta UNA, perdés plata</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Tu precio tiene que pagar siete cosas. Si te olvidás de una sola, estás perdiendo plata.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Contá con los dedos cuántas incluís hoy. Al final te digo qué hacer con las que te faltan.</li>
+    <li><span class="t">5–12 s</span>1. Ingredientes. 2. Merma: lo que se rompe, se quema o sobra.</li><li><span class="t">12–20 s</span>3. Packaging. 4. Gas y luz. 5. Tu hora de trabajo.</li><li><span class="t">20–28 s</span>6. Costos fijos: herramientas, monotributo, internet. 7. Comisiones de cobro.</li><li><span class="t">28–34 s</span>Y recién arriba de todo eso, tu margen de ganancia.</li>
+    <li class="po"><span class="t">REMATE</span>Si incluís menos de 7, tu precio está mal calculado aunque “se venda bien”.</li>
+    <li class="ct"><span class="t">CIERRE</span>Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>¿Cuántas de las 7 estás cobrando? 🖐️✌️ El método completo en el ebook (link en perfil).</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Las *7 cosas*\nque tiene que\npagar tu precio&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CHECKLIST&quot;, &quot;episodio&quot;: &quot;10&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s1" data-id="V11" data-dia="3">
+  <header>
+    <span class="slot mono">08:30 · El error que te cuesta plata</span>
+    <span class="vid mono">V11</span>
+  </header>
+  <div class="hooktxt cond">Esto también lo tenés que cobrar</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>El huevo que se rompe, el bizcochuelo que se quema, el recorte que sobra: también lo pagás vos.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te digo cuánto tenés que sumar para dejar de regalar esa plata.</li>
+    <li><span class="t">5–12 s</span>Se llama merma: todo lo que comprás y no termina en el producto.</li><li><span class="t">12–20 s</span>En pastelería suele andar entre el 5% y el 10% de los ingredientes.</li><li><span class="t">20–28 s</span>Ingredientes de $10.000 con 8% de merma: $800 que hoy no cobrás.</li>
+    <li class="po"><span class="t">REMATE</span>Sumá un 5 a 10% de merma sobre ingredientes en cada receta. Con 20 pedidos al mes son $16.000 que recuperás.</li>
+    <li class="ct"><span class="t">CIERRE</span>Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>La merma existe aunque no la veas 🥚</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;La plata que\n*tirás a la basura*\nsin darte cuenta&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;ERRORES&quot;, &quot;episodio&quot;: &quot;11&quot;, &quot;datoLabel&quot;: &quot;MERMA PROMEDIO&quot;, &quot;dato&quot;: &quot;5–10 %&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s2" data-id="V12" data-dia="3">
+  <header>
+    <span class="slot mono">12:30 · Calculamos juntas</span>
+    <span class="vid mono">V12</span>
+  </header>
+  <div class="hooktxt cond">El gasto que nadie suma</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>El gas y la luz no son gratis, y el horno es lo que más consume. Calculemos cuánto ponés por pedido.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>No necesitás medidores: con tu factura y una división lo tenés.</li>
+    <li><span class="t">5–12 s</span>Tomá lo que pagás de gas y luz en un mes. Ejemplo: $40.000.</li><li><span class="t">12–20 s</span>Estimá qué parte es por producir. Si horneás todos los días, digamos 60%: $24.000.</li><li><span class="t">20–28 s</span>Dividilo por los pedidos del mes. 30 pedidos: $24.000 ÷ 30.</li>
+    <li class="po"><span class="t">REMATE</span>$800 de energía por pedido. Sumalo siempre; si un producto lleva el doble de horno, sumale el doble.</li>
+    <li class="ct"><span class="t">CIERRE</span>Guardalo y hacelo con tu próxima factura. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Tu horno también pasa factura 🔥</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Cuánto te cuesta\n*el horno*\nen cada pedido&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CÁLCULO&quot;, &quot;episodio&quot;: &quot;12&quot;, &quot;datoLabel&quot;: &quot;ENERGÍA POR PEDIDO&quot;, &quot;dato&quot;: &quot;$ 800&quot;, &quot;variante&quot;: &quot;harina&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s3" data-id="V13" data-dia="3">
+  <header>
+    <span class="slot mono">15:30 · Mito vs. realidad</span>
+    <span class="vid mono">V13</span>
+  </header>
+  <div class="hooktxt cond">¿Cobrás tus tortas por kilo?</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Cobrar las tortas por kilo parece justo, pero te puede estar haciendo perder plata.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te digo cómo cobrar para que la decoración y el trabajo no te salgan gratis.</li>
+    <li><span class="t">5–12 s</span>El kilo no dice cuánto trabajo lleva: una torta lisa y una decorada pueden pesar lo mismo.</li><li><span class="t">12–20 s</span>La clienta piensa en porciones: “¿para cuántas personas es?”.</li><li><span class="t">20–28 s</span>Torta de 20 porciones con costo de $30.000: $1.500 de costo por porción.</li>
+    <li class="po"><span class="t">REMATE</span>Con 40% de margen: $2.500 la porción, $50.000 la torta. Y la decoración se cotiza aparte.</li>
+    <li class="ct"><span class="t">CIERRE</span>¿Vos cómo cobrás? Kilo o porción, te leo. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Kilo vs porción: el debate de siempre ⚖️</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;¿Por kilo o\n*por porción*?&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;MITOS&quot;, &quot;episodio&quot;: &quot;13&quot;, &quot;datoLabel&quot;: &quot;PRECIO POR PORCIÓN&quot;, &quot;dato&quot;: &quot;$ 2.500&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s4" data-id="V14" data-dia="3">
+  <header>
+    <span class="slot mono">19:00 · La clienta me dijo…</span>
+    <span class="vid mono">V14</span>
+  </header>
+  <div class="hooktxt cond">“Si te pido 50, ¿me hacés precio?”</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>“Si te pido 50 alfajores, ¿me hacés un descuento?” Antes de decir que sí, mirá esta cuenta.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te muestro cuánto descuento podés hacer de verdad sin perder plata.</li>
+    <li><span class="t">5–12 s</span>Alfajor a $1.000, con costo de $600. Ganás $400 por unidad.</li><li><span class="t">12–20 s</span>Le hacés 20% de descuento: lo vendés a $800. Ahora ganás $200.</li><li><span class="t">20–28 s</span>Con un 20% de descuento te quedás con la MITAD de la ganancia.</li>
+    <li class="po"><span class="t">REMATE</span>Solo descontá lo que de verdad ahorrás al producir en cantidad: suele ser un 5 a 10%. Y decilo con números.</li>
+    <li class="ct"><span class="t">CIERRE</span>Mandáselo a una amiga que siempre dice que sí 😅 Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>El descuento sale de TU ganancia, no del precio 🧾</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;“¿Me hacés\n*descuento* si\nte pido 50?”&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CLIENTAS&quot;, &quot;episodio&quot;: &quot;14&quot;, &quot;datoLabel&quot;: &quot;TU GANANCIA CON 20% OFF&quot;, &quot;dato&quot;: &quot;− 50 %&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s5" data-id="V15" data-dia="3">
+  <header>
+    <span class="slot mono">21:30 · La fórmula</span>
+    <span class="vid mono">V15</span>
+  </header>
+  <div class="hooktxt cond">Dejá de poner precios a ojo</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si tus precios salen de “más o menos lo que cobran otras”, en 15 minutos lo arreglás.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te doy los 3 pasos; hacelos con tu producto más vendido hoy mismo.</li>
+    <li><span class="t">5–12 s</span>Paso 1: anotá TODO lo que lleva tu producto, gramo por gramo, incluida la caja.</li><li><span class="t">12–20 s</span>Paso 2: pasá cada ingrediente a costo por gramo y sumá. Agregá merma, energía y tus horas.</li><li><span class="t">20–28 s</span>Paso 3: costo total ÷ (1 − margen). Ese es tu precio.</li>
+    <li class="po"><span class="t">REMATE</span>Con tu producto más vendido calculado, ya sabés si estás ganando o perdiendo en lo que más vendés.</li>
+    <li class="ct"><span class="t">CIERRE</span>Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>15 minutos que cambian tu emprendimiento ⏳ Paso a paso en el ebook (link en perfil).</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;De precio *“a ojo”*\na precio exacto\nen 15 minutos&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;MÉTODO&quot;, &quot;episodio&quot;: &quot;15&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s1" data-id="V16" data-dia="4">
+  <header>
+    <span class="slot mono">08:30 · El error que te cuesta plata</span>
+    <span class="vid mono">V16</span>
+  </header>
+  <div class="hooktxt cond">¿Regalás el packaging?</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si la caja, la base y la cinta “las ponés vos”, estás regalando hasta un 20% de tu costo.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Sumemos el packaging de una torta: te vas a sorprender.</li>
+    <li><span class="t">5–12 s</span>Caja: $1.800. Base de cartón: $600.</li><li><span class="t">12–20 s</span>Cinta y sticker con tu logo: $300. Bolsa: $300.</li><li><span class="t">20–28 s</span>Total: $3.000 en una torta que te cuesta $15.000.</li>
+    <li class="po"><span class="t">REMATE</span>Es el 20% del costo. Sumalo siempre al precio; si querés un packaging más lindo, cobralo como opción premium.</li>
+    <li class="ct"><span class="t">CIERRE</span>Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>La presentación vende, pero también cuesta 🎀</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;La *caja* también\nse cobra&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;ERRORES&quot;, &quot;episodio&quot;: &quot;16&quot;, &quot;datoLabel&quot;: &quot;PACKAGING&quot;, &quot;dato&quot;: &quot;20 % DEL COSTO&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s2" data-id="V17" data-dia="4">
+  <header>
+    <span class="slot mono">12:30 · Calculamos juntas</span>
+    <span class="vid mono">V17</span>
+  </header>
+  <div class="hooktxt cond">Calculamos una docena de alfajores</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Vamos a calcular el precio de una docena de alfajores de maicena, de punta a punta.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Al final te digo cuánto tendría que salir cada alfajor. Seguro es más de lo que cobrás.</li>
+    <li><span class="t">5–12 s</span>Ingredientes de la docena: $4.800. Merma 8%: $384.</li><li><span class="t">12–20 s</span>Packaging: $1.200. Energía: $400.</li><li><span class="t">20–28 s</span>Tiempo: hora y media a $5.000 = $7.500. Costo total: $14.284.</li>
+    <li class="po"><span class="t">REMATE</span>Con 40% de margen: $14.284 ÷ 0,60 = $23.800 la docena. Casi $2.000 cada alfajor.</li>
+    <li class="ct"><span class="t">CIERRE</span>Guardalo y reemplazá con tus números. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>¿Cuánto cobrás la docena? 🍪 Comparalo con esta cuenta.</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Precio de una\n*docena de\nalfajores*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CÁLCULO&quot;, &quot;episodio&quot;: &quot;17&quot;, &quot;datoLabel&quot;: &quot;PRECIO DOCENA&quot;, &quot;dato&quot;: &quot;$ 23.800&quot;, &quot;variante&quot;: &quot;harina&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s3" data-id="V18" data-dia="4">
+  <header>
+    <span class="slot mono">15:30 · Mito vs. realidad</span>
+    <span class="vid mono">V18</span>
+  </header>
+  <div class="hooktxt cond">“Mi tiempo no lo cobro, lo hago por gusto”</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>“Mi tiempo no lo cobro porque lo disfruto.” Esta frase es la que no te deja crecer.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te explico qué pasa el día que quieras dejar de hacerlo todo vos.</li>
+    <li><span class="t">5–12 s</span>Si tu precio no incluye tu hora, tu trabajo vale cero.</li><li><span class="t">12–20 s</span>El día que tengas muchos pedidos y quieras sumar una ayudante, ¿de dónde sale su sueldo?</li><li><span class="t">20–28 s</span>No sale de ningún lado: tu precio nunca lo contempló.</li>
+    <li class="po"><span class="t">REMATE</span>Cobrá tu hora aunque lo disfrutes. Eso es lo que convierte un hobby en un emprendimiento que puede crecer.</li>
+    <li class="ct"><span class="t">CIERRE</span>¿Cobrás tu tiempo o todavía no? Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Disfrutarlo no significa regalarlo 💛</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;“Lo hago por hobby,\n*no cobro\nmi tiempo*”&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;MITOS&quot;, &quot;episodio&quot;: &quot;18&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s4" data-id="V19" data-dia="4">
+  <header>
+    <span class="slot mono">19:00 · La clienta me dijo…</span>
+    <span class="vid mono">V19</span>
+  </header>
+  <div class="hooktxt cond">“¿Cuánto cobro una torta de 1 kg?”</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Me preguntan todo el tiempo cuánto cobrar una torta de un kilo. La respuesta no es un número.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te doy la forma de calcularla para que nunca más tengas que preguntarle a nadie.</li>
+    <li><span class="t">5–12 s</span>Nadie te puede dar un número: tus ingredientes, tu zona y tu tiempo son distintos.</li><li><span class="t">12–20 s</span>Lo que sí te puedo dar es el método: costo de ingredientes + merma + packaging + energía + tus horas.</li><li><span class="t">20–28 s</span>Y después: ese costo total dividido (1 − el margen que querés).</li>
+    <li class="po"><span class="t">REMATE</span>Si alguien te tira un número sin conocer tus costos, desconfiá. Tu precio sale de tus números.</li>
+    <li class="ct"><span class="t">CIERRE</span>Contame qué producto querés que calculemos en un video. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>No hay precio universal, hay método 📐</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;“¿Cuánto sale una\n*torta de 1 kilo*?”&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CLIENTAS&quot;, &quot;episodio&quot;: &quot;19&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s5" data-id="V20" data-dia="4">
+  <header>
+    <span class="slot mono">21:30 · La fórmula</span>
+    <span class="vid mono">V20</span>
+  </header>
+  <div class="hooktxt cond">3 preguntas. Respondelas en voz alta</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Te hago tres preguntas. Si no sabés alguna, estás perdiendo plata con cada pedido.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Respondé en voz alta. Al final te digo qué hacer si fallaste alguna.</li>
+    <li><span class="t">5–12 s</span>Una: ¿cuánto te cuesta exactamente UNA porción de tu torta más vendida?</li><li><span class="t">12–20 s</span>Dos: ¿cuánto vale tu hora de trabajo?</li><li><span class="t">20–28 s</span>Tres: de cada $100 que cobrás, ¿cuántos te quedan de ganancia?</li>
+    <li class="po"><span class="t">REMATE</span>Si dudaste en alguna, tu precio está puesto a ojo. Y a ojo casi siempre se cobra de menos.</li>
+    <li class="ct"><span class="t">CIERRE</span>Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>¿Cuántas respondiste sin dudar? 🤔 El método está en el ebook (link en perfil).</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Si no sabés\nestas 3 respuestas,\n*estás perdiendo plata*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;TEST&quot;, &quot;episodio&quot;: &quot;20&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s1" data-id="V21" data-dia="5">
+  <header>
+    <span class="slot mono">08:30 · El error que te cuesta plata</span>
+    <span class="vid mono">V21</span>
+  </header>
+  <div class="hooktxt cond">Te pagan con link… y perdés plata</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Cobrás con link de pago o con tarjeta y no lo sumás al precio. Esa comisión sale de tu ganancia.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te muestro cuánto se lleva en un solo pedido.</li>
+    <li><span class="t">5–12 s</span>Revisá en tu app cuánto te cobran: cambia según el medio y el plazo de acreditación.</li><li><span class="t">12–20 s</span>Ejemplo: 6% sobre una torta de $30.000 = $1.800.</li><li><span class="t">20–28 s</span>Si tu ganancia era $8.000, ahora es $6.200. Te comió casi un cuarto.</li>
+    <li class="po"><span class="t">REMATE</span>Sumá la comisión al precio cuando cobres por esos medios, o ofrecé un precio con transferencia.</li>
+    <li class="ct"><span class="t">CIERRE</span>Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Revisá cuánto te cobra tu medio de pago 📲</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;La comisión\nque *se come\ntu ganancia*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;ERRORES&quot;, &quot;episodio&quot;: &quot;21&quot;, &quot;datoLabel&quot;: &quot;COMISIÓN DE EJEMPLO&quot;, &quot;dato&quot;: &quot;$ 1.800&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s2" data-id="V22" data-dia="5">
+  <header>
+    <span class="slot mono">12:30 · Calculamos juntas</span>
+    <span class="vid mono">V22</span>
+  </header>
+  <div class="hooktxt cond">La decoración NO va incluida</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si cobrás lo mismo una torta lisa que una decorada, la decoración la estás pagando vos.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Calculemos cuánto cuesta decorar una torta temática.</li>
+    <li><span class="t">5–12 s</span>Horas extra de decoración: 3 horas a $5.000 = $15.000.</li><li><span class="t">12–20 s</span>Insumos: fondant, colorantes, topper: $6.000.</li><li><span class="t">20–28 s</span>Costo de la decoración: $21.000, aparte de la torta.</li>
+    <li class="po"><span class="t">REMATE</span>Con 40% de margen la decoración suma $35.000 al precio. Por eso una temática no puede costar lo mismo que una lisa.</li>
+    <li class="ct"><span class="t">CIERRE</span>Guardalo para tu próximo presupuesto. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Cada detalle lleva horas ✨ y las horas se cobran.</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Cómo cobrar\n*la decoración*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CÁLCULO&quot;, &quot;episodio&quot;: &quot;22&quot;, &quot;datoLabel&quot;: &quot;DECORACIÓN&quot;, &quot;dato&quot;: &quot;+ $ 21.000 DE COSTO&quot;, &quot;variante&quot;: &quot;harina&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s3" data-id="V23" data-dia="5">
+  <header>
+    <span class="slot mono">15:30 · Mito vs. realidad</span>
+    <span class="vid mono">V23</span>
+  </header>
+  <div class="hooktxt cond">¿Precio redondo o terminado en 900?</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>$25.000 o $24.900. Parece igual, pero comunica algo muy distinto.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te digo cuál usar según lo que querés que piense tu clienta.</li>
+    <li><span class="t">5–12 s</span>El precio terminado en 900 dice “oferta”, “barato”: funciona en promos y productos de impulso.</li><li><span class="t">12–20 s</span>El precio redondo dice “artesanal”, “de calidad”, “pensado”.</li><li><span class="t">20–28 s</span>Si vendés tortas personalizadas, competir por $100 no te suma nada.</li>
+    <li class="po"><span class="t">REMATE</span>Productos premium: precio redondo. Promos y combos: terminado en 900. Elegí a propósito.</li>
+    <li class="ct"><span class="t">CIERRE</span>¿Vos cuál usás? Te leo. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>El precio también comunica 💬</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;¿$25.000 o\n*$24.900*?&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;OPINIÓN&quot;, &quot;episodio&quot;: &quot;23&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s4" data-id="V24" data-dia="5">
+  <header>
+    <span class="slot mono">19:00 · La clienta me dijo…</span>
+    <span class="vid mono">V24</span>
+  </header>
+  <div class="hooktxt cond">“La necesito para mañana”</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>“¿Me hacés una torta para mañana?” Si decís que sí al mismo precio, estás perdiendo.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te digo cuánto cobrar y cómo decirlo sin quedar mal.</li>
+    <li><span class="t">5–12 s</span>Un pedido urgente te desordena todo: reprogramás, trabajás de noche, comprás al por menor y más caro.</li><li><span class="t">12–20 s</span>Eso tiene un costo, y no lo tiene que pagar tu descanso.</li><li><span class="t">20–28 s</span>Lo habitual es un recargo del 20 al 30%.</li>
+    <li class="po"><span class="t">REMATE</span>Decilo así: “Para mañana se puede, con un recargo por urgencia del 25%. Queda en $X.” Sin pedir perdón.</li>
+    <li class="ct"><span class="t">CIERRE</span>Mandáselo a esa amiga que nunca dice que no. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Lo urgente para ella no es gratis para vos ⏰</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;“¿Me la hacés\n*para mañana*?”&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CLIENTAS&quot;, &quot;episodio&quot;: &quot;24&quot;, &quot;datoLabel&quot;: &quot;RECARGO POR URGENCIA&quot;, &quot;dato&quot;: &quot;20–30 %&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s5" data-id="V25" data-dia="5">
+  <header>
+    <span class="slot mono">21:30 · La fórmula</span>
+    <span class="vid mono">V25</span>
+  </header>
+  <div class="hooktxt cond">Si te pasa 1 de estas 3, tu precio está mal</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si te pasa una sola de estas tres cosas, tu precio está mal calculado.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>La tercera es la que más duele y la que más se repite.</li>
+    <li><span class="t">5–12 s</span>Una: trabajás todos los fines de semana y a fin de mes no te sobra plata.</li><li><span class="t">12–20 s</span>Dos: no sabés cuánto te cuesta una porción de lo que vendés.</li><li><span class="t">20–28 s</span>Tres: te da vergüenza decir el precio y siempre lo justificás.</li>
+    <li class="po"><span class="t">REMATE</span>Las tres tienen la misma solución: precio calculado con números, no con miedo.</li>
+    <li class="ct"><span class="t">CIERRE</span>Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>¿Con cuál te sentiste identificada? 🙋‍♀️ Link al ebook en el perfil.</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;3 señales de que\n*tu precio\nestá mal*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;SEÑALES&quot;, &quot;episodio&quot;: &quot;25&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s1" data-id="V26" data-dia="6">
+  <header>
+    <span class="slot mono">08:30 · El error que te cuesta plata</span>
+    <span class="vid mono">V26</span>
+  </header>
+  <div class="hooktxt cond">¿Cuándo actualizaste tus precios?</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>¿Cuándo fue la última vez que actualizaste tus precios? Si no te acordás, ya estás perdiendo.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te doy un método de 5 minutos por mes para no quedarte atrás.</li>
+    <li><span class="t">5–12 s</span>No hace falta revisar todo: elegí los 5 ingredientes que más pesan. Manteca, chocolate, crema, dulce de leche, huevos.</li><li><span class="t">12–20 s</span>Si esos 5 son el 70% de tu costo y suben 10%, tu costo sube 7%.</li><li><span class="t">20–28 s</span>Revisalos el mismo día cada mes y ajustá si hace falta.</li>
+    <li class="po"><span class="t">REMATE</span>Cinco precios, una vez por mes. Así nunca más te enterás tarde de que estabas trabajando a pérdida.</li>
+    <li class="ct"><span class="t">CIERRE</span>Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Ponete una alarma mensual 🔔</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;No actualizar\nprecios *te cuesta\ncaro*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;ERRORES&quot;, &quot;episodio&quot;: &quot;26&quot;, &quot;datoLabel&quot;: &quot;SI SUBEN 10 %&quot;, &quot;dato&quot;: &quot;TU COSTO + 7 %&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s2" data-id="V27" data-dia="6">
+  <header>
+    <span class="slot mono">12:30 · Calculamos juntas</span>
+    <span class="vid mono">V27</span>
+  </header>
+  <div class="hooktxt cond">Calculamos un postre en vasito</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Los postres en vasito son de lo que más se vende, y de lo que peor se calcula. Hagamos uno.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Al final vas a ver cuánto tendría que salir cada uno.</li>
+    <li><span class="t">5–12 s</span>Vaso con tapa y cuchara: $450. Relleno y base: $900. Decoración: $150.</li><li><span class="t">12–20 s</span>Armado: 4 minutos por vaso a $5.000 la hora = $333.</li><li><span class="t">20–28 s</span>Energía y merma: $100. Costo por vaso: $1.933.</li>
+    <li class="po"><span class="t">REMATE</span>Con 45% de margen: $1.933 ÷ 0,55 = $3.515. Lo podés redondear a $3.500.</li>
+    <li class="ct"><span class="t">CIERRE</span>Guardalo y probalo con tu receta. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Chiquito no significa barato 🥄</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Precio de un\n*postre en vasito*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CÁLCULO&quot;, &quot;episodio&quot;: &quot;27&quot;, &quot;datoLabel&quot;: &quot;PRECIO POR VASITO&quot;, &quot;dato&quot;: &quot;$ 3.500&quot;, &quot;variante&quot;: &quot;harina&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s3" data-id="V28" data-dia="6">
+  <header>
+    <span class="slot mono">15:30 · Mito vs. realidad</span>
+    <span class="vid mono">V28</span>
+  </header>
+  <div class="hooktxt cond">MITO: para vender mucho hay que cobrar barato</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>“Las que venden un montón es porque cobran barato.” Esto te puede fundir.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te explico qué hay detrás de las que venden barato y en cantidad.</li>
+    <li><span class="t">5–12 s</span>Para que barato + volumen funcione, necesitás comprar por mayor, máquinas y ayuda.</li><li><span class="t">12–20 s</span>Sin eso, más volumen con poco margen es solo más horas por la misma plata.</li><li><span class="t">20–28 s</span>Vos, produciendo sola, ganás por margen, no por cantidad.</li>
+    <li class="po"><span class="t">REMATE</span>Si producís sola, tu estrategia es precio justo y clientas que valoren lo artesanal, no competir por barato.</li>
+    <li class="ct"><span class="t">CIERRE</span>¿Estás de acuerdo? Te leo en comentarios. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>No es tu competencia, es otro modelo de negocio 🏭</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;“Las que venden\nmucho *cobran\nbarato*”&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;MITOS&quot;, &quot;episodio&quot;: &quot;28&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s4" data-id="V29" data-dia="6">
+  <header>
+    <span class="slot mono">19:00 · La clienta me dijo…</span>
+    <span class="vid mono">V29</span>
+  </header>
+  <div class="hooktxt cond">Así se dice un precio</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>La forma en que decís tu precio hace que parezca caro o justo. Mirá la diferencia.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te dejo la frase exacta para copiar y pegar en WhatsApp.</li>
+    <li><span class="t">5–12 s</span>Así NO: “Mirá, te sale $50.000, perdón, es que está todo carísimo… ¿te parece?”</li><li><span class="t">12–20 s</span>Así SÍ: “La torta de 20 porciones con relleno de dulce de leche y frutillas sale $50.000. Se reserva con el 50% de seña.”</li><li><span class="t">20–28 s</span>Producto, detalle, precio, condición. Sin justificar, sin preguntar.</li>
+    <li class="po"><span class="t">REMATE</span>Cuanto más explicás, más caro parece. Decilo claro y con seguridad: el precio está bien calculado.</li>
+    <li class="ct"><span class="t">CIERRE</span>Guardalo para tu próximo presupuesto. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Tu precio no necesita disculpas 💬</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Cómo decir\nel precio\n*sin pedir perdón*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CLIENTAS&quot;, &quot;episodio&quot;: &quot;29&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s5" data-id="V30" data-dia="6">
+  <header>
+    <span class="slot mono">21:30 · La fórmula</span>
+    <span class="vid mono">V30</span>
+  </header>
+  <div class="hooktxt cond">Misma torta. Otra ganancia.</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Misma torta, mismo trabajo, misma clienta. Lo único que cambió fue cómo se calculó el precio.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Mirá el antes y el después.</li>
+    <li><span class="t">5–12 s</span>Antes: precio a ojo, $35.000.</li><li><span class="t">12–20 s</span>Calculando todo, el costo real era $31.000. Ganancia: $4.000.</li><li><span class="t">20–28 s</span>Después: $31.000 ÷ 0,60 = $51.700.</li>
+    <li class="po"><span class="t">REMATE</span>Ganancia nueva: $20.700 por torta. $16.700 más, sin trabajar un minuto más.</li>
+    <li class="ct"><span class="t">CIERRE</span>Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>El método que cambia el antes y el después 📊 Link en el perfil.</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;La misma torta,\n*$16.700 más\nde ganancia*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;ANTES/DESPUÉS&quot;, &quot;episodio&quot;: &quot;30&quot;, &quot;datoLabel&quot;: &quot;ANTES → DESPUÉS&quot;, &quot;dato&quot;: &quot;$ 4.000 → $ 20.700&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s1" data-id="V31" data-dia="7">
+  <header>
+    <span class="slot mono">08:30 · El error que te cuesta plata</span>
+    <span class="vid mono">V31</span>
+  </header>
+  <div class="hooktxt cond">¿Tomás pedidos sin seña?</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si tomás pedidos sin seña, el día que te cancelen vas a pagar vos.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te digo cuánto pedir y cómo pedirlo.</li>
+    <li><span class="t">5–12 s</span>Te cancelan una torta de $50.000 el día anterior.</li><li><span class="t">12–20 s</span>Ya compraste ingredientes, hiciste el bizcochuelo, apartaste tiempo: $20.000 invertidos.</li><li><span class="t">20–28 s</span>Sin seña, esa plata se perdió.</li>
+    <li class="po"><span class="t">REMATE</span>Pedí 50% de seña para confirmar. Cubre tus costos si cancelan y filtra a las clientas que no estaban decididas.</li>
+    <li class="ct"><span class="t">CIERRE</span>Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>La seña te protege a vos 🔒</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Trabajar *sin seña*\nes trabajar\na riesgo&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;ERRORES&quot;, &quot;episodio&quot;: &quot;31&quot;, &quot;datoLabel&quot;: &quot;SEÑA RECOMENDADA&quot;, &quot;dato&quot;: &quot;50 %&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s2" data-id="V32" data-dia="7">
+  <header>
+    <span class="slot mono">12:30 · Calculamos juntas</span>
+    <span class="vid mono">V32</span>
+  </header>
+  <div class="hooktxt cond">¿Tu batidora la pagás vos?</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Tu batidora, tu horno y tus moldes se gastan. Si no los incluís en el precio, el reemplazo lo pagás de tu bolsillo.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Te enseño a calcular cuánto sumar por pedido. Se llama amortización y es fácil.</li>
+    <li><span class="t">5–12 s</span>Batidora de $300.000 que te dura unos 2 años: 24 meses.</li><li><span class="t">12–20 s</span>$300.000 ÷ 24 = $12.500 por mes.</li><li><span class="t">20–28 s</span>Si hacés 40 pedidos por mes: $12.500 ÷ 40.</li>
+    <li class="po"><span class="t">REMATE</span>$312 por pedido. Hacelo con tus herramientas grandes y sumalo: cuando se rompan, la nueva ya está paga.</li>
+    <li class="ct"><span class="t">CIERRE</span>Guardalo. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Tus herramientas son parte del costo 🛠️</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Tu batidora\n*también se cobra*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;CÁLCULO&quot;, &quot;episodio&quot;: &quot;32&quot;, &quot;datoLabel&quot;: &quot;AMORTIZACIÓN / PEDIDO&quot;, &quot;dato&quot;: &quot;$ 312&quot;, &quot;variante&quot;: &quot;harina&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s3" data-id="V33" data-dia="7">
+  <header>
+    <span class="slot mono">15:30 · Mito vs. realidad</span>
+    <span class="vid mono">V33</span>
+  </header>
+  <div class="hooktxt cond">“Gano poquito, pero por lo menos vendo”</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>“Gano poquito, pero por lo menos vendo.” Mirá cuántas tortas necesitás solo para no perder.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Al final vas a saber cuál es tu número mínimo del mes.</li>
+    <li><span class="t">5–12 s</span>Tus gastos fijos del mes: monotributo, internet, amortización. Ejemplo: $90.000.</li><li><span class="t">12–20 s</span>Ganancia por torta: $15.000.</li><li><span class="t">20–28 s</span>$90.000 ÷ $15.000 = 6 tortas.</li>
+    <li class="po"><span class="t">REMATE</span>Las primeras 6 tortas del mes solo cubren gastos. Recién la séptima te deja ganancia. Ese es tu punto de equilibrio.</li>
+    <li class="ct"><span class="t">CIERRE</span>¿Sabías cuál es tu número? Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Tu punto de equilibrio, explicado fácil ⚖️</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;“Gano poquito\npero vendo”\n*no alcanza*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;MITOS&quot;, &quot;episodio&quot;: &quot;33&quot;, &quot;datoLabel&quot;: &quot;SOLO PARA CUBRIR GASTOS&quot;, &quot;dato&quot;: &quot;6 TORTAS&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s4" data-id="V34" data-dia="7">
+  <header>
+    <span class="slot mono">19:00 · La clienta me dijo…</span>
+    <span class="vid mono">V34</span>
+  </header>
+  <div class="hooktxt cond">Las 3 preguntas que más me hacen</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Estas son las tres preguntas que más me hacen sobre precios. Respuestas rápidas.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>La tercera es la más incómoda.</li>
+    <li><span class="t">5–12 s</span>¿El envío se cobra? Sí, siempre aparte, o con un precio que lo incluya y que lo diga.</li><li><span class="t">12–20 s</span>¿La degustación se cobra? Sí, o se descuenta del pedido si confirman.</li><li><span class="t">20–28 s</span>¿A mi familia le cobro? Como mínimo, el costo. Regalar tu trabajo es decisión tuya, no la regla.</li>
+    <li class="po"><span class="t">REMATE</span>Todo lo que te lleva tiempo o materiales tiene precio. Que lo cobres o lo regales, decidilo vos.</li>
+    <li class="ct"><span class="t">CIERRE</span>Dejame tu pregunta para el próximo video. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>Preguntas incómodas, respuestas claras 🙌</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Las 3 preguntas\nque *más me hacen*&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;PREGUNTAS&quot;, &quot;episodio&quot;: &quot;34&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;cacao&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article>
+<article class="card s5" data-id="V35" data-dia="7">
+  <header>
+    <span class="slot mono">21:30 · La fórmula</span>
+    <span class="vid mono">V35</span>
+  </header>
+  <div class="hooktxt cond">5 números que tenés que saber sí o sí</div>
+  <ol class="script">
+    <li class="hk"><span class="t">0–2 s · HOOK</span>Si tenés un emprendimiento de pastelería, hay cinco números que tenés que saber de memoria.</li>
+    <li class="pr"><span class="t">2–5 s · PROMESA</span>Contá cuántos sabés hoy. Al final te digo cómo sacar los que te faltan.</li>
+    <li><span class="t">5–12 s</span>1. Costo por porción de tu producto más vendido. 2. Cuánto vale tu hora.</li><li><span class="t">12–20 s</span>3. Tu margen: de cada $100, cuánto te queda.</li><li><span class="t">20–28 s</span>4. Tu punto de equilibrio: cuántos pedidos cubren los gastos. 5. Tu ticket promedio.</li>
+    <li class="po"><span class="t">REMATE</span>Con esos cinco números dejás de adivinar y empezás a decidir.</li>
+    <li class="ct"><span class="t">CIERRE</span>Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.</li>
+  </ol>
+  <div class="cap"><span class="t mono">CAPTION</span>¿Cuántos sabés? 🔢 Cómo calcular los 5 en el ebook (link en perfil).</div>
+  <footer>
+    <div class="acts">
+      <button class="b" data-copy="guion">Copiar guion</button>
+      <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{&quot;titulo&quot;: &quot;Los *5 números*\nque tenés que\nsaber sí o sí&quot;, &quot;bajada&quot;: &quot;&quot;, &quot;etiqueta&quot;: &quot;RESUMEN&quot;, &quot;episodio&quot;: &quot;35&quot;, &quot;datoLabel&quot;: &quot;&quot;, &quot;dato&quot;: &quot;&quot;, &quot;variante&quot;: &quot;margen&quot;, &quot;porcion&quot;: true}">Abrir portada →</a>
+    </div>
+    <div class="st">
+      <label><input type="checkbox" data-k="grabado">Grabado</label>
+      <label><input type="checkbox" data-k="editado">Editado</label>
+      <label><input type="checkbox" data-k="publicado">Publicado</label>
+    </div>
+  </footer>
+</article></div>
+</div>
+
+<section><div class="wrap">
+  <div class="k">05 · Banco de hooks</div>
+  <h2 class="cond">30 hooks más para la semana 2.</h2>
+  <p class="lead">Tocá uno para copiarlo. Cada hook se arma con la misma estructura: promesa → 3 golpes con números → remate.</p>
+  <ul class="hooks"><li><button class="hb" title="Copiar">Si tu torta más vendida sale menos de [precio], estás perdiendo plata. Te muestro por qué.</button></li><li><button class="hb" title="Copiar">Este es el precio que deberías cobrar por una torta de 20 porciones (y por qué nadie lo cobra).</button></li><li><button class="hb" title="Copiar">Hice la cuenta de lo que gana una pastelera por hora y me quería morir.</button></li><li><button class="hb" title="Copiar">Tres palabras que nunca tenés que decir cuando pasás un presupuesto.</button></li><li><button class="hb" title="Copiar">La pregunta que te hace perder clientas no es el precio, es esta.</button></li><li><button class="hb" title="Copiar">Si alguna vez dijiste “bueno, te lo dejo en…”, mirá esto.</button></li><li><button class="hb" title="Copiar">Lo que te cuesta de verdad una caja de bombones.</button></li><li><button class="hb" title="Copiar">Calculé cuánto cuesta un cupcake y no es lo que pensás.</button></li><li><button class="hb" title="Copiar">No subas tus precios hasta ver este video.</button></li><li><button class="hb" title="Copiar">Así se calcula una torta de cumpleaños de punta a punta, en 40 segundos.</button></li><li><button class="hb" title="Copiar">El error número uno de las pasteleras que recién empiezan.</button></li><li><button class="hb" title="Copiar">Si vendés por Instagram, este costo te lo estás comiendo.</button></li><li><button class="hb" title="Copiar">¿Cuánto cobrar una mesa dulce? Te doy el método.</button></li><li><button class="hb" title="Copiar">Por qué tu clienta dice “es caro” (y no es por el precio).</button></li><li><button class="hb" title="Copiar">Pasteleras: dejen de cobrar el bizcochuelo y regalar el relleno.</button></li><li><button class="hb" title="Copiar">Lo que aprendí después de calcular 100 tortas.</button></li><li><button class="hb" title="Copiar">El precio de las tortas en Día de la Madre: cómo calcularlo sin regalar tu trabajo.</button></li><li><button class="hb" title="Copiar">Si te da vergüenza cobrar, esto es para vos.</button></li><li><button class="hb" title="Copiar">Cuánto tenés que cobrar para ganar [monto] por mes. Hagamos la cuenta al revés.</button></li><li><button class="hb" title="Copiar">Le pregunté a ChatGPT cuánto cobrar una torta… y está mal. Te explico.</button></li><li><button class="hb" title="Copiar">La diferencia entre una pastelera que vive de esto y una que no: un solo número.</button></li><li><button class="hb" title="Copiar">Tu precio no es caro. Tu clienta no es tu clienta. Te explico.</button></li><li><button class="hb" title="Copiar">Esto es lo que gana una pastelera con una torta de $50.000.</button></li><li><button class="hb" title="Copiar">¿Te conviene vender por porción en el local de alguien más? Hagamos la cuenta.</button></li><li><button class="hb" title="Copiar">El costo escondido de las tortas con frutas frescas.</button></li><li><button class="hb" title="Copiar">Si cobrás igual una torta de chocolate que una de vainilla, mirá esto.</button></li><li><button class="hb" title="Copiar">Cómo cobrar un pedido corporativo de 200 alfajores.</button></li><li><button class="hb" title="Copiar">Todo lo que pagás vos cuando tu clienta “se arrepiente”.</button></li><li><button class="hb" title="Copiar">Precio de una torta alta vs una común: no es solo un piso más.</button></li><li><button class="hb" title="Copiar">Me dijeron que estoy cara. Le mostré esta cuenta.</button></li></ul>
+</div></section>
+
+<section style="border:0"><div class="wrap">
+  <div class="k">06 · Qué medir</div>
+  <h2 class="cond">Tres números deciden qué repetir.</h2>
+  <div class="metrics">
+    <div><b>Retención 3 s</b>Si menos de la mitad pasa los 3 segundos, el problema es el hook. Regrabá solo el inicio.</div>
+    <div><b>% visto completo</b>Si se van en la mitad, la promesa no es lo bastante fuerte o el desarrollo es lento. Recortá.</div>
+    <div><b>Visitas al perfil</b>Es la métrica que lleva a la venta. Los videos que más visitas generan marcan el formato que más hay que repetir.</div>
+  </div>
+  <p class="note"><b>Regla de la semana:</b> los 5 videos con mejor retención se rehacen la semana siguiente con otro hook y otro ejemplo (otro producto, otro número). No se inventa todo de cero cada semana: lo que funciona se multiplica.</p>
+  <p class="note"><b>Link al ebook:</b> TikTok no habilita el link en el perfil en todas las cuentas desde el principio (depende del tipo de cuenta y la cantidad de seguidores). Si todavía no lo tenés, cambiá el cierre de venta por “Escribime <b>PRECIO</b> por mensaje y te paso el ebook”.</p>
+</div></section>
+
+<script>
+(() => {
+const D = {"V01": {"guion": "[V01 · Día 1 · El error que te cuesta plata]\nTEXTO EN PANTALLA (0 s): ¿Cobrás ingredientes x3? Mirá esto\nHOOK (0–2 s): Si calculás tu precio multiplicando los ingredientes por tres, frená: estás trabajando casi gratis.\nPROMESA (2–5 s): Te muestro con una torta real cuánto te queda en el bolsillo… y el número te va a doler.\nDESARROLLO 1: Ingredientes de la torta: $10.000. Por tres: cobrás $30.000. Parece un montón.\nDESARROLLO 2: Pero sumá lo que no estás contando: packaging $2.000, gas y luz $1.000, merma $800.\nDESARROLLO 3: Y tu tiempo: 4 horas a $4.000 la hora = $16.000.\nDESARROLLO 4: Costo real: $29.800.\nREMATE: Cobrando $30.000 te quedan $200 de ganancia. Con un margen del 40% el precio correcto es $49.700.\nCIERRE: Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "La regla del x3 es el error más caro de la pastelería 😮‍💨 ¿Vos la usabas?\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V02": {"guion": "[V02 · Día 1 · Calculamos juntas]\nTEXTO EN PANTALLA (0 s): Calculá esto antes de tu próximo pedido\nHOOK (0–2 s): Si no sabés cuánto te cuesta un gramo de harina, no sabés cuánto te cuesta tu torta.\nPROMESA (2–5 s): En 30 segundos te enseño la cuenta que te sirve para TODOS los ingredientes.\nDESARROLLO 1: Paquete de harina: $1.200 por 1.000 gramos. Precio dividido gramos: $1,20 el gramo.\nDESARROLLO 2: Tu receta usa 350 g: 350 × $1,20 = $420 de harina.\nDESARROLLO 3: Manteca: pan de 200 g a $3.000 = $15 el gramo. Usás 100 g: $1.500.\nDESARROLLO 4: Huevos: maple de 30 a $6.000 = $200 cada huevo.\nREMATE: Precio del paquete ÷ gramos del paquete × gramos que usás. Hacelo una vez por ingrediente y tenés el costo exacto de cualquier receta.\nCIERRE: Guardalo para hacerlo con tus ingredientes. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "La cuenta más importante de tu emprendimiento y nadie te la enseña 🧮 Guardalo.\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V03": {"guion": "[V03 · Día 1 · Mito vs. realidad]\nTEXTO EN PANTALLA (0 s): MITO: si subís el precio perdés clientas\nHOOK (0–2 s): “Si subo el precio no me compra nadie.” Te muestro por qué esto es falso con números.\nPROMESA (2–5 s): Al final vas a ver por qué vender MENOS te puede hacer ganar casi el doble.\nDESARROLLO 1: Opción A: vendés 10 tortas y te quedan $3.000 de ganancia en cada una. Total: $30.000.\nDESARROLLO 2: Subís el precio. Perdés 3 clientas. Vendés 7, pero ahora ganás $8.000 por torta.\nDESARROLLO 3: 7 × $8.000 = $56.000.\nREMATE: Ganás $26.000 más trabajando 3 tortas menos. Las clientas que se van por precio no eran tu negocio.\nCIERRE: ¿Te animás a subir? Contame en comentarios. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Vender menos y ganar más no es magia, es matemática 📈\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V04": {"guion": "[V04 · Día 1 · La clienta me dijo…]\nTEXTO EN PANTALLA (0 s): “¿Tan caro? Es solo un bizcochuelo”\nHOOK (0–2 s): Una clienta me dice: “¿tan caro? Si es solo un bizcochuelo”. Esto es lo que le contestaría.\nPROMESA (2–5 s): Te desarmo el “solo un bizcochuelo” peso por peso para que no vuelvas a dudar.\nDESARROLLO 1: Ingredientes: $4.500. Horno, gas y luz: $600. Caja y base: $500.\nDESARROLLO 2: Dos horas de trabajo, a $4.000 la hora: $8.000.\nDESARROLLO 3: Costo real: $13.600. Y todavía no ganaste nada.\nREMATE: Con un 40% de margen, ese “solo un bizcochuelo” vale $22.700. No es caro: es lo que cuesta.\nCIERRE: Mandáselo a esa clienta 😅 Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Para la próxima vez que te digan “es solo un bizcochuelo” 🍰\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V05": {"guion": "[V05 · Día 1 · La fórmula]\nTEXTO EN PANTALLA (0 s): La fórmula que usan las que SÍ ganan\nHOOK (0–2 s): Esta es la única fórmula de precio que necesitás, y casi nadie la usa bien.\nPROMESA (2–5 s): Te muestro la fórmula y el error que hace que, aunque “le sumes ganancia”, ganes menos de lo que creés.\nDESARROLLO 1: Precio = costo total dividido (1 menos el margen que querés).\nDESARROLLO 2: Costo $10.000 y querés ganar el 40% del precio: $10.000 ÷ 0,60 = $16.667.\nDESARROLLO 3: Lo que hace casi todo el mundo: $10.000 + 40% = $14.000. Eso te deja solo un 28,6%.\nREMATE: Usá siempre “dividido (1 − margen)”. Con la misma torta pasás de ganar $4.000 a ganar $6.667.\nCIERRE: Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.", "caption": "Sumar 40% no es ganar 40% ⚠️ La fórmula completa en el ebook (link en perfil).\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V06": {"guion": "[V06 · Día 2 · El error que te cuesta plata]\nTEXTO EN PANTALLA (0 s): Le sumás 50%… y ganás 33%\nHOOK (0–2 s): Si le sumás un 50% al costo pensando que ganás la mitad, te estoy por arruinar el día.\nPROMESA (2–5 s): Quedate, porque al final te digo cuánto tendrías que cobrar de verdad.\nDESARROLLO 1: Torta con costo de $20.000. Le sumás 50%: la vendés a $30.000.\nDESARROLLO 2: Ganancia: $10.000. Pero $10.000 sobre $30.000 es el 33% del precio, no el 50%.\nDESARROLLO 3: El margen se mide sobre lo que cobrás, no sobre lo que gastás.\nREMATE: Para ganar de verdad la mitad del precio: $20.000 ÷ 0,50 = $40.000. Diez mil pesos de diferencia por torta.\nCIERRE: Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Margen y recargo no son lo mismo y te está costando plata 💸\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V07": {"guion": "[V07 · Día 2 · Calculamos juntas]\nTEXTO EN PANTALLA (0 s): Calculá cuánto vale TU hora\nHOOK (0–2 s): Si no le ponés precio a tu hora, la estás regalando. Vamos a calcularla juntas.\nPROMESA (2–5 s): En tres pasos vas a tener el número exacto que tenés que sumar a cada pedido.\nDESARROLLO 1: Paso 1: ¿cuánto querés ganar por mes? Ejemplo: $800.000.\nDESARROLLO 2: Paso 2: ¿cuántas horas trabajás por mes? 25 días × 6 horas = 150 horas.\nDESARROLLO 3: Paso 3: $800.000 ÷ 150 = $5.333 la hora.\nREMATE: Cada pedido lleva: horas que le dedicás × $5.333. Una torta de 4 horas suma $21.332 solo de tu trabajo.\nCIERRE: Hacé tu cuenta y decime en comentarios cuánto te dio. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Tu tiempo es un ingrediente más ⏱️ ¿Cuánto vale tu hora?\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V08": {"guion": "[V08 · Día 2 · Mito vs. realidad]\nTEXTO EN PANTALLA (0 s): ¿Cobrás lo mismo que la de al lado?\nHOOK (0–2 s): Cobrás lo mismo que la pastelera de tu barrio porque “así está el mercado”. Error.\nPROMESA (2–5 s): Te muestro por qué con el MISMO precio ella gana casi el doble que vos.\nDESARROLLO 1: Las dos venden la torta a $25.000.\nDESARROLLO 2: Ella compra por mayor y produce de a varias: su costo es $12.000.\nDESARROLLO 3: Vos comprás por menor y hacés una por vez: tu costo es $18.000.\nREMATE: Ella gana $13.000 y vos $7.000. El precio de otra no te dice nada de TUS costos. Partí siempre de los tuyos.\nCIERRE: ¿Vos mirás los precios de otras? Contame. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Mismo precio, distinta ganancia 👀\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V09": {"guion": "[V09 · Día 2 · La clienta me dijo…]\nTEXTO EN PANTALLA (0 s): 40 tortas en diciembre… y casi nada de plata\nHOOK (0–2 s): Esto le pasa a muchísimas pasteleras: diciembre explotado de pedidos y en enero no hay plata.\nPROMESA (2–5 s): Hagamos las cuentas de ese diciembre, porque el resultado explica todo.\nDESARROLLO 1: 40 tortas a $25.000: facturó un millón de pesos. Suena bárbaro.\nDESARROLLO 2: Costo real de cada torta: $22.000. Por 40: $880.000.\nDESARROLLO 3: Ganancia: $120.000. Por unas 160 horas de trabajo.\nREMATE: $120.000 ÷ 160 horas = $750 la hora. Facturar mucho no es ganar mucho: lo que manda es el margen.\nCIERRE: Guardalo y miralo antes de armar tu lista de fiestas. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Facturar ≠ ganar. Que no te pase este diciembre 🎄\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V10": {"guion": "[V10 · Día 2 · La fórmula]\nTEXTO EN PANTALLA (0 s): Si te falta UNA, perdés plata\nHOOK (0–2 s): Tu precio tiene que pagar siete cosas. Si te olvidás de una sola, estás perdiendo plata.\nPROMESA (2–5 s): Contá con los dedos cuántas incluís hoy. Al final te digo qué hacer con las que te faltan.\nDESARROLLO 1: 1. Ingredientes. 2. Merma: lo que se rompe, se quema o sobra.\nDESARROLLO 2: 3. Packaging. 4. Gas y luz. 5. Tu hora de trabajo.\nDESARROLLO 3: 6. Costos fijos: herramientas, monotributo, internet. 7. Comisiones de cobro.\nDESARROLLO 4: Y recién arriba de todo eso, tu margen de ganancia.\nREMATE: Si incluís menos de 7, tu precio está mal calculado aunque “se venda bien”.\nCIERRE: Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.", "caption": "¿Cuántas de las 7 estás cobrando? 🖐️✌️ El método completo en el ebook (link en perfil).\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V11": {"guion": "[V11 · Día 3 · El error que te cuesta plata]\nTEXTO EN PANTALLA (0 s): Esto también lo tenés que cobrar\nHOOK (0–2 s): El huevo que se rompe, el bizcochuelo que se quema, el recorte que sobra: también lo pagás vos.\nPROMESA (2–5 s): Te digo cuánto tenés que sumar para dejar de regalar esa plata.\nDESARROLLO 1: Se llama merma: todo lo que comprás y no termina en el producto.\nDESARROLLO 2: En pastelería suele andar entre el 5% y el 10% de los ingredientes.\nDESARROLLO 3: Ingredientes de $10.000 con 8% de merma: $800 que hoy no cobrás.\nREMATE: Sumá un 5 a 10% de merma sobre ingredientes en cada receta. Con 20 pedidos al mes son $16.000 que recuperás.\nCIERRE: Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "La merma existe aunque no la veas 🥚\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V12": {"guion": "[V12 · Día 3 · Calculamos juntas]\nTEXTO EN PANTALLA (0 s): El gasto que nadie suma\nHOOK (0–2 s): El gas y la luz no son gratis, y el horno es lo que más consume. Calculemos cuánto ponés por pedido.\nPROMESA (2–5 s): No necesitás medidores: con tu factura y una división lo tenés.\nDESARROLLO 1: Tomá lo que pagás de gas y luz en un mes. Ejemplo: $40.000.\nDESARROLLO 2: Estimá qué parte es por producir. Si horneás todos los días, digamos 60%: $24.000.\nDESARROLLO 3: Dividilo por los pedidos del mes. 30 pedidos: $24.000 ÷ 30.\nREMATE: $800 de energía por pedido. Sumalo siempre; si un producto lleva el doble de horno, sumale el doble.\nCIERRE: Guardalo y hacelo con tu próxima factura. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Tu horno también pasa factura 🔥\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V13": {"guion": "[V13 · Día 3 · Mito vs. realidad]\nTEXTO EN PANTALLA (0 s): ¿Cobrás tus tortas por kilo?\nHOOK (0–2 s): Cobrar las tortas por kilo parece justo, pero te puede estar haciendo perder plata.\nPROMESA (2–5 s): Te digo cómo cobrar para que la decoración y el trabajo no te salgan gratis.\nDESARROLLO 1: El kilo no dice cuánto trabajo lleva: una torta lisa y una decorada pueden pesar lo mismo.\nDESARROLLO 2: La clienta piensa en porciones: “¿para cuántas personas es?”.\nDESARROLLO 3: Torta de 20 porciones con costo de $30.000: $1.500 de costo por porción.\nREMATE: Con 40% de margen: $2.500 la porción, $50.000 la torta. Y la decoración se cotiza aparte.\nCIERRE: ¿Vos cómo cobrás? Kilo o porción, te leo. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Kilo vs porción: el debate de siempre ⚖️\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V14": {"guion": "[V14 · Día 3 · La clienta me dijo…]\nTEXTO EN PANTALLA (0 s): “Si te pido 50, ¿me hacés precio?”\nHOOK (0–2 s): “Si te pido 50 alfajores, ¿me hacés un descuento?” Antes de decir que sí, mirá esta cuenta.\nPROMESA (2–5 s): Te muestro cuánto descuento podés hacer de verdad sin perder plata.\nDESARROLLO 1: Alfajor a $1.000, con costo de $600. Ganás $400 por unidad.\nDESARROLLO 2: Le hacés 20% de descuento: lo vendés a $800. Ahora ganás $200.\nDESARROLLO 3: Con un 20% de descuento te quedás con la MITAD de la ganancia.\nREMATE: Solo descontá lo que de verdad ahorrás al producir en cantidad: suele ser un 5 a 10%. Y decilo con números.\nCIERRE: Mandáselo a una amiga que siempre dice que sí 😅 Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "El descuento sale de TU ganancia, no del precio 🧾\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V15": {"guion": "[V15 · Día 3 · La fórmula]\nTEXTO EN PANTALLA (0 s): Dejá de poner precios a ojo\nHOOK (0–2 s): Si tus precios salen de “más o menos lo que cobran otras”, en 15 minutos lo arreglás.\nPROMESA (2–5 s): Te doy los 3 pasos; hacelos con tu producto más vendido hoy mismo.\nDESARROLLO 1: Paso 1: anotá TODO lo que lleva tu producto, gramo por gramo, incluida la caja.\nDESARROLLO 2: Paso 2: pasá cada ingrediente a costo por gramo y sumá. Agregá merma, energía y tus horas.\nDESARROLLO 3: Paso 3: costo total ÷ (1 − margen). Ese es tu precio.\nREMATE: Con tu producto más vendido calculado, ya sabés si estás ganando o perdiendo en lo que más vendés.\nCIERRE: Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.", "caption": "15 minutos que cambian tu emprendimiento ⏳ Paso a paso en el ebook (link en perfil).\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V16": {"guion": "[V16 · Día 4 · El error que te cuesta plata]\nTEXTO EN PANTALLA (0 s): ¿Regalás el packaging?\nHOOK (0–2 s): Si la caja, la base y la cinta “las ponés vos”, estás regalando hasta un 20% de tu costo.\nPROMESA (2–5 s): Sumemos el packaging de una torta: te vas a sorprender.\nDESARROLLO 1: Caja: $1.800. Base de cartón: $600.\nDESARROLLO 2: Cinta y sticker con tu logo: $300. Bolsa: $300.\nDESARROLLO 3: Total: $3.000 en una torta que te cuesta $15.000.\nREMATE: Es el 20% del costo. Sumalo siempre al precio; si querés un packaging más lindo, cobralo como opción premium.\nCIERRE: Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "La presentación vende, pero también cuesta 🎀\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V17": {"guion": "[V17 · Día 4 · Calculamos juntas]\nTEXTO EN PANTALLA (0 s): Calculamos una docena de alfajores\nHOOK (0–2 s): Vamos a calcular el precio de una docena de alfajores de maicena, de punta a punta.\nPROMESA (2–5 s): Al final te digo cuánto tendría que salir cada alfajor. Seguro es más de lo que cobrás.\nDESARROLLO 1: Ingredientes de la docena: $4.800. Merma 8%: $384.\nDESARROLLO 2: Packaging: $1.200. Energía: $400.\nDESARROLLO 3: Tiempo: hora y media a $5.000 = $7.500. Costo total: $14.284.\nREMATE: Con 40% de margen: $14.284 ÷ 0,60 = $23.800 la docena. Casi $2.000 cada alfajor.\nCIERRE: Guardalo y reemplazá con tus números. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "¿Cuánto cobrás la docena? 🍪 Comparalo con esta cuenta.\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V18": {"guion": "[V18 · Día 4 · Mito vs. realidad]\nTEXTO EN PANTALLA (0 s): “Mi tiempo no lo cobro, lo hago por gusto”\nHOOK (0–2 s): “Mi tiempo no lo cobro porque lo disfruto.” Esta frase es la que no te deja crecer.\nPROMESA (2–5 s): Te explico qué pasa el día que quieras dejar de hacerlo todo vos.\nDESARROLLO 1: Si tu precio no incluye tu hora, tu trabajo vale cero.\nDESARROLLO 2: El día que tengas muchos pedidos y quieras sumar una ayudante, ¿de dónde sale su sueldo?\nDESARROLLO 3: No sale de ningún lado: tu precio nunca lo contempló.\nREMATE: Cobrá tu hora aunque lo disfrutes. Eso es lo que convierte un hobby en un emprendimiento que puede crecer.\nCIERRE: ¿Cobrás tu tiempo o todavía no? Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Disfrutarlo no significa regalarlo 💛\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V19": {"guion": "[V19 · Día 4 · La clienta me dijo…]\nTEXTO EN PANTALLA (0 s): “¿Cuánto cobro una torta de 1 kg?”\nHOOK (0–2 s): Me preguntan todo el tiempo cuánto cobrar una torta de un kilo. La respuesta no es un número.\nPROMESA (2–5 s): Te doy la forma de calcularla para que nunca más tengas que preguntarle a nadie.\nDESARROLLO 1: Nadie te puede dar un número: tus ingredientes, tu zona y tu tiempo son distintos.\nDESARROLLO 2: Lo que sí te puedo dar es el método: costo de ingredientes + merma + packaging + energía + tus horas.\nDESARROLLO 3: Y después: ese costo total dividido (1 − el margen que querés).\nREMATE: Si alguien te tira un número sin conocer tus costos, desconfiá. Tu precio sale de tus números.\nCIERRE: Contame qué producto querés que calculemos en un video. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "No hay precio universal, hay método 📐\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V20": {"guion": "[V20 · Día 4 · La fórmula]\nTEXTO EN PANTALLA (0 s): 3 preguntas. Respondelas en voz alta\nHOOK (0–2 s): Te hago tres preguntas. Si no sabés alguna, estás perdiendo plata con cada pedido.\nPROMESA (2–5 s): Respondé en voz alta. Al final te digo qué hacer si fallaste alguna.\nDESARROLLO 1: Una: ¿cuánto te cuesta exactamente UNA porción de tu torta más vendida?\nDESARROLLO 2: Dos: ¿cuánto vale tu hora de trabajo?\nDESARROLLO 3: Tres: de cada $100 que cobrás, ¿cuántos te quedan de ganancia?\nREMATE: Si dudaste en alguna, tu precio está puesto a ojo. Y a ojo casi siempre se cobra de menos.\nCIERRE: Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.", "caption": "¿Cuántas respondiste sin dudar? 🤔 El método está en el ebook (link en perfil).\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V21": {"guion": "[V21 · Día 5 · El error que te cuesta plata]\nTEXTO EN PANTALLA (0 s): Te pagan con link… y perdés plata\nHOOK (0–2 s): Cobrás con link de pago o con tarjeta y no lo sumás al precio. Esa comisión sale de tu ganancia.\nPROMESA (2–5 s): Te muestro cuánto se lleva en un solo pedido.\nDESARROLLO 1: Revisá en tu app cuánto te cobran: cambia según el medio y el plazo de acreditación.\nDESARROLLO 2: Ejemplo: 6% sobre una torta de $30.000 = $1.800.\nDESARROLLO 3: Si tu ganancia era $8.000, ahora es $6.200. Te comió casi un cuarto.\nREMATE: Sumá la comisión al precio cuando cobres por esos medios, o ofrecé un precio con transferencia.\nCIERRE: Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Revisá cuánto te cobra tu medio de pago 📲\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V22": {"guion": "[V22 · Día 5 · Calculamos juntas]\nTEXTO EN PANTALLA (0 s): La decoración NO va incluida\nHOOK (0–2 s): Si cobrás lo mismo una torta lisa que una decorada, la decoración la estás pagando vos.\nPROMESA (2–5 s): Calculemos cuánto cuesta decorar una torta temática.\nDESARROLLO 1: Horas extra de decoración: 3 horas a $5.000 = $15.000.\nDESARROLLO 2: Insumos: fondant, colorantes, topper: $6.000.\nDESARROLLO 3: Costo de la decoración: $21.000, aparte de la torta.\nREMATE: Con 40% de margen la decoración suma $35.000 al precio. Por eso una temática no puede costar lo mismo que una lisa.\nCIERRE: Guardalo para tu próximo presupuesto. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Cada detalle lleva horas ✨ y las horas se cobran.\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V23": {"guion": "[V23 · Día 5 · Mito vs. realidad]\nTEXTO EN PANTALLA (0 s): ¿Precio redondo o terminado en 900?\nHOOK (0–2 s): $25.000 o $24.900. Parece igual, pero comunica algo muy distinto.\nPROMESA (2–5 s): Te digo cuál usar según lo que querés que piense tu clienta.\nDESARROLLO 1: El precio terminado en 900 dice “oferta”, “barato”: funciona en promos y productos de impulso.\nDESARROLLO 2: El precio redondo dice “artesanal”, “de calidad”, “pensado”.\nDESARROLLO 3: Si vendés tortas personalizadas, competir por $100 no te suma nada.\nREMATE: Productos premium: precio redondo. Promos y combos: terminado en 900. Elegí a propósito.\nCIERRE: ¿Vos cuál usás? Te leo. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "El precio también comunica 💬\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V24": {"guion": "[V24 · Día 5 · La clienta me dijo…]\nTEXTO EN PANTALLA (0 s): “La necesito para mañana”\nHOOK (0–2 s): “¿Me hacés una torta para mañana?” Si decís que sí al mismo precio, estás perdiendo.\nPROMESA (2–5 s): Te digo cuánto cobrar y cómo decirlo sin quedar mal.\nDESARROLLO 1: Un pedido urgente te desordena todo: reprogramás, trabajás de noche, comprás al por menor y más caro.\nDESARROLLO 2: Eso tiene un costo, y no lo tiene que pagar tu descanso.\nDESARROLLO 3: Lo habitual es un recargo del 20 al 30%.\nREMATE: Decilo así: “Para mañana se puede, con un recargo por urgencia del 25%. Queda en $X.” Sin pedir perdón.\nCIERRE: Mandáselo a esa amiga que nunca dice que no. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Lo urgente para ella no es gratis para vos ⏰\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V25": {"guion": "[V25 · Día 5 · La fórmula]\nTEXTO EN PANTALLA (0 s): Si te pasa 1 de estas 3, tu precio está mal\nHOOK (0–2 s): Si te pasa una sola de estas tres cosas, tu precio está mal calculado.\nPROMESA (2–5 s): La tercera es la que más duele y la que más se repite.\nDESARROLLO 1: Una: trabajás todos los fines de semana y a fin de mes no te sobra plata.\nDESARROLLO 2: Dos: no sabés cuánto te cuesta una porción de lo que vendés.\nDESARROLLO 3: Tres: te da vergüenza decir el precio y siempre lo justificás.\nREMATE: Las tres tienen la misma solución: precio calculado con números, no con miedo.\nCIERRE: Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.", "caption": "¿Con cuál te sentiste identificada? 🙋‍♀️ Link al ebook en el perfil.\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V26": {"guion": "[V26 · Día 6 · El error que te cuesta plata]\nTEXTO EN PANTALLA (0 s): ¿Cuándo actualizaste tus precios?\nHOOK (0–2 s): ¿Cuándo fue la última vez que actualizaste tus precios? Si no te acordás, ya estás perdiendo.\nPROMESA (2–5 s): Te doy un método de 5 minutos por mes para no quedarte atrás.\nDESARROLLO 1: No hace falta revisar todo: elegí los 5 ingredientes que más pesan. Manteca, chocolate, crema, dulce de leche, huevos.\nDESARROLLO 2: Si esos 5 son el 70% de tu costo y suben 10%, tu costo sube 7%.\nDESARROLLO 3: Revisalos el mismo día cada mes y ajustá si hace falta.\nREMATE: Cinco precios, una vez por mes. Así nunca más te enterás tarde de que estabas trabajando a pérdida.\nCIERRE: Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Ponete una alarma mensual 🔔\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V27": {"guion": "[V27 · Día 6 · Calculamos juntas]\nTEXTO EN PANTALLA (0 s): Calculamos un postre en vasito\nHOOK (0–2 s): Los postres en vasito son de lo que más se vende, y de lo que peor se calcula. Hagamos uno.\nPROMESA (2–5 s): Al final vas a ver cuánto tendría que salir cada uno.\nDESARROLLO 1: Vaso con tapa y cuchara: $450. Relleno y base: $900. Decoración: $150.\nDESARROLLO 2: Armado: 4 minutos por vaso a $5.000 la hora = $333.\nDESARROLLO 3: Energía y merma: $100. Costo por vaso: $1.933.\nREMATE: Con 45% de margen: $1.933 ÷ 0,55 = $3.515. Lo podés redondear a $3.500.\nCIERRE: Guardalo y probalo con tu receta. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Chiquito no significa barato 🥄\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V28": {"guion": "[V28 · Día 6 · Mito vs. realidad]\nTEXTO EN PANTALLA (0 s): MITO: para vender mucho hay que cobrar barato\nHOOK (0–2 s): “Las que venden un montón es porque cobran barato.” Esto te puede fundir.\nPROMESA (2–5 s): Te explico qué hay detrás de las que venden barato y en cantidad.\nDESARROLLO 1: Para que barato + volumen funcione, necesitás comprar por mayor, máquinas y ayuda.\nDESARROLLO 2: Sin eso, más volumen con poco margen es solo más horas por la misma plata.\nDESARROLLO 3: Vos, produciendo sola, ganás por margen, no por cantidad.\nREMATE: Si producís sola, tu estrategia es precio justo y clientas que valoren lo artesanal, no competir por barato.\nCIERRE: ¿Estás de acuerdo? Te leo en comentarios. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "No es tu competencia, es otro modelo de negocio 🏭\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V29": {"guion": "[V29 · Día 6 · La clienta me dijo…]\nTEXTO EN PANTALLA (0 s): Así se dice un precio\nHOOK (0–2 s): La forma en que decís tu precio hace que parezca caro o justo. Mirá la diferencia.\nPROMESA (2–5 s): Te dejo la frase exacta para copiar y pegar en WhatsApp.\nDESARROLLO 1: Así NO: “Mirá, te sale $50.000, perdón, es que está todo carísimo… ¿te parece?”\nDESARROLLO 2: Así SÍ: “La torta de 20 porciones con relleno de dulce de leche y frutillas sale $50.000. Se reserva con el 50% de seña.”\nDESARROLLO 3: Producto, detalle, precio, condición. Sin justificar, sin preguntar.\nREMATE: Cuanto más explicás, más caro parece. Decilo claro y con seguridad: el precio está bien calculado.\nCIERRE: Guardalo para tu próximo presupuesto. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Tu precio no necesita disculpas 💬\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V30": {"guion": "[V30 · Día 6 · La fórmula]\nTEXTO EN PANTALLA (0 s): Misma torta. Otra ganancia.\nHOOK (0–2 s): Misma torta, mismo trabajo, misma clienta. Lo único que cambió fue cómo se calculó el precio.\nPROMESA (2–5 s): Mirá el antes y el después.\nDESARROLLO 1: Antes: precio a ojo, $35.000.\nDESARROLLO 2: Calculando todo, el costo real era $31.000. Ganancia: $4.000.\nDESARROLLO 3: Después: $31.000 ÷ 0,60 = $51.700.\nREMATE: Ganancia nueva: $20.700 por torta. $16.700 más, sin trabajar un minuto más.\nCIERRE: Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.", "caption": "El método que cambia el antes y el después 📊 Link en el perfil.\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V31": {"guion": "[V31 · Día 7 · El error que te cuesta plata]\nTEXTO EN PANTALLA (0 s): ¿Tomás pedidos sin seña?\nHOOK (0–2 s): Si tomás pedidos sin seña, el día que te cancelen vas a pagar vos.\nPROMESA (2–5 s): Te digo cuánto pedir y cómo pedirlo.\nDESARROLLO 1: Te cancelan una torta de $50.000 el día anterior.\nDESARROLLO 2: Ya compraste ingredientes, hiciste el bizcochuelo, apartaste tiempo: $20.000 invertidos.\nDESARROLLO 3: Sin seña, esa plata se perdió.\nREMATE: Pedí 50% de seña para confirmar. Cubre tus costos si cancelan y filtra a las clientas que no estaban decididas.\nCIERRE: Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "La seña te protege a vos 🔒\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V32": {"guion": "[V32 · Día 7 · Calculamos juntas]\nTEXTO EN PANTALLA (0 s): ¿Tu batidora la pagás vos?\nHOOK (0–2 s): Tu batidora, tu horno y tus moldes se gastan. Si no los incluís en el precio, el reemplazo lo pagás de tu bolsillo.\nPROMESA (2–5 s): Te enseño a calcular cuánto sumar por pedido. Se llama amortización y es fácil.\nDESARROLLO 1: Batidora de $300.000 que te dura unos 2 años: 24 meses.\nDESARROLLO 2: $300.000 ÷ 24 = $12.500 por mes.\nDESARROLLO 3: Si hacés 40 pedidos por mes: $12.500 ÷ 40.\nREMATE: $312 por pedido. Hacelo con tus herramientas grandes y sumalo: cuando se rompan, la nueva ya está paga.\nCIERRE: Guardalo. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Tus herramientas son parte del costo 🛠️\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V33": {"guion": "[V33 · Día 7 · Mito vs. realidad]\nTEXTO EN PANTALLA (0 s): “Gano poquito, pero por lo menos vendo”\nHOOK (0–2 s): “Gano poquito, pero por lo menos vendo.” Mirá cuántas tortas necesitás solo para no perder.\nPROMESA (2–5 s): Al final vas a saber cuál es tu número mínimo del mes.\nDESARROLLO 1: Tus gastos fijos del mes: monotributo, internet, amortización. Ejemplo: $90.000.\nDESARROLLO 2: Ganancia por torta: $15.000.\nDESARROLLO 3: $90.000 ÷ $15.000 = 6 tortas.\nREMATE: Las primeras 6 tortas del mes solo cubren gastos. Recién la séptima te deja ganancia. Ese es tu punto de equilibrio.\nCIERRE: ¿Sabías cuál es tu número? Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Tu punto de equilibrio, explicado fácil ⚖️\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V34": {"guion": "[V34 · Día 7 · La clienta me dijo…]\nTEXTO EN PANTALLA (0 s): Las 3 preguntas que más me hacen\nHOOK (0–2 s): Estas son las tres preguntas que más me hacen sobre precios. Respuestas rápidas.\nPROMESA (2–5 s): La tercera es la más incómoda.\nDESARROLLO 1: ¿El envío se cobra? Sí, siempre aparte, o con un precio que lo incluya y que lo diga.\nDESARROLLO 2: ¿La degustación se cobra? Sí, o se descuenta del pedido si confirman.\nDESARROLLO 3: ¿A mi familia le cobro? Como mínimo, el costo. Regalar tu trabajo es decisión tuya, no la regla.\nREMATE: Todo lo que te lleva tiempo o materiales tiene precio. Que lo cobres o lo regales, decidilo vos.\nCIERRE: Dejame tu pregunta para el próximo video. Seguime: todos los días te enseño a cobrar lo que vale tu trabajo.", "caption": "Preguntas incómodas, respuestas claras 🙌\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}, "V35": {"guion": "[V35 · Día 7 · La fórmula]\nTEXTO EN PANTALLA (0 s): 5 números que tenés que saber sí o sí\nHOOK (0–2 s): Si tenés un emprendimiento de pastelería, hay cinco números que tenés que saber de memoria.\nPROMESA (2–5 s): Contá cuántos sabés hoy. Al final te digo cómo sacar los que te faltan.\nDESARROLLO 1: 1. Costo por porción de tu producto más vendido. 2. Cuánto vale tu hora.\nDESARROLLO 2: 3. Tu margen: de cada $100, cuánto te queda.\nDESARROLLO 3: 4. Tu punto de equilibrio: cuántos pedidos cubren los gastos. 5. Tu ticket promedio.\nREMATE: Con esos cinco números dejás de adivinar y empezás a decidir.\nCIERRE: Esto y todo el método paso a paso está en el ebook La Receta del Precio. Link en mi perfil.", "caption": "¿Cuántos sabés? 🔢 Cómo calcular los 5 en el ebook (link en perfil).\n\n#pasteleria #emprendimiento #costos #precios #reposteria #pastelerias #emprendedoras #larecetadelprecio"}};
+const KEY = 'lrdp-plan-v1';
+let st = {}; try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+const cards = [...document.querySelectorAll('.card')];
+function prog(){
+  const n = cards.filter(c => (st[c.dataset.id] || {}).publicado).length;
+  const p = document.getElementById('prog'); p.firstChild.nodeValue = n + '/' + cards.length + ' publicados';
+  p.querySelector('b').style.width = (100 * n / cards.length) + '%';
+}
+cards.forEach(c => {
+  const id = c.dataset.id, s = st[id] || {};
+  c.querySelectorAll('input[data-k]').forEach(i => {
+    i.checked = !!s[i.dataset.k];
+    i.addEventListener('change', () => { st[id] = {...(st[id] || {}), [i.dataset.k]: i.checked}; c.classList.toggle('done', !!st[id].publicado); save(); prog(); });
+  });
+  c.classList.toggle('done', !!s.publicado);
+  c.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', () => copy(D[id][b.dataset.copy], b)));
+});
+function copy(t, b){
+  const done = () => { const o = b.textContent; b.classList.add('ok'); b.textContent = '¡Copiado!'; setTimeout(() => { b.classList.remove('ok'); b.textContent = o; }, 1200); };
+  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(done).catch(() => {
+    const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {} ta.remove();
+  });
+}
+document.querySelectorAll('.hb').forEach(b => b.addEventListener('click', () => {
+  const t = b.textContent; navigator.clipboard && navigator.clipboard.writeText(t).then(() => { b.classList.add('ok'); setTimeout(() => b.classList.remove('ok'), 900); });
+}));
+const tabs = [...document.querySelectorAll('#tabs button')];
+function show(d){
+  tabs.forEach(t => t.setAttribute('aria-pressed', t.dataset.d === String(d)));
+  cards.forEach(c => c.style.display = (d == 0 || c.dataset.dia == d) ? '' : 'none');
+  try { localStorage.setItem(KEY + '-tab', d); } catch (e) {}
+}
+tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.d)));
+let t0 = '1'; try { t0 = localStorage.getItem(KEY + '-tab') || '1'; } catch (e) {}
+show(t0); prog();
+})();
+</script>
+</body></html>
