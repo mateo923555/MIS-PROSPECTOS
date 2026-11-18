@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Estudio Doña Marga</title>
+<style>
+@font-face{font-family:'T';src:url(../../fonts/Bric-XB-Cond.ttf)}
+@font-face{font-family:'A';src:url(../../fonts/Fraun-It-SB.ttf);font-style:italic}
+@font-face{font-family:'M';src:url(../../fonts/SpaceMono-Bold.ttf)}
+@font-face{font-family:'B';src:url(../../fonts/Bric-B.ttf)}
+:root{--cacao:#24140F;--harina:#F4EADB;--margen:#FF5A1F;--lima:#C8F03C}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--harina)}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(70% 45% at 50% 78%,#EADCC6 0,#F4EADB 70%)}
+svg#marga{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.ov{position:absolute;left:70px;right:70px;will-change:transform,opacity}
+#bug{position:absolute;top:140px;right:64px;width:96px;height:96px;border-radius:50%;background:var(--cacao)}
+#hook{top:270px;background:var(--cacao);color:var(--harina);border-radius:24px;padding:44px 48px 52px;font:118px/0.92 'T';letter-spacing:-1px}
+#hook em{font-style:normal;color:var(--margen)}
+#hook small{display:block;font:italic 50px 'A';color:#d8c9b6;margin-top:18px;letter-spacing:0}
+#ticket{top:250px;background:#FFFDF8;border-radius:22px;padding:30px 40px 30px;box-shadow:0 24px 50px -24px rgba(36,20,15,.45);color:var(--cacao)}
+#ticket .k{font:28px 'M';letter-spacing:4px;color:#8C7F74;display:flex;justify-content:space-between;margin-bottom:14px}
+.row{display:flex;justify-content:space-between;align-items:baseline;font:40px 'M';padding:7px 0;border-bottom:3px dashed #E2D5C2;overflow:hidden}
+.row span:first-child{font:42px 'B'}
+.row.precio{background:var(--margen);margin:0 -40px 8px;padding:12px 40px;border:0}
+.row.precio span:first-child{font:40px 'B'}
+.row.total{border-bottom:0;border-top:5px solid var(--cacao);margin-top:6px;padding-top:12px;font-size:50px}
+.row.total span:first-child{font:52px 'T'}
+#big{top:300px;left:auto;right:56px;width:540px;background:var(--cacao);color:var(--harina);border-radius:26px;padding:26px 36px 30px;transform-origin:70% 50%}
+#big .l{font:30px 'M';letter-spacing:5px;color:#d8c9b6}
+#big .v{font:150px/1 'M';color:var(--margen);margin-top:6px}
+#sub{top:935px;text-align:center;left:60px;right:60px}
+#sub span{display:inline;background:var(--cacao);color:var(--harina);font:50px/1.38 'B';padding:6px 18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:12px}
+#sub b{color:var(--margen);font-weight:inherit}
+#cta{top:300px;text-align:center;color:var(--cacao)}
+#cta .logo{width:230px;height:230px;margin:0 auto 26px;border-radius:50%;background:var(--cacao)}
+#cta .n{font:96px/0.95 'T'}
+#cta .n em{font:italic 96px 'A';color:var(--margen)}
+#cta .h{display:inline-block;margin-top:30px;font:44px 'M';background:var(--margen);padding:14px 34px;border-radius:99px}
+#ej{position:absolute;left:0;right:0;bottom:46px;text-align:center;font:24px 'M';letter-spacing:3px;color:rgba(36,20,15,.55)}
+</style></head>
+<body><div id="stage">
+<svg id="marga" viewBox="0 0 1080 1920">
+  <defs>
+    <clipPath id="mclip"><path id="mclipPath" d=""/></clipPath>
+    <g id="sym"><path d="M0 0 L173.2 -100 A200 200 0 1 1 0 -200 Z M-200 0 H-50 V314 L-200 360 Z" fill="currentColor"/><path d="M28 -48.5 L28 -248.5 A200 200 0 0 1 201.2 -148.5 Z" fill="#FF5A1F"/></g>
+  </defs>
+  <g id="char" transform="translate(540 1440) scale(1.06)">
+    <!-- cuerpo -->
+    <g id="body">
+      <path d="M-340 430 C-340 300 -240 252 -120 236 L120 236 C240 252 340 300 340 430 L370 720 L-370 720 Z" fill="#6B3E2E"/>
+      <path d="M-205 330 L205 330 L240 720 L-240 720 Z" fill="#FFF8EE"/>
+      <path d="M-205 330 L-150 236 M205 330 L150 236" stroke="#FFF8EE" stroke-width="26" stroke-linecap="round"/>
+      <rect x="-80" y="420" width="160" height="150" rx="26" fill="#F4EADB"/>
+      <g transform="translate(-4 503) scale(.2)" style="color:#24140F"><use href="#sym" transform="translate(0 -56)"/></g>
+      <path d="M-58 168 L58 168 L64 262 L-64 262 Z" fill="#E8B48E"/>
+      <ellipse cx="-62" cy="252" rx="78" ry="30" fill="#FFF8EE" transform="rotate(14 -62 252)"/>
+      <ellipse cx="62" cy="252" rx="78" ry="30" fill="#FFF8EE" transform="rotate(-14 62 252)"/>
+    </g>
+    <!-- cabeza -->
+    <g id="head">
+      <g id="pencil" transform="translate(30 -258) rotate(-32)">
+        <rect x="-11" y="-150" width="22" height="210" rx="3" fill="#FF5A1F"/>
+        <rect x="-11" y="-150" width="22" height="22" fill="#E9A3A0"/>
+        <rect x="-11" y="-128" width="22" height="10" fill="#B8B1A9"/>
+        <path d="M-11 60 L11 60 L0 92 Z" fill="#F2C6A0"/><path d="M-4 81 L4 81 L0 92 Z" fill="#24140F"/>
+      </g>
+      <ellipse cx="0" cy="-40" rx="206" ry="210" fill="#D8D2CC"/>
+      <circle cx="0" cy="-252" r="96" fill="#D8D2CC"/>
+      <path d="M-58 -270 C-30 -320 40 -322 62 -268 M-40 -230 C-10 -262 30 -262 52 -232" stroke="#BDB5AD" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <ellipse cx="-176" cy="22" rx="32" ry="44" fill="#EBB892"/><ellipse cx="176" cy="22" rx="32" ry="44" fill="#EBB892"/>
+      <circle cx="-180" cy="76" r="13" fill="#FFFDF7"/><circle cx="180" cy="76" r="13" fill="#FFFDF7"/>
+      <ellipse cx="0" cy="12" rx="176" ry="196" fill="#F3C9A4"/>
+      <path d="M-186 -6 C-196 -168 -84 -220 0 -214 C84 -220 196 -168 186 -6 C160 -104 96 -142 6 -132 C-60 -150 -150 -118 -186 -6 Z" fill="#E6E1DB"/>
+      <path d="M6 -132 C-20 -170 -60 -190 -110 -186" stroke="#CFC8C1" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <ellipse cx="-112" cy="76" rx="42" ry="25" fill="#F29A85" opacity=".55"/>
+      <ellipse cx="112" cy="76" rx="42" ry="25" fill="#F29A85" opacity=".55"/>
+      <g id="brows" stroke="#A79F98" stroke-width="13" stroke-linecap="round" fill="none">
+        <path id="browL" d="M-122 -72 Q-82 -96 -40 -76"/><path id="browR" d="M40 -76 Q82 -96 122 -72"/>
+      </g>
+      <g id="eyes" fill="#24140F">
+        <g id="eyeL" transform="translate(-80 -8)"><ellipse rx="17" ry="23"/><circle cx="6" cy="-8" r="6" fill="#fff"/></g>
+        <g id="eyeR" transform="translate(80 -8)"><ellipse rx="17" ry="23"/><circle cx="6" cy="-8" r="6" fill="#fff"/></g>
+      </g>
+      <g stroke="#24140F" stroke-width="9" fill="rgba(255,255,255,.14)">
+        <circle cx="-80" cy="-8" r="62"/><circle cx="80" cy="-8" r="62"/>
+        <path d="M-18 -14 Q0 -28 18 -14 M-142 -16 L-172 -4 M142 -16 L172 -4" fill="none"/>
+      </g>
+      <path d="M2 30 Q22 70 -4 80" stroke="#D49473" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <g transform="translate(0 124)">
+        <path id="mouth" d="" fill="#5B1F1B"/>
+        <g clip-path="url(#mclip)">
+          <rect id="teeth" x="-60" y="-20" width="120" height="0" fill="#FFFDF7"/>
+          <ellipse id="tongue" cx="0" cy="0" rx="30" ry="0" fill="#E0716A"/>
+        </g>
+        <path id="lip" d="" stroke="#B85A4E" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+</svg>
+
+<div id="bug"><svg viewBox="0 0 96 96" width="96" height="96"><g transform="translate(48 48) scale(.12) translate(0 -56)" style="color:#F4EADB"><use href="#sym"/></g></svg></div>
+<div class="ov" id="hook"></div>
+<div class="ov" id="ticket"><div class="k"><span>TORTA DE EJEMPLO</span><span>CIFRAS DE EJEMPLO</span></div><div id="rows"></div></div>
+<div class="ov" id="big"><div class="l"></div><div class="v"></div></div>
+<div class="ov" id="cta"><div class="logo"><svg viewBox="0 0 230 230" width="230" height="230"><g transform="translate(115 115) scale(.3) translate(0 -56)" style="color:#F4EADB"><use href="#sym"/></g></svg></div>
+  <div class="n">La Receta <em>del</em> Precio</div><div class="h"></div></div>
+<div class="ov" id="sub"><span></span></div>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const clamp = (x, a=0, b=1) => Math.max(a, Math.min(b, x));
+const easeOut = x => 1 - Math.pow(1 - clamp(x), 3);
+const back = x => { x = clamp(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const fmt = s => s.replace(/\*([^*]+)\*/g, '<em>$1</em>').replace(/\n/g, '<br>');
+let TL = null;
+
+window.load = (tl) => {
+  TL = tl;
+  // precalcula cuándo aparece cada cosa
+  const S = TL.segmentos;
+  TL.rows = []; TL.hook = null; TL.ticket = null; TL.big = null; TL.cta = null; TL.precio = null; TL.total = null;
+  S.forEach((s, i) => {
+    const a = s.accion; if (!a) return;
+    if (a.tipo === 'hook') TL.hook = {t: s.ini, ...a};
+    if (a.tipo === 'ticket') TL.ticket = {t: s.ini};
+    if (a.tipo === 'precio') TL.precio = {t: s.ini, ...a};
+    if (a.tipo === 'row') TL.rows.push({t: s.ini, ...a});
+    if (a.tipo === 'total') TL.total = {t: s.ini, ...a};
+    if (a.tipo === 'big') TL.big = {t: s.ini + Math.max(0, (s.fin - s.ini) * 0.55), ...a};
+    if (a.tipo === 'cta') TL.cta = {t: s.ini, ...a};
+  });
+  $('#hook').innerHTML = TL.hook ? fmt(TL.hook.texto) : '';
+  const rows = [];
+  if (TL.precio) rows.push(`<div class="row precio" data-t="${TL.precio.t}"><span>${TL.precio.label}</span><span>${TL.precio.valor}</span></div>`);
+  TL.rows.forEach(r => rows.push(`<div class="row" data-t="${r.t}"><span>${r.label}</span><span>${r.valor}</span></div>`));
+  if (TL.total) rows.push(`<div class="row total" data-t="${TL.total.t}"><span>${TL.total.label}</span><span>${TL.total.valor}</span></div>`);
+  $('#rows').innerHTML = rows.join('');
+  if (TL.big){ $('#big .l').textContent = TL.big.label; $('#big .v').textContent = TL.big.valor; }
+  if (TL.cta) $('#cta .h').textContent = 'Seguime · ' + TL.cta.texto;
+};
+
+function show(el, t0, t, t1 = 1e9, dur = .35, dy = 40){
+  const p = easeOut((t - t0) / dur), q = easeOut((t - t1) / .3);
+  const o = t < t0 ? 0 : p * (1 - q);
+  el.style.opacity = o;
+  el.style.transform = `translateY(${(1 - p) * dy - q * 20}px)`;
+  return o;
+}
+
+window.render = (t) => {
+  const S = TL.segmentos, f = Math.floor(t * TL.fps);
+  const o = TL.boca[f] || 0;
+  const seg = S.find(s => t >= s.ini - .05 && t <= s.fin + .25);
+
+  // ---- personaje
+  const sway = 1.6 * Math.sin(t * 1.25) + o * 2.4 * Math.sin(t * 6.3);
+  document.getElementById('head').setAttribute('transform', `translate(0 ${-o * 5}) rotate(${sway} 0 180)`);
+  document.getElementById('body').setAttribute('transform', `translate(0 ${Math.sin(t * 2.1) * 3})`);
+  // parpadeo: cada ~3.4 s, 140 ms
+  const bp = (t + 0.7) % 3.4, blink = bp < .14 ? Math.sin(bp / .14 * Math.PI) : 0;
+  ['eyeL', 'eyeR'].forEach(id => {
+    const g = document.getElementById(id), x = id === 'eyeL' ? -80 : 80;
+    g.setAttribute('transform', `translate(${x} -8) scale(1 ${1 - .9 * blink})`);
+  });
+  // cejas
+  const ceja = seg && seg.ceja ? easeOut((t - seg.ini) / .25) * (1 - easeOut((t - seg.fin) / .3)) : 0;
+  const lift = -14 * ceja;
+  document.getElementById('browL').setAttribute('d', `M-122 ${-72 + lift} Q-82 ${-96 + lift * 1.3} -40 ${-76 + lift}`);
+  document.getElementById('browR').setAttribute('d', `M40 ${-76 + lift * .6} Q82 ${-96 + lift * 1.6} 122 ${-72 + lift * .6}`);
+  // boca: sonrisa cerrada → abierta
+  const w = 92 + o * 8, h = 4 + o * 46, up = -3 - o * 3;
+  const d = `M${-w/2} 0 Q0 ${up} ${w/2} 0 Q0 ${h * 1.55 + 16} ${-w/2} 0 Z`;
+  document.getElementById('mouth').setAttribute('d', d);
+  document.getElementById('mclipPath').setAttribute('d', d);
+  document.getElementById('teeth').setAttribute('height', o > .2 ? 9 + o * 6 : 0);
+  const tg = document.getElementById('tongue');
+  tg.setAttribute('cy', h * 1.2 + 6); tg.setAttribute('ry', o > .15 ? 10 + o * 14 : 0);
+  document.getElementById('lip').setAttribute('d', `M${-w/2 - 4} 2 Q0 ${h * 1.55 + 20} ${w/2 + 4} 2`);
+
+  // ---- capas de texto
+  const tTicket = TL.ticket ? TL.ticket.t : 1e9, tCta = TL.cta ? TL.cta.t : 1e9;
+  show($('#hook'), TL.hook ? TL.hook.t : 1e9, t, tTicket, .4, 60);
+  show($('#ticket'), tTicket, t, tCta, .45, 60);
+  document.querySelectorAll('#rows .row').forEach(r => {
+    const t0 = +r.dataset.t, p = easeOut((t - t0) / .3);
+    r.style.display = t < t0 ? 'none' : 'flex';
+    r.style.opacity = p; r.style.transform = `translateX(${(1 - p) * -40}px)`;
+  });
+  if (TL.big){
+    const b = $('#big'), t0 = TL.big.t;
+    const p = t < t0 ? 0 : back((t - t0) / .45), q = easeOut((t - tCta) / .3);
+    b.style.opacity = t < t0 ? 0 : clamp((t - t0) / .15) * (1 - q);
+    b.style.transform = `rotate(-4deg) scale(${.5 + .5 * p})`;
+  }
+  if (TL.cta){
+    const c = $('#cta'), p = back((t - tCta) / .5);
+    c.style.opacity = t < tCta ? 0 : clamp((t - tCta) / .2);
+    c.style.transform = `scale(${.85 + .15 * p})`;
+  }
+  // subtítulo
+  const sub = $('#sub span');
+  if (seg){ sub.innerHTML = seg.sub.replace(/(\$ ?[\d.]+|×\s?\d+|x3)/g, '<b>$1</b>'); }
+  show($('#sub'), seg ? seg.ini - .05 : 1e9, t, seg ? seg.fin + .25 : 1e9, .15, 12);
+};
+</script>
+</body></html>
