@@ -4,6 +4,7 @@ Marca independiente para TikTok: costos, precios y ganancia para emprendedores d
 
 ## Abrir primero
 - `comparar-conceptos.html`: los 3 conceptos en grande, en el recorte circular (200/110/56/32 px) y en un perfil de TikTok claro y oscuro, más la decisión.
+- `plantilla-portada.html`: **editor de portadas para TikTok** (1080×1920). Escribís el título, elegís el fondo (cacao, harina, margen o foto) y descargás el PNG. Funciona sin internet porque las fuentes van incrustadas. Hay ejemplos en `export/portadas/`.
 - `guia-visual.html`: mini guía con colores, tipografías, reglas del logo y aplicaciones en video 9:16.
 
 ## Conceptos (`logos/concepto-*`)
@@ -35,4 +36,6 @@ pip install fonttools uharfbuzz
 python3 tools/build.py      # SVG
 python3 tools/pages.py      # HTML
 node tools/export.cjs       # PNG (requiere playwright)
+python3 tools/portada.py    # plantilla de portada
+node tools/export-portadas.cjs  # portadas de ejemplo
 ```
