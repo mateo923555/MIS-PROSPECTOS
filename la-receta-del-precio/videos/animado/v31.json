@@ -1,0 +1,80 @@
+{
+ "id": "V31",
+ "titulo": "Una cancelación sin condiciones escritas",
+ "segmentos": [
+  {
+   "say": "Te cancelan una torta el día anterior. Si no tenías nada escrito, lo pagás vos.",
+   "sub": "Te cancelan una torta el día anterior. Si no tenías nada escrito, lo pagás vos.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "Te cancelan el día anterior. ¿Quién paga?"
+   }
+  },
+  {
+   "say": "Te digo qué dejar definido antes de que te pase.",
+   "sub": "Te digo qué dejar definido antes de que te pase.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te digo qué dejar definido antes de que te pase."
+   }
+  },
+  {
+   "say": "Ejemplo: torta de cincuenta mil pesos que cancelan un día antes.",
+   "sub": "Ejemplo: torta de $50.000 que cancelan un día antes.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Ejemplo: torta de $50.000 que cancelan un día antes."
+   }
+  },
+  {
+   "say": "Ya compraste ingredientes, hiciste el bizcochuelo, reservaste el día: veinte mil pesos invertidos.",
+   "sub": "Ya compraste ingredientes, hiciste el bizcochuelo, reservaste el día: $20.000 invertidos.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Ya compraste ingredientes, hiciste el bizcochuelo, reservaste el día: $20.000 invertidos."
+   }
+  },
+  {
+   "say": "Sin seña ni condiciones por escrito, no hay de dónde recuperarlo.",
+   "sub": "Sin seña ni condiciones por escrito, no hay de dónde recuperarlo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Sin seña ni condiciones por escrito, no hay de dónde recuperarlo."
+   }
+  },
+  {
+   "say": "Definí tu seña, tu fecha límite y qué pasa si cancelan. Cuánto y cómo, lo decidís vos; lo importante es que esté escrito antes.",
+   "sub": "Definí tu seña, tu fecha límite y qué pasa si cancelan. Cuánto y cómo, lo decidís vos; lo importante es que esté escrito antes.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Definí tu seña, tu fecha límite y qué pasa si cancelan. Cuánto y cómo, lo decidís vos; lo importante es que esté escrito antes.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "YA INVERTIDO · EJEMPLO",
+     "valor": "$ 20.000",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

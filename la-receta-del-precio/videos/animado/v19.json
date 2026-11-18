@@ -1,0 +1,74 @@
+{
+ "id": "V19",
+ "titulo": "“¿Cuánto sale una torta de 1 kilo?”",
+ "segmentos": [
+  {
+   "say": "Me preguntan cuánto cobrar una torta de un kilo. La respuesta honesta no es un número.",
+   "sub": "Me preguntan cuánto cobrar una torta de un kilo. La respuesta honesta no es un número.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "“¿Cuánto cobro una torta de 1 kg?”"
+   }
+  },
+  {
+   "say": "Te doy el método y las preguntas que tenés que hacer antes de cotizar.",
+   "sub": "Te doy el método y las preguntas que tenés que hacer antes de cotizar.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te doy el método y las preguntas que tenés que hacer antes de cotizar."
+   }
+  },
+  {
+   "say": "Nadie te puede dar tu número: tus ingredientes, tu zona y tu tiempo son distintos.",
+   "sub": "Nadie te puede dar tu número: tus ingredientes, tu zona y tu tiempo son distintos.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Nadie te puede dar tu número: tus ingredientes, tu zona y tu tiempo son distintos."
+   }
+  },
+  {
+   "say": "Antes de cotizar, preguntá: fecha, porciones, sabor, decoración, fotos de referencia y alergias.",
+   "sub": "Antes de cotizar, preguntá: fecha, porciones, sabor, decoración, fotos de referencia y alergias.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Antes de cotizar, preguntá: fecha, porciones, sabor, decoración, fotos de referencia y alergias."
+   }
+  },
+  {
+   "say": "Con eso: capas de costo, gastos del mes, tu ganancia.",
+   "sub": "Con eso: capas de costo, gastos del mes, tu ganancia.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Con eso: capas de costo, gastos del mes, tu ganancia."
+   }
+  },
+  {
+   "say": "Si alguien te tira un precio sin conocer tus costos, es su precio, no el tuyo.",
+   "sub": "Si alguien te tira un precio sin conocer tus costos, es su precio, no el tuyo.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Si alguien te tira un precio sin conocer tus costos, es su precio, no el tuyo.",
+     "fuerte": true
+    }
+   ]
+  },
+  {
+   "say": "¿Qué producto calculamos en el próximo video? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "¿Qué producto calculamos en el próximo video? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

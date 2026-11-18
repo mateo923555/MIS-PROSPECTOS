@@ -66,6 +66,7 @@ def card(d):
     <div class="acts">
       <button class="b" data-copy="guion">Copiar guion</button>
       <button class="b" data-copy="caption">Copiar caption</button>
+      <a class="b" target="_blank" rel="noopener" href="export/videos/{d['id'].lower()}-dona-marga.mp4">▶ Video</a>
       <a class="b o" target="_blank" rel="noopener" href="plantilla-portada.html#{E(json.dumps(d['portada_state'], ensure_ascii=False))}">Abrir portada →</a>
     </div>
     <div class="st">

@@ -1,0 +1,80 @@
+{
+ "id": "V11",
+ "titulo": "La plata que tirás a la basura sin darte cuenta",
+ "segmentos": [
+  {
+   "say": "El huevo que se rompe, el bizcochuelo que se quema, el recorte que sobra: también lo pagás vos.",
+   "sub": "El huevo que se rompe, el bizcochuelo que se quema, el recorte que sobra: también lo pagás vos.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "Esto también lo pagás vos"
+   }
+  },
+  {
+   "say": "Te digo cómo medir cuánto es en tu cocina.",
+   "sub": "Te digo cómo medir cuánto es en tu cocina.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te digo cómo medir cuánto es en tu cocina."
+   }
+  },
+  {
+   "say": "Se llama merma: todo lo que compraste y no termina en la torta.",
+   "sub": "Se llama merma: todo lo que compraste y no termina en la torta.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Se llama merma: todo lo que compraste y no termina en la torta."
+   }
+  },
+  {
+   "say": "Ejemplo: ingredientes de diez mil pesos y ochocientos pesos que se pierden en el camino.",
+   "sub": "Ejemplo: ingredientes de $10.000 y $800 que se pierden en el camino.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Ejemplo: ingredientes de $10.000 y $800 que se pierden en el camino."
+   }
+  },
+  {
+   "say": "Para saber tu número, anotá durante un mes lo que tirás o rehacés.",
+   "sub": "Para saber tu número, anotá durante un mes lo que tirás o rehacés.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Para saber tu número, anotá durante un mes lo que tirás o rehacés."
+   }
+  },
+  {
+   "say": "Con tu número real, sumalo a tus ingredientes. En veinte pedidos de este ejemplo son dieciséis mil pesos al mes.",
+   "sub": "Con tu número real, sumalo a tus ingredientes. En 20 pedidos de este ejemplo son $16.000 al mes.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Con tu número real, sumalo a tus ingredientes. En 20 pedidos de este ejemplo son $16.000 al mes.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "MERMA · EJEMPLO",
+     "valor": "$ 800",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

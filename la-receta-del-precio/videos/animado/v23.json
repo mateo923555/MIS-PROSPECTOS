@@ -1,0 +1,74 @@
+{
+ "id": "V23",
+ "titulo": "“Ya le dije un precio, no lo puedo cambiar”",
+ "segmentos": [
+  {
+   "say": "Le tiraste un número a una clienta por WhatsApp y ahora no sabés si lo podés cambiar.",
+   "sub": "Le tiraste un número a una clienta por WhatsApp y ahora no sabés si lo podés cambiar.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "¿Le pasaste un número por WhatsApp?"
+   }
+  },
+  {
+   "say": "Te explico la diferencia entre tres momentos que casi nadie separa.",
+   "sub": "Te explico la diferencia entre tres momentos que casi nadie separa.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te explico la diferencia entre tres momentos que casi nadie separa."
+   }
+  },
+  {
+   "say": "Estimación: un número orientativo antes de tener los datos. Puede cambiar, si lo aclaraste desde el principio.",
+   "sub": "Estimación: un número orientativo antes de tener los datos. Puede cambiar, si lo aclaraste desde el principio.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Estimación: un número orientativo antes de tener los datos. Puede cambiar, si lo aclaraste desde el principio."
+   }
+  },
+  {
+   "say": "Presupuesto: el detalle con total y fecha de vigencia. La clienta lo acepta, pide cambios o no sigue.",
+   "sub": "Presupuesto: el detalle con total y fecha de vigencia. La clienta lo acepta, pide cambios o no sigue.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Presupuesto: el detalle con total y fecha de vigencia. La clienta lo acepta, pide cambios o no sigue."
+   }
+  },
+  {
+   "say": "Pedido acordado: lo que las dos confirmaron por escrito. Solo cambia si las dos están de acuerdo.",
+   "sub": "Pedido acordado: lo que las dos confirmaron por escrito. Solo cambia si las dos están de acuerdo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Pedido acordado: lo que las dos confirmaron por escrito. Solo cambia si las dos están de acuerdo."
+   }
+  },
+  {
+   "say": "Nombrá el momento en cada mensaje: estimación, presupuesto, pedido acordado. Te ahorra malentendidos.",
+   "sub": "Nombrá el momento en cada mensaje: “estimación”, “presupuesto”, “pedido acordado”. Te ahorra malentendidos.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Nombrá el momento en cada mensaje: “estimación”, “presupuesto”, “pedido acordado”. Te ahorra malentendidos.",
+     "fuerte": true
+    }
+   ]
+  },
+  {
+   "say": "¿Te pasó? Contame. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "¿Te pasó? Contame. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

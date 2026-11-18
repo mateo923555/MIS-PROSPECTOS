@@ -1,0 +1,83 @@
+{
+ "id": "V10",
+ "titulo": "Las capas que tiene que pagar tu precio",
+ "segmentos": [
+  {
+   "say": "Tu torta tiene capas de bizcochuelo y relleno... y también capas de costo. ¿Cuántas cobrás?",
+   "sub": "Tu torta tiene capas de bizcochuelo y relleno… y también capas de costo. ¿Cuántas cobrás?",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "Tu torta tiene más capas de las que cobrás"
+   }
+  },
+  {
+   "say": "Contá con los dedos cuántas incluís hoy.",
+   "sub": "Contá con los dedos cuántas incluís hoy.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Contá con los dedos cuántas incluís hoy."
+   }
+  },
+  {
+   "say": "Bizcochuelo, relleno y cobertura: cada uno con su propia ficha.",
+   "sub": "Bizcochuelo, relleno y cobertura: cada uno con su propia ficha.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/4",
+    "texto": "Bizcochuelo, relleno y cobertura: cada uno con su propia ficha."
+   }
+  },
+  {
+   "say": "Materiales de decoración y packaging.",
+   "sub": "Materiales de decoración y packaging.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/4",
+    "texto": "Materiales de decoración y packaging."
+   }
+  },
+  {
+   "say": "Tu tiempo de decoración y tu tiempo de armado.",
+   "sub": "Tu tiempo de decoración y tu tiempo de armado.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/4",
+    "texto": "Tu tiempo de decoración y tu tiempo de armado."
+   }
+  },
+  {
+   "say": "Después, los gastos del mes que le tocan a cada torta. Y recién ahí, tu ganancia y el costo de cobro.",
+   "sub": "Después, los gastos del mes que le tocan a cada torta. Y recién ahí, tu ganancia y el costo de cobro.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "4/4",
+    "texto": "Después, los gastos del mes que le tocan a cada torta. Y recién ahí, tu ganancia y el costo de cobro."
+   }
+  },
+  {
+   "say": "Si te salteás una capa, el número sale más bajo de lo que te cuesta. Y ojo: la suma de la torta todavía no es tu precio.",
+   "sub": "Si te salteás una capa, el número sale más bajo de lo que te cuesta. Y ojo: la suma de la torta todavía no es tu precio.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Si te salteás una capa, el número sale más bajo de lo que te cuesta. Y ojo: la suma de la torta todavía no es tu precio.",
+     "fuerte": true
+    }
+   ]
+  },
+  {
+   "say": "La hoja ocho del cuaderno junta todas las capas. Esto, con el cuaderno de once hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "sub": "La hoja 8 del cuaderno junta todas las capas. Esto, con el cuaderno de 11 hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Link en mi perfil",
+    "ref": "Hoja 8 · Suma de la torta · pág. 65"
+   }
+  }
+ ]
+}

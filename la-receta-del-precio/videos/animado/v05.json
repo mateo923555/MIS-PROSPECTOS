@@ -1,0 +1,80 @@
+{
+ "id": "V05",
+ "titulo": "3 caminos para ponerle ganancia a tu torta",
+ "segmentos": [
+  {
+   "say": "Hay tres formas de sumarle ganancia a una torta, y no dan lo mismo.",
+   "sub": "Hay tres formas de sumarle ganancia a una torta, y no dan lo mismo.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "Le sumás 40%… ¿pero de qué?"
+   }
+  },
+  {
+   "say": "Te muestro las tres con el mismo costo, y por qué tenés que saber cuál estás usando.",
+   "sub": "Te muestro las tres con el mismo costo, y por qué tenés que saber cuál estás usando.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te muestro las tres con el mismo costo, y por qué tenés que saber cuál estás usando."
+   }
+  },
+  {
+   "say": "Costo completo: diez mil pesos. Camino A, monto fijo: le sumás cuatro mil pesos. Precio: catorce mil pesos.",
+   "sub": "Costo completo: $10.000. Camino A, monto fijo: le sumás $4.000. Precio: $14.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Costo completo: $10.000. Camino A, monto fijo: le sumás $4.000. Precio: $14.000."
+   }
+  },
+  {
+   "say": "Camino B, recargo sobre el costo: cuarenta por ciento de diez mil pesos. Precio: catorce mil pesos.",
+   "sub": "Camino B, recargo sobre el costo: 40% de $10.000. Precio: $14.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Camino B, recargo sobre el costo: 40% de $10.000. Precio: $14.000."
+   }
+  },
+  {
+   "say": "Camino C, margen sobre el precio: diez mil pesos dividido , uno menos cero coma cuarenta, igual a dieciséis mil seiscientos sesenta y siete pesos.",
+   "sub": "Camino C, margen sobre el precio: $10.000 ÷ (1 − 0,40) = $16.667.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Camino C, margen sobre el precio: $10.000 ÷ (1 − 0,40) = $16.667."
+   }
+  },
+  {
+   "say": "Con recargo del cuarenta por ciento, la ganancia es el veintiocho coma seis por ciento de lo que cobrás. Ninguno está prohibido: lo que no sirve es no saber cuál usás.",
+   "sub": "Con recargo del 40%, la ganancia es el 28,6% de lo que cobrás. Ninguno está prohibido: lo que no sirve es no saber cuál usás.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Con recargo del 40%, la ganancia es el 28,6% de lo que cobrás. Ninguno está prohibido: lo que no sirve es no saber cuál usás.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "MISMO COSTO, 3 PRECIOS",
+     "valor": "$14.000 · $16.667",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "La hoja diez del cuaderno te hace elegir el camino a propósito. Esto, con el cuaderno de once hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "sub": "La hoja 10 del cuaderno te hace elegir el camino a propósito. Esto, con el cuaderno de 11 hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Link en mi perfil",
+    "ref": "Hoja 10 · Mi precio · pág. 76"
+   }
+  }
+ ]
+}

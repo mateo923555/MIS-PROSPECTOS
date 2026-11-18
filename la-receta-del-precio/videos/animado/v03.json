@@ -1,0 +1,80 @@
+{
+ "id": "V03",
+ "titulo": "“Si subo el precio no me compran”",
+ "segmentos": [
+  {
+   "say": "Si subo el precio no me compra nadie. Hagamos la cuenta antes de creerlo.",
+   "sub": "“Si subo el precio no me compra nadie.” Hagamos la cuenta antes de creerlo.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "MITO: si subís el precio perdés todo"
+   }
+  },
+  {
+   "say": "Al final vas a ver por qué vender menos tortas no siempre significa ganar menos.",
+   "sub": "Al final vas a ver por qué vender menos tortas no siempre significa ganar menos.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Al final vas a ver por qué vender menos tortas no siempre significa ganar menos."
+   }
+  },
+  {
+   "say": "Ejemplo A: vendés diez tortas y te quedan tres mil pesos de ganancia en cada una. Total: treinta mil pesos.",
+   "sub": "Ejemplo A: vendés 10 tortas y te quedan $3.000 de ganancia en cada una. Total: $30.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Ejemplo A: vendés 10 tortas y te quedan $3.000 de ganancia en cada una. Total: $30.000."
+   }
+  },
+  {
+   "say": "Ejemplo B: con otro precio vendés siete, pero te quedan ocho mil pesos por torta.",
+   "sub": "Ejemplo B: con otro precio vendés 7, pero te quedan $8.000 por torta.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Ejemplo B: con otro precio vendés 7, pero te quedan $8.000 por torta."
+   }
+  },
+  {
+   "say": "siete por ocho mil pesos, igual a cincuenta y seis mil pesos.",
+   "sub": "7 × $8.000 = $56.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "7 × $8.000 = $56.000."
+   }
+  },
+  {
+   "say": "Con tres tortas menos, veintiséis mil pesos más. No sabemos cuántas clientas vas a tener vos: lo que sí sabés es cuánto te deja cada una.",
+   "sub": "Con 3 tortas menos, $26.000 más. No sabemos cuántas clientas vas a tener vos: lo que sí sabés es cuánto te deja cada una.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Con 3 tortas menos, $26.000 más. No sabemos cuántas clientas vas a tener vos: lo que sí sabés es cuánto te deja cada una.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "EJEMPLO · 7 TORTAS",
+     "valor": "$ 56.000",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "¿Lo pensaste así alguna vez? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "¿Lo pensaste así alguna vez? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "id": "V35",
+ "titulo": "Las 3 hojas que no te podés saltear",
+ "segmentos": [
+  {
+   "say": "Si este fin de semana solo tenés tiempo para tres hojas, que sean estas.",
+   "sub": "Si este fin de semana solo tenés tiempo para tres hojas, que sean estas.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "Si hacés solo 3 hojas, que sean estas"
+   }
+  },
+  {
+   "say": "Con estas tres ya tenés un precio que podés explicar.",
+   "sub": "Con estas tres ya tenés un precio que podés explicar.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Con estas tres ya tenés un precio que podés explicar."
+   }
+  },
+  {
+   "say": "Hoja ocho, la suma de la torta: todas las capas de costo juntas.",
+   "sub": "Hoja 8, la suma de la torta: todas las capas de costo juntas.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Hoja 8, la suma de la torta: todas las capas de costo juntas."
+   }
+  },
+  {
+   "say": "Hoja nueve, los gastos del mes: luz, gas y lo demás, divididos por las tortas que hiciste.",
+   "sub": "Hoja 9, los gastos del mes: luz, gas y lo demás, divididos por las tortas que hiciste.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Hoja 9, los gastos del mes: luz, gas y lo demás, divididos por las tortas que hiciste."
+   }
+  },
+  {
+   "say": "Hoja diez, tu precio: costo completo, el camino de ganancia que elegiste y el costo de cobro.",
+   "sub": "Hoja 10, tu precio: costo completo, el camino de ganancia que elegiste y el costo de cobro.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Hoja 10, tu precio: costo completo, el camino de ganancia que elegiste y el costo de cobro."
+   }
+  },
+  {
+   "say": "Suma, gastos, precio. Con esas tres, la próxima vez que te pregunten ¿por qué sale eso? tenés la respuesta.",
+   "sub": "Suma, gastos, precio. Con esas tres, la próxima vez que te pregunten “¿por qué sale eso?” tenés la respuesta.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Suma, gastos, precio. Con esas tres, la próxima vez que te pregunten “¿por qué sale eso?” tenés la respuesta.",
+     "fuerte": true
+    }
+   ]
+  },
+  {
+   "say": "Esto, con el cuaderno de once hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "sub": "Esto, con el cuaderno de 11 hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Link en mi perfil",
+    "ref": "Hojas 8, 9 y 10"
+   }
+  }
+ ]
+}

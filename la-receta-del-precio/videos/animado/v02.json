@@ -1,0 +1,89 @@
+{
+ "id": "V02",
+ "titulo": "Cuánto te cuesta 1 gramo de harina",
+ "segmentos": [
+  {
+   "say": "Si no sabés cuánto te cuesta la harina que usás, no sabés cuánto te cuesta tu torta.",
+   "sub": "Si no sabés cuánto te cuesta la harina que usás, no sabés cuánto te cuesta tu torta.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "La cuenta que sirve para TODO ingrediente"
+   }
+  },
+  {
+   "say": "En treinta segundos, la cuenta que sirve para cualquier ingrediente.",
+   "sub": "En 30 segundos, la cuenta que sirve para cualquier ingrediente.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "En 30 segundos, la cuenta que sirve para cualquier ingrediente."
+   }
+  },
+  {
+   "say": "Precio del paquete dividido lo que trae, por lo que usás.",
+   "sub": "Precio del paquete dividido lo que trae, por lo que usás.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/4",
+    "texto": "Precio del paquete dividido lo que trae, por lo que usás."
+   }
+  },
+  {
+   "say": "Harina: mil doscientos pesos dividido mil gramos por trescientos cincuenta gramos, igual a cuatrocientos veinte pesos.",
+   "sub": "Harina: $1.200 ÷ 1.000 g × 350 g = $420.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/4",
+    "texto": "Harina: $1.200 ÷ 1.000 g × 350 g = $420."
+   }
+  },
+  {
+   "say": "Manteca: tres mil pesos dividido doscientos gramos por cien gramos, igual a mil quinientos pesos.",
+   "sub": "Manteca: $3.000 ÷ 200 g × 100 g = $1.500.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/4",
+    "texto": "Manteca: $3.000 ÷ 200 g × 100 g = $1.500."
+   }
+  },
+  {
+   "say": "Huevos: seis mil pesos dividido treinta por tres, igual a seiscientos pesos. Siempre en la misma unidad: gramos con gramos, unidades con unidades.",
+   "sub": "Huevos: $6.000 ÷ 30 × 3 = $600. Siempre en la misma unidad: gramos con gramos, unidades con unidades.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "4/4",
+    "texto": "Huevos: $6.000 ÷ 30 × 3 = $600. Siempre en la misma unidad: gramos con gramos, unidades con unidades."
+   }
+  },
+  {
+   "say": "Lo hacés una vez por receta, anotás la fecha de los precios, y tenés el costo exacto de tus ingredientes.",
+   "sub": "Lo hacés una vez por receta, anotás la fecha de los precios, y tenés el costo exacto de tus ingredientes.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Lo hacés una vez por receta, anotás la fecha de los precios, y tenés el costo exacto de tus ingredientes.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "HARINA POR GRAMO",
+     "valor": "$ 1,20",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "Guardalo y probalo con tu receta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Guardalo y probalo con tu receta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

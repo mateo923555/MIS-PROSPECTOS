@@ -1,0 +1,83 @@
+{
+ "id": "V29",
+ "titulo": "Cómo pasar un presupuesto en 4 bloques",
+ "segmentos": [
+  {
+   "say": "Torta cumple doce porciones, veintiocho mil setecientos treinta pesos, avisame. Así no. Mirá cómo queda en cuatro bloques.",
+   "sub": "“Torta cumple 12 porciones, $28.730, avisame.” Así no. Mirá cómo queda en 4 bloques.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "“Torta 12 p. $28.730. Avisame.” ❌"
+   }
+  },
+  {
+   "say": "Te dejo la estructura para copiar en WhatsApp.",
+   "sub": "Te dejo la estructura para copiar en WhatsApp.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te dejo la estructura para copiar en WhatsApp."
+   }
+  },
+  {
+   "say": "Qué: torta de chocolate, doce porciones, seis flores de pasta.",
+   "sub": "Qué: torta de chocolate, 12 porciones, 6 flores de pasta.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/4",
+    "texto": "Qué: torta de chocolate, 12 porciones, 6 flores de pasta."
+   }
+  },
+  {
+   "say": "Cuánto: veintiocho mil setecientos treinta pesos.",
+   "sub": "Cuánto: $28.730.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/4",
+    "texto": "Cuánto: $28.730."
+   }
+  },
+  {
+   "say": "Qué incluye y qué va aparte: relleno, caja con moño y base. El envío va aparte.",
+   "sub": "Qué incluye y qué va aparte: relleno, caja con moño y base. El envío va aparte.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/4",
+    "texto": "Qué incluye y qué va aparte: relleno, caja con moño y base. El envío va aparte."
+   }
+  },
+  {
+   "say": "Vigencia: vale hasta el tal fecha. Para confirmar, respondé este mensaje.",
+   "sub": "Vigencia: vale hasta el [fecha]. Para confirmar, respondé este mensaje.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "4/4",
+    "texto": "Vigencia: vale hasta el [fecha]. Para confirmar, respondé este mensaje."
+   }
+  },
+  {
+   "say": "Qué, cuánto, qué incluye y hasta cuándo. Sin justificarte y sin ¿te parece?.",
+   "sub": "Qué, cuánto, qué incluye y hasta cuándo. Sin justificarte y sin “¿te parece?”.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Qué, cuánto, qué incluye y hasta cuándo. Sin justificarte y sin “¿te parece?”.",
+     "fuerte": true
+    }
+   ]
+  },
+  {
+   "say": "Guardalo para tu próximo presupuesto. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Guardalo para tu próximo presupuesto. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

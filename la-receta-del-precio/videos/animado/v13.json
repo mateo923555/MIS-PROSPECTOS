@@ -1,0 +1,80 @@
+{
+ "id": "V13",
+ "titulo": "¿Por kilo o por porción?",
+ "segmentos": [
+  {
+   "say": "Cobrar las tortas por kilo parece justo, pero puede esconder tu trabajo.",
+   "sub": "Cobrar las tortas por kilo parece justo, pero puede esconder tu trabajo.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "¿Cobrás tus tortas por kilo?"
+   }
+  },
+  {
+   "say": "Te digo qué mirar para que la decoración no te salga gratis.",
+   "sub": "Te digo qué mirar para que la decoración no te salga gratis.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te digo qué mirar para que la decoración no te salga gratis."
+   }
+  },
+  {
+   "say": "El kilo no dice cuánto trabajo lleva: una torta lisa y una decorada pueden pesar lo mismo.",
+   "sub": "El kilo no dice cuánto trabajo lleva: una torta lisa y una decorada pueden pesar lo mismo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "El kilo no dice cuánto trabajo lleva: una torta lisa y una decorada pueden pesar lo mismo."
+   }
+  },
+  {
+   "say": "La clienta piensa en porciones. Contá las que vos servís, no las de una tabla.",
+   "sub": "La clienta piensa en porciones. Contá las que vos servís, no las de una tabla.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "La clienta piensa en porciones. Contá las que vos servís, no las de una tabla."
+   }
+  },
+  {
+   "say": "Ejemplo: torta de veinte porciones con costo de treinta mil pesos, igual a mil quinientos pesos por porción.",
+   "sub": "Ejemplo: torta de 20 porciones con costo de $30.000 = $1.500 por porción.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Ejemplo: torta de 20 porciones con costo de $30.000 = $1.500 por porción."
+   }
+  },
+  {
+   "say": "Con la ganancia que elijas, sale por porción. Ejemplo: dos mil quinientos pesos la porción, cincuenta mil pesos la torta. La decoración se calcula aparte.",
+   "sub": "Con la ganancia que elijas, sale por porción. Ejemplo: $2.500 la porción, $50.000 la torta. La decoración se calcula aparte.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Con la ganancia que elijas, sale por porción. Ejemplo: $2.500 la porción, $50.000 la torta. La decoración se calcula aparte.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "POR PORCIÓN · EJEMPLO",
+     "valor": "$ 2.500",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "¿Kilo o porción? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "¿Kilo o porción? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

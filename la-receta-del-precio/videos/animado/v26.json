@@ -1,0 +1,80 @@
+{
+ "id": "V26",
+ "titulo": "Tu ficha tiene fecha de vencimiento",
+ "segmentos": [
+  {
+   "say": "¿De qué fecha son los precios con los que calculaste tu torta? Si no lo sabés, mirá esto.",
+   "sub": "¿De qué fecha son los precios con los que calculaste tu torta? Si no lo sabés, mirá esto.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "¿De qué fecha son tus precios?"
+   }
+  },
+  {
+   "say": "Te doy un método de cinco minutos por mes.",
+   "sub": "Te doy un método de 5 minutos por mes.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te doy un método de 5 minutos por mes."
+   }
+  },
+  {
+   "say": "Anotá en cada ficha la fecha de los precios.",
+   "sub": "Anotá en cada ficha la fecha de los precios.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Anotá en cada ficha la fecha de los precios."
+   }
+  },
+  {
+   "say": "Una vez por mes, revisá los ingredientes que más pesan: manteca, chocolate, crema, dulce de leche, huevos.",
+   "sub": "Una vez por mes, revisá los ingredientes que más pesan: manteca, chocolate, crema, dulce de leche, huevos.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Una vez por mes, revisá los ingredientes que más pesan: manteca, chocolate, crema, dulce de leche, huevos."
+   }
+  },
+  {
+   "say": "Ejemplo: si esos son el setenta por ciento del costo y suben diez por ciento, tu costo sube siete por ciento.",
+   "sub": "Ejemplo: si esos son el 70% del costo y suben 10%, tu costo sube 7%.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Ejemplo: si esos son el 70% del costo y suben 10%, tu costo sube 7%."
+   }
+  },
+  {
+   "say": "Recalculás solo la línea que cambió. Y a una clienta habitual le avisás desde cuándo rige: un pedido ya acordado no cambia.",
+   "sub": "Recalculás solo la línea que cambió. Y a una clienta habitual le avisás desde cuándo rige: un pedido ya acordado no cambia.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Recalculás solo la línea que cambió. Y a una clienta habitual le avisás desde cuándo rige: un pedido ya acordado no cambia.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "SI SUBEN 10 % · EJEMPLO",
+     "valor": "COSTO + 7 %",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

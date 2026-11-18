@@ -1,0 +1,80 @@
+{
+ "id": "V08",
+ "titulo": "Copiar el precio de otra pastelera no te sirve",
+ "segmentos": [
+  {
+   "say": "Cobrás lo mismo que otra pastelera porque así está el mercado. Mirá por qué eso no te dice nada.",
+   "sub": "Cobrás lo mismo que otra pastelera porque “así está el mercado”. Mirá por qué eso no te dice nada.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "¿Cobrás lo mismo que la de al lado?"
+   }
+  },
+  {
+   "say": "Te muestro cómo con el mismo precio ella puede ganar casi el doble.",
+   "sub": "Te muestro cómo con el mismo precio ella puede ganar casi el doble.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te muestro cómo con el mismo precio ella puede ganar casi el doble."
+   }
+  },
+  {
+   "say": "Las dos cobran veinticinco mil pesos.",
+   "sub": "Las dos cobran $25.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Las dos cobran $25.000."
+   }
+  },
+  {
+   "say": "Ella compra por mayor y hace varias a la vez: su costo es doce mil pesos.",
+   "sub": "Ella compra por mayor y hace varias a la vez: su costo es $12.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Ella compra por mayor y hace varias a la vez: su costo es $12.000."
+   }
+  },
+  {
+   "say": "Vos comprás por menor y hacés una por vez: tu costo es dieciocho mil pesos.",
+   "sub": "Vos comprás por menor y hacés una por vez: tu costo es $18.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Vos comprás por menor y hacés una por vez: tu costo es $18.000."
+   }
+  },
+  {
+   "say": "Ella gana trece mil pesos y vos siete mil pesos. Su precio sale de sus costos. El tuyo tiene que salir de los tuyos.",
+   "sub": "Ella gana $13.000 y vos $7.000. Su precio sale de sus costos. El tuyo tiene que salir de los tuyos.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Ella gana $13.000 y vos $7.000. Su precio sale de sus costos. El tuyo tiene que salir de los tuyos.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "MISMO PRECIO · EJEMPLO",
+     "valor": "$13.000 vs $7.000",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "¿Mirás los precios de otras? Contame. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "¿Mirás los precios de otras? Contame. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "id": "V33",
+ "titulo": "“Gano poquito pero vendo” no alcanza",
+ "segmentos": [
+  {
+   "say": "Gano poquito, pero por lo menos vendo. Mirá cuántas tortas hacen falta solo para cubrir gastos.",
+   "sub": "“Gano poquito, pero por lo menos vendo.” Mirá cuántas tortas hacen falta solo para cubrir gastos.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "“Gano poquito, pero por lo menos vendo”"
+   }
+  },
+  {
+   "say": "Al final vas a saber cuál es tu número mínimo del mes.",
+   "sub": "Al final vas a saber cuál es tu número mínimo del mes.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Al final vas a saber cuál es tu número mínimo del mes."
+   }
+  },
+  {
+   "say": "Gastos fijos del mes: monotributo, internet, herramientas. Ejemplo: noventa mil pesos.",
+   "sub": "Gastos fijos del mes: monotributo, internet, herramientas. Ejemplo: $90.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Gastos fijos del mes: monotributo, internet, herramientas. Ejemplo: $90.000."
+   }
+  },
+  {
+   "say": "Ganancia por torta: quince mil pesos.",
+   "sub": "Ganancia por torta: $15.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Ganancia por torta: $15.000."
+   }
+  },
+  {
+   "say": "noventa mil pesos dividido quince mil pesos, igual a seis tortas.",
+   "sub": "$90.000 ÷ $15.000 = 6 tortas.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "$90.000 ÷ $15.000 = 6 tortas."
+   }
+  },
+  {
+   "say": "En este ejemplo, las primeras seis tortas del mes solo cubren gastos. Recién la séptima deja ganancia.",
+   "sub": "En este ejemplo, las primeras 6 tortas del mes solo cubren gastos. Recién la séptima deja ganancia.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "En este ejemplo, las primeras 6 tortas del mes solo cubren gastos. Recién la séptima deja ganancia.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "SOLO PARA CUBRIR · EJEMPLO",
+     "valor": "6 TORTAS",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "¿Sabías tu número? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "¿Sabías tu número? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

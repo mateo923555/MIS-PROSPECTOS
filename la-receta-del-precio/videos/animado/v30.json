@@ -1,0 +1,89 @@
+{
+ "id": "V30",
+ "titulo": "De dónde sale un precio de $28.730",
+ "segmentos": [
+  {
+   "say": "Esta torta de ejemplo sale veintiocho mil setecientos treinta pesos. Te muestro de dónde sale cada peso.",
+   "sub": "Esta torta de ejemplo sale $28.730. Te muestro de dónde sale cada peso.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "$28.730, línea por línea"
+   }
+  },
+  {
+   "say": "Al final vas a ver que ningún número está puesto a ojo.",
+   "sub": "Al final vas a ver que ningún número está puesto a ojo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Al final vas a ver que ningún número está puesto a ojo."
+   }
+  },
+  {
+   "say": "Materiales de las seis flores: ochocientos cuarenta pesos. Tiempo de decoración: tres horas a dos mil pesos, igual a seis mil pesos.",
+   "sub": "Materiales de las 6 flores: $840. Tiempo de decoración: 3 horas a $2.000 = $6.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/4",
+    "texto": "Materiales de las 6 flores: $840. Tiempo de decoración: 3 horas a $2.000 = $6.000."
+   }
+  },
+  {
+   "say": "Bizcochuelo, relleno, cobertura, caja, base y armado: trece mil seiscientos noventa pesos.",
+   "sub": "Bizcochuelo, relleno, cobertura, caja, base y armado: $13.690.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/4",
+    "texto": "Bizcochuelo, relleno, cobertura, caja, base y armado: $13.690."
+   }
+  },
+  {
+   "say": "Gastos del mes que le tocan a esta torta: tres mil doscientos pesos. Costo completo: veintitrés mil setecientos treinta pesos.",
+   "sub": "Gastos del mes que le tocan a esta torta: $3.200. Costo completo: $23.730.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/4",
+    "texto": "Gastos del mes que le tocan a esta torta: $3.200. Costo completo: $23.730."
+   }
+  },
+  {
+   "say": "Ganancia elegida en este ejemplo: cinco mil pesos.",
+   "sub": "Ganancia elegida en este ejemplo: $5.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "4/4",
+    "texto": "Ganancia elegida en este ejemplo: $5.000."
+   }
+  },
+  {
+   "say": "veintitrés mil setecientos treinta pesos más cinco mil pesos, igual a veintiocho mil setecientos treinta pesos. Cada línea sale de una hoja del cuaderno.",
+   "sub": "$23.730 + $5.000 = $28.730. Cada línea sale de una hoja del cuaderno.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "$23.730 + $5.000 = $28.730. Cada línea sale de una hoja del cuaderno.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "COSTO + GANANCIA",
+     "valor": "$ 28.730",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "Esto, con el cuaderno de once hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "sub": "Esto, con el cuaderno de 11 hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Link en mi perfil",
+    "ref": "Ebook · pág. 78"
+   }
+  }
+ ]
+}

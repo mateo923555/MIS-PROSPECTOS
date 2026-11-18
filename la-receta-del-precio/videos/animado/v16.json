@@ -1,0 +1,80 @@
+{
+ "id": "V16",
+ "titulo": "La caja también se cobra",
+ "segmentos": [
+  {
+   "say": "Si la caja, la base y la cinta las ponés vos, mirá cuánto suma.",
+   "sub": "Si la caja, la base y la cinta “las ponés vos”, mirá cuánto suma.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "¿La caja la ponés vos?"
+   }
+  },
+  {
+   "say": "Sumemos el packaging de una torta de ejemplo.",
+   "sub": "Sumemos el packaging de una torta de ejemplo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Sumemos el packaging de una torta de ejemplo."
+   }
+  },
+  {
+   "say": "Caja: pack de diez a dieciocho mil pesos, igual a mil ochocientos pesos cada una. Base: seiscientos pesos.",
+   "sub": "Caja: pack de 10 a $18.000 = $1.800 cada una. Base: $600.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Caja: pack de 10 a $18.000 = $1.800 cada una. Base: $600."
+   }
+  },
+  {
+   "say": "Cinta y tarjeta: trescientos pesos. Bolsa: trescientos pesos.",
+   "sub": "Cinta y tarjeta: $300. Bolsa: $300.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Cinta y tarjeta: $300. Bolsa: $300."
+   }
+  },
+  {
+   "say": "Total: tres mil pesos, en una torta que te cuesta quince mil pesos.",
+   "sub": "Total: $3.000, en una torta que te cuesta $15.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Total: $3.000, en una torta que te cuesta $15.000."
+   }
+  },
+  {
+   "say": "Es un veinte por ciento de ese costo. Decidí si va incluido o aparte, y escribilo en el presupuesto.",
+   "sub": "Es un 20% de ese costo. Decidí si va incluido o aparte, y escribilo en el presupuesto.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Es un 20% de ese costo. Decidí si va incluido o aparte, y escribilo en el presupuesto.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "PACKAGING · EJEMPLO",
+     "valor": "$ 3.000",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

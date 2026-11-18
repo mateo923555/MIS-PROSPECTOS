@@ -1,0 +1,74 @@
+{
+ "id": "V25",
+ "titulo": "3 señales de que tu precio está a ojo",
+ "segmentos": [
+  {
+   "say": "Si te pasa una de estas tres cosas, tu precio probablemente está puesto a ojo.",
+   "sub": "Si te pasa una de estas tres cosas, tu precio probablemente está puesto a ojo.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "Si te pasa una de estas 3, tu precio está a ojo"
+   }
+  },
+  {
+   "say": "La tercera es la que más se repite.",
+   "sub": "La tercera es la que más se repite.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "La tercera es la que más se repite."
+   }
+  },
+  {
+   "say": "Una: trabajás todos los fines de semana y a fin de mes no sabés cuánto ganaste.",
+   "sub": "Una: trabajás todos los fines de semana y a fin de mes no sabés cuánto ganaste.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Una: trabajás todos los fines de semana y a fin de mes no sabés cuánto ganaste."
+   }
+  },
+  {
+   "say": "Dos: no sabés cuánto te cuestan los ingredientes de una porción.",
+   "sub": "Dos: no sabés cuánto te cuestan los ingredientes de una porción.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Dos: no sabés cuánto te cuestan los ingredientes de una porción."
+   }
+  },
+  {
+   "say": "Tres: cada vez que te dicen está caro, bajás el precio.",
+   "sub": "Tres: cada vez que te dicen “está caro”, bajás el precio.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Tres: cada vez que te dicen “está caro”, bajás el precio."
+   }
+  },
+  {
+   "say": "Las tres se ordenan igual: costo completo, una ganancia elegida y un presupuesto que dice qué incluye.",
+   "sub": "Las tres se ordenan igual: costo completo, una ganancia elegida y un presupuesto que dice qué incluye.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Las tres se ordenan igual: costo completo, una ganancia elegida y un presupuesto que dice qué incluye.",
+     "fuerte": true
+    }
+   ]
+  },
+  {
+   "say": "Esto, con el cuaderno de once hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "sub": "Esto, con el cuaderno de 11 hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Link en mi perfil",
+    "ref": "Cuaderno + Bono 1"
+   }
+  }
+ ]
+}

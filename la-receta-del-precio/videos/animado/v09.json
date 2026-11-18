@@ -1,0 +1,80 @@
+{
+ "id": "V09",
+ "titulo": "40 tortas en diciembre y $750 la hora",
+ "segmentos": [
+  {
+   "say": "Diciembre lleno de pedidos y en enero no hay plata. Hagamos un ejemplo para ver por qué pasa.",
+   "sub": "Diciembre lleno de pedidos y en enero no hay plata. Hagamos un ejemplo para ver por qué pasa.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "Diciembre explotado… y enero sin plata"
+   }
+  },
+  {
+   "say": "El resultado explica todo.",
+   "sub": "El resultado explica todo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "El resultado explica todo."
+   }
+  },
+  {
+   "say": "cuarenta tortas a veinticinco mil pesos: entra un millón de pesos.",
+   "sub": "40 tortas a $25.000: entra un millón de pesos.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "40 tortas a $25.000: entra un millón de pesos."
+   }
+  },
+  {
+   "say": "Costo completo de cada una: veintidós mil pesos. Por cuarenta: ochocientos ochenta mil pesos.",
+   "sub": "Costo completo de cada una: $22.000. Por 40: $880.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Costo completo de cada una: $22.000. Por 40: $880.000."
+   }
+  },
+  {
+   "say": "Quedan ciento veinte mil pesos, por unas ciento sesenta horas de trabajo.",
+   "sub": "Quedan $120.000, por unas 160 horas de trabajo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Quedan $120.000, por unas 160 horas de trabajo."
+   }
+  },
+  {
+   "say": "ciento veinte mil pesos dividido ciento sesenta, igual a setecientos cincuenta pesos la hora. Facturar mucho no es ganar mucho: lo que cuenta es cuánto te deja cada torta.",
+   "sub": "$120.000 ÷ 160 = $750 la hora. Facturar mucho no es ganar mucho: lo que cuenta es cuánto te deja cada torta.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "$120.000 ÷ 160 = $750 la hora. Facturar mucho no es ganar mucho: lo que cuenta es cuánto te deja cada torta.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "POR HORA · EJEMPLO",
+     "valor": "$ 750",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "Guardalo para cuando armes tu lista de fiestas. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Guardalo para cuando armes tu lista de fiestas. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

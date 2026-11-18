@@ -1,0 +1,89 @@
+{
+ "id": "V07",
+ "titulo": "¿Cuánto vale tu hora de trabajo?",
+ "segmentos": [
+  {
+   "say": "Si tu precio no tiene tu hora adentro, la estás regalando. Calculémosla.",
+   "sub": "Si tu precio no tiene tu hora adentro, la estás regalando. Calculémosla.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "Calculá cuánto vale TU hora"
+   }
+  },
+  {
+   "say": "En tres pasos tenés el número, y un truco que casi nadie usa para medir el tiempo.",
+   "sub": "En tres pasos tenés el número, y un truco que casi nadie usa para medir el tiempo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "En tres pasos tenés el número, y un truco que casi nadie usa para medir el tiempo."
+   }
+  },
+  {
+   "say": "¿Cuánto querés ganar por mes? Ejemplo: ochocientos mil pesos.",
+   "sub": "¿Cuánto querés ganar por mes? Ejemplo: $800.000.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/4",
+    "texto": "¿Cuánto querés ganar por mes? Ejemplo: $800.000."
+   }
+  },
+  {
+   "say": "¿Cuántas horas trabajás? veinticinco días por seis horas, igual a ciento cincuenta horas.",
+   "sub": "¿Cuántas horas trabajás? 25 días × 6 horas = 150 horas.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/4",
+    "texto": "¿Cuántas horas trabajás? 25 días × 6 horas = 150 horas."
+   }
+  },
+  {
+   "say": "ochocientos mil pesos dividido ciento cincuenta, igual a cinco mil trescientos treinta y tres pesos la hora.",
+   "sub": "$800.000 ÷ 150 = $5.333 la hora.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/4",
+    "texto": "$800.000 ÷ 150 = $5.333 la hora."
+   }
+  },
+  {
+   "say": "El truco: anotá cuándo empezás y terminás cada tarea, y separá el tiempo de trabajo del de espera , horno, heladera.",
+   "sub": "El truco: anotá cuándo empezás y terminás cada tarea, y separá el tiempo de trabajo del de espera (horno, heladera).",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "4/4",
+    "texto": "El truco: anotá cuándo empezás y terminás cada tarea, y separá el tiempo de trabajo del de espera (horno, heladera)."
+   }
+  },
+  {
+   "say": "Costo de tu trabajo, igual a horas de trabajo por valor de tu hora. Medido, no adivinado.",
+   "sub": "Costo de tu trabajo = horas de trabajo × valor de tu hora. Medido, no adivinado.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Costo de tu trabajo = horas de trabajo × valor de tu hora. Medido, no adivinado.",
+     "fuerte": true
+    },
+    {
+     "tipo": "big",
+     "label": "TU HORA · EJEMPLO",
+     "valor": "$ 5.333",
+     "top": 780
+    }
+   ]
+  },
+  {
+   "say": "Contame cuánto te dio. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Contame cuánto te dio. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}

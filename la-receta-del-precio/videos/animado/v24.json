@@ -1,0 +1,74 @@
+{
+ "id": "V24",
+ "titulo": "“¿Me la hacés para mañana?”",
+ "segmentos": [
+  {
+   "say": "¿Me hacés una torta para mañana? Antes de decir que sí, hacé esto.",
+   "sub": "“¿Me hacés una torta para mañana?” Antes de decir que sí, hacé esto.",
+   "ceja": true,
+   "accion": {
+    "tipo": "hook",
+    "texto": "“La necesito para mañana”"
+   }
+  },
+  {
+   "say": "Te digo qué recalcular y cómo responder.",
+   "sub": "Te digo qué recalcular y cómo responder.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "QUEDATE HASTA EL FINAL",
+    "texto": "Te digo qué recalcular y cómo responder."
+   }
+  },
+  {
+   "say": "Un pedido urgente cambia tus costos: horas de noche, compras al por menor, otros pedidos que movés.",
+   "sub": "Un pedido urgente cambia tus costos: horas de noche, compras al por menor, otros pedidos que movés.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "1/3",
+    "texto": "Un pedido urgente cambia tus costos: horas de noche, compras al por menor, otros pedidos que movés."
+   }
+  },
+  {
+   "say": "Así que no es el mismo precio de siempre: se recalcula como un presupuesto nuevo.",
+   "sub": "Así que no es el mismo precio de siempre: se recalcula como un presupuesto nuevo.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "2/3",
+    "texto": "Así que no es el mismo precio de siempre: se recalcula como un presupuesto nuevo."
+   }
+  },
+  {
+   "say": "Si decidís sumar un recargo por urgencia, el número lo definís vos.",
+   "sub": "Si decidís sumar un recargo por urgencia, el número lo definís vos.",
+   "accion": {
+    "tipo": "pizarra",
+    "k": "3/3",
+    "texto": "Si decidís sumar un recargo por urgencia, el número lo definís vos."
+   }
+  },
+  {
+   "say": "Respondé: Para mañana se puede: el total es tanto. Si te sirve, lo confirmamos por escrito. Con número y sin pedir perdón.",
+   "sub": "Respondé: “Para mañana se puede: el total es $X. Si te sirve, lo confirmamos por escrito.” Con número y sin pedir perdón.",
+   "ceja": true,
+   "accion": [
+    {
+     "tipo": "pizarra",
+     "k": "LA RESPUESTA",
+     "texto": "Respondé: “Para mañana se puede: el total es $X. Si te sirve, lo confirmamos por escrito.” Con número y sin pedir perdón.",
+     "fuerte": true
+    }
+   ]
+  },
+  {
+   "say": "Mandáselo a esa amiga que nunca dice que no. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "sub": "Mandáselo a esa amiga que nunca dice que no. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "accion": {
+    "tipo": "cta",
+    "texto": "@larecetadelprecio",
+    "boton": "Seguime · @larecetadelprecio",
+    "ref": null
+   }
+  }
+ ]
+}
