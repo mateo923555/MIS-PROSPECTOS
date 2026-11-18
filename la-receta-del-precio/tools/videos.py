@@ -28,6 +28,7 @@ for i, v in enumerate(g.G, 1):
         *[f'DESARROLLO {n}: {b}' for n, b in enumerate(v["beats"], 1)],
         f'REMATE: {v["payoff"]}',
         f'CIERRE: {v["cta"]}',
+        *([f'APUNTA A: {v["ref"]}'] if v.get("ref") else []),
     ])
     d["portada_state"] = dict(titulo=v["portada"], bajada="", etiqueta=v["etiqueta"],
                               episodio=f"{i:02d}", datoLabel=(v["dato"] or ("", ""))[0],
@@ -37,7 +38,7 @@ for i, v in enumerate(g.G, 1):
     data.append(d)
 
 with open(os.path.join(ROOT, "videos", "guiones.json"), "w") as fh:
-    json.dump(dict(formatos=g.FORMATOS, guiones=data, hooks_extra=g.HOOKS_EXTRA), fh, ensure_ascii=False, indent=1)
+    json.dump(dict(pack=g.PACK, formatos=g.FORMATOS, guiones=data, hooks_extra=g.HOOKS_EXTRA), fh, ensure_ascii=False, indent=1)
 
 E = html.escape
 
@@ -52,6 +53,7 @@ def card(d):
     <span class="vid mono">{d['id']}</span>
   </header>
   <div class="hooktxt cond">{E(d['hook_txt'])}</div>
+  {f'<div class="ref mono">EN EL PACK · {E(d["ref"])}</div>' if d.get('ref') else ''}
   <ol class="script">
     <li class="hk"><span class="t">0–2 s · HOOK</span>{E(d['hook'])}</li>
     <li class="pr"><span class="t">2–5 s · PROMESA</span>{E(d['promesa'])}</li>
@@ -138,6 +140,10 @@ h2{font-size:clamp(34px,5vw,56px);margin:10px 0 14px}
 .script .hk{font-weight:700;font-size:15.5px}
 .script .pr{background:#fff3ec;border-left:3px solid var(--margen);padding:6px 10px;border-radius:0 6px 6px 0}
 .script .po{background:#f3fbd9;border-left:3px solid #9cc31a;padding:6px 10px;border-radius:0 6px 6px 0;font-weight:700}
+.ref{font-size:11px;font-weight:700;letter-spacing:.04em;background:var(--harina);border-radius:6px;padding:6px 9px;align-self:flex-start}
+.pack{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.pack div{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:16px;font-size:14px}
+.pack b{display:block;font-size:17px;margin-bottom:4px}
 .cap{font-size:13.5px;color:#5a4a40;border-top:1px dashed var(--linea);padding-top:10px}
 .card footer{margin-top:auto;display:grid;gap:10px}
 .acts{display:flex;gap:6px;flex-wrap:wrap}
@@ -156,7 +162,7 @@ h2{font-size:clamp(34px,5vw,56px);margin:10px 0 14px}
 .metrics div{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:16px;font-size:14px}
 .metrics b{display:block;font:700 24px 'Space Mono';color:var(--margen)}
 .note{background:#fff;border-left:4px solid var(--margen);border-radius:0 10px 10px 0;padding:14px 16px;font-size:14px;margin-top:16px;max-width:820px}
-@media (max-width:900px){.wrap{padding:0 16px}.kpis,.rules,.metrics{grid-template-columns:1fr 1fr}.fmts{grid-template-columns:1fr 1fr}.week{grid-template-columns:repeat(2,1fr)}.tl{grid-template-columns:1fr}.tl div{min-height:0;border-right:0;border-bottom:2px solid var(--harina)}.hooks{columns:1}.cards{grid-template-columns:1fr}.prog{margin-left:0;width:100%}}
+@media (max-width:900px){.wrap{padding:0 16px}.kpis,.rules,.metrics,.pack{grid-template-columns:1fr 1fr}.fmts{grid-template-columns:1fr 1fr}.week{grid-template-columns:repeat(2,1fr)}.tl{grid-template-columns:1fr}.tl div{min-height:0;border-right:0;border-bottom:2px solid var(--harina)}.hooks{columns:1}.cards{grid-template-columns:1fr}.prog{margin-left:0;width:100%}}
 </style></head><body>
 
 <section class="hero"><div class="wrap">
@@ -187,8 +193,15 @@ h2{font-size:clamp(34px,5vw,56px);margin:10px 0 14px}
     <div><b>Un video, un problema</b>Si da para dos, son dos videos. A 5 por día, el contenido sobra: lo que importa es la claridad.</div>
     <div><b>Números siempre en pantalla</b>En Space Mono, sobre tarjeta Harina. Quien mira sin sonido tiene que entender todo.</div>
     <div><b>Sin intro, sin logo al inicio</b>El símbolo vive arriba a la derecha todo el video. La marca se reconoce por el formato, no por una intro.</div>
-    <div><b>Los números son ejemplos</b>Antes de grabar, reemplazá los montos por precios actuales de tu zona. Las cuentas están verificadas.</div>
+    <div><b>Los números son ejemplos, y se dice</b>Igual que en el pack: “ejemplo” en pantalla o en el caption. Si querés, cambiá los montos por precios de tu zona; las cuentas están verificadas.</div>
   </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="k">Lo que vende cada video</div>
+  <h2 class="cond">El pack, en una línea por pieza.</h2>
+  <p class="lead">Cada guion apunta a una hoja del cuaderno, una página del ebook o un bono (lo ves en la tarjeta). El tono es el del producto: no prometemos ventas ni “cobrar más”; mostramos la cuenta y la clienta decide.</p>
+  <div class="pack">__PACK__</div>
 </div></section>
 
 <section><div class="wrap">
@@ -286,7 +299,8 @@ show(t0); prog();
 </script>
 </body></html>"""
 
-out = (PAGE.replace("__FORMATOS__", formatos).replace("__TABS__", tabs).replace("__CARDS__", cards)
+pack = "".join(f"<div><b>{E(n)}</b>{E(t)}</div>" for n, t in g.PACK["piezas"])
+out = (PAGE.replace("__PACK__", pack).replace("__FORMATOS__", formatos).replace("__TABS__", tabs).replace("__CARDS__", cards)
        .replace("__HOOKS__", hooks).replace("__DATA__", js_data))
 open(os.path.join(ROOT, "plan-videos.html"), "w").write(out)
 print("   plan-videos.html ·", len(data), "guiones · videos/guiones.json")
