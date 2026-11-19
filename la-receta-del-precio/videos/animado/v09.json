@@ -103,14 +103,15 @@
    ]
   },
   {
-   "say": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
-   "sub": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+   "say": "Está todo en mi ebook, La Receta del Precio... y viene con dos bonos de regalo: tu presupuesto bien dicho y tu catálogo de tortas. Link en mi perfil.",
+   "sub": "Está todo en mi ebook, La Receta del Precio... y viene con dos bonos de regalo: tu presupuesto bien dicho y tu catálogo de tortas. Link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
     "boton": "Link en mi perfil",
-    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos",
+    "bonos": true
    }
   }
  ]

@@ -86,14 +86,15 @@
    ]
   },
   {
-   "say": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
-   "sub": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
+   "say": "¿Querés hacerlo con tus números? Mi ebook te lo enseña... y trae dos bonos de regalo: cómo pasar tu presupuesto y tu catálogo de tortas. Link en mi perfil.",
+   "sub": "¿Querés hacerlo con tus números? Mi ebook te lo enseña... y trae dos bonos de regalo: cómo pasar tu presupuesto y tu catálogo de tortas. Link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
     "boton": "Link en mi perfil",
-    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos",
+    "bonos": true
    }
   }
  ]

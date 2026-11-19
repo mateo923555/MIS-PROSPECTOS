@@ -111,14 +111,15 @@
    ]
   },
   {
-   "say": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
-   "sub": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
+   "say": "El método completo está en mi ebook... más dos bonos de regalo: tu presupuesto bien dicho y tu catálogo listo para mostrar. Link en mi perfil.",
+   "sub": "El método completo está en mi ebook... más dos bonos de regalo: tu presupuesto bien dicho y tu catálogo listo para mostrar. Link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
     "boton": "Link en mi perfil",
-    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos",
+    "bonos": true
    }
   }
  ]

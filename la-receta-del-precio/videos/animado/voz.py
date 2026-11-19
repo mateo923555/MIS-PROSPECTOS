@@ -344,6 +344,10 @@ def main():
                 poner(mix, blip(660), s["ini"] + .05)
             if a.get("tipo") == "cta":
                 poner(mix, golpe() * .5, s["ini"]); poner(mix, ding(), s["ini"] + .3)
+                wb = next((w for w in s["palabras"] if "bonos" in w[0].lower()), None)
+                if wb:
+                    for dl in (0, .35):
+                        poner(mix, swish(), wb[1] + dl - .05); poner(mix, ding() * .8, wb[1] + dl + .3)
     mraw = os.path.join(tmp, "m.wav")
     escribir(mraw, mix)
     ff("-i", mraw, "-af", "alimiter=limit=0.89:attack=3:release=60", "-ar", str(SR), os.path.join(out, "voz.wav"))

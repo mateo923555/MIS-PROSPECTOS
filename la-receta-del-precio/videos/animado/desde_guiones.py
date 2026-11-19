@@ -136,9 +136,9 @@ def tarjeta(texto):
 # ---------------------------------------------------------------- armado
 PROMESAS = ["Quedate: el número del final duele.", "Mirá el número del final.", "Al final te doy la cuenta exacta.",
             "Esperá el final.", "El final te va a sorprender."]
-CTAS = ["El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
-        "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
-        "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil."]
+CTAS = ["Está todo en mi ebook, La Receta del Precio... y viene con dos bonos de regalo: tu presupuesto bien dicho y tu catálogo de tortas. Link en mi perfil.",
+        "¿Querés hacerlo con tus números? Mi ebook te lo enseña... y trae dos bonos de regalo: cómo pasar tu presupuesto y tu catálogo de tortas. Link en mi perfil.",
+        "El método completo está en mi ebook... más dos bonos de regalo: tu presupuesto bien dicho y tu catálogo listo para mostrar. Link en mi perfil."]
 
 
 def primera(t):
@@ -182,7 +182,7 @@ def guion(i, v):
     S.append(dict(say=hablar(pf), sub=limpio(pf), ceja=True, plano="B", rapidez=1.3, pausa=.6, accion=pay))
     S.append(dict(say=hablar(cta), sub=cta, plano="A",
                   accion={"tipo": "cta", "texto": "@larecetadelprecio", "boton": "Link en mi perfil",
-                          "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"}))
+                          "ref": "Ebook + cuaderno de 11 hojas + 2 bonos", "bonos": True}))
     return dict(id=f"V{i:02d}", titulo=v["portada"].replace("*", "").replace("\n", " "), segmentos=S)
 
 
