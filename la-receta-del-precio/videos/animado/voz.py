@@ -33,6 +33,20 @@ PAUSA = 0.12           # entre frases (s, audio final)
 PAUSA_DRAMA = 0.34     # en cada "..."
 
 
+INSTR_BASE = (
+    "Voz: mujer argentina de unos 60 años, pastelera con mucha experiencia, segura y con autoridad. "
+    "Acento rioplatense de Buenos Aires: usa el vos y la sh porteña en ll e y. "
+    "Tono: firme y cálido a la vez, como alguien que te dice una verdad incómoda por tu bien. "
+    "Ritmo: ágil y dinámico, para TikTok, sin apurarse en los números. Pausa breve y dramática en los puntos suspensivos. "
+    "Remarcá las palabras clave y los números. ")
+INSTR_TIPO = {
+    "gancho": "Es la primera frase del video: arrancá rápido y contundente, frenando a quien está scrolleando, con intriga y autoridad.",
+    "remate": "Es el remate: revelá el dato con peso y energía, una mínima pausa antes del número clave y seguí rápido.",
+    "cta": "Este es el cierre: cálida, cercana y segura, invitando a seguirte.",
+    "paso": "Explicá con claridad y energía, como una profesora que mantiene la atención.",
+}
+
+
 def palabras_con_tiempo(sub, ini, fin):
     ws = sub.split()
     if not ws:
@@ -187,16 +201,42 @@ def main():
     ap.add_argument("guion")
     ap.add_argument("--modelo", required=True)
     ap.add_argument("--rapidez", type=float, default=1.5)
+    ap.add_argument("--motor", choices=["piper", "openai"], default="openai")
+    ap.add_argument("--voz", default="marin", help="voz de OpenAI (coral, sage, marin…)")
+    ap.add_argument("--tempo", type=float, default=1.5, help="aceleración de la voz de OpenAI")
     args = ap.parse_args()
-
-    from piper import PiperVoice
-    from piper.config import SynthesisConfig
 
     g = json.load(open(args.guion))
     out = os.path.join(os.path.dirname(os.path.abspath(args.guion)), "build", g["id"].lower())
     os.makedirs(out, exist_ok=True)
-    voice = PiperVoice.load(args.modelo)
     tmp = tempfile.mkdtemp()
+    if args.motor == "piper":
+        from piper import PiperVoice
+        from piper.config import SynthesisConfig
+        voice = PiperVoice.load(args.modelo)
+
+    def sintetizar_openai(texto, rapidez, tipo):
+        """OpenAI gpt-4o-mini-tts con instrucciones de acento y tono. Cachea cada frase."""
+        import hashlib
+        import urllib.request
+        instr = INSTR_BASE + INSTR_TIPO.get(tipo, "")
+        clave = hashlib.sha1(f"{args.voz}|{instr}|{texto}".encode()).hexdigest()[:16]
+        mp3 = os.path.join(out, "cache", f"{clave}.mp3")
+        if not os.path.exists(mp3):
+            os.makedirs(os.path.dirname(mp3), exist_ok=True)
+            req = urllib.request.Request(
+                "https://api.openai.com/v1/audio/speech",
+                data=json.dumps({"model": "gpt-4o-mini-tts", "voice": args.voz, "input": texto,
+                                 "instructions": instr, "response_format": "mp3"}).encode(),
+                headers={"Authorization": "Bearer proxy-injected", "Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=120) as r, open(mp3, "wb") as fh:
+                fh.write(r.read())
+        tempo = args.tempo                               # elegido: marin a 1,5×
+        proc = os.path.join(tmp, "p.wav")
+        ff("-i", mp3, "-af", f"aresample={SR},rubberband=tempo={tempo:.4f}:formant=preserved:pitchq=quality,"
+           "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse",
+           "-ac", "1", "-ar", str(SR), proc)
+        return leer(proc)
 
     def sintetizar(texto, rapidez):
         objetivo = BASE / rapidez
@@ -212,8 +252,15 @@ def main():
     voz, segs, t = [np.zeros(int(.06 * SR))], [], .06
     for s in g["segmentos"]:
         rap = s.get("rapidez", args.rapidez)
-        partes = [p.strip() for p in re.split(r"\.\.\.|…", s["say"]) if p.strip()]
         ini = t
+        if args.motor == "openai":
+            tipo = "gancho" if s.get("gancho") else ("cta" if any((a or {}).get("tipo") == "cta" for a in (s["accion"] if isinstance(s.get("accion"), list) else [s.get("accion")])) else ("remate" if rap < 1.4 else "paso"))
+            a = sintetizar_openai(s["say"], rap, tipo)
+            voz.append(a); t += len(a) / SR
+            segs.append(dict(s, ini=round(ini, 3), fin=round(t, 3)))
+            voz.append(np.zeros(int(PAUSA * SR))); t += PAUSA
+            continue
+        partes = [p.strip() for p in re.split(r"\.\.\.|…", s["say"]) if p.strip()]
         for k, p in enumerate(partes):
             a = sintetizar(p, rap)
             voz.append(a); t += len(a) / SR
@@ -227,7 +274,12 @@ def main():
     # voz más firme y presente: sin graves sucios, con presencia, comprimida
     vraw, vproc = os.path.join(tmp, "v.wav"), os.path.join(tmp, "vp.wav")
     escribir(vraw, v)
-    ff("-i", vraw, "-af", "highpass=f=90,equalizer=f=170:t=q:w=1:g=3.5,equalizer=f=450:t=q:w=1.4:g=-2,"
+    cadena = ("highpass=f=80,equalizer=f=180:t=q:w=1:g=1.5,equalizer=f=3000:t=q:w=1.2:g=2,"
+              "acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2,loudnorm=I=-14:TP=-1.5:LRA=7")
+    if args.motor == "openai":
+        ff("-i", vraw, "-af", cadena, "-ar", str(SR), vproc)
+    else:
+      ff("-i", vraw, "-af", "highpass=f=90,equalizer=f=170:t=q:w=1:g=3.5,equalizer=f=450:t=q:w=1.4:g=-2,"
        "equalizer=f=2600:t=q:w=1.2:g=4.5,deesser=i=0.4,"
        "acompressor=threshold=-24dB:ratio=5:attack=3:release=90:makeup=5,asoftclip=type=tanh:output=0.95,"
        "aexciter=amount=1.2:drive=6:freq=3500,loudnorm=I=-14:TP=-1.5:LRA=5", "-ar", str(SR), vproc)
