@@ -3,13 +3,15 @@
  "titulo": "Tu ficha tiene fecha de vencimiento",
  "segmentos": [
   {
-   "say": "¿De qué fecha son los precios con los que calculaste tu torta? Si no lo sabés, mirá esto.",
-   "sub": "¿De qué fecha son los precios con los que calculaste tu torta? Si no lo sabés, mirá esto.",
+   "say": "¿De qué fecha son tus precios? Pensalo bien.",
+   "sub": "¿De qué fecha son tus precios? Pensalo bien.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "¿De qué fecha son tus precios?"
+    "texto": "¿De qué *fecha* son tus precios?"
    }
   },
   {
@@ -76,6 +78,7 @@
    "sub": "Recalculás solo la línea que cambió. Y a una clienta habitual le avisás desde cuándo rige: un pedido ya acordado no cambia.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

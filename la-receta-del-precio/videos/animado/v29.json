@@ -3,13 +3,15 @@
  "titulo": "Cómo pasar un presupuesto en 4 bloques",
  "segmentos": [
   {
-   "say": "Torta cumple doce porciones, veintiocho mil setecientos treinta pesos, avisame. Así no. Mirá cómo queda en cuatro bloques.",
-   "sub": "“Torta cumple 12 porciones, $28.730, avisame.” Así no. Mirá cómo queda en 4 bloques.",
+   "say": "Así NO se pasa un presupuesto.",
+   "sub": "Así NO se pasa un presupuesto.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "“Torta 12 p. $28.730. Avisame.” ❌"
+    "texto": "Así *NO* se pasa un precio"
    }
   },
   {
@@ -79,6 +81,7 @@
    "sub": "Qué, cuánto, qué incluye y hasta cuándo. Sin justificarte y sin “¿te parece?”.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": []
   },
   {

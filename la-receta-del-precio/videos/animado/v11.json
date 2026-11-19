@@ -3,13 +3,15 @@
  "titulo": "La plata que tirás a la basura sin darte cuenta",
  "segmentos": [
   {
-   "say": "El huevo que se rompe, el bizcochuelo que se quema, el recorte que sobra: también lo pagás vos.",
-   "sub": "El huevo que se rompe, el bizcochuelo que se quema, el recorte que sobra: también lo pagás vos.",
+   "say": "Hay plata que tirás a la basura todos los días.",
+   "sub": "Hay plata que tirás a la basura todos los días.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "Esto también lo pagás vos"
+    "texto": "La plata que *tirás*"
    }
   },
   {
@@ -72,6 +74,7 @@
    "sub": "Con tu número real, sumalo a tus ingredientes. En 20 pedidos de este ejemplo son $16.000 al mes.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

@@ -3,13 +3,15 @@
  "titulo": "Multiplicar x3 los ingredientes te deja sin ganancia",
  "segmentos": [
   {
-   "say": "Si calculás tu precio multiplicando los ingredientes por tres, frená: puede que estés trabajando casi gratis.",
-   "sub": "Si calculás tu precio multiplicando los ingredientes por tres, frená: puede que estés trabajando casi gratis.",
+   "say": "Multiplicar por tres los ingredientes... es trabajar gratis.",
+   "sub": "Multiplicar por tres los ingredientes... es trabajar gratis.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "¿Cobrás ingredientes x3? Mirá esto"
+    "texto": "x3 = TRABAJAR *GRATIS*"
    }
   },
   {
@@ -114,6 +116,7 @@
    "sub": "Cobrando $30.000 te quedan $200. El x3 no sabe cuánto trabajo lleva tu torta: por eso hay que sumar capa por capa.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

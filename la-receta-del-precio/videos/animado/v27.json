@@ -3,13 +3,15 @@
  "titulo": "Precio de un postre en vasito",
  "segmentos": [
   {
-   "say": "Los postres en vasito se venden mucho y se calculan poco. Hagamos uno.",
-   "sub": "Los postres en vasito se venden mucho y se calculan poco. Hagamos uno.",
+   "say": "Un vasito de postre... vale más de lo que pensás.",
+   "sub": "Un vasito de postre... vale más de lo que pensás.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "Calculamos un postre en vasito"
+    "texto": "Precio de *1 vasito*"
    }
   },
   {
@@ -94,6 +96,7 @@
    "sub": "Con un margen del 45%: $1.933 ÷ 0,55 = $3.515.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

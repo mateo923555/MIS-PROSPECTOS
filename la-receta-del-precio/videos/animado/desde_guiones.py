@@ -138,7 +138,7 @@ def guion(i, v):
     n = len(v["beats"])
     ciclo = ["C", "D", "A"]
     ciclo = ciclo[i % 3:] + ciclo[:i % 3]
-    S = [dict(say=hablar(v["hook"]), sub=limpio(v["hook"]), ceja=True, plano="B",
+    S = [dict(say=hablar(v["hook"]), sub=limpio(v["hook"]), ceja=True, plano="B", rapidez=1.2, gancho=True,
               accion={"tipo": "hook", "texto": v["hook_txt"]}),
          dict(say=hablar(v["promesa"]), sub=limpio(v["promesa"]), plano="A",
               accion={"tipo": "promesa", "texto": "Quedate hasta el final"})]
@@ -164,7 +164,7 @@ def guion(i, v):
             dato = ("EN ESTE EJEMPLO", re.sub(r"\$ ?", "$ ", m.group(0)))
     if dato:
         pay.append({"tipo": "big", "label": dato[0], "valor": dato[1]})
-    S.append(dict(say=hablar(v["payoff"]), sub=limpio(v["payoff"]), ceja=True, plano="B", accion=pay))
+    S.append(dict(say=hablar(v["payoff"]), sub=limpio(v["payoff"]), ceja=True, plano="B", rapidez=1.3, accion=pay))
     venta = v["slot"] == 5
     S.append(dict(say=hablar(v["cta"]), sub=limpio(v["cta"]), plano="A",
                   accion={"tipo": "cta", "texto": "@larecetadelprecio",

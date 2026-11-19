@@ -3,13 +3,15 @@
  "titulo": "Cuánto cuesta una flor de decoración",
  "segmentos": [
   {
-   "say": "Si cobrás igual una torta lisa que una con flores, las flores las pagás vos.",
-   "sub": "Si cobrás igual una torta lisa que una con flores, las flores las pagás vos.",
+   "say": "Una flor de pasta cuesta más de lo que cobrás.",
+   "sub": "Una flor de pasta cuesta más de lo que cobrás.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "¿Cuánto cuesta UNA flor de pasta?"
+    "texto": "¿Cuánto cuesta *1 FLOR*?"
    }
   },
   {
@@ -73,6 +75,7 @@
    "sub": "$1.140 por flor. Seis flores: $6.840 de costo, antes de la torta.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

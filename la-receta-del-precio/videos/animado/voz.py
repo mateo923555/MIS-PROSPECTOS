@@ -1,32 +1,39 @@
-"""Genera la voz de un guion animado y la línea de tiempo para el render.
+"""Genera la voz + diseño de sonido de un guion animado y la línea de tiempo para el render.
 
 Uso:
-  python3 voz.py v01.json --modelo /ruta/es_AR-daniela-high.onnx [--rapidez 1.5]
+  python3 voz.py v01.json --modelo /ruta/es_AR-daniela-high.onnx
 Salida (en build/<id>/):
-  voz.wav        audio final
+  voz.wav        audio final (voz + sonido)
   timeline.json  segmentos con inicio/fin, tiempos por palabra y apertura de boca (30 fps)
 
-Voz: Piper "es_AR daniela high" (CC BY-SA 4.0, dataset OpenSLR 61).
---rapidez 1.5 = 1,5 veces más rápido que la versión original (dinámica para TikTok).
+Voz: Piper "es_AR daniela high" (CC BY-SA 4.0, dataset OpenSLR 61), procesada para
+sonar más grave, firme y cercana. Cada segmento puede tener su propia "rapidez"
+(el gancho y el remate van más pausados; el resto, a 1,5×). Los "..." del texto
+se convierten en pausas dramáticas.
+
+Sonido (sintetizado acá, sin samples externos): golpe grave al arrancar, base de
+tensión debajo de la voz, ráfaga en cada cambio de plano, subida antes del remate
+y "ding" cuando aparece el dato.
 """
 import argparse
 import json
 import os
 import re
 import subprocess
+import tempfile
 import wave
 
 import numpy as np
 
 FPS = 30
-PAUSA = 0.10          # silencio entre frases (s, antes de acelerar)
-PAUSA_INICIO = 0.10
-BASE = 1.08           # length_scale de la primera versión (referencia de "1×")
-TONO = 0.95           # tono un 5 % más grave = más cálida
+SR = 44100
+BASE = 1.08            # length_scale de la primera versión (referencia de "1×")
+TONO = 0.92            # tono un 8 % más grave: más autoridad
+PAUSA = 0.12           # entre frases (s, audio final)
+PAUSA_DRAMA = 0.34     # en cada "..."
 
 
 def palabras_con_tiempo(sub, ini, fin):
-    """Reparte el tiempo de la frase entre las palabras del subtítulo según su largo."""
     ws = sub.split()
     if not ws:
         return []
@@ -39,6 +46,81 @@ def palabras_con_tiempo(sub, ini, fin):
     return out
 
 
+def leer(p):
+    with wave.open(p) as w:
+        return np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
+
+
+def escribir(p, a, sr=SR):
+    with wave.open(p, "wb") as w:
+        w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
+        w.writeframes((np.clip(a, -1, 1) * 32767).astype(np.int16).tobytes())
+
+
+def ff(*args):
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *args], check=True)
+
+
+# ---------------------------------------------------------------- sonido
+rng = np.random.default_rng(7)
+
+
+def banda(x, lo, hi):
+    X = np.fft.rfft(x)
+    f = np.fft.rfftfreq(len(x), 1 / SR)
+    X[(f < lo) | (f > hi)] = 0
+    return np.fft.irfft(X, len(x))
+
+
+def golpe():
+    n = int(.9 * SR); t = np.arange(n) / SR
+    f = 95 * np.exp(-t * 3.2) + 38
+    sub = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 4.2)
+    click = banda(rng.standard_normal(n), 800, 5000) * np.exp(-t * 60) * .5
+    return (sub + click) * .85
+
+
+def rafaga(d=.32):
+    n = int(d * SR); t = np.linspace(0, 1, n)
+    x = banda(rng.standard_normal(n), 400, 6000)
+    return x / (np.abs(x).max() + 1e-9) * np.sin(np.pi * t) ** 2 * .16
+
+
+def subida(d=1.0):
+    n = int(d * SR); t = np.linspace(0, 1, n)
+    x = banda(rng.standard_normal(n), 1500, 9000)
+    x = x / (np.abs(x).max() + 1e-9)
+    tono = np.sin(2 * np.pi * np.cumsum(180 + 620 * t ** 2) / SR)
+    return (x * .6 + tono * .4) * t ** 2.2 * .17
+
+
+def ding():
+    n = int(.9 * SR); t = np.arange(n) / SR
+    a = np.sin(2 * np.pi * 1318.5 * t) + .5 * np.sin(2 * np.pi * 1975.5 * t)
+    b = np.zeros(n); k = int(.07 * SR)
+    b[k:] = (np.sin(2 * np.pi * 1760 * t[:n - k]) + .4 * np.sin(2 * np.pi * 2637 * t[:n - k])) * np.exp(-t[:n - k] * 7)
+    return (a * np.exp(-t * 8) + b) * .16
+
+
+def base_tension(n, voz_env):
+    t = np.arange(n) / SR
+    trem = .6 + .4 * np.sin(2 * np.pi * .23 * t)
+    x = (np.sin(2 * np.pi * 55 * t) + .7 * np.sin(2 * np.pi * 82.4 * t) + .5 * np.sin(2 * np.pi * 58.3 * t)) * trem
+    x += banda(rng.standard_normal(n), 60, 400) * .6
+    x = x / (np.abs(x).max() + 1e-9) * .075
+    return x * (1 - .55 * voz_env)                  # baja cuando habla
+
+
+def poner(dst, src, at):
+    i = int(at * SR)
+    if i < 0:
+        src, i = src[-i:], 0
+    j = min(len(dst), i + len(src))
+    if j > i:
+        dst[i:j] += src[: j - i]
+
+
+# ---------------------------------------------------------------- voz
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("guion")
@@ -52,59 +134,80 @@ def main():
     g = json.load(open(args.guion))
     out = os.path.join(os.path.dirname(os.path.abspath(args.guion)), "build", g["id"].lower())
     os.makedirs(out, exist_ok=True)
-
-    # Parte de la aceleración la hace Piper (suena natural) y el resto ffmpeg (sin cambiar el tono).
-    objetivo = BASE / args.rapidez
-    piper_ls = max(objetivo, 0.86)
-    tempo = piper_ls / objetivo                      # factor extra en ffmpeg
-
     voice = PiperVoice.load(args.modelo)
-    cfg = SynthesisConfig(length_scale=piper_ls, noise_scale=0.62, noise_w_scale=0.8)
-    sr = voice.config.sample_rate
+    tmp = tempfile.mkdtemp()
 
-    chunks, segs, t = [np.zeros(int(PAUSA_INICIO * sr), np.int16)], [], PAUSA_INICIO
-    for i, s in enumerate(g["segmentos"]):
-        p = os.path.join(out, f"seg{i:02d}.wav")
-        with wave.open(p, "wb") as w:
-            voice.synthesize_wav(s["say"], w, syn_config=cfg)
-        with wave.open(p) as w:
-            a = np.frombuffer(w.readframes(w.getnframes()), np.int16)
-        d = len(a) / sr
-        segs.append(dict(s, ini=t, fin=t + d))
-        chunks += [a, np.zeros(int(PAUSA * sr), np.int16)]
-        t += d + PAUSA
-    chunks.append(np.zeros(int(1.6 * sr * tempo), np.int16))   # cola para el cierre
-    audio = np.concatenate(chunks)
+    def sintetizar(texto, rapidez):
+        objetivo = BASE / rapidez
+        ls = max(objetivo, .86)
+        cfg = SynthesisConfig(length_scale=ls, noise_scale=.55, noise_w_scale=.7)
+        raw, proc = os.path.join(tmp, "r.wav"), os.path.join(tmp, "p.wav")
+        with wave.open(raw, "wb") as w:
+            voice.synthesize_wav(texto, w, syn_config=cfg)
+        sr = voice.config.sample_rate
+        ff("-i", raw, "-af", f"asetrate={sr}*{TONO},aresample={SR},atempo={(ls / objetivo) / TONO:.5f}", "-ar", str(SR), proc)
+        return leer(proc)
 
-    raw = os.path.join(out, "voz_raw.wav")
-    with wave.open(raw, "wb") as w:
-        w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes(audio.tobytes())
+    voz, segs, t = [np.zeros(int(.06 * SR))], [], .06
+    for s in g["segmentos"]:
+        rap = s.get("rapidez", args.rapidez)
+        partes = [p.strip() for p in re.split(r"\.\.\.|…", s["say"]) if p.strip()]
+        ini = t
+        for k, p in enumerate(partes):
+            a = sintetizar(p, rap)
+            voz.append(a); t += len(a) / SR
+            if k < len(partes) - 1:
+                voz.append(np.zeros(int(PAUSA_DRAMA * SR))); t += PAUSA_DRAMA
+        segs.append(dict(s, ini=round(ini, 3), fin=round(t, 3)))
+        voz.append(np.zeros(int(PAUSA * SR))); t += PAUSA
+    voz.append(np.zeros(int(1.4 * SR)))
+    v = np.concatenate(voz)
 
-    final = os.path.join(out, "voz.wav")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
-                    f"asetrate={sr}*{TONO},aresample=44100,atempo={tempo / TONO:.5f},"
-                    "bass=g=3:f=180,treble=g=-1:f=6000,loudnorm=I=-14:TP=-1.5:LRA=9",
-                    "-ar", "44100", "-ac", "1", final], check=True)
+    # voz más firme y presente: sin graves sucios, con presencia, comprimida
+    vraw, vproc = os.path.join(tmp, "v.wav"), os.path.join(tmp, "vp.wav")
+    escribir(vraw, v)
+    ff("-i", vraw, "-af", "highpass=f=85,equalizer=f=220:t=q:w=1:g=2,equalizer=f=3200:t=q:w=1.2:g=3,"
+       "acompressor=threshold=-20dB:ratio=3.5:attack=5:release=120:makeup=3,loudnorm=I=-15:TP=-2:LRA=7", "-ar", str(SR), vproc)
+    v = leer(vproc)
 
-    # tiempos en el audio final
     for s in segs:
-        s["ini"], s["fin"] = round(s["ini"] / tempo, 3), round(s["fin"] / tempo, 3)
         s["palabras"] = palabras_con_tiempo(s.get("sub", ""), s["ini"], s["fin"])
+    for i, s in enumerate(segs):
+        s["next"] = segs[i + 1]["ini"] if i + 1 < len(segs) else len(v) / SR
 
-    with wave.open(final) as w:
-        fr = w.getframerate()
-        b = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
-    hop = fr // FPS
-    n = len(b) // hop
-    rms = np.sqrt(np.mean(b[: n * hop].reshape(n, hop) ** 2, axis=1))
-    ref = np.percentile(rms[rms > 0.01], 90) if (rms > 0.01).any() else 1
-    boca = np.clip((rms - 0.02) / (ref - 0.02), 0, 1)
-    boca = np.convolve(boca, [0.25, 0.5, 0.25], mode="same")
+    # boca (solo voz)
+    hop = SR // FPS
+    n = len(v) // hop
+    rms = np.sqrt(np.mean(v[: n * hop].reshape(n, hop) ** 2, axis=1))
+    ref = np.percentile(rms[rms > .01], 90) if (rms > .01).any() else 1
+    boca = np.convolve(np.clip((rms - .02) / (ref - .02), 0, 1), [.25, .5, .25], mode="same")
 
-    json.dump(dict(id=g["id"], fps=FPS, duracion=round(len(b) / fr, 3), segmentos=segs,
+    # sonido
+    env = np.repeat(np.clip(rms / ref, 0, 1), hop)
+    env = np.pad(env, (0, len(v) - len(env)))
+    mix = v.copy()
+    fin_base = segs[-1]["ini"]
+    bed = base_tension(len(v), env)
+    bed[int(fin_base * SR):] *= np.linspace(1, 0, len(bed) - int(fin_base * SR))
+    mix += bed
+    poner(mix, golpe(), 0)
+    for i, s in enumerate(segs):
+        if i and s.get("plano") != segs[i - 1].get("plano"):
+            poner(mix, rafaga(), s["ini"] - .16)
+        acts = s.get("accion") if isinstance(s.get("accion"), list) else [s.get("accion")] if s.get("accion") else []
+        if any(a.get("tipo") == "big" for a in acts):
+            poner(mix, subida(), s["ini"] - 1.0)
+            poner(mix, ding(), s["ini"] + min(1.2, (s["next"] - s["ini"]) * .3))
+    mraw = os.path.join(tmp, "m.wav")
+    escribir(mraw, mix)
+    ff("-i", mraw, "-af", "alimiter=limit=0.89:attack=3:release=60", "-ar", str(SR), os.path.join(out, "voz.wav"))
+
+    for s in segs:
+        s.pop("next", None)
+    json.dump(dict(id=g["id"], fps=FPS, duracion=round(len(v) / SR, 3), segmentos=segs,
                    boca=[round(float(x), 3) for x in boca]),
               open(os.path.join(out, "timeline.json"), "w"), ensure_ascii=False)
-    print(f"   {g['id']} · {len(b)/fr:.1f} s · {len(segs)} segmentos")
+    print(f"   {g['id']} · {len(v)/SR:.1f} s")
 
 
 if __name__ == "__main__":

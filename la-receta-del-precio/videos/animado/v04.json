@@ -3,13 +3,15 @@
  "titulo": "“¿Por qué sale más que en la panadería?”",
  "segmentos": [
   {
-   "say": "En la panadería la misma torta sale la mitad. Esto es lo que podés contestar sin ofenderte.",
-   "sub": "“En la panadería la misma torta sale la mitad.” Esto es lo que podés contestar sin ofenderte.",
+   "say": "En la panadería sale la mitad. Contestá esto.",
+   "sub": "“En la panadería sale la mitad.” Contestá esto.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "“En la panadería sale la mitad”"
+    "texto": "“En la panadería sale *la mitad*”"
    }
   },
   {
@@ -98,6 +100,7 @@
    "sub": "No es la misma torta: es una hecha a pedido, con tu tiempo adentro. Contá qué incluye; no hace falta hablar mal de nadie.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

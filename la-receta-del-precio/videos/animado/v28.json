@@ -3,13 +3,15 @@
  "titulo": "“Las que venden mucho cobran barato”",
  "segmentos": [
   {
-   "say": "Las que venden un montón es porque cobran barato. Mirá lo que no se ve.",
-   "sub": "“Las que venden un montón es porque cobran barato.” Mirá lo que no se ve.",
+   "say": "Vender barato para vender mucho... te puede fundir.",
+   "sub": "Vender barato para vender mucho... te puede fundir.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "MITO: para vender mucho hay que cobrar barato"
+    "texto": "MITO: *barato vende más*"
    }
   },
   {
@@ -59,6 +61,7 @@
    "sub": "No es tu competencia: es otro modelo de negocio. Calculá el tuyo con tus costos.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": []
   },
   {

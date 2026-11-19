@@ -3,13 +3,15 @@
  "titulo": "Sumarle 50% no es ganar la mitad",
  "segmentos": [
   {
-   "say": "Si le sumás un cincuenta por ciento al costo pensando que la mitad de lo que cobrás es ganancia, mirá esto.",
-   "sub": "Si le sumás un 50% al costo pensando que la mitad de lo que cobrás es ganancia, mirá esto.",
+   "say": "Le sumás la mitad... y te quedás con un tercio.",
+   "sub": "Le sumás la mitad... y te quedás con un tercio.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "Le sumás 50%… y te queda 33%"
+    "texto": "+50% → te queda *33%*"
    }
   },
   {
@@ -93,6 +95,7 @@
    "sub": "Para que la mitad del precio sea ganancia: $20.000 ÷ 0,50 = $40.000. Si te alcanza con el recargo, perfecto: pero elegilo sabiendo.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

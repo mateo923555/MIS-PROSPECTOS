@@ -3,13 +3,15 @@
  "titulo": "Tu precio en 11 hojas",
  "segmentos": [
   {
-   "say": "Así se arma el precio de una torta, desde el primer gramo hasta el mensaje para la clienta.",
-   "sub": "Así se arma el precio de una torta, desde el primer gramo hasta el mensaje para la clienta.",
+   "say": "Once hojas separan un precio a ojo de uno exacto.",
+   "sub": "Once hojas separan un precio a ojo de uno exacto.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "Así se arma un precio, hoja por hoja"
+    "texto": "Tu precio en *11 hojas*"
    }
   },
   {
@@ -70,6 +72,7 @@
    "sub": "Once hojas, siempre en el mismo orden. La próxima vez que te pidan una torta, no improvisás.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

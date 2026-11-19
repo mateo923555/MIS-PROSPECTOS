@@ -3,13 +3,15 @@
  "titulo": "Cuánto pone cada torta para la luz y el gas",
  "segmentos": [
   {
-   "say": "La luz y el gas no son gratis. Calculemos cuánto le toca pagar a cada torta.",
-   "sub": "La luz y el gas no son gratis. Calculemos cuánto le toca pagar a cada torta.",
+   "say": "Tu horno te pasa factura... en cada torta.",
+   "sub": "Tu horno te pasa factura... en cada torta.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "El gasto que nadie suma"
+    "texto": "El gasto que *nadie suma*"
    }
   },
   {
@@ -73,6 +75,7 @@
    "sub": "$24.000 ÷ 30 = $800 por torta. Va en cada precio, aunque no lo veas.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",

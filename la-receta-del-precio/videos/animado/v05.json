@@ -3,13 +3,15 @@
  "titulo": "3 caminos para ponerle ganancia a tu torta",
  "segmentos": [
   {
-   "say": "Hay tres formas de sumarle ganancia a una torta, y no dan lo mismo.",
-   "sub": "Hay tres formas de sumarle ganancia a una torta, y no dan lo mismo.",
+   "say": "Le sumás cuarenta por ciento... y no ganás cuarenta.",
+   "sub": "Le sumás cuarenta por ciento... y no ganás cuarenta.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.2,
+   "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "Le sumás 40%… ¿pero de qué?"
+    "texto": "+40% *≠* ganar 40%"
    }
   },
   {
@@ -98,6 +100,7 @@
    "sub": "Con recargo del 40%, la ganancia es el 28,6% de lo que cobrás. Ninguno está prohibido: lo que no sirve es no saber cuál usás.",
    "ceja": true,
    "plano": "B",
+   "rapidez": 1.3,
    "accion": [
     {
      "tipo": "big",
