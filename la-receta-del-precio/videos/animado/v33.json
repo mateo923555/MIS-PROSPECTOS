@@ -6,6 +6,7 @@
    "say": "Gano poquito, pero por lo menos vendo. Mirá cuántas tortas hacen falta solo para cubrir gastos.",
    "sub": "“Gano poquito, pero por lo menos vendo.” Mirá cuántas tortas hacen falta solo para cubrir gastos.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "“Gano poquito, pero por lo menos vendo”"
@@ -14,61 +15,85 @@
   {
    "say": "Al final vas a saber cuál es tu número mínimo del mes.",
    "sub": "Al final vas a saber cuál es tu número mínimo del mes.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "Al final vas a saber cuál es tu número mínimo del mes."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Gastos fijos del mes: monotributo, internet, herramientas. Ejemplo: noventa mil pesos.",
    "sub": "Gastos fijos del mes: monotributo, internet, herramientas. Ejemplo: $90.000.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "Gastos fijos del mes: monotributo, internet, herramientas. Ejemplo: $90.000."
-   }
+   "plano": "C",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Ejemplo",
+       "valor": "$ 90.000"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Ganancia por torta: quince mil pesos.",
    "sub": "Ganancia por torta: $15.000.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "Ganancia por torta: $15.000."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Ganancia por torta",
+       "valor": "$ 15.000"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "noventa mil pesos dividido quince mil pesos, igual a seis tortas.",
    "sub": "$90.000 ÷ $15.000 = 6 tortas.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "$90.000 ÷ $15.000 = 6 tortas."
-   }
+   "plano": "A",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    },
+    {
+     "tipo": "calc",
+     "label": "",
+     "linea": "$90.000 ÷ $15.000 = 6 tortas"
+    }
+   ]
   },
   {
    "say": "En este ejemplo, las primeras seis tortas del mes solo cubren gastos. Recién la séptima deja ganancia.",
    "sub": "En este ejemplo, las primeras 6 tortas del mes solo cubren gastos. Recién la séptima deja ganancia.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "En este ejemplo, las primeras 6 tortas del mes solo cubren gastos. Recién la séptima deja ganancia.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "SOLO PARA CUBRIR · EJEMPLO",
-     "valor": "6 TORTAS",
-     "top": 780
+     "valor": "6 TORTAS"
     }
    ]
   },
   {
    "say": "¿Sabías tu número? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "¿Sabías tu número? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

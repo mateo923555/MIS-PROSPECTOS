@@ -9,52 +9,69 @@
 :root{--cacao:#24140F;--harina:#F4EADB;--margen:#FF5A1F;--lima:#C8F03C}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1920px;overflow:hidden;background:var(--harina)}
-#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(70% 45% at 50% 78%,#EADCC6 0,#F4EADB 70%)}
-svg#marga{position:absolute;left:0;top:0;width:1080px;height:1920px}
-.ov{position:absolute;left:70px;right:70px;will-change:transform,opacity}
-#bug{position:absolute;top:140px;right:64px;width:96px;height:96px;border-radius:50%;background:var(--cacao)}
-#hook{top:270px;background:var(--cacao);color:var(--harina);border-radius:24px;padding:44px 48px 52px;font:118px/0.92 'T';letter-spacing:-1px}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--harina)}
+#world{position:absolute;inset:0;transform-origin:50% 55%}
+#bgA{position:absolute;inset:0;background:radial-gradient(70% 45% at 50% 75%,#EADCC6 0,#F4EADB 70%)}
+#bgC{position:absolute;inset:0;opacity:0;background-color:var(--cacao);
+  background-image:linear-gradient(rgba(244,234,219,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(244,234,219,.06) 2px,transparent 2px);
+  background-size:72px 72px}
+svg.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.ov{position:absolute;left:64px;right:64px;opacity:0}
+#hook{top:230px;background:var(--cacao);color:var(--harina);border-radius:26px;padding:38px 46px 46px;font:104px/0.92 'T';letter-spacing:-1px;box-shadow:0 30px 60px -30px rgba(36,20,15,.6)}
 #hook em{font-style:normal;color:var(--margen)}
-#hook small{display:block;font:italic 50px 'A';color:#d8c9b6;margin-top:18px;letter-spacing:0}
-#ticket{top:250px;background:#FFFDF8;border-radius:22px;padding:30px 40px 30px;box-shadow:0 24px 50px -24px rgba(36,20,15,.45);color:var(--cacao)}
-#ticket .k{font:28px 'M';letter-spacing:4px;color:#8C7F74;display:flex;justify-content:space-between;margin-bottom:14px}
-.row{display:flex;justify-content:space-between;align-items:baseline;font:40px 'M';padding:7px 0;border-bottom:3px dashed #E2D5C2;overflow:hidden}
-.row span:first-child{font:42px 'B'}
-.row.precio{background:var(--margen);margin:0 -40px 8px;padding:12px 40px;border:0}
-.row.precio span:first-child{font:40px 'B'}
-.row.total{border-bottom:0;border-top:5px solid var(--cacao);margin-top:6px;padding-top:12px;font-size:50px}
-.row.total span:first-child{font:52px 'T'}
-#big{top:300px;left:auto;right:56px;width:540px;background:var(--cacao);color:var(--harina);border-radius:26px;padding:26px 36px 30px;transform-origin:70% 50%}
-#big .l{font:30px 'M';letter-spacing:5px;color:#d8c9b6}
-#big .v{font:150px/1 'M';color:var(--margen);margin-top:6px;white-space:nowrap}
-#big.auto{width:auto;max-width:960px;padding:20px 32px 24px}
-#big.auto .l{font-size:26px}
-#piz{top:270px;background:#FFFDF8;border-radius:24px;padding:34px 44px 40px;box-shadow:0 24px 50px -24px rgba(36,20,15,.45);color:var(--cacao)}
-#piz .k{font:28px 'M';letter-spacing:4px;color:#8C7F74;margin-bottom:14px}
-#piz .t{font:58px/1.22 'B'}
-#piz .t b{font-family:'M';font-weight:400;color:var(--margen);font-size:.92em;white-space:nowrap}
-#piz.fuerte{background:var(--cacao);color:var(--harina)}
-#piz.fuerte .k{color:#d8c9b6}
-#piz.fuerte .t b{color:var(--margen)}
-#cta .r{margin-top:22px;font:32px 'M';color:#8C7F74}
-#sub{top:935px;text-align:center;left:60px;right:60px}
-#sub span{display:inline;background:var(--cacao);color:var(--harina);font:50px/1.38 'B';padding:6px 18px;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:12px}
-#sub b{color:var(--margen);font-weight:inherit}
-#cta{top:300px;text-align:center;color:var(--cacao)}
-#cta .logo{width:230px;height:230px;margin:0 auto 26px;border-radius:50%;background:var(--cacao)}
-#cta .n{font:96px/0.95 'T'}
-#cta .n em{font:italic 96px 'A';color:var(--margen)}
-#cta .h{display:inline-block;margin-top:30px;font:44px 'M';background:var(--margen);padding:14px 34px;border-radius:99px}
-#ej{position:absolute;left:0;right:0;bottom:46px;text-align:center;font:24px 'M';letter-spacing:3px;color:rgba(36,20,15,.55)}
+#prom{top:250px;text-align:center}
+#prom span{display:inline-block;background:var(--margen);color:var(--cacao);font:40px 'M';letter-spacing:2px;padding:16px 32px;border-radius:99px}
+#paso{top:250px;right:auto;font:34px 'M';background:var(--cacao);color:var(--harina);padding:10px 22px;border-radius:12px}
+#card{top:250px;background:#FFFDF8;border-radius:24px;padding:26px 40px 30px;color:var(--cacao);box-shadow:0 26px 52px -26px rgba(36,20,15,.5)}
+#card .k{display:flex;justify-content:space-between;font:26px 'M';letter-spacing:3px;color:#8C7F74;margin-bottom:10px}
+#card .k b{color:var(--margen);font-weight:400}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:10px 0;border-bottom:3px dashed #E2D5C2}
+.row:last-child{border-bottom:0}
+.row .l{font:46px/1.1 'B'}
+.row .v{font:54px 'M';color:var(--margen);white-space:nowrap}
+.calc .lab{font:40px 'B';color:#8C7F74;margin-bottom:8px}
+.calc .ln{font:58px/1.25 'M';display:flex;flex-wrap:wrap;gap:0 16px;align-items:baseline}
+.calc .ln span{display:inline-block}
+.calc .ln .op{color:#8C7F74}
+.calc .ln .res{color:var(--margen);font-size:1.25em}
+#card.big{background:var(--harina);top:300px}
+#card.big .row .l{font-size:54px}#card.big .row .v{font-size:66px}#card.big .calc .ln{font-size:68px}
+#big{top:250px;display:flex;justify-content:center}
+#big .in{background:var(--cacao);color:var(--harina);border-radius:28px;padding:24px 40px 30px;text-align:center;box-shadow:0 30px 60px -28px rgba(36,20,15,.7)}
+#big .l{font:30px 'M';letter-spacing:4px;color:#d8c9b6}
+#big .v{font:150px/1 'M';color:var(--margen);margin-top:8px;white-space:nowrap}
+#cta{top:230px;text-align:center;color:var(--cacao)}
+#cta .logo{width:220px;height:220px;margin:0 auto 24px;border-radius:50%;background:var(--cacao)}
+#cta .n{font:94px/0.95 'T'}
+#cta .n em{font:italic 94px 'A';color:var(--margen)}
+#cta .h{display:inline-block;margin-top:28px;font:44px 'M';background:var(--margen);padding:16px 36px;border-radius:99px}
+#cta .r{margin-top:20px;font:30px 'M';color:#8C7F74}
+#caps{position:absolute;left:50px;right:50px;text-align:center;font:92px/1.02 'T';color:#fff;letter-spacing:-.5px;opacity:0;
+  text-shadow:5px 0 #24140F,-5px 0 #24140F,0 5px #24140F,0 -5px #24140F,4px 4px #24140F,-4px 4px #24140F,4px -4px #24140F,-4px -4px #24140F,0 12px 0 rgba(36,20,15,.35)}
+#caps .w{display:inline-block;margin:0 .08em}
+#caps .w.n{color:var(--margen)}
+#caps .w.on{color:var(--lima);transform:scale(1.1)}
+#bar{position:absolute;left:0;top:0;height:12px;background:var(--margen);width:0}
+#bug{position:absolute;top:140px;right:60px;width:92px;height:92px;border-radius:50%;background:var(--cacao)}
 </style></head>
-<body><div id="stage">
-<svg id="marga" viewBox="0 0 1080 1920">
+<body><div id="stage"><div id="world">
+<div id="bgA"></div><div id="bgC"></div>
+<svg class="full" id="deco" viewBox="0 0 1080 1920">
+  <g fill="none" stroke="#E4D3BA" stroke-width="6" stroke-linejoin="round">
+    <path id="d1" d="M0 0 L200 0 A200 200 0 0 1 100 173 Z"/>
+    <path id="d2" d="M0 0 L160 0 A160 160 0 0 1 80 139 Z"/>
+    <path id="d3" d="M0 0 L120 0 A120 120 0 0 1 60 104 Z"/>
+  </g>
+</svg>
+<svg class="full" id="marga" viewBox="0 0 1080 1920">
   <defs>
+    <clipPath id="pip"><circle cx="250" cy="1600" r="215"/></clipPath>
     <clipPath id="mclip"><path id="mclipPath" d=""/></clipPath>
     <g id="sym"><path d="M0 0 L173.2 -100 A200 200 0 1 1 0 -200 Z M-200 0 H-50 V314 L-200 360 Z" fill="currentColor"/><path d="M28 -48.5 L28 -248.5 A200 200 0 0 1 201.2 -148.5 Z" fill="#FF5A1F"/></g>
   </defs>
+  <circle id="pipbg" cx="250" cy="1600" r="215" fill="#F4EADB" opacity="0"/>
+  <g id="clipwrap">
   <g id="char" transform="translate(540 1440) scale(1.06)">
-    <!-- cuerpo -->
     <g id="body">
       <path d="M-340 430 C-340 300 -240 252 -120 236 L120 236 C240 252 340 300 340 430 L370 720 L-370 720 Z" fill="#6B3E2E"/>
       <path d="M-205 330 L205 330 L240 720 L-240 720 Z" fill="#FFF8EE"/>
@@ -65,9 +82,8 @@ svg#marga{position:absolute;left:0;top:0;width:1080px;height:1920px}
       <ellipse cx="-62" cy="252" rx="78" ry="30" fill="#FFF8EE" transform="rotate(14 -62 252)"/>
       <ellipse cx="62" cy="252" rx="78" ry="30" fill="#FFF8EE" transform="rotate(-14 62 252)"/>
     </g>
-    <!-- cabeza -->
     <g id="head">
-      <g id="pencil" transform="translate(30 -258) rotate(-32)">
+      <g transform="translate(30 -258) rotate(-32)">
         <rect x="-11" y="-150" width="22" height="210" rx="3" fill="#FF5A1F"/>
         <rect x="-11" y="-150" width="22" height="22" fill="#E9A3A0"/>
         <rect x="-11" y="-128" width="22" height="10" fill="#B8B1A9"/>
@@ -83,10 +99,10 @@ svg#marga{position:absolute;left:0;top:0;width:1080px;height:1920px}
       <path d="M6 -132 C-20 -170 -60 -190 -110 -186" stroke="#CFC8C1" stroke-width="8" fill="none" stroke-linecap="round"/>
       <ellipse cx="-112" cy="76" rx="42" ry="25" fill="#F29A85" opacity=".55"/>
       <ellipse cx="112" cy="76" rx="42" ry="25" fill="#F29A85" opacity=".55"/>
-      <g id="brows" stroke="#A79F98" stroke-width="13" stroke-linecap="round" fill="none">
+      <g stroke="#A79F98" stroke-width="13" stroke-linecap="round" fill="none">
         <path id="browL" d="M-122 -72 Q-82 -96 -40 -76"/><path id="browR" d="M40 -76 Q82 -96 122 -72"/>
       </g>
-      <g id="eyes" fill="#24140F">
+      <g fill="#24140F">
         <g id="eyeL" transform="translate(-80 -8)"><ellipse rx="17" ry="23"/><circle cx="6" cy="-8" r="6" fill="#fff"/></g>
         <g id="eyeR" transform="translate(80 -8)"><ellipse rx="17" ry="23"/><circle cx="6" cy="-8" r="6" fill="#fff"/></g>
       </g>
@@ -105,135 +121,185 @@ svg#marga{position:absolute;left:0;top:0;width:1080px;height:1920px}
       </g>
     </g>
   </g>
+  </g>
+  <circle id="pipring" cx="250" cy="1600" r="215" fill="none" stroke="#FF5A1F" stroke-width="12" opacity="0"/>
 </svg>
 
-<div id="bug"><svg viewBox="0 0 96 96" width="96" height="96"><g transform="translate(48 48) scale(.12) translate(0 -56)" style="color:#F4EADB"><use href="#sym"/></g></svg></div>
 <div class="ov" id="hook"></div>
-<div class="ov" id="ticket"><div class="k"><span>TORTA DE EJEMPLO</span><span>CIFRAS DE EJEMPLO</span></div><div id="rows"></div></div>
-<div class="ov" id="big"><div class="l"></div><div class="v"></div></div>
-<div class="ov" id="cta"><div class="logo"><svg viewBox="0 0 230 230" width="230" height="230"><g transform="translate(115 115) scale(.3) translate(0 -56)" style="color:#F4EADB"><use href="#sym"/></g></svg></div>
+<div class="ov" id="prom"><span>QUEDATE HASTA EL FINAL</span></div>
+<div class="ov" id="paso"></div>
+<div class="ov" id="card"></div>
+<div class="ov" id="big"><div class="in"><div class="l"></div><div class="v"></div></div></div>
+<div class="ov" id="cta"><div class="logo"><svg viewBox="0 0 220 220" width="220" height="220"><g id="ctasym" transform="translate(110 110) scale(.29) translate(0 -56)" style="color:#F4EADB"><use href="#sym"/></g></svg></div>
   <div class="n">La Receta <em>del</em> Precio</div><div class="h"></div><div class="r"></div></div>
-<div class="ov" id="piz"><div class="k"></div><div class="t"></div></div>
-<div class="ov" id="sub"><span></span></div>
+<div id="caps"></div>
+</div>
+<div id="bar"></div>
+<div id="bug"><svg viewBox="0 0 92 92" width="92" height="92"><g transform="translate(46 46) scale(.115) translate(0 -56)" style="color:#F4EADB"><use href="#sym"/></g></svg></div>
 </div>
 <script>
-const $ = s => document.querySelector(s);
-const clamp = (x, a=0, b=1) => Math.max(a, Math.min(b, x));
+const $ = s => document.querySelector(s), E = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const easeOut = x => 1 - Math.pow(1 - clamp(x), 3);
 const back = x => { x = clamp(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
-const fmt = s => s.replace(/\*([^*]+)\*/g, '<em>$1</em>').replace(/\n/g, '<br>');
-let TL = null;
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const acts = s => Array.isArray(s.accion) ? s.accion : (s.accion ? [s.accion] : []);
+
+// Planos: personaje [x, y, escala] y posición de subtítulos
+const SHOTS = {
+  A: {ch: [540, 1440, 1.06], bg: 0, caps: {top: 890, left: 40, right: 40, size: 112, align: 'center'}},
+  B: {ch: [540, 1580, 1.85], bg: 0, caps: {top: 680, left: 40, right: 40, size: 116, align: 'center'}},
+  C: {ch: [250, 1655, 0.62], bg: 1, pip: 1, big: 1, caps: {top: 1180, left: 490, right: 36, size: 92, align: 'left'}},
+  D: {ch: [330, 1500, 1.0], bg: 0, caps: {top: 1100, left: 560, right: 36, size: 92, align: 'left'}},
+};
+let TL;
 
 window.load = (tl) => {
   TL = tl;
-  // precalcula cuándo aparece cada cosa
   const S = TL.segmentos;
-  TL.rows = []; TL.hook = null; TL.ticket = null; TL.big = null; TL.cta = null; TL.precio = null; TL.total = null;
-  TL.piz = [];
-  S.forEach((s, i) => (Array.isArray(s.accion) ? s.accion : (s.accion ? [s.accion] : [])).forEach(a => {
-    if (a.tipo === 'pizarra') TL.piz.push({t: s.ini, ...a});
-    if (a.tipo === 'hook') TL.hook = {t: s.ini, ...a};
-    if (a.tipo === 'ticket') TL.ticket = {t: s.ini};
-    if (a.tipo === 'precio') TL.precio = {t: s.ini, ...a};
-    if (a.tipo === 'row') TL.rows.push({t: s.ini, ...a});
-    if (a.tipo === 'total') TL.total = {t: s.ini, ...a};
-    if (a.tipo === 'big') TL.big = {t: s.ini + Math.max(0, (s.fin - s.ini) * 0.55), ...a};
-    if (a.tipo === 'cta') TL.cta = {t: s.ini, ...a};
-  }));
-  $('#hook').innerHTML = TL.hook ? fmt(TL.hook.texto) : '';
-  const rows = [];
-  if (TL.precio) rows.push(`<div class="row precio" data-t="${TL.precio.t}"><span>${TL.precio.label}</span><span>${TL.precio.valor}</span></div>`);
-  TL.rows.forEach(r => rows.push(`<div class="row" data-t="${r.t}"><span>${r.label}</span><span>${r.valor}</span></div>`));
-  if (TL.total) rows.push(`<div class="row total" data-t="${TL.total.t}"><span>${TL.total.label}</span><span>${TL.total.valor}</span></div>`);
-  $('#rows').innerHTML = rows.join('');
-  if (TL.big){ $('#big .l').textContent = TL.big.label; $('#big .v').textContent = TL.big.valor;
-    if (TL.big.top){ $('#big').style.top = TL.big.top + 'px'; $('#big').classList.add('auto');
-      $('#big .v').style.fontSize = Math.min(120, 860 / (0.6 * TL.big.valor.length)) + 'px'; } }
-  if (TL.cta){ $('#cta .h').textContent = TL.cta.boton || ('Seguime · ' + TL.cta.texto);
-    $('#cta .r').textContent = TL.cta.ref ? 'En el pack · ' + TL.cta.ref : ''; }
+  S.forEach((s, i) => { s.next = i + 1 < S.length ? S[i + 1].ini : TL.duracion; s.acts = acts(s); });
+  S.forEach(s => {
+    s.grupos = []; let g = [];
+    (s.palabras || []).forEach(w => {
+      g.push(w);
+      if (g.length >= 3 || /[.,:;?!…]$/.test(w[0])) { s.grupos.push(g); g = []; }
+    });
+    if (g.length) s.grupos.push(g);
+  });
+  const cta = S.flatMap(s => s.acts).find(a => a.tipo === 'cta');
+  if (cta){ $('#cta .h').textContent = cta.boton || 'Seguime'; $('#cta .r').textContent = cta.ref ? 'En el pack · ' + cta.ref : ''; }
 };
 
-function show(el, t0, t, t1 = 1e9, dur = .35, dy = 40){
-  const p = easeOut((t - t0) / dur), q = easeOut((t - t1) / .3);
-  const o = t < t0 ? 0 : p * (1 - q);
+function segAt(t){
+  const S = TL.segmentos; let k = 0;
+  for (let i = 0; i < S.length; i++) if (t >= S[i].ini - .02) k = i;
+  return S[k];
+}
+function vis(el, o, ty = 0, sc = 1, rot = 0){
   el.style.opacity = o;
-  el.style.transform = `translateY(${(1 - p) * dy - q * 20}px)`;
-  return o;
+  el.style.transform = `translateY(${ty}px) scale(${sc}) rotate(${rot}deg)`;
+}
+// cuenta animada: "$ 23.800" sube desde 0
+function contar(valor, p){
+  const m = valor.match(/^(\D*?)(\d[\d.]*)(,\d+)?(\D*)$/);
+  if (!m) return valor;
+  p = clamp(p);
+  const n = parseInt(m[2].replace(/\./g, ''), 10), x = Math.round(n * easeOut(p));
+  const s = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return m[1] + s + (m[3] ? (p >= 1 ? m[3] : ',' + '0'.repeat(m[3].length - 1)) : '') + m[4];
+}
+
+let lastCard = null;
+function pintarCard(s, a, shot){
+  const card = E('card'), key = s.ini + a.tipo;
+  if (lastCard !== key){
+    lastCard = key;
+    const paso = s.acts.find(x => x.tipo === 'paso');
+    let h = `<div class="k"><span>${paso ? 'PASO <b>' + paso.k + '</b>' : ''}</span><span>EJEMPLO</span></div>`;
+    if (a.tipo === 'rows'){
+      h += a.rows.map(r => `<div class="row"><span class="l">${esc(r.label || '→')}</span><span class="v" data-v="${esc(r.valor)}"></span></div>`).join('');
+    } else {
+      const toks = a.linea.split(/\s*(=|÷|×|−|\+|\(|\))\s*/).filter(x => x && x.trim());
+      let res = false;
+      h += `<div class="calc">${a.label ? `<div class="lab">${esc(a.label)}</div>` : ''}<div class="ln">` +
+        toks.map(x => { const op = /^(=|÷|×|−|\+|\(|\))$/.test(x), r = res; if (x === '=') res = true;
+          return `<span class="${op ? 'op' : (r ? 'res' : '')}">${esc(x)}</span>`; }).join('') + '</div></div>';
+    }
+    card.innerHTML = h;
+    card.classList.toggle('big', !!SHOTS[shot].big);
+  }
+  const dur = Math.max(.8, s.next - s.ini), t = TL.t - s.ini;
+  if (a.tipo === 'rows'){
+    const rs = card.querySelectorAll('.row'), step = Math.min(.9, dur * .7 / rs.length);
+    rs.forEach((r, i) => {
+      const p = (t - i * step) / .3;
+      r.style.opacity = clamp(p); r.style.transform = `translateX(${(1 - easeOut(p)) * -50}px)`;
+      const v = r.querySelector('.v'); v.textContent = contar(v.dataset.v, (t - i * step) / .55);
+    });
+  } else {
+    const sp = card.querySelectorAll('.ln span'), step = Math.min(.35, dur * .7 / sp.length);
+    sp.forEach((x, i) => { const p = (t - .1 - i * step) / .18; x.style.opacity = clamp(p); x.style.transform = `scale(${.6 + .4 * back(p)})`; });
+  }
 }
 
 window.render = (t) => {
-  const S = TL.segmentos, f = Math.floor(t * TL.fps);
-  const o = TL.boca[f] || 0;
-  const seg = S.find(s => t >= s.ini - .05 && t <= s.fin + .25);
+  TL.t = t;
+  const f = Math.floor(t * TL.fps), o = TL.boca[f] || 0;
+  const s = segAt(t), shot = s.plano || 'A', SH = SHOTS[shot];
+  const ts = t - s.ini, dur = s.next - s.ini, prog = clamp(ts / dur);
 
-  // ---- personaje
-  const sway = 1.6 * Math.sin(t * 1.25) + o * 2.4 * Math.sin(t * 6.3);
-  document.getElementById('head').setAttribute('transform', `translate(0 ${-o * 5}) rotate(${sway} 0 180)`);
-  document.getElementById('body').setAttribute('transform', `translate(0 ${Math.sin(t * 2.1) * 3})`);
-  // parpadeo: cada ~3.4 s, 140 ms
-  const bp = (t + 0.7) % 3.4, blink = bp < .14 ? Math.sin(bp / .14 * Math.PI) : 0;
-  ['eyeL', 'eyeR'].forEach(id => {
-    const g = document.getElementById(id), x = id === 'eyeL' ? -80 : 80;
-    g.setAttribute('transform', `translate(${x} -8) scale(1 ${1 - .9 * blink})`);
-  });
-  // cejas
-  const ceja = seg && seg.ceja ? easeOut((t - seg.ini) / .25) * (1 - easeOut((t - seg.fin) / .3)) : 0;
-  const lift = -14 * ceja;
-  document.getElementById('browL').setAttribute('d', `M-122 ${-72 + lift} Q-82 ${-96 + lift * 1.3} -40 ${-76 + lift}`);
-  document.getElementById('browR').setAttribute('d', `M40 ${-76 + lift * .6} Q82 ${-96 + lift * 1.6} 122 ${-72 + lift * .6}`);
-  // boca: sonrisa cerrada → abierta
-  const w = 92 + o * 8, h = 4 + o * 46, up = -3 - o * 3;
-  const d = `M${-w/2} 0 Q0 ${up} ${w/2} 0 Q0 ${h * 1.55 + 16} ${-w/2} 0 Z`;
-  document.getElementById('mouth').setAttribute('d', d);
-  document.getElementById('mclipPath').setAttribute('d', d);
-  document.getElementById('teeth').setAttribute('height', o > .2 ? 9 + o * 6 : 0);
-  const tg = document.getElementById('tongue');
-  tg.setAttribute('cy', h * 1.2 + 6); tg.setAttribute('ry', o > .15 ? 10 + o * 14 : 0);
-  document.getElementById('lip').setAttribute('d', `M${-w/2 - 4} 2 Q0 ${h * 1.55 + 20} ${w/2 + 4} 2`);
+  // corte con golpe de zoom
+  E('world').style.transform = `scale(${1 + .07 * (1 - easeOut(ts / .22))})`;
+  E('bgC').style.opacity = SH.bg; E('bgA').style.opacity = 1 - SH.bg; E('deco').style.opacity = SH.bg ? 0 : 1;
+  [['d1', 900, 520, 18], ['d2', 140, 820, -24], ['d3', 960, 1180, 30]].forEach(([id, x, y, sp]) =>
+    E(id).setAttribute('transform', `translate(${x} ${y}) rotate(${t * sp})`));
 
-  // ---- capas de texto
-  const tTicket = TL.ticket ? TL.ticket.t : (TL.piz.length ? TL.piz[0].t : 1e9), tCta = TL.cta ? TL.cta.t : 1e9;
-  // pizarra: la tarjeta del golpe actual, hasta que empiece el siguiente
-  const pz = $('#piz'); let cur = -1;
-  TL.piz.forEach((x, i) => { if (t >= x.t) cur = i; });
-  if (cur >= 0 && t < tCta){
-    const x = TL.piz[cur];
-    if (pz.dataset.i != cur){
-      pz.dataset.i = cur; pz.classList.toggle('fuerte', !!x.fuerte);
-      pz.querySelector('.k').textContent = x.k || '';
-      const tt = pz.querySelector('.t');
-      tt.innerHTML = x.texto.replace(/\*/g, '').replace(/(\$ ?[\d.,]+|\d[\d.,]*\s?%|\d[\d.,]*\s?(?:g|h)\b|×|÷|=)/g, '<b>$1</b>');
-      let fs = 58; tt.style.fontSize = fs + 'px';
-      const maxH = x.fuerte && TL.big && TL.big.top ? 470 : 640;
-      while (pz.offsetHeight > maxH && fs > 34){ fs -= 2; tt.style.fontSize = fs + 'px'; }
-    }
-    const p = easeOut((t - x.t) / .3);
-    pz.style.opacity = p; pz.style.transform = `translateY(${(1 - p) * 30}px)`;
-  } else { pz.style.opacity = 0; pz.dataset.i = -1; }
-  show($('#hook'), TL.hook ? TL.hook.t : 1e9, t, tTicket, .4, 60);
-  show($('#ticket'), tTicket, t, tCta, .45, 60);
-  document.querySelectorAll('#rows .row').forEach(r => {
-    const t0 = +r.dataset.t, p = easeOut((t - t0) / .3);
-    r.style.display = t < t0 ? 'none' : 'flex';
-    r.style.opacity = p; r.style.transform = `translateX(${(1 - p) * -40}px)`;
-  });
-  if (TL.big){
-    const b = $('#big'), t0 = TL.big.t;
-    const p = t < t0 ? 0 : back((t - t0) / .45), q = easeOut((t - tCta) / .3);
-    b.style.opacity = t < t0 ? 0 : clamp((t - t0) / .15) * (1 - q);
-    b.style.transform = `rotate(-4deg) scale(${.5 + .5 * p})`;
+  // cámara sobre Doña Marga, con acercamiento lento dentro del plano
+  let [cx, cy, sc] = SH.ch;
+  const drift = shot === 'B' ? 1 + .05 * prog : 1 + .02 * prog;
+  if (shot === 'D') cx += 12 * prog;
+  E('char').setAttribute('transform', `translate(${cx} ${cy}) scale(${sc * drift})`);
+  if (SH.pip) E('clipwrap').setAttribute('clip-path', 'url(#pip)'); else E('clipwrap').removeAttribute('clip-path');
+  E('pipbg').setAttribute('opacity', SH.pip ? 1 : 0); E('pipring').setAttribute('opacity', SH.pip ? 1 : 0);
+
+  const sway = 1.8 * Math.sin(t * 1.4) + o * 2.6 * Math.sin(t * 7);
+  E('head').setAttribute('transform', `translate(0 ${-o * 5}) rotate(${sway} 0 180)`);
+  E('body').setAttribute('transform', `translate(0 ${Math.sin(t * 2.4) * 3})`);
+  const bp = (t + .7) % 3.1, blink = bp < .13 ? Math.sin(bp / .13 * Math.PI) : 0;
+  E('eyeL').setAttribute('transform', `translate(-80 -8) scale(1 ${1 - .9 * blink})`);
+  E('eyeR').setAttribute('transform', `translate(80 -8) scale(1 ${1 - .9 * blink})`);
+  const ceja = s.ceja ? easeOut(ts / .2) * (1 - easeOut((t - s.fin) / .25)) : 0, lift = -15 * ceja;
+  E('browL').setAttribute('d', `M-122 ${-72 + lift} Q-82 ${-96 + lift * 1.3} -40 ${-76 + lift}`);
+  E('browR').setAttribute('d', `M40 ${-76 + lift * .6} Q82 ${-96 + lift * 1.6} 122 ${-72 + lift * .6}`);
+  const w = 92 + o * 8, h = 4 + o * 46;
+  const d = `M${-w / 2} 0 Q0 ${-3 - o * 3} ${w / 2} 0 Q0 ${h * 1.55 + 16} ${-w / 2} 0 Z`;
+  E('mouth').setAttribute('d', d); E('mclipPath').setAttribute('d', d);
+  E('teeth').setAttribute('height', o > .2 ? 9 + o * 6 : 0);
+  E('tongue').setAttribute('cy', h * 1.2 + 6); E('tongue').setAttribute('ry', o > .15 ? 10 + o * 14 : 0);
+  E('lip').setAttribute('d', `M${-w / 2 - 4} 2 Q0 ${h * 1.55 + 20} ${w / 2 + 4} 2`);
+
+  // motion graphics del segmento
+  ['hook', 'prom', 'paso', 'card', 'big', 'cta'].forEach(id => E(id).style.opacity = 0);
+  const A = s.acts;
+  const hook = A.find(a => a.tipo === 'hook'), card = A.find(a => a.tipo === 'rows' || a.tipo === 'calc');
+  const big = A.find(a => a.tipo === 'big'), cta = A.find(a => a.tipo === 'cta');
+  const paso = A.find(a => a.tipo === 'paso'), prom = A.find(a => a.tipo === 'promesa');
+  if (hook){
+    E('hook').innerHTML = esc(hook.texto).replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    const p = ts / .28, shake = ts > .28 && ts < .5 ? Math.sin(ts * 90) * 6 * (1 - (ts - .28) / .22) : 0;
+    vis(E('hook'), clamp(p * 2), shake, 1.35 - .35 * easeOut(p), -2.5 + 1.5 * easeOut(p));
   }
-  if (TL.cta){
-    const c = $('#cta'), p = back((t - tCta) / .5);
-    c.style.opacity = t < tCta ? 0 : clamp((t - tCta) / .2);
-    c.style.transform = `scale(${.85 + .15 * p})`;
+  if (prom){ const p = ts / .3; vis(E('prom'), clamp(p * 2), 0, (.7 + .3 * back(p)) * (1 + .03 * Math.sin(ts * 9))); }
+  if (card){ pintarCard(s, card, shot); const p = ts / .3; vis(E('card'), clamp(p * 2), (1 - easeOut(p)) * 50); }
+  else if (paso){ E('paso').textContent = 'PASO ' + paso.k; const p = ts / .25; vis(E('paso'), clamp(p * 2), 0, .6 + .4 * back(p)); }
+  if (big){
+    const t0 = Math.min(1.2, dur * .3), p = (ts - t0) / .45;
+    $('#big .l').textContent = big.label;
+    const v = $('#big .v'); v.style.fontSize = Math.min(150, 880 / (.6 * big.valor.length)) + 'px';
+    v.textContent = contar(big.valor, (ts - t0) / .6);
+    vis(E('big'), ts < t0 ? 0 : clamp(p * 3), 0, .4 + .6 * back(p), -3);
   }
-  // subtítulo
-  const sub = $('#sub span');
-  const conPiz = cur >= 0 && t < tCta && seg && seg.ini >= TL.piz[0].t;
-  if (conPiz){ $('#sub').style.opacity = 0; return; }
-  if (seg){ sub.innerHTML = seg.sub.replace(/(\$ ?[\d.]+|×\s?\d+|x3)/g, '<b>$1</b>'); }
-  show($('#sub'), seg ? seg.ini - .05 : 1e9, t, seg ? seg.fin + .25 : 1e9, .15, 12);
+  if (cta){
+    const p = ts / .5;
+    vis(E('cta'), clamp(p * 2), 0, .8 + .2 * back(p));
+    E('ctasym').setAttribute('transform', `translate(110 110) rotate(${(1 - easeOut(p)) * -180}) scale(.29) translate(0 -56)`);
+    $('#cta .h').style.transform = `scale(${1 + .04 * Math.sin(ts * 7)})`;
+  }
+
+  // subtítulos palabra por palabra
+  const caps = E('caps'), C = SH.caps;
+  Object.assign(caps.style, {top: C.top + 'px', left: C.left + 'px', right: C.right + 'px', textAlign: C.align, fontSize: C.size + 'px'});
+  const g = s.grupos.find(gr => t >= gr[0][1] - .03 && t < gr[gr.length - 1][2] + .12) ||
+            (t <= s.fin + .15 ? s.grupos.filter(gr => gr[0][1] <= t).slice(-1)[0] : null);
+  if (g && !cta){
+    caps.innerHTML = g.map(w => {
+      const on = t >= w[1] && t < w[2], num = /\d|\$|%/.test(w[0]);
+      return `<span class="w${on ? ' on' : ''}${num && !on ? ' n' : ''}">${esc(w[0])}</span>`;
+    }).join(' ');
+    caps.style.opacity = 1; caps.style.transform = `scale(${.86 + .14 * easeOut((t - g[0][1]) / .12)})`;
+  } else caps.style.opacity = 0;
+
+  E('bar').style.width = (100 * clamp(t / TL.duracion)) + '%';
 };
 </script>
 </body></html>

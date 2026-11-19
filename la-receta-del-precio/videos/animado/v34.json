@@ -6,6 +6,7 @@
    "say": "Las tres preguntas incómodas que más me hacen. Respuestas cortas.",
    "sub": "Las tres preguntas incómodas que más me hacen. Respuestas cortas.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "Las 3 preguntas incómodas de siempre"
@@ -14,55 +15,56 @@
   {
    "say": "La tercera es la que más cuesta.",
    "sub": "La tercera es la que más cuesta.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "La tercera es la que más cuesta."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "¿El envío se cobra? Decidí si va incluido o aparte, y escribilo igual de claro que lo que incluye.",
    "sub": "¿El envío se cobra? Decidí si va incluido o aparte, y escribilo igual de claro que lo que incluye.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "¿El envío se cobra? Decidí si va incluido o aparte, y escribilo igual de claro que lo que incluye."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    }
+   ]
   },
   {
    "say": "¿Mi primer presupuesto? Completá tus hojas antes de contestar y poné un plazo: te lo paso antes de las veinte.",
    "sub": "¿Mi primer presupuesto? Completá tus hojas antes de contestar y poné un plazo: “te lo paso antes de las 20”.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "¿Mi primer presupuesto? Completá tus hojas antes de contestar y poné un plazo: “te lo paso antes de las 20”."
-   }
+   "plano": "B",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    }
+   ]
   },
   {
    "say": "¿A mi familia le cobro? Armá el presupuesto igual que para cualquiera. Si querés hacer un trato, que sea una decisión tuya.",
    "sub": "¿A mi familia le cobro? Armá el presupuesto igual que para cualquiera. Si querés hacer un trato, que sea una decisión tuya.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "¿A mi familia le cobro? Armá el presupuesto igual que para cualquiera. Si querés hacer un trato, que sea una decisión tuya."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    }
+   ]
   },
   {
    "say": "Todo lo que lleva tiempo o materiales tiene un costo. Si lo regalás, que sea porque lo decidiste.",
    "sub": "Todo lo que lleva tiempo o materiales tiene un costo. Si lo regalás, que sea porque lo decidiste.",
    "ceja": true,
-   "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "Todo lo que lleva tiempo o materiales tiene un costo. Si lo regalás, que sea porque lo decidiste.",
-     "fuerte": true
-    }
-   ]
+   "plano": "B",
+   "accion": []
   },
   {
    "say": "Dejame tu pregunta para el próximo video. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "Dejame tu pregunta para el próximo video. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

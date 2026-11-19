@@ -6,6 +6,7 @@
    "say": "¿No me lo dejás en veinticuatro mil pesos? Antes de bajar el precio, mirá esta otra opción.",
    "sub": "“¿No me lo dejás en $24.000?” Antes de bajar el precio, mirá esta otra opción.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "“¿No me lo dejás en $24.000?”"
@@ -14,61 +15,88 @@
   {
    "say": "Te muestro cómo responder sin regalar tu trabajo ni perder la buena onda.",
    "sub": "Te muestro cómo responder sin regalar tu trabajo ni perder la buena onda.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "Te muestro cómo responder sin regalar tu trabajo ni perder la buena onda."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Presupuesto de ejemplo: veintiocho mil setecientos treinta pesos. Costo completo: veintitrés mil setecientos treinta pesos.",
    "sub": "Presupuesto de ejemplo: $28.730. Costo completo: $23.730.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "Presupuesto de ejemplo: $28.730. Costo completo: $23.730."
-   }
+   "plano": "C",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Presupuesto de ejemplo",
+       "valor": "$ 28.730"
+      },
+      {
+       "label": "Costo completo",
+       "valor": "$ 23.730"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Si lo bajás a veinticuatro mil pesos, de tu ganancia quedan doscientos setenta pesos.",
    "sub": "Si lo bajás a $24.000, de tu ganancia quedan $270.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "Si lo bajás a $24.000, de tu ganancia quedan $270."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Si lo bajás",
+       "valor": "$ 24.000"
+      },
+      {
+       "label": "Tu ganancia quedan",
+       "valor": "$ 270"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Otra opción: cambiar el alcance. Misma torta con tres flores en vez de seis.",
    "sub": "Otra opción: cambiar el alcance. Misma torta con 3 flores en vez de 6.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "Otra opción: cambiar el alcance. Misma torta con 3 flores en vez de 6."
-   }
+   "plano": "B",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    }
+   ]
   },
   {
    "say": "Se recalcula: veinticinco mil trescientos diez pesos, con tu ganancia intacta. No es un descuento: es otra versión, y la clienta decide.",
    "sub": "Se recalcula: $25.310, con tu ganancia intacta. No es un descuento: es otra versión, y la clienta decide.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "Se recalcula: $25.310, con tu ganancia intacta. No es un descuento: es otra versión, y la clienta decide.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "OTRA VERSIÓN · EJEMPLO",
-     "valor": "$ 25.310",
-     "top": 780
+     "valor": "$ 25.310"
     }
    ]
   },
   {
    "say": "Mandáselo a una amiga que siempre dice que sí Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "Mandáselo a una amiga que siempre dice que sí Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

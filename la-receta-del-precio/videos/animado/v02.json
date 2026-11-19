@@ -6,6 +6,7 @@
    "say": "Si no sabés cuánto te cuesta la harina que usás, no sabés cuánto te cuesta tu torta.",
    "sub": "Si no sabés cuánto te cuesta la harina que usás, no sabés cuánto te cuesta tu torta.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "La cuenta que sirve para TODO ingrediente"
@@ -14,70 +15,88 @@
   {
    "say": "En treinta segundos, la cuenta que sirve para cualquier ingrediente.",
    "sub": "En 30 segundos, la cuenta que sirve para cualquier ingrediente.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "En 30 segundos, la cuenta que sirve para cualquier ingrediente."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Precio del paquete dividido lo que trae, por lo que usás.",
    "sub": "Precio del paquete dividido lo que trae, por lo que usás.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/4",
-    "texto": "Precio del paquete dividido lo que trae, por lo que usás."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/4"
+    }
+   ]
   },
   {
    "say": "Harina: mil doscientos pesos dividido mil gramos por trescientos cincuenta gramos, igual a cuatrocientos veinte pesos.",
    "sub": "Harina: $1.200 ÷ 1.000 g × 350 g = $420.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/4",
-    "texto": "Harina: $1.200 ÷ 1.000 g × 350 g = $420."
-   }
+   "plano": "A",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/4"
+    },
+    {
+     "tipo": "calc",
+     "label": "Harina",
+     "linea": "$1.200 ÷ 1.000 g × 350 g = $420"
+    }
+   ]
   },
   {
    "say": "Manteca: tres mil pesos dividido doscientos gramos por cien gramos, igual a mil quinientos pesos.",
    "sub": "Manteca: $3.000 ÷ 200 g × 100 g = $1.500.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/4",
-    "texto": "Manteca: $3.000 ÷ 200 g × 100 g = $1.500."
-   }
+   "plano": "C",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/4"
+    },
+    {
+     "tipo": "calc",
+     "label": "Manteca",
+     "linea": "$3.000 ÷ 200 g × 100 g = $1.500"
+    }
+   ]
   },
   {
    "say": "Huevos: seis mil pesos dividido treinta por tres, igual a seiscientos pesos. Siempre en la misma unidad: gramos con gramos, unidades con unidades.",
    "sub": "Huevos: $6.000 ÷ 30 × 3 = $600. Siempre en la misma unidad: gramos con gramos, unidades con unidades.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "4/4",
-    "texto": "Huevos: $6.000 ÷ 30 × 3 = $600. Siempre en la misma unidad: gramos con gramos, unidades con unidades."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "4/4"
+    },
+    {
+     "tipo": "calc",
+     "label": "Huevos",
+     "linea": "$6.000 ÷ 30 × 3 = $600"
+    }
+   ]
   },
   {
    "say": "Lo hacés una vez por receta, anotás la fecha de los precios, y tenés el costo exacto de tus ingredientes.",
    "sub": "Lo hacés una vez por receta, anotás la fecha de los precios, y tenés el costo exacto de tus ingredientes.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "Lo hacés una vez por receta, anotás la fecha de los precios, y tenés el costo exacto de tus ingredientes.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "HARINA POR GRAMO",
-     "valor": "$ 1,20",
-     "top": 780
+     "valor": "$ 1,20"
     }
    ]
   },
   {
    "say": "Guardalo y probalo con tu receta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "Guardalo y probalo con tu receta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

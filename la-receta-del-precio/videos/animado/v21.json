@@ -6,6 +6,7 @@
    "say": "Si te pagan con link o tarjeta, no te llega todo. Y sumarle el porcentaje no alcanza.",
    "sub": "Si te pagan con link o tarjeta, no te llega todo. Y sumarle el porcentaje no alcanza.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "Te pagan con link… y no te llega todo"
@@ -14,61 +15,101 @@
   {
    "say": "Te muestro la cuenta correcta. Es una división, no una suma.",
    "sub": "Te muestro la cuenta correcta. Es una división, no una suma.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "Te muestro la cuenta correcta. Es una división, no una suma."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
-   "say": "Querés recibir treinta mil pesos y tu medio de cobro se queda con seis por ciento , ejemplo: fijate el tuyo.",
+   "say": "Querés recibir treinta mil pesos y tu medio de cobro se queda con seis por ciento, ejemplo: fijate el tuyo.",
    "sub": "Querés recibir $30.000 y tu medio de cobro se queda con 6% (ejemplo: fijate el tuyo).",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "Querés recibir $30.000 y tu medio de cobro se queda con 6% (ejemplo: fijate el tuyo)."
-   }
+   "plano": "C",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Querés recibir",
+       "valor": "$ 30.000"
+      },
+      {
+       "label": "Medio de cobro se queda",
+       "valor": "6%"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Si le sumás seis por ciento: cobrás treinta y un mil ochocientos pesos, te descuentan mil novecientos ocho pesos y recibís veintinueve mil ochocientos noventa y dos pesos.",
    "sub": "Si le sumás 6%: cobrás $31.800, te descuentan $1.908 y recibís $29.892.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "Si le sumás 6%: cobrás $31.800, te descuentan $1.908 y recibís $29.892."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Si le sumás",
+       "valor": "6%"
+      },
+      {
+       "label": "Cobrás",
+       "valor": "$ 31.800"
+      },
+      {
+       "label": "Te descuentan",
+       "valor": "$ 1.908"
+      },
+      {
+       "label": "Recibís",
+       "valor": "$ 29.892"
+      }
+     ]
+    }
+   ]
   },
   {
-   "say": "La cuenta correcta: treinta mil pesos dividido , uno menos cero coma cero seis, igual a treinta y un mil novecientos quince pesos.",
+   "say": "La cuenta correcta: treinta mil pesos dividido, uno menos cero coma cero seis, igual a treinta y un mil novecientos quince pesos.",
    "sub": "La cuenta correcta: $30.000 ÷ (1 − 0,06) = $31.915.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "La cuenta correcta: $30.000 ÷ (1 − 0,06) = $31.915."
-   }
+   "plano": "A",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    },
+    {
+     "tipo": "calc",
+     "label": "La cuenta correcta",
+     "linea": "$30.000 ÷ (1 − 0,06) = $31.915"
+    }
+   ]
   },
   {
    "say": "Cobrás treinta y un mil novecientos quince pesos y te llegan tus treinta mil pesos. El costo de cobro se calcula una sola vez, al final.",
    "sub": "Cobrás $31.915 y te llegan tus $30.000. El costo de cobro se calcula una sola vez, al final.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "Cobrás $31.915 y te llegan tus $30.000. El costo de cobro se calcula una sola vez, al final.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "PARA RECIBIR $30.000",
-     "valor": "COBRÁS $31.915",
-     "top": 780
+     "valor": "COBRÁS $31.915"
     }
    ]
   },
   {
    "say": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

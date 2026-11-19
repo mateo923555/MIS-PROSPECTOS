@@ -6,6 +6,7 @@
    "say": "Así se arma el precio de una torta, desde el primer gramo hasta el mensaje para la clienta.",
    "sub": "Así se arma el precio de una torta, desde el primer gramo hasta el mensaje para la clienta.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "Así se arma un precio, hoja por hoja"
@@ -14,70 +15,73 @@
   {
    "say": "Te muestro el recorrido completo, en orden.",
    "sub": "Te muestro el recorrido completo, en orden.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "Te muestro el recorrido completo, en orden."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Hoja uno: el costo de los ingredientes de cada preparación. Hoja seis: relleno y cobertura.",
    "sub": "Hoja 1: el costo de los ingredientes de cada preparación. Hoja 6: relleno y cobertura.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/4",
-    "texto": "Hoja 1: el costo de los ingredientes de cada preparación. Hoja 6: relleno y cobertura."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/4"
+    }
+   ]
   },
   {
    "say": "Hojas tres, cuatro y cinco: decoración, tus tiempos y el costo por pieza. Hoja siete: packaging.",
    "sub": "Hojas 3, 4 y 5: decoración, tus tiempos y el costo por pieza. Hoja 7: packaging.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/4",
-    "texto": "Hojas 3, 4 y 5: decoración, tus tiempos y el costo por pieza. Hoja 7: packaging."
-   }
+   "plano": "B",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/4"
+    }
+   ]
   },
   {
    "say": "Hoja ocho: la suma de la torta. Hoja nueve: los gastos del mes por torta.",
    "sub": "Hoja 8: la suma de la torta. Hoja 9: los gastos del mes por torta.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/4",
-    "texto": "Hoja 8: la suma de la torta. Hoja 9: los gastos del mes por torta."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/4"
+    }
+   ]
   },
   {
    "say": "Hoja diez: tu precio, con el camino de ganancia que elijas. Hoja once: el presupuesto.",
    "sub": "Hoja 10: tu precio, con el camino de ganancia que elijas. Hoja 11: el presupuesto.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "4/4",
-    "texto": "Hoja 10: tu precio, con el camino de ganancia que elijas. Hoja 11: el presupuesto."
-   }
+   "plano": "B",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "4/4"
+    }
+   ]
   },
   {
    "say": "Once hojas, siempre en el mismo orden. La próxima vez que te pidan una torta, no improvisás.",
    "sub": "Once hojas, siempre en el mismo orden. La próxima vez que te pidan una torta, no improvisás.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "Once hojas, siempre en el mismo orden. La próxima vez que te pidan una torta, no improvisás.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "CUADERNO",
-     "valor": "11 HOJAS",
-     "top": 780
+     "valor": "11 HOJAS"
     }
    ]
   },
   {
    "say": "Esto, con el cuaderno de once hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
    "sub": "Esto, con el cuaderno de 11 hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

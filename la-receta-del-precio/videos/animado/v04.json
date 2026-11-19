@@ -6,6 +6,7 @@
    "say": "En la panadería la misma torta sale la mitad. Esto es lo que podés contestar sin ofenderte.",
    "sub": "“En la panadería la misma torta sale la mitad.” Esto es lo que podés contestar sin ofenderte.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "“En la panadería sale la mitad”"
@@ -14,61 +15,101 @@
   {
    "say": "Te desarmo una torta de ejemplo para que veas qué está pagando tu clienta.",
    "sub": "Te desarmo una torta de ejemplo para que veas qué está pagando tu clienta.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "Te desarmo una torta de ejemplo para que veas qué está pagando tu clienta."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Ingredientes: cuatro mil quinientos pesos. Horno, gas y luz: seiscientos pesos. Caja y base: quinientos pesos.",
    "sub": "Ingredientes: $4.500. Horno, gas y luz: $600. Caja y base: $500.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "Ingredientes: $4.500. Horno, gas y luz: $600. Caja y base: $500."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Ingredientes",
+       "valor": "$ 4.500"
+      },
+      {
+       "label": "Gas y luz",
+       "valor": "$ 600"
+      },
+      {
+       "label": "Caja y base",
+       "valor": "$ 500"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Dos horas de trabajo a cuatro mil pesos: ocho mil pesos.",
    "sub": "Dos horas de trabajo a $4.000: $8.000.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "Dos horas de trabajo a $4.000: $8.000."
-   }
+   "plano": "A",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Dos horas de trabajo",
+       "valor": "$ 4.000"
+      },
+      {
+       "label": "",
+       "valor": "$ 8.000"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Costo completo: trece mil seiscientos pesos, antes de ganar un peso.",
    "sub": "Costo completo: $13.600, antes de ganar un peso.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "Costo completo: $13.600, antes de ganar un peso."
-   }
+   "plano": "C",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Costo completo",
+       "valor": "$ 13.600"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "No es la misma torta: es una hecha a pedido, con tu tiempo adentro. Contá qué incluye; no hace falta hablar mal de nadie.",
    "sub": "No es la misma torta: es una hecha a pedido, con tu tiempo adentro. Contá qué incluye; no hace falta hablar mal de nadie.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "No es la misma torta: es una hecha a pedido, con tu tiempo adentro. Contá qué incluye; no hace falta hablar mal de nadie.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "COSTO · EJEMPLO",
-     "valor": "$ 13.600",
-     "top": 780
+     "valor": "$ 13.600"
     }
    ]
   },
   {
    "say": "Mandáselo a una amiga pastelera Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "Mandáselo a una amiga pastelera Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

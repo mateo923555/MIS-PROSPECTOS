@@ -6,6 +6,7 @@
    "say": "Mi tiempo no lo cobro porque lo disfruto. Mirá qué pasa el día que quieras crecer.",
    "sub": "“Mi tiempo no lo cobro porque lo disfruto.” Mirá qué pasa el día que quieras crecer.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "“Mi tiempo no lo cobro, lo disfruto”"
@@ -14,55 +15,56 @@
   {
    "say": "Te explico por qué esa frase te cierra puertas.",
    "sub": "Te explico por qué esa frase te cierra puertas.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "Te explico por qué esa frase te cierra puertas."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Si tu precio no tiene tu hora, tu trabajo figura como cero.",
    "sub": "Si tu precio no tiene tu hora, tu trabajo figura como cero.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "Si tu precio no tiene tu hora, tu trabajo figura como cero."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    }
+   ]
   },
   {
    "say": "El día que quieras sumar una ayudante, ¿de dónde sale lo que le pagás?",
    "sub": "El día que quieras sumar una ayudante, ¿de dónde sale lo que le pagás?",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "El día que quieras sumar una ayudante, ¿de dónde sale lo que le pagás?"
-   }
+   "plano": "B",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    }
+   ]
   },
   {
    "say": "De ningún lado: tu precio nunca lo contempló.",
    "sub": "De ningún lado: tu precio nunca lo contempló.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "De ningún lado: tu precio nunca lo contempló."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    }
+   ]
   },
   {
    "say": "Disfrutarlo y cobrarlo no se contradicen. Medí tu tiempo y ponele valor; después decidís qué hacer con él.",
    "sub": "Disfrutarlo y cobrarlo no se contradicen. Medí tu tiempo y ponele valor; después decidís qué hacer con él.",
    "ceja": true,
-   "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "Disfrutarlo y cobrarlo no se contradicen. Medí tu tiempo y ponele valor; después decidís qué hacer con él.",
-     "fuerte": true
-    }
-   ]
+   "plano": "B",
+   "accion": []
   },
   {
    "say": "¿Cobrás tu tiempo? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "¿Cobrás tu tiempo? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

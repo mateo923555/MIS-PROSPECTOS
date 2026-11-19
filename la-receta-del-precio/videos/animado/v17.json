@@ -6,6 +6,7 @@
    "say": "Calculemos el precio de una docena de alfajores de maicena, de punta a punta.",
    "sub": "Calculemos el precio de una docena de alfajores de maicena, de punta a punta.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "Calculamos una docena de alfajores"
@@ -14,61 +15,93 @@
   {
    "say": "Al final, cuánto sale cada alfajor en este ejemplo.",
    "sub": "Al final, cuánto sale cada alfajor en este ejemplo.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "Al final, cuánto sale cada alfajor en este ejemplo."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Ingredientes: cuatro mil ochocientos pesos. Merma: trescientos ochenta y cuatro pesos.",
    "sub": "Ingredientes: $4.800. Merma: $384.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "Ingredientes: $4.800. Merma: $384."
-   }
+   "plano": "C",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Ingredientes",
+       "valor": "$ 4.800"
+      },
+      {
+       "label": "Merma",
+       "valor": "$ 384"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Packaging: mil doscientos pesos. Gastos del mes por docena: cuatrocientos pesos.",
    "sub": "Packaging: $1.200. Gastos del mes por docena: $400.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "Packaging: $1.200. Gastos del mes por docena: $400."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Packaging",
+       "valor": "$ 1.200"
+      },
+      {
+       "label": "Gastos del mes por docena",
+       "valor": "$ 400"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Tiempo: hora y media a cinco mil pesos, igual a siete mil quinientos pesos. Costo completo: catorce mil doscientos ochenta y cuatro pesos.",
    "sub": "Tiempo: hora y media a $5.000 = $7.500. Costo completo: $14.284.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "Tiempo: hora y media a $5.000 = $7.500. Costo completo: $14.284."
-   }
+   "plano": "A",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    },
+    {
+     "tipo": "calc",
+     "label": "Tiempo",
+     "linea": "hora y media a $5.000 = $7.500"
+    }
+   ]
   },
   {
    "say": "Con un margen del cuarenta por ciento: catorce mil doscientos ochenta y cuatro pesos dividido cero coma sesenta, igual a veintitrés mil ochocientos siete pesos, unos mil novecientos ochenta y cuatro pesos por alfajor.",
    "sub": "Con un margen del 40%: $14.284 ÷ 0,60 = $23.807, unos $1.984 por alfajor.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "Con un margen del 40%: $14.284 ÷ 0,60 = $23.807, unos $1.984 por alfajor.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "DOCENA · EJEMPLO",
-     "valor": "$ 23.800",
-     "top": 780
+     "valor": "$ 23.800"
     }
    ]
   },
   {
    "say": "Guardalo y cambiá los números por los tuyos. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "Guardalo y cambiá los números por los tuyos. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

@@ -1,10 +1,13 @@
 """Convierte los guiones de videos/guiones.py en guiones animados para Doña Marga.
 
-Uso: python3 desde_guiones.py            -> escribe v02.json … v35.json (V01 es a mano)
-     python3 desde_guiones.py --probar   -> muestra cómo lee la voz cada línea
+Uso: python3 desde_guiones.py            -> escribe v01.json … v35.json
+     python3 desde_guiones.py --probar   -> muestra planos y números de cada video
 
-Pantalla: gancho → una tarjeta por golpe (con los números resaltados y "2/4") →
-remate con el dato de la portada como sello → cierre.
+Planos (mismo patrón en todos los videos, con variedad):
+  B = primer plano (gancho y remate)      A = plano medio con tarjeta
+  C = pantalla de datos + Doña Marga en círculo      D = plano lateral
+Gancho siempre en B, promesa en A, los pasos rotan C/D/A (arranca distinto según el
+video), remate en B con el sello del dato, cierre en A.
 """
 import importlib.util
 import json
@@ -37,7 +40,6 @@ def _menor_mil(n):
 
 
 def _apocope(s):
-    # "uno" delante de sustantivo o de "mil": veintiuno -> veintiún, y uno -> y un
     return re.sub(r"veintiuno$", "veintiún", re.sub(r"\buno$", "un", s))
 
 
@@ -62,19 +64,21 @@ def _num(txt):
     return int(txt.replace(".", ""))
 
 
-def _dec(ent, dec, apocope=False):
-    s = palabras(_num(ent), apocope)
+def _dec(ent, dec):
+    s = palabras(_num(ent))
     if dec:
         s += " coma " + (" ".join(palabras(int(c)) for c in dec) if dec.startswith("0") else palabras(int(dec)))
     return s
 
 
+EMOJI = r"[\U0001F000-\U0001FFFF☀-➿️]"
+
+
 def hablar(t):
-    t = re.sub(r"[\U0001F000-\U0001FFFF☀-➿️]", "", t)
+    t = re.sub(EMOJI, "", t)
     t = t.replace("[fecha]", "tal fecha").replace("$X", "tanto").replace("[", "").replace("]", "")
     t = re.sub(r"[x×] ?3\b", "por tres", t)
     t = t.replace("c/u", "cada uno").replace(" vs ", " contra ")
-    # $ con decimales: $1,20 -> un peso con veinte
     t = re.sub(r"\$ ?(\d+),(\d+)", lambda m: ("un peso" if m[1] == "1" else palabras(_num(m[1]), True) + " pesos")
                + " con " + palabras(int(m[2])), t)
     t = re.sub(r"\$ ?(\d{1,3}(?:\.\d{3})+|\d+)", lambda m: palabras(_num(m[1]), True) + " pesos", t)
@@ -86,30 +90,83 @@ def hablar(t):
     t = (t.replace("÷", " dividido ").replace("×", " por ").replace(" = ", ", igual a ").replace("=", " igual a ")
          .replace("−", " menos ").replace(" + ", " más ").replace("→", " a ").replace("(", ", ").replace(")", ","))
     t = t.replace("“", "").replace("”", "").replace("…", "...")
+    t = re.sub(r"\s+,", ",", t)
     t = re.sub(r",\s*([,.:;])", r"\1", t)
     return re.sub(r"\s+", " ", t).strip()
 
 
-# ---------------------------------------------------------------- armado
 def limpio(t):
-    return re.sub(r"\s+", " ", re.sub(r"[\U0001F000-\U0001FFFF☀-➿️]", "", t)).strip()
+    return re.sub(r"\s+", " ", re.sub(EMOJI, "", t)).strip()
 
 
+# ---------------------------------------------------------------- qué números mostrar
+VAL = r"\$ ?\d{1,3}(?:\.\d{3})*(?:,\d+)?|\d+(?:,\d+)? ?%"
+STOP = r"(y|pero|e|con|es|son|el|la|los|las|un|una|de|a|en|por|sobre)"
+
+
+def tarjeta(texto):
+    """Acción de pantalla para un golpe: 'calc' (una cuenta), 'rows' (montos) o None."""
+    t = limpio(texto).replace("“", "").replace("”", "")
+    for f in re.split(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚ¿¡])", t):
+        if "=" in f or "÷" in f:
+            label, expr = ("", f)
+            if ":" in f.split("=")[0]:
+                label, expr = f.split(":", 1)
+            expr = expr.strip().rstrip(".")
+            if len(expr) <= 48:
+                return {"tipo": "calc", "label": label.strip(), "linea": expr}
+    rows = []
+    for f in re.split(r"(?<=[.!?;])\s+(?=[A-ZÁÉÍÓÚ¿¡])", t):
+        fin = 0
+        for m in re.finditer(VAL, f):
+            antes = re.split(r"[:;,(]|\.(?!\d)", f[fin:m.start()])[-1].strip()
+            if not antes and ":" in f[:m.start()]:
+                cand = f[:m.start()].rsplit(":", 1)[0]
+                if not re.search(r"\d", cand):
+                    antes = re.split(r"[;,(]|\.(?!\d)", cand)[-1].strip()
+            antes = re.sub(r"^(?:%s\s+)+" % STOP, "", antes, flags=re.I)
+            antes = re.sub(r"(?:\s+%s)+$" % STOP, "", antes, flags=re.I)
+            label = " ".join(antes.split()[-5:]).strip(" .:")
+            rows.append({"label": label[:1].upper() + label[1:], "valor": re.sub(r"\$ ?", "$ ", m.group(0))})
+            fin = m.end()
+    rows = rows[:4]
+    return {"tipo": "rows", "rows": rows} if rows else None
+
+
+# ---------------------------------------------------------------- armado
 def guion(i, v):
     n = len(v["beats"])
-    S = [dict(say=hablar(v["hook"]), sub=limpio(v["hook"]), ceja=True,
+    ciclo = ["C", "D", "A"]
+    ciclo = ciclo[i % 3:] + ciclo[:i % 3]
+    S = [dict(say=hablar(v["hook"]), sub=limpio(v["hook"]), ceja=True, plano="B",
               accion={"tipo": "hook", "texto": v["hook_txt"]}),
-         dict(say=hablar(v["promesa"]), sub=limpio(v["promesa"]),
-              accion={"tipo": "pizarra", "k": "QUEDATE HASTA EL FINAL", "texto": limpio(v["promesa"])})]
-    for k, b in enumerate(v["beats"], 1):
-        S.append(dict(say=hablar(b), sub=limpio(b),
-                      accion={"tipo": "pizarra", "k": f"{k}/{n}", "texto": b}))
-    pay = [{"tipo": "pizarra", "k": "LA RESPUESTA", "texto": v["payoff"], "fuerte": True}]
-    if v.get("dato"):
-        pay.append({"tipo": "big", "label": v["dato"][0], "valor": v["dato"][1], "top": 780})
-    S.append(dict(say=hablar(v["payoff"]), sub=limpio(v["payoff"]), ceja=True, accion=pay))
+         dict(say=hablar(v["promesa"]), sub=limpio(v["promesa"]), plano="A",
+              accion={"tipo": "promesa", "texto": "Quedate hasta el final"})]
+    prev, k = "A", 0
+    for j, b in enumerate(v["beats"], 1):
+        card = tarjeta(b)
+        if card:
+            plano = ciclo[k % 3]
+            if plano == prev:
+                k += 1
+                plano = ciclo[k % 3]
+            k += 1
+        else:
+            plano = "D" if prev != "D" else "B"
+        acc = [{"tipo": "paso", "k": f"{j}/{n}"}] + ([card] if card else [])
+        S.append(dict(say=hablar(b), sub=limpio(b), plano=plano, accion=acc))
+        prev = plano
+    pay = []
+    dato = v.get("dato")
+    if not dato:
+        m = re.search(VAL, v["payoff"])
+        if m:
+            dato = ("EN ESTE EJEMPLO", re.sub(r"\$ ?", "$ ", m.group(0)))
+    if dato:
+        pay.append({"tipo": "big", "label": dato[0], "valor": dato[1]})
+    S.append(dict(say=hablar(v["payoff"]), sub=limpio(v["payoff"]), ceja=True, plano="B", accion=pay))
     venta = v["slot"] == 5
-    S.append(dict(say=hablar(v["cta"]), sub=limpio(v["cta"]),
+    S.append(dict(say=hablar(v["cta"]), sub=limpio(v["cta"]), plano="A",
                   accion={"tipo": "cta", "texto": "@larecetadelprecio",
                           "boton": "Link en mi perfil" if venta else "Seguime · @larecetadelprecio",
                           "ref": v.get("ref") if venta else None}))
@@ -118,14 +175,13 @@ def guion(i, v):
 
 if __name__ == "__main__":
     if "--probar" in sys.argv:
-        for v in g.G:
-            for t in [v["hook"], v["promesa"], *v["beats"], v["payoff"]]:
-                if re.search(r"\d|\$|%|÷|×", t):
-                    print("·", hablar(t))
+        for i, v in enumerate(g.G, 1):
+            print(f"\n== V{i:02d}")
+            for s in guion(i, v)["segmentos"]:
+                acc = s["accion"] if isinstance(s["accion"], list) else [s["accion"]]
+                print(f"  [{s['plano']}]", [a for a in acc if a["tipo"] in ("calc", "rows", "big")])
         sys.exit()
     for i, v in enumerate(g.G, 1):
-        if i == 1:
-            continue
         with open(os.path.join(AQUI, f"v{i:02d}.json"), "w") as fh:
             json.dump(guion(i, v), fh, ensure_ascii=False, indent=1)
-    print("   v02.json … v35.json")
+    print("   v01.json … v35.json")

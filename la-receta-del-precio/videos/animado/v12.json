@@ -6,6 +6,7 @@
    "say": "La luz y el gas no son gratis. Calculemos cuánto le toca pagar a cada torta.",
    "sub": "La luz y el gas no son gratis. Calculemos cuánto le toca pagar a cada torta.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "El gasto que nadie suma"
@@ -14,61 +15,76 @@
   {
    "say": "No necesitás medidores: con tus boletas y una división lo tenés.",
    "sub": "No necesitás medidores: con tus boletas y una división lo tenés.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "No necesitás medidores: con tus boletas y una división lo tenés."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Tomá la boleta de un mes normal. Ejemplo: cuarenta mil pesos entre luz y gas.",
    "sub": "Tomá la boleta de un mes normal. Ejemplo: $40.000 entre luz y gas.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "Tomá la boleta de un mes normal. Ejemplo: $40.000 entre luz y gas."
-   }
+   "plano": "C",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Ejemplo",
+       "valor": "$ 40.000"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "Anotá qué parte es de la pastelería. Ejemplo: sesenta por ciento, igual a veinticuatro mil pesos.",
    "sub": "Anotá qué parte es de la pastelería. Ejemplo: 60% = $24.000.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "Anotá qué parte es de la pastelería. Ejemplo: 60% = $24.000."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    },
+    {
+     "tipo": "calc",
+     "label": "Ejemplo",
+     "linea": "60% = $24.000"
+    }
+   ]
   },
   {
    "say": "Dividilo por las tortas que hiciste ese mes: treinta.",
    "sub": "Dividilo por las tortas que hiciste ese mes: 30.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "Dividilo por las tortas que hiciste ese mes: 30."
-   }
+   "plano": "B",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    }
+   ]
   },
   {
    "say": "veinticuatro mil pesos dividido treinta, igual a ochocientos pesos por torta. Va en cada precio, aunque no lo veas.",
    "sub": "$24.000 ÷ 30 = $800 por torta. Va en cada precio, aunque no lo veas.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "$24.000 ÷ 30 = $800 por torta. Va en cada precio, aunque no lo veas.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "POR TORTA · EJEMPLO",
-     "valor": "$ 800",
-     "top": 780
+     "valor": "$ 800"
     }
    ]
   },
   {
    "say": "Guardalo para tu próxima boleta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "Guardalo para tu próxima boleta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",

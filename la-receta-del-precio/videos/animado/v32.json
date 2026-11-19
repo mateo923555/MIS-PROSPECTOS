@@ -6,6 +6,7 @@
    "say": "Tu batidora y tu horno se gastan. Si no están en el precio, el reemplazo sale de tu bolsillo.",
    "sub": "Tu batidora y tu horno se gastan. Si no están en el precio, el reemplazo sale de tu bolsillo.",
    "ceja": true,
+   "plano": "B",
    "accion": {
     "tipo": "hook",
     "texto": "¿La batidora nueva la pagás vos?"
@@ -14,61 +15,81 @@
   {
    "say": "Te enseño a calcular cuánto sumar por pedido.",
    "sub": "Te enseño a calcular cuánto sumar por pedido.",
+   "plano": "A",
    "accion": {
-    "tipo": "pizarra",
-    "k": "QUEDATE HASTA EL FINAL",
-    "texto": "Te enseño a calcular cuánto sumar por pedido."
+    "tipo": "promesa",
+    "texto": "Quedate hasta el final"
    }
   },
   {
    "say": "Ejemplo: batidora de trescientos mil pesos que te dura unos dos años.",
    "sub": "Ejemplo: batidora de $300.000 que te dura unos 2 años.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "1/3",
-    "texto": "Ejemplo: batidora de $300.000 que te dura unos 2 años."
-   }
+   "plano": "C",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "1/3"
+    },
+    {
+     "tipo": "rows",
+     "rows": [
+      {
+       "label": "Batidora",
+       "valor": "$ 300.000"
+      }
+     ]
+    }
+   ]
   },
   {
    "say": "trescientos mil pesos dividido veinticuatro meses, igual a doce mil quinientos pesos por mes.",
    "sub": "$300.000 ÷ 24 meses = $12.500 por mes.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "2/3",
-    "texto": "$300.000 ÷ 24 meses = $12.500 por mes."
-   }
+   "plano": "D",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "2/3"
+    },
+    {
+     "tipo": "calc",
+     "label": "",
+     "linea": "$300.000 ÷ 24 meses = $12.500 por mes"
+    }
+   ]
   },
   {
    "say": "Con cuarenta pedidos por mes: doce mil quinientos pesos dividido cuarenta.",
    "sub": "Con 40 pedidos por mes: $12.500 ÷ 40.",
-   "accion": {
-    "tipo": "pizarra",
-    "k": "3/3",
-    "texto": "Con 40 pedidos por mes: $12.500 ÷ 40."
-   }
+   "plano": "A",
+   "accion": [
+    {
+     "tipo": "paso",
+     "k": "3/3"
+    },
+    {
+     "tipo": "calc",
+     "label": "Con 40 pedidos por mes",
+     "linea": "$12.500 ÷ 40"
+    }
+   ]
   },
   {
    "say": "trescientos doce pesos por pedido. Sumalo a tus gastos del mes: cuando se rompa, la nueva ya está en parte paga.",
    "sub": "$312 por pedido. Sumalo a tus gastos del mes: cuando se rompa, la nueva ya está en parte paga.",
    "ceja": true,
+   "plano": "B",
    "accion": [
-    {
-     "tipo": "pizarra",
-     "k": "LA RESPUESTA",
-     "texto": "$312 por pedido. Sumalo a tus gastos del mes: cuando se rompa, la nueva ya está en parte paga.",
-     "fuerte": true
-    },
     {
      "tipo": "big",
      "label": "POR PEDIDO · EJEMPLO",
-     "valor": "$ 312",
-     "top": 780
+     "valor": "$ 312"
     }
    ]
   },
   {
    "say": "Guardalo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
    "sub": "Guardalo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
