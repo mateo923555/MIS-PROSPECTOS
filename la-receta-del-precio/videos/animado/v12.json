@@ -3,20 +3,20 @@
  "titulo": "Cuánto pone cada torta para la luz y el gas",
  "segmentos": [
   {
-   "say": "Tu horno te pasa factura... en cada torta.",
-   "sub": "Tu horno te pasa factura... en cada torta.",
+   "say": "Tu horno te cobra en cada torta... y no lo sumás.",
+   "sub": "Tu horno te cobra en cada torta... y no lo sumás.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "El gasto que *nadie suma*"
+    "texto": "Tu horno *te cobra*"
    }
   },
   {
-   "say": "No necesitás medidores: con tus boletas y una división lo tenés.",
-   "sub": "No necesitás medidores: con tus boletas y una división lo tenés.",
+   "say": "Al final te doy la cuenta exacta.",
+   "sub": "Al final te doy la cuenta exacta.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -71,11 +71,12 @@
    ]
   },
   {
-   "say": "veinticuatro mil pesos dividido treinta, igual a ochocientos pesos por torta. Va en cada precio, aunque no lo veas.",
-   "sub": "$24.000 ÷ 30 = $800 por torta. Va en cada precio, aunque no lo veas.",
+   "say": "veinticuatro mil pesos dividido treinta, igual a ochocientos pesos por torta.",
+   "sub": "$24.000 ÷ 30 = $800 por torta.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -85,14 +86,14 @@
    ]
   },
   {
-   "say": "Guardalo para tu próxima boleta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Guardalo para tu próxima boleta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+   "sub": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

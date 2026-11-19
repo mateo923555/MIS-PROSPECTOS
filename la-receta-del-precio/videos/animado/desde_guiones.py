@@ -134,16 +134,30 @@ def tarjeta(texto):
 
 
 # ---------------------------------------------------------------- armado
+PROMESAS = ["Quedate: el número del final duele.", "Mirá el número del final.", "Al final te doy la cuenta exacta.",
+            "Esperá el final.", "El final te va a sorprender."]
+CTAS = ["El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+        "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
+        "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil."]
+
+
+def primera(t):
+    return re.split(r"(?<=[.!?])\s+", t.strip())[0]
+
+
 def guion(i, v):
-    n = len(v["beats"])
+    beats = v["beats"][:3]
+    n = len(beats)
+    prom = PROMESAS[i % len(PROMESAS)]
+    cta = CTAS[i % len(CTAS)]
     ciclo = ["C", "D", "A"]
     ciclo = ciclo[i % 3:] + ciclo[:i % 3]
     S = [dict(say=hablar(v["hook"]), sub=limpio(v["hook"]), ceja=True, plano="B", rapidez=1.2, gancho=True,
               accion={"tipo": "hook", "texto": v["hook_txt"]}),
-         dict(say=hablar(v["promesa"]), sub=limpio(v["promesa"]), plano="A",
+         dict(say=hablar(prom), sub=prom, plano="A",
               accion={"tipo": "promesa", "texto": "Quedate hasta el final"})]
     prev, k = "A", 0
-    for j, b in enumerate(v["beats"], 1):
+    for j, b in enumerate(beats, 1):
         card = tarjeta(b)
         if card:
             plano = ciclo[k % 3]
@@ -164,12 +178,11 @@ def guion(i, v):
             dato = ("EN ESTE EJEMPLO", re.sub(r"\$ ?", "$ ", m.group(0)))
     if dato:
         pay.append({"tipo": "big", "label": dato[0], "valor": dato[1]})
-    S.append(dict(say=hablar(v["payoff"]), sub=limpio(v["payoff"]), ceja=True, plano="B", rapidez=1.3, accion=pay))
-    venta = v["slot"] == 5
-    S.append(dict(say=hablar(v["cta"]), sub=limpio(v["cta"]), plano="A",
-                  accion={"tipo": "cta", "texto": "@larecetadelprecio",
-                          "boton": "Link en mi perfil" if venta else "Seguime · @larecetadelprecio",
-                          "ref": v.get("ref") if venta else None}))
+    pf = primera(v["payoff"])
+    S.append(dict(say=hablar(pf), sub=limpio(pf), ceja=True, plano="B", rapidez=1.3, pausa=.6, accion=pay))
+    S.append(dict(say=hablar(cta), sub=cta, plano="A",
+                  accion={"tipo": "cta", "texto": "@larecetadelprecio", "boton": "Link en mi perfil",
+                          "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"}))
     return dict(id=f"V{i:02d}", titulo=v["portada"].replace("*", "").replace("\n", " "), segmentos=S)
 
 

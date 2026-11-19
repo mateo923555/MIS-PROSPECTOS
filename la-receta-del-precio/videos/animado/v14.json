@@ -3,8 +3,8 @@
  "titulo": "“¿Me lo dejás más barato?”",
  "segmentos": [
   {
-   "say": "Te piden descuento. No bajes el precio todavía.",
-   "sub": "Te piden descuento. No bajes el precio todavía.",
+   "say": "Te piden descuento. No bajes el precio. Hacé esto.",
+   "sub": "Te piden descuento. No bajes el precio. Hacé esto.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "Te muestro cómo responder sin regalar tu trabajo ni perder la buena onda.",
-   "sub": "Te muestro cómo responder sin regalar tu trabajo ni perder la buena onda.",
+   "say": "El final te va a sorprender.",
+   "sub": "El final te va a sorprender.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -83,11 +83,12 @@
    ]
   },
   {
-   "say": "Se recalcula: veinticinco mil trescientos diez pesos, con tu ganancia intacta. No es un descuento: es otra versión, y la clienta decide.",
-   "sub": "Se recalcula: $25.310, con tu ganancia intacta. No es un descuento: es otra versión, y la clienta decide.",
+   "say": "Se recalcula: veinticinco mil trescientos diez pesos, con tu ganancia intacta.",
+   "sub": "Se recalcula: $25.310, con tu ganancia intacta.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -97,14 +98,14 @@
    ]
   },
   {
-   "say": "Mandáselo a una amiga que siempre dice que sí Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Mandáselo a una amiga que siempre dice que sí Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
+   "sub": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

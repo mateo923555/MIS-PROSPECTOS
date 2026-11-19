@@ -3,20 +3,20 @@
  "titulo": "“Gano poquito pero vendo” no alcanza",
  "segmentos": [
   {
-   "say": "Gano poquito, pero vendo. Hacé esta cuenta.",
-   "sub": "“Gano poquito, pero vendo.” Hacé esta cuenta.",
+   "say": "Gano poquito pero vendo... seis tortas sin ganar nada.",
+   "sub": "Gano poquito pero vendo... seis tortas sin ganar nada.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "“Gano poquito *pero vendo*”"
+    "texto": "*6 tortas* sin ganar nada"
    }
   },
   {
-   "say": "Al final vas a saber cuál es tu número mínimo del mes.",
-   "sub": "Al final vas a saber cuál es tu número mínimo del mes.",
+   "say": "Esperá el final.",
+   "sub": "Esperá el final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -80,11 +80,12 @@
    ]
   },
   {
-   "say": "En este ejemplo, las primeras seis tortas del mes solo cubren gastos. Recién la séptima deja ganancia.",
-   "sub": "En este ejemplo, las primeras 6 tortas del mes solo cubren gastos. Recién la séptima deja ganancia.",
+   "say": "En este ejemplo, las primeras seis tortas del mes solo cubren gastos.",
+   "sub": "En este ejemplo, las primeras 6 tortas del mes solo cubren gastos.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -94,14 +95,14 @@
    ]
   },
   {
-   "say": "¿Sabías tu número? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "¿Sabías tu número? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+   "sub": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

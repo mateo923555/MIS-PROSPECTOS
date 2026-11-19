@@ -44,6 +44,14 @@ svg.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
 #cta .logo{width:220px;height:220px;margin:0 auto 24px;border-radius:50%;background:var(--cacao)}
 #cta .n{font:94px/0.95 'T'}
 #cta .n em{font:italic 94px 'A';color:var(--margen)}
+#cta .book{width:360px;height:480px;margin:0 auto 34px;perspective:1400px}
+#cta .cover{width:100%;height:100%;background:var(--cacao);color:var(--harina);border-radius:10px 22px 22px 10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transform:rotateY(-16deg) rotateX(3deg);
+  box-shadow:inset 18px 0 0 #3B2219,inset 22px 0 0 #6B3E2E,26px 34px 50px -18px rgba(36,20,15,.65)}
+#cta .kk{font:26px 'M';letter-spacing:8px;background:var(--margen);color:var(--cacao);padding:6px 16px;border-radius:6px}
+#cta .bt{font:66px/0.95 'T';text-align:center}
+#cta .bt em{font:italic 66px 'A';color:var(--margen)}
+#cta .bs{font:20px/1.5 'M';letter-spacing:2px;color:#d8c9b6;text-align:center}
 #cta .h{display:inline-block;margin-top:28px;font:44px 'M';background:var(--margen);padding:16px 36px;border-radius:99px}
 #cta .r{margin-top:20px;font:30px 'M';color:#8C7F74}
 #caps{position:absolute;left:50px;right:50px;text-align:center;font:92px/1.02 'T';color:#fff;letter-spacing:-.5px;opacity:0;
@@ -132,8 +140,12 @@ svg.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
 <div class="ov" id="paso"></div>
 <div class="ov" id="card"></div>
 <div class="ov" id="big"><div class="in"><div class="l"></div><div class="v"></div></div></div>
-<div class="ov" id="cta"><div class="logo"><svg viewBox="0 0 220 220" width="220" height="220"><g id="ctasym" transform="translate(110 110) scale(.29) translate(0 -56)" style="color:#F4EADB"><use href="#sym"/></g></svg></div>
-  <div class="n">La Receta <em>del</em> Precio</div><div class="h"></div><div class="r"></div></div>
+<div class="ov" id="cta"><div class="book"><div class="cover">
+    <div class="kk">EBOOK</div>
+    <svg viewBox="0 0 220 220" width="150" height="150"><g id="ctasym" transform="translate(110 110) scale(.29) translate(0 -56)" style="color:#F4EADB"><use href="#sym"/></g></svg>
+    <div class="bt">La Receta<br><em>del</em> Precio</div>
+    <div class="bs">+ CUADERNO DE 11 HOJAS<br>+ 2 BONOS</div></div></div>
+  <div class="h"></div><div class="r"></div></div>
 <svg class="full" id="fx" viewBox="0 0 1080 1920" style="pointer-events:none">
   <ellipse id="marker" cx="0" cy="0" rx="10" ry="10" fill="none" stroke="#FF5A1F" stroke-width="9" stroke-linecap="round" opacity="0"/>
   <g id="parts"></g>
@@ -182,7 +194,7 @@ window.load = (tl) => {
     if (g.length) s.grupos.push(g);
   });
   const cta = S.flatMap(s => s.acts).find(a => a.tipo === 'cta');
-  if (cta){ $('#cta .h').textContent = cta.boton || 'Seguime'; $('#cta .r').textContent = cta.ref ? 'En el pack · ' + cta.ref : ''; }
+  if (cta){ $('#cta .h').textContent = '↑ ' + (cta.boton || 'Link en mi perfil'); $('#cta .r').textContent = '@larecetadelprecio'; }
 };
 
 function segAt(t){
@@ -313,7 +325,8 @@ window.render = (t) => {
     const p = ts / .5;
     vis(E('cta'), clamp(p * 2), 0, .8 + .2 * back(p));
     E('ctasym').setAttribute('transform', `translate(110 110) rotate(${(1 - easeOut(p)) * -180}) scale(.29) translate(0 -56)`);
-    $('#cta .h').style.transform = `scale(${1 + .04 * Math.sin(ts * 7)})`;
+    $('#cta .h').style.transform = `scale(${1 + .05 * Math.sin(ts * 8)}) translateY(${-Math.abs(Math.sin(ts * 5)) * 10}px)`;
+    $('#cta .cover').style.transform = `rotateY(${-16 + 10 * Math.sin(ts * 1.6)}deg) rotateX(3deg)`;
   }
 
   // subtítulos palabra por palabra

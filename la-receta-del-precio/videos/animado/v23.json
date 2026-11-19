@@ -3,8 +3,8 @@
  "titulo": "“Ya le dije un precio, no lo puedo cambiar”",
  "segmentos": [
   {
-   "say": "Le pasaste un precio por WhatsApp... ¿y ahora?",
-   "sub": "Le pasaste un precio por WhatsApp... ¿y ahora?",
+   "say": "Le pasaste un precio por WhatsApp. ¿Y ahora?",
+   "sub": "Le pasaste un precio por WhatsApp. ¿Y ahora?",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "Te explico la diferencia entre tres momentos que casi nadie separa.",
-   "sub": "Te explico la diferencia entre tres momentos que casi nadie separa.",
+   "say": "Esperá el final.",
+   "sub": "Esperá el final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -57,22 +57,23 @@
    ]
   },
   {
-   "say": "Nombrá el momento en cada mensaje: estimación, presupuesto, pedido acordado. Te ahorra malentendidos.",
-   "sub": "Nombrá el momento en cada mensaje: “estimación”, “presupuesto”, “pedido acordado”. Te ahorra malentendidos.",
+   "say": "Nombrá el momento en cada mensaje: estimación, presupuesto, pedido acordado.",
+   "sub": "Nombrá el momento en cada mensaje: “estimación”, “presupuesto”, “pedido acordado”.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": []
   },
   {
-   "say": "¿Te pasó? Contame. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "¿Te pasó? Contame. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
+   "sub": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

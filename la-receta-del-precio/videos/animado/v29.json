@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "Te dejo la estructura para copiar en WhatsApp.",
-   "sub": "Te dejo la estructura para copiar en WhatsApp.",
+   "say": "El final te va a sorprender.",
+   "sub": "El final te va a sorprender.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -30,7 +30,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "1/4"
+     "k": "1/3"
     }
    ]
   },
@@ -41,7 +41,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "2/4"
+     "k": "2/3"
     },
     {
      "tipo": "rows",
@@ -61,38 +61,28 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "3/4"
+     "k": "3/3"
     }
    ]
   },
   {
-   "say": "Vigencia: vale hasta el tal fecha. Para confirmar, respondé este mensaje.",
-   "sub": "Vigencia: vale hasta el [fecha]. Para confirmar, respondé este mensaje.",
-   "plano": "B",
-   "accion": [
-    {
-     "tipo": "paso",
-     "k": "4/4"
-    }
-   ]
-  },
-  {
-   "say": "Qué, cuánto, qué incluye y hasta cuándo. Sin justificarte y sin ¿te parece?.",
-   "sub": "Qué, cuánto, qué incluye y hasta cuándo. Sin justificarte y sin “¿te parece?”.",
+   "say": "Qué, cuánto, qué incluye y hasta cuándo.",
+   "sub": "Qué, cuánto, qué incluye y hasta cuándo.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": []
   },
   {
-   "say": "Guardalo para tu próximo presupuesto. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Guardalo para tu próximo presupuesto. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
+   "sub": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

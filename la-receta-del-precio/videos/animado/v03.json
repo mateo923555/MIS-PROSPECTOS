@@ -3,20 +3,20 @@
  "titulo": "“Si subo el precio no me compran”",
  "segmentos": [
   {
-   "say": "Subir el precio no te deja sin clientas. Mirá la cuenta.",
-   "sub": "Subir el precio no te deja sin clientas. Mirá la cuenta.",
+   "say": "¿Perder clientas... y ganar más? Mirá la cuenta.",
+   "sub": "¿Perder clientas... y ganar más? Mirá la cuenta.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "“Si subo, *no me compran*”"
+    "texto": "Perdés clientas. *¿Ganás más?*"
    }
   },
   {
-   "say": "Al final vas a ver por qué vender menos tortas no siempre significa ganar menos.",
-   "sub": "Al final vas a ver por qué vender menos tortas no siempre significa ganar menos.",
+   "say": "Esperá el final.",
+   "sub": "Esperá el final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -84,11 +84,12 @@
    ]
   },
   {
-   "say": "Con tres tortas menos, veintiséis mil pesos más. No sabemos cuántas clientas vas a tener vos: lo que sí sabés es cuánto te deja cada una.",
-   "sub": "Con 3 tortas menos, $26.000 más. No sabemos cuántas clientas vas a tener vos: lo que sí sabés es cuánto te deja cada una.",
+   "say": "Con tres tortas menos, veintiséis mil pesos más.",
+   "sub": "Con 3 tortas menos, $26.000 más.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -98,14 +99,14 @@
    ]
   },
   {
-   "say": "¿Lo pensaste así alguna vez? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "¿Lo pensaste así alguna vez? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+   "sub": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

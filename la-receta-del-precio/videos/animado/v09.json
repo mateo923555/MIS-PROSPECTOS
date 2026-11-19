@@ -3,8 +3,8 @@
  "titulo": "40 tortas en diciembre y $750 la hora",
  "segmentos": [
   {
-   "say": "Cuarenta tortas en diciembre... y setecientos cincuenta pesos la hora.",
-   "sub": "Cuarenta tortas en diciembre... y setecientos cincuenta pesos la hora.",
+   "say": "Cuarenta tortas en diciembre... a setecientos cincuenta pesos la hora.",
+   "sub": "Cuarenta tortas en diciembre... a setecientos cincuenta pesos la hora.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "El resultado explica todo.",
-   "sub": "El resultado explica todo.",
+   "say": "El final te va a sorprender.",
+   "sub": "El final te va a sorprender.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -88,11 +88,12 @@
    ]
   },
   {
-   "say": "ciento veinte mil pesos dividido ciento sesenta, igual a setecientos cincuenta pesos la hora. Facturar mucho no es ganar mucho: lo que cuenta es cuánto te deja cada torta.",
-   "sub": "$120.000 ÷ 160 = $750 la hora. Facturar mucho no es ganar mucho: lo que cuenta es cuánto te deja cada torta.",
+   "say": "ciento veinte mil pesos dividido ciento sesenta, igual a setecientos cincuenta pesos la hora.",
+   "sub": "$120.000 ÷ 160 = $750 la hora.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -102,14 +103,14 @@
    ]
   },
   {
-   "say": "Guardalo para cuando armes tu lista de fiestas. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Guardalo para cuando armes tu lista de fiestas. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+   "sub": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

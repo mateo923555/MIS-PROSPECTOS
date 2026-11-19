@@ -258,7 +258,8 @@ def main():
             a = sintetizar_openai(s["say"], rap, tipo)
             voz.append(a); t += len(a) / SR
             segs.append(dict(s, ini=round(ini, 3), fin=round(t, 3)))
-            voz.append(np.zeros(int(PAUSA * SR))); t += PAUSA
+            pz = PAUSA + s.get("pausa", 0)
+            voz.append(np.zeros(int(pz * SR))); t += pz
             continue
         partes = [p.strip() for p in re.split(r"\.\.\.|…", s["say"]) if p.strip()]
         for k, p in enumerate(partes):

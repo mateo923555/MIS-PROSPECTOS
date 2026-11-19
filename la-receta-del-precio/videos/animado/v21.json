@@ -3,20 +3,20 @@
  "titulo": "La comisión que se come tu ganancia",
  "segmentos": [
   {
-   "say": "Te pagan con link... y te llega menos de lo que cobraste.",
-   "sub": "Te pagan con link... y te llega menos de lo que cobraste.",
+   "say": "Cobrás con link... y te llega menos plata.",
+   "sub": "Cobrás con link... y te llega menos plata.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "La comisión que *te come*"
+    "texto": "Te llega *menos plata*"
    }
   },
   {
-   "say": "Te muestro la cuenta correcta. Es una división, no una suma.",
-   "sub": "Te muestro la cuenta correcta. Es una división, no una suma.",
+   "say": "Mirá el número del final.",
+   "sub": "Mirá el número del final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -96,11 +96,12 @@
    ]
   },
   {
-   "say": "Cobrás treinta y un mil novecientos quince pesos y te llegan tus treinta mil pesos. El costo de cobro se calcula una sola vez, al final.",
-   "sub": "Cobrás $31.915 y te llegan tus $30.000. El costo de cobro se calcula una sola vez, al final.",
+   "say": "Cobrás treinta y un mil novecientos quince pesos y te llegan tus treinta mil pesos.",
+   "sub": "Cobrás $31.915 y te llegan tus $30.000.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -110,14 +111,14 @@
    ]
   },
   {
-   "say": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+   "sub": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

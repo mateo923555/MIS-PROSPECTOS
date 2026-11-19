@@ -3,20 +3,20 @@
  "titulo": "¿Por kilo o por porción?",
  "segmentos": [
   {
-   "say": "Cobrar por kilo esconde tu trabajo.",
-   "sub": "Cobrar por kilo esconde tu trabajo.",
+   "say": "Si cobrás por kilo, estás escondiendo tu trabajo.",
+   "sub": "Si cobrás por kilo, estás escondiendo tu trabajo.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "¿Cobrás *por KILO*?"
+    "texto": "¿Por kilo? *Cuidado.*"
    }
   },
   {
-   "say": "Te digo qué mirar para que la decoración no te salga gratis.",
-   "sub": "Te digo qué mirar para que la decoración no te salga gratis.",
+   "say": "Esperá el final.",
+   "sub": "Esperá el final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -70,11 +70,12 @@
    ]
   },
   {
-   "say": "Con la ganancia que elijas, sale por porción. Ejemplo: dos mil quinientos pesos la porción, cincuenta mil pesos la torta. La decoración se calcula aparte.",
-   "sub": "Con la ganancia que elijas, sale por porción. Ejemplo: $2.500 la porción, $50.000 la torta. La decoración se calcula aparte.",
+   "say": "Con la ganancia que elijas, sale por porción.",
+   "sub": "Con la ganancia que elijas, sale por porción.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -84,14 +85,14 @@
    ]
   },
   {
-   "say": "¿Kilo o porción? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "¿Kilo o porción? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
+   "sub": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

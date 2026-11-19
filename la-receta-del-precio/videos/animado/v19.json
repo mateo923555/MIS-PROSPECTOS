@@ -3,8 +3,8 @@
  "titulo": "“¿Cuánto sale una torta de 1 kilo?”",
  "segmentos": [
   {
-   "say": "¿Cuánto cobro una torta de un kilo? La respuesta no es un número.",
-   "sub": "¿Cuánto cobro una torta de un kilo? La respuesta no es un número.",
+   "say": "Nadie puede decirte cuánto cobrar una torta de un kilo.",
+   "sub": "Nadie puede decirte cuánto cobrar una torta de un kilo.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "Te doy el método y las preguntas que tenés que hacer antes de cotizar.",
-   "sub": "Te doy el método y las preguntas que tenés que hacer antes de cotizar.",
+   "say": "El final te va a sorprender.",
+   "sub": "El final te va a sorprender.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -62,17 +62,18 @@
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": []
   },
   {
-   "say": "¿Qué producto calculamos en el próximo video? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "¿Qué producto calculamos en el próximo video? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
+   "sub": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

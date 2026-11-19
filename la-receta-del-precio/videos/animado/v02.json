@@ -3,20 +3,20 @@
  "titulo": "Cuánto te cuesta 1 gramo de harina",
  "segmentos": [
   {
-   "say": "¿Sabés cuánto te cuesta un gramo de harina? Casi nadie lo sabe.",
-   "sub": "¿Sabés cuánto te cuesta un gramo de harina? Casi nadie lo sabe.",
+   "say": "El error más caro empieza en un gramo de harina.",
+   "sub": "El error más caro empieza en un gramo de harina.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "¿Cuánto vale *1 GRAMO*?"
+    "texto": "El error está en *1 gramo*"
    }
   },
   {
-   "say": "En treinta segundos, la cuenta que sirve para cualquier ingrediente.",
-   "sub": "En 30 segundos, la cuenta que sirve para cualquier ingrediente.",
+   "say": "Al final te doy la cuenta exacta.",
+   "sub": "Al final te doy la cuenta exacta.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -30,7 +30,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "1/4"
+     "k": "1/3"
     }
    ]
   },
@@ -41,7 +41,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "2/4"
+     "k": "2/3"
     },
     {
      "tipo": "calc",
@@ -57,7 +57,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "3/4"
+     "k": "3/3"
     },
     {
      "tipo": "calc",
@@ -67,27 +67,12 @@
    ]
   },
   {
-   "say": "Huevos: seis mil pesos dividido treinta por tres, igual a seiscientos pesos. Siempre en la misma unidad: gramos con gramos, unidades con unidades.",
-   "sub": "Huevos: $6.000 ÷ 30 × 3 = $600. Siempre en la misma unidad: gramos con gramos, unidades con unidades.",
-   "plano": "D",
-   "accion": [
-    {
-     "tipo": "paso",
-     "k": "4/4"
-    },
-    {
-     "tipo": "calc",
-     "label": "Huevos",
-     "linea": "$6.000 ÷ 30 × 3 = $600"
-    }
-   ]
-  },
-  {
    "say": "Lo hacés una vez por receta, anotás la fecha de los precios, y tenés el costo exacto de tus ingredientes.",
    "sub": "Lo hacés una vez por receta, anotás la fecha de los precios, y tenés el costo exacto de tus ingredientes.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -97,14 +82,14 @@
    ]
   },
   {
-   "say": "Guardalo y probalo con tu receta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Guardalo y probalo con tu receta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
+   "sub": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

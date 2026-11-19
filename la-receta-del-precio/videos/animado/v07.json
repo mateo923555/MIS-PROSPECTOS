@@ -3,20 +3,20 @@
  "titulo": "¿Cuánto vale tu hora de trabajo?",
  "segmentos": [
   {
-   "say": "Tu hora tiene precio. Y casi seguro la estás regalando.",
-   "sub": "Tu hora tiene precio. Y casi seguro la estás regalando.",
+   "say": "Estás regalando tu hora. Y te lo demuestro.",
+   "sub": "Estás regalando tu hora. Y te lo demuestro.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "¿Cuánto vale *TU hora*?"
+    "texto": "Estás *regalando* tu hora"
    }
   },
   {
-   "say": "En tres pasos tenés el número, y un truco que casi nadie usa para medir el tiempo.",
-   "sub": "En tres pasos tenés el número, y un truco que casi nadie usa para medir el tiempo.",
+   "say": "Al final te doy la cuenta exacta.",
+   "sub": "Al final te doy la cuenta exacta.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -30,7 +30,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "1/4"
+     "k": "1/3"
     },
     {
      "tipo": "rows",
@@ -50,7 +50,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "2/4"
+     "k": "2/3"
     }
    ]
   },
@@ -61,7 +61,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "3/4"
+     "k": "3/3"
     },
     {
      "tipo": "calc",
@@ -71,22 +71,12 @@
    ]
   },
   {
-   "say": "El truco: anotá cuándo empezás y terminás cada tarea, y separá el tiempo de trabajo del de espera, horno, heladera.",
-   "sub": "El truco: anotá cuándo empezás y terminás cada tarea, y separá el tiempo de trabajo del de espera (horno, heladera).",
-   "plano": "D",
-   "accion": [
-    {
-     "tipo": "paso",
-     "k": "4/4"
-    }
-   ]
-  },
-  {
-   "say": "Costo de tu trabajo, igual a horas de trabajo por valor de tu hora. Medido, no adivinado.",
-   "sub": "Costo de tu trabajo = horas de trabajo × valor de tu hora. Medido, no adivinado.",
+   "say": "Costo de tu trabajo, igual a horas de trabajo por valor de tu hora.",
+   "sub": "Costo de tu trabajo = horas de trabajo × valor de tu hora.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -96,14 +86,14 @@
    ]
   },
   {
-   "say": "Contame cuánto te dio. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Contame cuánto te dio. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
+   "sub": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

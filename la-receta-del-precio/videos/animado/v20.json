@@ -3,20 +3,20 @@
  "titulo": "3 preguntas sobre tu precio. ¿Las sabés?",
  "segmentos": [
   {
-   "say": "Tres preguntas. Si dudás en una, tu precio está a ojo.",
-   "sub": "Tres preguntas. Si dudás en una, tu precio está a ojo.",
+   "say": "Tres preguntas. Si dudás en una... cobrás de menos.",
+   "sub": "Tres preguntas. Si dudás en una... cobrás de menos.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "3 preguntas. *¿Las sabés?*"
+    "texto": "*3 preguntas.* ¿Las sabés?"
    }
   },
   {
-   "say": "Al final te digo dónde sale cada respuesta.",
-   "sub": "Al final te digo dónde sale cada respuesta.",
+   "say": "Quedate: el número del final duele.",
+   "sub": "Quedate: el número del final duele.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -57,22 +57,23 @@
    ]
   },
   {
-   "say": "Si dudaste, tu precio todavía está a ojo. La primera sale de la hoja uno, la segunda de la cuatro y la tercera de la diez.",
-   "sub": "Si dudaste, tu precio todavía está a ojo. La primera sale de la hoja 1, la segunda de la 4 y la tercera de la 10.",
+   "say": "Si dudaste, tu precio todavía está a ojo.",
+   "sub": "Si dudaste, tu precio todavía está a ojo.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": []
   },
   {
-   "say": "Esto, con el cuaderno de once hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
-   "sub": "Esto, con el cuaderno de 11 hojas y dos bonos, está en La Receta del Precio. Link en mi perfil.",
+   "say": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
+   "sub": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
     "boton": "Link en mi perfil",
-    "ref": "Hojas 1, 4 y 10"
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

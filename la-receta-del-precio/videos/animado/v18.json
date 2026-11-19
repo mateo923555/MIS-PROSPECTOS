@@ -3,8 +3,8 @@
  "titulo": "“Lo hago por gusto, no cobro mi tiempo”",
  "segmentos": [
   {
-   "say": "Lo hago por gusto es la frase que no te deja crecer.",
-   "sub": "“Lo hago por gusto” es la frase que no te deja crecer.",
+   "say": "Lo hago por gusto. Esa frase te frena.",
+   "sub": "“Lo hago por gusto.” Esa frase te frena.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "Te explico por qué esa frase te cierra puertas.",
-   "sub": "Te explico por qué esa frase te cierra puertas.",
+   "say": "Esperá el final.",
+   "sub": "Esperá el final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -57,22 +57,23 @@
    ]
   },
   {
-   "say": "Disfrutarlo y cobrarlo no se contradicen. Medí tu tiempo y ponele valor; después decidís qué hacer con él.",
-   "sub": "Disfrutarlo y cobrarlo no se contradicen. Medí tu tiempo y ponele valor; después decidís qué hacer con él.",
+   "say": "Disfrutarlo y cobrarlo no se contradicen.",
+   "sub": "Disfrutarlo y cobrarlo no se contradicen.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": []
   },
   {
-   "say": "¿Cobrás tu tiempo? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "¿Cobrás tu tiempo? Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+   "sub": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

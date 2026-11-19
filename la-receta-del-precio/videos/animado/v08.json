@@ -3,20 +3,20 @@
  "titulo": "Copiar el precio de otra pastelera no te sirve",
  "segmentos": [
   {
-   "say": "Mismo precio que tu competencia... la mitad de ganancia.",
-   "sub": "Mismo precio que tu competencia... la mitad de ganancia.",
+   "say": "Mismo precio que la otra pastelera... ella gana el doble.",
+   "sub": "Mismo precio que la otra pastelera... ella gana el doble.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "Mismo precio. *La mitad* de ganancia."
+    "texto": "Mismo precio. *Ella gana el doble.*"
    }
   },
   {
-   "say": "Te muestro cómo con el mismo precio ella puede ganar casi el doble.",
-   "sub": "Te muestro cómo con el mismo precio ella puede ganar casi el doble.",
+   "say": "Esperá el final.",
+   "sub": "Esperá el final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -84,11 +84,12 @@
    ]
   },
   {
-   "say": "Ella gana trece mil pesos y vos siete mil pesos. Su precio sale de sus costos. El tuyo tiene que salir de los tuyos.",
-   "sub": "Ella gana $13.000 y vos $7.000. Su precio sale de sus costos. El tuyo tiene que salir de los tuyos.",
+   "say": "Ella gana trece mil pesos y vos siete mil pesos.",
+   "sub": "Ella gana $13.000 y vos $7.000.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -98,14 +99,14 @@
    ]
   },
   {
-   "say": "¿Mirás los precios de otras? Contame. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "¿Mirás los precios de otras? Contame. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
+   "sub": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

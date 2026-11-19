@@ -3,8 +3,8 @@
  "titulo": "Precio de un postre en vasito",
  "segmentos": [
   {
-   "say": "Un vasito de postre... vale más de lo que pensás.",
-   "sub": "Un vasito de postre... vale más de lo que pensás.",
+   "say": "Antes de vender otro vasito de postre, hacé esta cuenta.",
+   "sub": "Antes de vender otro vasito de postre, hacé esta cuenta.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "Al final, cuánto sale cada uno en este ejemplo.",
-   "sub": "Al final, cuánto sale cada uno en este ejemplo.",
+   "say": "Al final te doy la cuenta exacta.",
+   "sub": "Al final te doy la cuenta exacta.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -97,6 +97,7 @@
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -106,14 +107,14 @@
    ]
   },
   {
-   "say": "Guardalo y probalo con tu receta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Guardalo y probalo con tu receta. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
+   "sub": "El método completo está en mi ebook, La Receta del Precio. El link, en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

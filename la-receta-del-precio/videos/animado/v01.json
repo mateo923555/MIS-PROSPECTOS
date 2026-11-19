@@ -3,20 +3,20 @@
  "titulo": "Multiplicar x3 los ingredientes te deja sin ganancia",
  "segmentos": [
   {
-   "say": "Multiplicar por tres los ingredientes... es trabajar gratis.",
-   "sub": "Multiplicar por tres los ingredientes... es trabajar gratis.",
+   "say": "Pastelera, si cobrás los ingredientes por tres... frená.",
+   "sub": "Pastelera, si cobrás los ingredientes por tres... frená.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.2,
    "gancho": true,
    "accion": {
     "tipo": "hook",
-    "texto": "x3 = TRABAJAR *GRATIS*"
+    "texto": "¿Cobrás *x3*? FRENÁ."
    }
   },
   {
-   "say": "Te muestro con una torta de ejemplo cuánto te queda en el bolsillo... y el número duele.",
-   "sub": "Te muestro con una torta de ejemplo cuánto te queda en el bolsillo… y el número duele.",
+   "say": "Mirá el número del final.",
+   "sub": "Mirá el número del final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -30,7 +30,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "1/4"
+     "k": "1/3"
     },
     {
      "tipo": "rows",
@@ -54,7 +54,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "2/4"
+     "k": "2/3"
     },
     {
      "tipo": "rows",
@@ -82,7 +82,7 @@
    "accion": [
     {
      "tipo": "paso",
-     "k": "3/4"
+     "k": "3/3"
     },
     {
      "tipo": "calc",
@@ -92,31 +92,12 @@
    ]
   },
   {
-   "say": "Costo completo: veintinueve mil ochocientos pesos.",
-   "sub": "Costo completo: $29.800.",
-   "plano": "D",
-   "accion": [
-    {
-     "tipo": "paso",
-     "k": "4/4"
-    },
-    {
-     "tipo": "rows",
-     "rows": [
-      {
-       "label": "Costo completo",
-       "valor": "$ 29.800"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "say": "Cobrando treinta mil pesos te quedan doscientos pesos. El por tres no sabe cuánto trabajo lleva tu torta: por eso hay que sumar capa por capa.",
-   "sub": "Cobrando $30.000 te quedan $200. El x3 no sabe cuánto trabajo lleva tu torta: por eso hay que sumar capa por capa.",
+   "say": "Cobrando treinta mil pesos te quedan doscientos pesos.",
+   "sub": "Cobrando $30.000 te quedan $200.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -126,14 +107,14 @@
    ]
   },
   {
-   "say": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
+   "sub": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

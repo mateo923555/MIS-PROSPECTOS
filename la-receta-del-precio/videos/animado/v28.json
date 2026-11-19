@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "Te explico qué hay detrás de vender barato y en cantidad.",
-   "sub": "Te explico qué hay detrás de vender barato y en cantidad.",
+   "say": "Esperá el final.",
+   "sub": "Esperá el final.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -57,22 +57,23 @@
    ]
   },
   {
-   "say": "No es tu competencia: es otro modelo de negocio. Calculá el tuyo con tus costos.",
-   "sub": "No es tu competencia: es otro modelo de negocio. Calculá el tuyo con tus costos.",
+   "say": "No es tu competencia: es otro modelo de negocio.",
+   "sub": "No es tu competencia: es otro modelo de negocio.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": []
   },
   {
-   "say": "¿Estás de acuerdo? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "¿Estás de acuerdo? Te leo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
+   "sub": "¿Querés hacerlo con tus números? Está todo en mi ebook. Link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]

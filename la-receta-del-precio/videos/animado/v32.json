@@ -15,8 +15,8 @@
    }
   },
   {
-   "say": "Te enseño a calcular cuánto sumar por pedido.",
-   "sub": "Te enseño a calcular cuánto sumar por pedido.",
+   "say": "Al final te doy la cuenta exacta.",
+   "sub": "Al final te doy la cuenta exacta.",
    "plano": "A",
    "accion": {
     "tipo": "promesa",
@@ -76,11 +76,12 @@
    ]
   },
   {
-   "say": "trescientos doce pesos por pedido. Sumalo a tus gastos del mes: cuando se rompa, la nueva ya está en parte paga.",
-   "sub": "$312 por pedido. Sumalo a tus gastos del mes: cuando se rompa, la nueva ya está en parte paga.",
+   "say": "trescientos doce pesos por pedido.",
+   "sub": "$312 por pedido.",
    "ceja": true,
    "plano": "B",
    "rapidez": 1.3,
+   "pausa": 0.6,
    "accion": [
     {
      "tipo": "big",
@@ -90,14 +91,14 @@
    ]
   },
   {
-   "say": "Guardalo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
-   "sub": "Guardalo. Seguime: todos los días una cuenta para ponerle precio a tu trabajo.",
+   "say": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
+   "sub": "Esto y mucho más, paso a paso, en mi ebook. Te dejo el link en mi perfil.",
    "plano": "A",
    "accion": {
     "tipo": "cta",
     "texto": "@larecetadelprecio",
-    "boton": "Seguime · @larecetadelprecio",
-    "ref": null
+    "boton": "Link en mi perfil",
+    "ref": "Ebook + cuaderno de 11 hojas + 2 bonos"
    }
   }
  ]
