@@ -28,7 +28,7 @@ import numpy as np
 FPS = 30
 SR = 44100
 BASE = 1.08            # length_scale de la primera versión (referencia de "1×")
-TONO = 0.92            # tono un 8 % más grave: más autoridad
+TONO = 0.87            # tono 13 % más grave (formantes preservados): más autoridad
 PAUSA = 0.12           # entre frases (s, audio final)
 PAUSA_DRAMA = 0.34     # en cada "..."
 
@@ -111,6 +111,67 @@ def base_tension(n, voz_env):
     return x * (1 - .55 * voz_env)                  # baja cuando habla
 
 
+def tic():
+    n = int(.05 * SR); t = np.arange(n) / SR
+    return np.sin(2 * np.pi * 2400 * t) * np.exp(-t * 140) * .07
+
+
+def blip(f=880):
+    n = int(.09 * SR); t = np.arange(n) / SR
+    return np.sin(2 * np.pi * f * t * (1 + 2 * t)) * np.exp(-t * 45) * .09
+
+
+def swish():
+    return rafaga(.2) * .8
+
+
+def caja():
+    n = int(.5 * SR); t = np.arange(n) / SR
+    clack = banda(rng.standard_normal(n), 2000, 8000) * np.exp(-t * 90) * .5
+    bell = (np.sin(2 * np.pi * 2093 * t) + .6 * np.sin(2 * np.pi * 3136 * t)) * np.exp(-t * 9)
+    return (clack + bell) * .11
+
+
+def thump():
+    n = int(.18 * SR); t = np.arange(n) / SR
+    return np.sin(2 * np.pi * (70 + 60 * np.exp(-t * 30)) * t) * np.exp(-t * 22) * .22
+
+
+def monedas():
+    n = int(1.1 * SR); out = np.zeros(n)
+    for k in range(9):
+        i = int(rng.uniform(0, .6) * SR); f = rng.uniform(2600, 4200); m = int(.3 * SR)
+        tt = np.arange(m) / SR
+        out[i:i + m] += np.sin(2 * np.pi * f * tt) * np.exp(-tt * 18) * .05
+    return out
+
+
+def ritmo(n, voz_env, bpm=100):
+    """Bombo + platillo suaves para que el ritmo nunca frene (baja cuando habla)."""
+    x = np.zeros(n); b = 60 / bpm
+    k = thump() * 1.6
+    hh_n = int(.04 * SR); hh = banda(rng.standard_normal(hh_n), 7000, 14000) * np.exp(-np.arange(hh_n) / SR * 120) * .05
+    t = 0.0; i = 0
+    while t < n / SR:
+        poner(x, k, t)
+        poner(x, hh, t + b / 2)
+        if i % 2:
+            poner(x, banda(rng.standard_normal(int(.08 * SR)), 900, 4000) * np.exp(-np.arange(int(.08 * SR)) / SR * 40) * .06, t)
+        t += b; i += 1
+    return x * (1 - .45 * voz_env)
+
+
+def grupos(palabras):
+    gs, g = [], []
+    for w in palabras:
+        g.append(w)
+        if len(g) >= 3 or re.search(r"[.,:;?!…]$", w[0]):
+            gs.append(g); g = []
+    if g:
+        gs.append(g)
+    return gs
+
+
 def poner(dst, src, at):
     i = int(at * SR)
     if i < 0:
@@ -140,12 +201,12 @@ def main():
     def sintetizar(texto, rapidez):
         objetivo = BASE / rapidez
         ls = max(objetivo, .86)
-        cfg = SynthesisConfig(length_scale=ls, noise_scale=.55, noise_w_scale=.7)
+        cfg = SynthesisConfig(length_scale=ls, noise_scale=.42, noise_w_scale=.6)
         raw, proc = os.path.join(tmp, "r.wav"), os.path.join(tmp, "p.wav")
         with wave.open(raw, "wb") as w:
             voice.synthesize_wav(texto, w, syn_config=cfg)
         sr = voice.config.sample_rate
-        ff("-i", raw, "-af", f"asetrate={sr}*{TONO},aresample={SR},atempo={(ls / objetivo) / TONO:.5f}", "-ar", str(SR), proc)
+        ff("-i", raw, "-af", f"aresample={SR},rubberband=tempo={ls / objetivo:.5f}:pitch={TONO}:formant=preserved:pitchq=quality", "-ar", str(SR), proc)
         return leer(proc)
 
     voz, segs, t = [np.zeros(int(.06 * SR))], [], .06
@@ -166,8 +227,10 @@ def main():
     # voz más firme y presente: sin graves sucios, con presencia, comprimida
     vraw, vproc = os.path.join(tmp, "v.wav"), os.path.join(tmp, "vp.wav")
     escribir(vraw, v)
-    ff("-i", vraw, "-af", "highpass=f=85,equalizer=f=220:t=q:w=1:g=2,equalizer=f=3200:t=q:w=1.2:g=3,"
-       "acompressor=threshold=-20dB:ratio=3.5:attack=5:release=120:makeup=3,loudnorm=I=-15:TP=-2:LRA=7", "-ar", str(SR), vproc)
+    ff("-i", vraw, "-af", "highpass=f=90,equalizer=f=170:t=q:w=1:g=3.5,equalizer=f=450:t=q:w=1.4:g=-2,"
+       "equalizer=f=2600:t=q:w=1.2:g=4.5,deesser=i=0.4,"
+       "acompressor=threshold=-24dB:ratio=5:attack=3:release=90:makeup=5,asoftclip=type=tanh:output=0.95,"
+       "aexciter=amount=1.2:drive=6:freq=3500,loudnorm=I=-14:TP=-1.5:LRA=5", "-ar", str(SR), vproc)
     v = leer(vproc)
 
     for s in segs:
@@ -190,14 +253,44 @@ def main():
     bed = base_tension(len(v), env)
     bed[int(fin_base * SR):] *= np.linspace(1, 0, len(bed) - int(fin_base * SR))
     mix += bed
+    beat = ritmo(len(v), env)
+    beat[int(fin_base * SR):] *= np.linspace(1, .3, len(beat) - int(fin_base * SR))
+    mix += beat
     poner(mix, golpe(), 0)
+    poner(mix, rafaga(.18) * 1.4, .02)
     for i, s in enumerate(segs):
+        dur = s["next"] - s["ini"]
         if i and s.get("plano") != segs[i - 1].get("plano"):
             poner(mix, rafaga(), s["ini"] - .16)
+        # micro-cortes cada 1,7 s dentro del segmento (mismo cálculo que el render)
+        k = 1
+        while k * 1.7 < dur - .6:
+            poner(mix, thump(), s["ini"] + k * 1.7); k += 1
+        for gr in grupos(s["palabras"]):
+            poner(mix, tic(), gr[0][1])
         acts = s.get("accion") if isinstance(s.get("accion"), list) else [s.get("accion")] if s.get("accion") else []
-        if any(a.get("tipo") == "big" for a in acts):
-            poner(mix, subida(), s["ini"] - 1.0)
-            poner(mix, ding(), s["ini"] + min(1.2, (s["next"] - s["ini"]) * .3))
+        for a in acts:
+            if a.get("tipo") == "rows":
+                n_r = len(a["rows"]); step = min(.9, max(.8, dur) * .7 / n_r)
+                for j in range(n_r):
+                    poner(mix, swish(), s["ini"] + j * step - .05)
+                    poner(mix, caja(), s["ini"] + j * step + .55)
+            if a.get("tipo") == "calc":
+                toks = [x for x in re.split(r"\s*(=|÷|×|−|\+|\(|\))\s*", a["linea"]) if x and x.strip()]
+                step = min(.35, max(.8, dur) * .7 / len(toks))
+                for j, x in enumerate(toks):
+                    poner(mix, blip(1320 if x == "=" else 880 + 60 * j), s["ini"] + .1 + j * step)
+                poner(mix, caja(), s["ini"] + .1 + len(toks) * step)
+            if a.get("tipo") == "big":
+                t0 = s["ini"] + min(1.2, dur * .3)
+                poner(mix, subida(), s["ini"] - 1.0)
+                poner(mix, golpe() * .6, t0)
+                poner(mix, ding(), t0)
+                poner(mix, monedas(), t0 + .05)
+            if a.get("tipo") in ("hook", "promesa"):
+                poner(mix, blip(660), s["ini"] + .05)
+            if a.get("tipo") == "cta":
+                poner(mix, golpe() * .5, s["ini"]); poner(mix, ding(), s["ini"] + .3)
     mraw = os.path.join(tmp, "m.wav")
     escribir(mraw, mix)
     ff("-i", mraw, "-af", "alimiter=limit=0.89:attack=3:release=60", "-ar", str(SR), os.path.join(out, "voz.wav"))
