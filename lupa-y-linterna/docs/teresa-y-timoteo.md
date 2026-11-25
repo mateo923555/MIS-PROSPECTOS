@@ -31,3 +31,11 @@
 - **Dirección:** apertura en macro sobre la lente; gag de la nariz de Teresa que bambolea la lupa; plano «ojo gigante» de Timoteo mirando por la lente; saltos con anticipación y aplastamiento; primeros planos para sentir la emoción y planos abiertos para entender; luz, polvo, viñeta y cámara a pulso.
 - Las pruebas anteriores quedan en `renders/pruebas/v1/`. Las nuevas: 12,8 s y 13,0 s.
 - **Límites:** siguen siendo 4 vistas por perro (sin caminata real ni cola) y los párpados/orejas salen de recortes: se ven bien a tamaño Short, con costuras en primeros planos extremos. Para pasar al siguiente nivel hace falta regenerar poses/capas con crédito de imágenes.
+
+---
+## Actualización — pruebas v3 (marcha real de perfil)
+- Se recortaron de nuevo los **perfiles de pie** de Teresa y Timoteo (`t_side.png`, `m_side.png`) quitando el piso crema de la ficha (`scripts/cut-sheet.py`, `clean-ground.py`, `rect-erase.py`) y el halo claro del borde.
+- **Marcha de verdad:** cuatro patas articuladas con paso diagonal (la fase depende de la distancia recorrida), cola que se mueve, cabeza que cabecea, rebote del cuerpo al doble de la frecuencia del paso. Rig en `src/shared/rigs.json` (`t_side`, `m_side`).
+- **Movimiento continuo** (30 fps, sin vibración «a saltitos»), fundido corto entre vistas, orejas que acompañan el giro de la cabeza (follow-through) y cámara que nunca muestra fuera del escenario.
+- Pruebas anteriores: `renders/pruebas/v1/` y `renders/pruebas/v2/`.
+- Límites: las patas son recortes del perfil (con amplitud moderada para evitar huecos) y, de frente o en 3/4, los perros siguen sentados; no hay carrera ni giro de 360°.

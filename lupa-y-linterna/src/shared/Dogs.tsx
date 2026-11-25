@@ -10,15 +10,18 @@ import { Img, staticFile } from "remotion";
 export const DOG_VIEWS = {
   t_front: { file: "art/dogs/t_0.png", w: 302, h: 459 },
   t_tq: { file: "art/dogs/t_1.png", w: 320, h: 460 }, // 3/4 sentada, mira a la izquierda
-  t_side: { file: "art/dogs/t_2.png", w: 457, h: 402 }, // de perfil, parada, mira a la izquierda
+  t_side: { file: "art/dogs/t_side.png", w: 462, h: 394 }, // de perfil, parada, mira a la izquierda
   t_face: { file: "art/dogs/t_3.png", w: 376, h: 299 }, // primer plano de la cara
   m_front: { file: "art/dogs/m_0.png", w: 297, h: 562 },
   m_tq: { file: "art/dogs/m_1.png", w: 286, h: 545 }, // 3/4 sentado, mira a la derecha
+  m_side: { file: "art/dogs/m_side.png", w: 537, h: 540 }, // de perfil, parado, mira a la derecha
   m_face: { file: "art/dogs/m_3.png", w: 447, h: 686 }, // primer plano con la cabeza inclinada
 } as const;
 export type DogView = keyof typeof DOG_VIEWS;
 /** Escala base: Teresa es más corpulenta; Timoteo, más chico pero con orejas altas. */
 export const K = { t: 0.9, m: 0.78 };
+/** Corrige la escala de cada vista para que la cabeza mida lo mismo sentado o parado. */
+export const VIEW_MULT: Partial<Record<DogView, number>> = { t_side: 1.1 / 0.9, m_side: 0.94 / 0.78 };
 
 type Props = {
   view: DogView; x: number; y: number; k: number; rot?: number; sx?: number; sy?: number;
@@ -26,7 +29,8 @@ type Props = {
 };
 export const dogSize = (view: DogView, k: number) => ({ w: DOG_VIEWS[view].w * k, h: DOG_VIEWS[view].h * k });
 
-export const Dog: React.FC<Props> = ({ view, x, y, k, rot = 0, sx = 1, sy = 1, silhouette, blur = 0, opacity = 1, style }) => {
+export const Dog: React.FC<Props> = ({ view, x, y, k: k0, rot = 0, sx = 1, sy = 1, silhouette, blur = 0, opacity = 1, style }) => {
+  const k = k0 * (VIEW_MULT[view] ?? 1);
   const v = DOG_VIEWS[view];
   const w = v.w * k, h = v.h * k;
   const filters = [silhouette ? "brightness(0)" : "", blur ? `blur(${blur}px)` : ""].filter(Boolean).join(" ");

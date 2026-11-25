@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Burst, FaceInset, K, QMark, Sparkle, type DogView } from "../shared/Dogs";
-import { PuppetDog, blinkAt, earTwitch, idleHead } from "../shared/PuppetDog";
+import { CrossDog, PuppetDog, blinkAt, earTwitch, idleHead } from "../shared/PuppetDog";
 import { Dust, LightShaft, Vignette, handheld } from "../shared/Fx";
 import { Grain } from "../shared/Grain";
 import { Hearts } from "../shared/Hearts";
@@ -11,6 +11,7 @@ import { RoomBg } from "../shared/Room";
 import { C, H, W } from "../shared/theme";
 import { hash, hopSquash, keys, pop, stepTime, wobble } from "../shared/motion";
 
+const clampC = (c: number, size: number, s: number) => Math.min(size - size / (2 * s) - 2, Math.max(size / (2 * s) + 2, c)); // la cámara nunca muestra fuera del escenario
 export const PRUEBA_LUPA_SECONDS = 12.8;
 
 // lupa (imagen recortada 481×929; hueco de la lente: centro (237,241), radio 163)
@@ -42,11 +43,13 @@ export const PruebaLupa: React.FC = () => {
   const { fps } = useVideoConfig();
   const t = frame / fps;
   const tq = stepTime(frame, fps, 12);
-  const step = Math.floor(tq * 12);
+  const step = Math.floor(tq * 12); // solo para tics de vibración
 
   const mx = keys(tq, mPath), tx = keys(tq, tPath);
   const mMoving = Math.abs(mx - keys(Math.max(0, tq - 0.09), mPath)) > 0.6;
   const tMoving = Math.abs(tx - keys(Math.max(0, tq - 0.09), tPath)) > 0.6;
+  const mWalk = tq < 2.75 || (tq >= 5.5 && tq < 6.45);
+  const tWalk = tq < 2.85 || (tq >= 3.5 && tq < 5.6);
   const idleM = idleHead(tq, 1), idleT = idleHead(tq, 4);
   const earsM = earTwitch(tq, 2), earsT = earTwitch(tq, 7);
 
@@ -62,18 +65,19 @@ export const PruebaLupa: React.FC = () => {
   if (mMoving) { mEarL += 11 * Math.sin(step * 1.25); mEarR += -11 * Math.sin(step * 1.25 + 0.4); }
   if (tq >= 2.9 && tq < 3.6) { mEarL += 12 * (tq - 2.9) / 0.7; mEarR -= 12 * (tq - 2.9) / 0.7; } // orejas paradas: «¿qué es eso?»
   const mBlink = blinkAt(tq, 1);
-  const mBob = (mMoving ? Math.abs(Math.sin(step * 1.25)) * 18 : 0) + hopM.dy;
-  const mView: DogView = tq >= TT.react && tq < TT.react + 1.3 ? "m_front" : "m_tq";
+  const mBob = (mWalk && mMoving ? Math.abs(Math.sin((mx / 105) * Math.PI)) * 9 : mMoving ? Math.abs(Math.sin(step * 1.25)) * 14 : 0) + hopM.dy;
+  const mEntries: Array<[number, DogView]> = [[0, "m_side"], [2.75, "m_tq"], [5.5, "m_side"], [6.45, "m_tq"], [TT.react, "m_front"], [TT.react + 1.3, "m_tq"]];
 
   // ── acting de Teresa (calma, curiosa, pesada) ──
   const hopReactT = hopSquash(tq, TT.react + 0.1, 0.65, 62);
   const hopT = tq >= TT.react + 0.1 && tq < TT.react + 0.75 ? hopReactT : { dy: 0, sy: 1 };
   const sniffing = tq >= 3.4 && tq < TT.boop + 0.5;
-  const tView: DogView = tq < 2.8 ? "t_side" : tq >= TT.react && tq < TT.react + 1.3 ? "t_front" : "t_tq";
+  const tEntries: Array<[number, DogView]> = [[0, "t_side"], [2.85, "t_tq"], [3.5, "t_side"], [5.6, "t_tq"], [TT.react, "t_front"], [TT.react + 1.3, "t_tq"]];
   const tHeadRot = idleT.headRot + (sniffing ? -7 + 3 * Math.sin(tq * 9) : 0) + (lookAtTeresa ? -8 : 0) + (tq >= 3 && tq < 3.8 ? 10 * Math.sin((tq - 3) * 4) : 0);
   const tHeadDx = sniffing ? -16 - 6 * Math.sin(tq * 9) : 0;
-  const tBob = (tMoving ? Math.abs(Math.sin(step * 1.05 + 1)) * 12 : 0) + hopT.dy;
-  const tRot = tView === "t_side" && tq < 2.8 ? (step % 2 ? 1.6 : -1.6) : hash(3, step) * 0.5;
+  const tBob = (tWalk && tMoving ? Math.abs(Math.sin((tx / 120) * Math.PI)) * 7 : 0) + hopT.dy;
+  const tRot = Math.sin(tx / 40) * 0.8; // balanceo suave al andar
+  const mGait = mWalk && mMoving ? (mx / 105) * 2 * Math.PI : undefined, tGait = tWalk && tMoving ? (-tx / 120) * 2 * Math.PI : undefined;
 
   // ── lupa: se bambolea cuando Teresa le toca con la nariz ──
   const lupaRot = wobble(tq, TT.boop, 7, 2.6, 2.4);
@@ -86,7 +90,7 @@ export const PruebaLupa: React.FC = () => {
   const camX = keys(t, [[0, LENS.x], [0.55, LENS.x], [TT.macroEnd, 540], [TT.boop - 0.2, 470], [5.8, 470], [6.4, 540], [8.4, 540], [11, 540]]);
   const camY = keys(t, [[0, LENS.y], [0.55, LENS.y], [TT.macroEnd, 960], [TT.boop - 0.2, 1010], [5.8, 1010], [6.4, 980], [8.4, 930], [9.5, 1010], [12.8, 1000]]);
   const hh = handheld(t, 2.2 * Math.min(1, camS / 1.2));
-  const camTf = `translate(${W / 2}px, ${H / 2}px) scale(${camS}) translate(${-(camX + hh.x)}px, ${-(camY + hh.y)}px)`;
+  const camTf = `translate(${W / 2}px, ${H / 2}px) scale(${camS}) translate(${-clampC(camX + hh.x, W, camS)}px, ${-clampC(camY + hh.y, H, camS)}px)`;
   const dof = keys(t, [[0, 6], [0.55, 6], [TT.macroEnd, 0], [8.4, 0], [8.8, 2.5], [9.5, 0]]);
 
   const qOp = keys(t, [[3.0, 0], [3.2, 1], [4.2, 1], [4.4, 0]]);
@@ -126,10 +130,10 @@ export const PruebaLupa: React.FC = () => {
 
         {[mx, tx].map((x, i) => <div key={i} style={{ position: "absolute", left: x - 130, top: (i ? FOOT_T : FOOT_M) - 20, width: 260, height: 40, borderRadius: "50%", background: "rgba(40,25,10,0.38)", filter: "blur(10px)" }} />)}
 
-        <PuppetDog view={mView} x={mx} y={FOOT_M - mBob} k={K.m * 0.98} sy={hopM.sy * idleM.sy} rot={mMoving ? (step % 2 ? 2.5 : -2.5) : 0}
-          headRot={mHeadRot} headDy={idleM.headDy} earL={mEarL} earR={mEarR} blink={mBlink} />
-        <PuppetDog view={tView} x={tx} y={FOOT_T - tBob} k={K.t * 0.98} sy={hopT.sy * idleT.sy} rot={tRot}
-          headRot={tHeadRot} headDx={tHeadDx} headDy={idleT.headDy} earL={earsT.l} earR={earsT.r} blink={blinkAt(tq, 5)} />
+        <CrossDog t={tq} entries={mEntries} x={mx} y={FOOT_M - mBob} k={K.m * 0.98} sy={hopM.sy * idleM.sy} rot={mWalk && mMoving ? Math.sin(mx / 33) * 1.4 : 0}
+          headRot={mHeadRot} headDy={idleM.headDy} earL={mEarL - 0.4 * mHeadRot} earR={mEarR - 0.4 * mHeadRot} blink={mBlink} sideGait={mGait} gaitAmp={12} tailRot={12 * Math.sin(tq * 9)} />
+        <CrossDog t={tq} entries={tEntries} x={tx} y={FOOT_T - tBob} k={K.t * 0.98} sy={hopT.sy * idleT.sy} rot={tRot}
+          headRot={tHeadRot} headDx={tHeadDx} headDy={idleT.headDy} earL={earsT.l - 0.3 * tHeadRot} earR={earsT.r - 0.3 * tHeadRot} blink={blinkAt(tq, 5)} sideGait={tGait} gaitAmp={11} tailRot={9 * Math.sin(tq * 6 + 1)} />
 
         <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, pointerEvents: "none" }}>
           {qOp > 0 && <g opacity={qOp}><QMark x={mx + 20} y={FOOT_M - 480} s={0.9 + 0.08 * Math.sin(t * 6)} /><QMark x={tx - 10} y={FOOT_T - 450} s={0.9 + 0.08 * Math.sin(t * 6 + 2)} /></g>}

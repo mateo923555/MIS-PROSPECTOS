@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Burst, DOG_VIEWS, FaceInset, K, QMark, type DogView } from "../shared/Dogs";
-import { PuppetDog, blinkAt, earTwitch, idleHead } from "../shared/PuppetDog";
+import { CrossDog, PuppetDog, blinkAt, earTwitch, idleHead } from "../shared/PuppetDog";
 import { Dust, Vignette, handheld } from "../shared/Fx";
 import { Grain } from "../shared/Grain";
 import { Hearts } from "../shared/Hearts";
@@ -11,6 +11,7 @@ import { RoomBg } from "../shared/Room";
 import { C, H, W } from "../shared/theme";
 import { hash, hopSquash, keys, pop, stepTime } from "../shared/motion";
 
+const clampC = (c: number, size: number, s: number) => Math.min(size - size / (2 * s) - 2, Math.max(size / (2 * s) + 2, c)); // la cámara nunca muestra fuera del escenario
 export const PRUEBA_SOMBRA_SECONDS = 13.0;
 
 /* Geometría (misma idea que el Short «La sombra gigante»): linterna y pared FIJAS (D); la sombra de cada perro es la silueta de su
@@ -39,7 +40,7 @@ export const PruebaSombra: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const tq = stepTime(frame, fps, 12);
+  const tq = stepTime(frame, fps, 30);
   const step = Math.floor(tq * 12);
 
   // ── Timoteo ──
@@ -75,11 +76,13 @@ export const PruebaSombra: React.FC = () => {
   const idleT = idleHead(tq, 4), earsT = earTwitch(tq, 7);
   const hopT1 = hopSquash(tq, TM.aha, 0.6, 62), hopT2 = hopSquash(tq, 7.6, 0.5, 34), hopT3 = hopSquash(tq, 9.6, 0.5, 34);
   const hopT = tq >= TM.aha && tq < TM.aha + 0.6 ? hopT1 : tq >= 7.6 && tq < 8.1 ? hopT2 : tq >= 9.6 && tq < 10.1 ? hopT3 : { dy: 0, sy: 1 };
+  const tEntries: Array<[number, DogView]> = [[0, "t_side"], [4.6, "t_tq"], [TM.aha, "t_front"], [TM.aha + 1.1, "t_tq"]];
   const tView: DogView = tq < 4.6 ? "t_side" : tq >= TM.aha && tq < TM.aha + 1.1 ? "t_front" : "t_tq";
+  const tGait = tq < 4.8 && tMoving ? (-txx / 120) * 2 * Math.PI : undefined;
   const lookShadow = tq >= 4.8 && tq < TM.flick; // inclina la cabeza mirando la sombra
   const tHeadRot = idleT.headRot + (lookShadow ? 11 * Math.sin((tq - 4.8) * 3.2) : 0) + (tq >= TM.tender ? -9 : 0) + (tq >= 7 && tq < 10 ? -6 * Math.sin(tq * 2 + 1) : 0);
-  const tBob = (tMoving ? Math.abs(Math.sin(step * 1.05 + 1)) * 11 : 0) + hopT.dy;
-  const tRot = tView === "t_side" ? (tMoving ? (step % 2 ? 1.6 : -1.6) : 0) : hash(3, step) * 0.5;
+  const tBob = (tView === "t_side" && tMoving ? Math.abs(Math.sin((txx / 120) * Math.PI)) * 7 : 0) + hopT.dy;
+  const tRot = tView === "t_side" ? Math.sin(txx / 40) * 0.8 : hash(3, step) * 0.4;
 
   // ── sombras (silueta del MISMO títere: orejas, cabeza ladeada y respiración incluidas) ──
   const s = D / d;
@@ -99,7 +102,7 @@ export const PruebaSombra: React.FC = () => {
   const camX = keys(t, [[0, 540], [0.9, 540], [1.35, 440], [2.5, 440], [3.1, 540], [5.8, 540], [6.2, 640], [7.3, 640], [7.8, 540], [10.0, 540], [10.5, 560], [13, 540]]);
   const camY = keys(t, [[0, 960], [0.9, 960], [1.35, 900], [2.5, 900], [3.1, 960], [5.8, 960], [6.2, 840], [7.3, 840], [7.8, 960], [10.0, 960], [10.5, 900], [13, 950]]);
   const hh = handheld(t, 2.4);
-  const camTf = `translate(${W / 2}px, ${H / 2}px) scale(${camS}) translate(${-(camX + hh.x)}px, ${-(camY + hh.y)}px)`;
+  const camTf = `translate(${W / 2}px, ${H / 2}px) scale(${camS}) translate(${-clampC(camX + hh.x, W, camS)}px, ${-clampC(camY + hh.y, H, camS)}px)`;
 
   const lampGlow = 0.8 + 0.2 * Math.sin(t * 6);
   const qOp = keys(t, [[4.8, 0], [5.0, 1], [5.8, 1], [5.9, 0]]);
@@ -144,8 +147,8 @@ export const PruebaSombra: React.FC = () => {
 
         <div style={{ position: "absolute", left: mx - mw * 0.4, top: mFoot - 40, width: mw * 0.8, height: 40, borderRadius: "50%", background: "rgba(40,25,10,0.38)", filter: "blur(10px)" }} />
         <div style={{ position: "absolute", left: txx - 150, top: tFoot - 40, width: 300, height: 40, borderRadius: "50%", background: "rgba(40,25,10,0.38)", filter: "blur(10px)" }} />
-        <PuppetDog view={tView} x={txx} y={tFoot - tBob} k={tScale} sy={hopT.sy * idleT.sy} rot={tRot} headRot={tHeadRot} headDy={idleT.headDy} earL={earsT.l} earR={earsT.r} blink={blinkAt(tq, 5)} />
-        <PuppetDog view={mView} x={mx} y={mFoot - mBob} k={mK} sy={hopM.sy * idleM.sy} rot={mMoving ? (step % 2 ? 2.5 : -2.5) : 0} headRot={mHeadRot} headDy={mHeadDy} earL={mEarL} earR={mEarR} blink={mBlink} />
+        <CrossDog t={tq} entries={tEntries} x={txx} y={tFoot - tBob} k={tScale} sy={hopT.sy * idleT.sy} rot={tRot} headRot={tHeadRot} headDy={idleT.headDy} earL={earsT.l - 0.3 * tHeadRot} earR={earsT.r - 0.3 * tHeadRot} blink={blinkAt(tq, 5)} sideGait={tGait} gaitAmp={11} tailRot={9 * Math.sin(tq * 6 + 1)} />
+        <PuppetDog view={mView} x={mx} y={mFoot - mBob} k={mK} sy={hopM.sy * idleM.sy} rot={mMoving ? (step % 2 ? 2.5 : -2.5) : 0} headRot={mHeadRot} headDy={mHeadDy} earL={mEarL - 0.4 * mHeadRot} earR={mEarR - 0.4 * mHeadRot} blink={mBlink} />
         {earOp > 0 && (
           <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, opacity: earOp, pointerEvents: "none" }}>
             {ears.map(([ex, ey], i) => <circle key={i} cx={mx - mw / 2 + ex * mw} cy={mFoot - mBob - mh + ey * mh} r={Math.max(22, mw * 0.14)} fill="none" stroke={C.warmYellow} strokeWidth={7} strokeDasharray="12 9" />)}
