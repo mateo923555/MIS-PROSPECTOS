@@ -9,6 +9,7 @@ import { spawnSync } from "node:child_process";
 import { p } from "./lib/paths";
 import { openaiForm } from "./lib/openai";
 import { epFile, outDir } from "./lib/remotion";
+import { verifyNarrative } from "./verify-narrative";
 
 const args = process.argv.slice(2);
 const eps = args.filter((a) => !a.startsWith("--"));
@@ -91,6 +92,9 @@ for (const ep of eps) {
     } catch (e: any) { add("transcripción", false, `no disponible: ${e.message.slice(0, 120)}`); }
     fs.rmSync(wav, { force: true });
   } else add("transcripción", false, "omitida (--no-asr): la voz NO queda verificada");
+
+  // narrativa: momentos clave sobre el MP4 renderizado
+  for (const r of verifyNarrative(ep, file, meta, vj)) add(`narrativa · ${r.name}`, r.ok, r.detail);
 
   const ok = checks.every((c) => c.ok);
   const report = { ep, file: path.basename(file), checkedAt: new Date().toISOString(), ok, checks };

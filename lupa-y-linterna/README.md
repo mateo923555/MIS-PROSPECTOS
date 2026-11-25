@@ -6,15 +6,20 @@ Stack: **TypeScript + Remotion**, voz con la **API de OpenAI**, todo local. El r
 > Proyecto independiente (carpeta `lupa-y-linterna/`, con su propio `package.json`). No toca ni usa código, credenciales o configuración de YouTube de otros proyectos.
 > Si lo querés como repo aparte: `cp -r lupa-y-linterna ../lupa-y-linterna && cd ../lupa-y-linterna && git init`.
 
-## Estado de esta tanda
+## Dirección narrativa (v2) — leer primero
+
+Todos los Shorts siguen **`briefs/BRIEF-BASE.md`**: primer cuadro raro que se entiende sin sonido → objetivo del personaje claro **antes del seg. 4** → intento/pista/dos opciones (juego: **2 s reales** de pensar) → **prueba** que completa la historia → cierre enseguida tras el remate. Antes de animar se escriben **cuatro líneas** por episodio (`data/episodes/epXXX.json → narrative`: primer cuadro · qué quiere · qué aprende · plano final) y una frase de «qué puede contar un chico» (`contaElChico`). La cola de ideas con sus cuatro líneas está en `briefs/cola-semana-1.md` (`data/queue.json`).
+
+## Estado
 
 | Entregable | Ruta | Estado |
 |---|---|---|
-| Short 001 «¿Por qué mi sombra se hizo gigante?» (A) | `renders/lupa-y-linterna_ep001_sombra-gigante_*.mp4` | ver `renders/verification-ep001.json` |
-| Short 002 «¿Podés encontrar al pulpo escondido?» (B) | `renders/lupa-y-linterna_ep002_pulpo-escondido_*.mp4` | ver `renders/verification-ep002.json` |
+| Short 001 **v2** «La sombra gigante» (A) | `renders/lupa-y-linterna_ep001_sombra-gigante_v2_*.mp4` | ver `renders/verification-ep001.json` |
+| Short 002 **v2** «El pulpo escondido» (B) | `renders/lupa-y-linterna_ep002_pulpo-escondido_v2_*.mp4` | ver `renders/verification-ep002.json` |
+| Versiones **v1** (archivadas) | `renders/v1/`, `data/episodes/v1/`, `src/episodes/v1/` (`Ep001SombraV1`, `Ep002PulpoV1`), `public/audio/v1/` | conservadas |
 | Ficha del personaje | `docs/personaje.md` + `public/art/character/ficha-maestra.png` | listo |
-| Cola de 14 ideas | `data/queue.json` (editable) | listo; datos por verificar marcados |
-| Brief del horizontal | `briefs/h001-tres-misterios-de-luz.md` | brief listo (sin producir) |
+| Brief base + cola (con 4 líneas) | `briefs/BRIEF-BASE.md`, `briefs/cola-semana-1.md`, `data/queue.json` | listo |
+| Brief del horizontal | `briefs/h001-tres-misterios-de-luz.md` | brief listo (aplicar la regla narrativa al producirlo) |
 | Medición | `data/metrics.csv` + `npm run metrics` | listo, métricas vacías |
 | Fichas de episodio | `briefs/ep001.md`, `briefs/ep002.md` | listo |
 
@@ -45,7 +50,8 @@ export OPENAI_API_KEY=...        # solo en tu terminal
 | **Renderizar un episodio** | `npm run render -- ep001` |
 | **Renderizar los dos pilotos** | `npm run render:all` |
 | Masterizar audio (≈ -15 LUFS; `render` ya lo hace) | `npm run master -- ep001` |
-| Verificar MP4 (y promover a FINAL) | `npm run verify -- ep001 ep002` |
+| Chequeo de la geometría del ep001 (sin render) | `npm run check` |
+| Verificar MP4 + momentos clave de la historia (y promover a FINAL) | `npm run verify -- ep001 ep002` |
 | Cuadros de control (PNG) | `npm run stills -- ep001 0 2.5 9.9 22` → `renders/frames/ep001/` |
 | Regenerar fichas `briefs/epXXX.md` | `npm run briefs -- ep001 ep002` |
 | Medianas A vs B | `npm run metrics` |
@@ -77,8 +83,8 @@ Cada episodio es una composición independiente (`Ep001Sombra`, `Ep002Pulpo`) re
 
 - **Imágenes generadas** con `gpt-image-2` a partir de una **ficha maestra** (4 poses). Cada pose y escena se generó referenciando esa ficha; los fondos magenta se recortan con `scripts/key.py` (alfa suave + despill) para tener capas animables.
 - **Stop motion de verdad en el código:** personaje a 10 fps (pose/posición/vibración cada 3 cuadros), grano de plastilina que «hierve», caminata con saltito.
-- **Ep. 001 — la sombra es física, no un dibujo:** distancia linterna–pared fija `D`; la sombra es la silueta del *mismo sprite* escalada por `s = D/d` desde la altura de la linterna, con penumbra que crece con `s`. Se recorta en la línea pared–piso. La linterna está delante del bebé y a un costado; el bebé se desplaza en diagonal para que la sombra quede centrada.
-- **Ep. 002 — camuflaje real:** la «piel de roca» es el propio fondo visto a través de la silueta del pulpo, así que se funde con la roca; se lo sigue distinguiendo por el contorno, los ojitos cerrados y el relieve. La transición es por manchitas (cromatóforos). El brazo se mueve por separado. La pausa de 2 s tiene un temporizador visual sin palabras. La comparación *Antes / Ahora* usa miniaturas de la misma escena.
+- **Ep. 001 v2 — objetivo: que la sombra entre en el marco.** Hay un marco coral en la pared; la sombra lo desborda al inicio, crece al acercarse, se achica al alejarse y entra **justo** al final (la geometría y sus márgenes se verifican en `scripts/check-geometry.ts`). **La sombra es física, no un dibujo:** distancia linterna–pared fija `D`; la sombra es la silueta del *mismo sprite* escalada por `s = D/d` desde la altura de la linterna, con penumbra que crece con `s`. Se recorta en la línea pared–piso. La linterna está delante del bebé y a un costado; el bebé se desplaza en diagonal para que la sombra quede centrada.
+- **Ep. 002 v2 — objetivo: encontrar al pulpo y ver cómo se esconde otra vez.** Dos «?» sobre los escondites, pausa de 2 s con temporizador, revelación por el brazo, y el camuflaje avanza **gradualmente en el mismo encuadre** (manchitas) hasta que solo se lo sigue por el brazo en movimiento (aro sobre una ventosa). Sin repetición de cierre. **Camuflaje real:** la «piel de roca» es el propio fondo visto a través de la silueta del pulpo, así que se funde con la roca; se lo sigue distinguiendo por el contorno, los ojitos cerrados y el relieve. La transición es por manchitas (cromatóforos). El brazo se mueve por separado. La pausa de 2 s tiene un temporizador visual sin palabras. La comparación *Antes / Ahora* usa miniaturas de la misma escena.
 - **Subtítulos** grandes (≈ 92 px), 1–3 palabras, palabra activa en amarillo, dentro de la franja segura de Shorts (`SAFE` en `src/shared/theme.ts`).
 - **Audio:** al renderizar se masteriza la mezcla a ≈ -15 LUFS (sin recodificar el video). Voz por frase, ubicada por el inicio real de la voz; música propia con *ducking*; efectos propios. Todo sintetizado por `scripts/synth-audio.py` (sin muestras de terceros → **sin licencias que atribuir**).
 

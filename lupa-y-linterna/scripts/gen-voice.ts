@@ -14,7 +14,7 @@ const MODEL = process.env.TTS_MODEL ?? "gpt-4o-mini-tts";
 const VOICE = process.env.TTS_VOICE ?? "coral";
 const INSTRUCTIONS =
   process.env.TTS_INSTRUCTIONS ??
-  "Narradora de cuentos para chicos de 5 a 8 años. Español latinoamericano con un toque rioplatense suave (voseo natural, 'mirá', 'podés'; la 'y' y la 'll' suaves). Voz cálida, cercana y expresiva, sonrisa audible. Ritmo pausado y muy claro, con asombro en las exclamaciones y curiosidad en las preguntas. Pronunciá cada palabra completa, sin apurarte ni cortar el final de las frases.";
+  "Narradora de cuentos para chicos de 5 a 8 años. Español latinoamericano con un toque rioplatense suave (voseo natural, 'mirá', 'podés'; la 'y' y la 'll' suaves). Voz cálida, cercana y expresiva, sonrisa audible. Ritmo ágil y natural, sin apuro ni lentitud (como contando un cuento con energía), muy claro, con asombro en las exclamaciones y curiosidad en las preguntas. Pronunciá cada palabra completa, sin apurarte ni cortar el final de las frases.";
 
 type Seg = { id: string; at: number; text: string };
 type Word = { text: string; start: number; end: number };

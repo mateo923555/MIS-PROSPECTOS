@@ -4,206 +4,257 @@
   "segments": [
     {
       "id": "s1",
-      "text": "¡Esa sombra es gigante! ¿De quién será?",
+      "text": "¡Mi sombra no entra en el marco!",
       "file": "audio/ep001/s1.wav",
       "offset": 0.3,
-      "duration": 4.2,
+      "duration": 3.35,
       "voiceStart": 0.3,
-      "voiceEnd": 4.240000057220459,
+      "voiceEnd": 2.9600000858306883,
       "words": [
         {
-          "text": "¡Esa",
+          "text": "¡Mi",
           "start": 0.3,
-          "end": 1.12
+          "end": 0.72
         },
         {
           "text": "sombra",
-          "start": 1.12,
-          "end": 1.56
+          "start": 0.72,
+          "end": 1.14
         },
         {
-          "text": "es",
-          "start": 1.56,
+          "text": "no",
+          "start": 1.14,
+          "end": 1.8
+        },
+        {
+          "text": "entra",
+          "start": 1.8,
           "end": 2.1
         },
         {
-          "text": "gigante!",
+          "text": "en",
           "start": 2.1,
-          "end": 2.74
+          "end": 2.38
         },
         {
-          "text": "¿De",
-          "start": 3.34,
-          "end": 3.78
+          "text": "el",
+          "start": 2.38,
+          "end": 2.78
         },
         {
-          "text": "quién",
-          "start": 3.78,
-          "end": 3.94
-        },
-        {
-          "text": "será?",
-          "start": 3.94,
-          "end": 4.24
+          "text": "marco!",
+          "start": 2.78,
+          "end": 2.96
         }
       ]
     },
     {
       "id": "s2",
-      "text": "Es mía.",
+      "text": "¿Cómo hago para que entre?",
       "file": "audio/ep001/s2.wav",
-      "offset": 4.7,
-      "duration": 3,
-      "voiceStart": 4.7,
-      "voiceEnd": 6.119999957084656,
+      "offset": 3.25,
+      "duration": 3.05,
+      "voiceStart": 3.25,
+      "voiceEnd": 5.490000009536743,
       "words": [
         {
-          "text": "Es",
-          "start": 4.7,
-          "end": 5.44
+          "text": "¿Cómo",
+          "start": 3.25,
+          "end": 4.05
         },
         {
-          "text": "mía.",
-          "start": 5.44,
-          "end": 6.12
+          "text": "hago",
+          "start": 4.05,
+          "end": 4.59
+        },
+        {
+          "text": "para",
+          "start": 4.59,
+          "end": 4.99
+        },
+        {
+          "text": "que",
+          "start": 4.99,
+          "end": 5.37
+        },
+        {
+          "text": "entre?",
+          "start": 5.37,
+          "end": 5.49
         }
       ]
     },
     {
       "id": "s3",
-      "text": "Mirá, me acerco a la linterna y mi sombra crece.",
+      "text": "Si me acerco a la linterna… ¡crece más!",
       "file": "audio/ep001/s3.wav",
-      "offset": 6.3,
-      "duration": 4.7,
-      "voiceStart": 6.3,
-      "voiceEnd": 10.45999984741211,
+      "offset": 5.8,
+      "duration": 4.65,
+      "voiceStart": 5.8,
+      "voiceEnd": 10.140000152587891,
       "words": [
         {
-          "text": "Mirá,",
-          "start": 6.3,
-          "end": 6.68
+          "text": "Si",
+          "start": 5.8,
+          "end": 6.44
         },
         {
           "text": "me",
-          "start": 7.26,
-          "end": 7.56
+          "start": 6.44,
+          "end": 6.86
         },
         {
           "text": "acerco",
-          "start": 7.56,
-          "end": 7.9
+          "start": 6.86,
+          "end": 7.3
         },
         {
           "text": "a",
-          "start": 7.9,
-          "end": 8
+          "start": 7.3,
+          "end": 7.48
         },
         {
           "text": "la",
-          "start": 8,
-          "end": 8.26
+          "start": 7.48,
+          "end": 7.84
         },
         {
-          "text": "linterna",
-          "start": 8.26,
-          "end": 8.72
+          "text": "linterna…",
+          "start": 7.84,
+          "end": 8.84
         },
         {
-          "text": "y",
-          "start": 8.72,
-          "end": 9.28
+          "text": "¡crece",
+          "start": 9.42,
+          "end": 9.52
         },
         {
-          "text": "mi",
-          "start": 9.28,
-          "end": 9.56
-        },
-        {
-          "text": "sombra",
-          "start": 9.56,
-          "end": 9.92
-        },
-        {
-          "text": "crece.",
-          "start": 9.92,
-          "end": 10.46
+          "text": "más!",
+          "start": 9.52,
+          "end": 10.14
         }
       ]
     },
     {
       "id": "s4",
-      "text": "Ahora me alejo y se achica.",
+      "text": "Si me alejo… ¡se achica!",
       "file": "audio/ep001/s4.wav",
-      "offset": 12.6,
+      "offset": 10.6,
       "duration": 3.05,
-      "voiceStart": 12.6,
-      "voiceEnd": 15.439999914169311,
+      "voiceStart": 10.6,
+      "voiceEnd": 13.300000047683715,
       "words": [
         {
-          "text": "Ahora",
-          "start": 12.6,
-          "end": 13.34
+          "text": "Si",
+          "start": 10.6,
+          "end": 11.12
         },
         {
           "text": "me",
-          "start": 13.34,
-          "end": 13.62
+          "start": 11.12,
+          "end": 11.4
         },
         {
-          "text": "alejo",
-          "start": 13.62,
-          "end": 14.14
+          "text": "alejo…",
+          "start": 11.4,
+          "end": 11.94
         },
         {
-          "text": "y",
-          "start": 14.14,
-          "end": 14.9
+          "text": "¡se",
+          "start": 12.7,
+          "end": 12.98
         },
         {
-          "text": "se",
-          "start": 14.9,
-          "end": 15.14
-        },
-        {
-          "text": "achica.",
-          "start": 15.14,
-          "end": 15.44
+          "text": "achica!",
+          "start": 12.98,
+          "end": 13.3
         }
       ]
     },
     {
       "id": "s5",
-      "text": "¡Hasta la sombra puede saludar!",
+      "text": "¡Entró justo! Lejos de la luz, la sombra es más chica.",
       "file": "audio/ep001/s5.wav",
-      "offset": 18.3,
-      "duration": 3.4,
-      "voiceStart": 18.3,
-      "voiceEnd": 21.24000005722046,
+      "offset": 13.9,
+      "duration": 5.5,
+      "voiceStart": 13.9,
+      "voiceEnd": 18.660000228881835,
       "words": [
         {
-          "text": "¡Hasta",
-          "start": 18.3,
-          "end": 18.86
+          "text": "¡Entró",
+          "start": 13.9,
+          "end": 14.46
+        },
+        {
+          "text": "justo!",
+          "start": 14.46,
+          "end": 15.08
+        },
+        {
+          "text": "Lejos",
+          "start": 16,
+          "end": 16.18
+        },
+        {
+          "text": "de",
+          "start": 16.18,
+          "end": 16.34
         },
         {
           "text": "la",
-          "start": 18.86,
-          "end": 19.66
+          "start": 16.34,
+          "end": 16.72
+        },
+        {
+          "text": "luz,",
+          "start": 16.72,
+          "end": 16.76
+        },
+        {
+          "text": "la",
+          "start": 17.24,
+          "end": 17.58
         },
         {
           "text": "sombra",
-          "start": 19.66,
+          "start": 17.58,
+          "end": 17.76
+        },
+        {
+          "text": "es",
+          "start": 17.76,
+          "end": 18.08
+        },
+        {
+          "text": "más",
+          "start": 18.08,
+          "end": 18.36
+        },
+        {
+          "text": "chica.",
+          "start": 18.36,
+          "end": 18.66
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "text": "¡Hola, sombra!",
+      "file": "audio/ep001/s6.wav",
+      "offset": 19,
+      "duration": 2.55,
+      "voiceStart": 19,
+      "voiceEnd": 20.740000009536743,
+      "words": [
+        {
+          "text": "¡Hola,",
+          "start": 19,
           "end": 19.86
         },
         {
-          "text": "puede",
-          "start": 19.86,
-          "end": 20.64
-        },
-        {
-          "text": "saludar!",
-          "start": 20.64,
-          "end": 21.24
+          "text": "sombra!",
+          "start": 20.58,
+          "end": 20.74
         }
       ]
     }

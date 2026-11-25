@@ -1,0 +1,46 @@
+{
+  "id": "ep001",
+  "file": "lupa-y-linterna_ep001_sombra-gigante",
+  "format": "A",
+  "formatName": "¿Por qué pasa esto?",
+  "title": "¿Por qué mi sombra se hizo gigante?",
+  "durationTargetSec": 23,
+  "voice": {
+    "person": "primera persona (el bebé)",
+    "segments": [
+      {
+        "id": "s1",
+        "at": 0.3,
+        "text": "¡Esa sombra es gigante! ¿De quién será?"
+      },
+      {
+        "id": "s2",
+        "at": 4.7,
+        "text": "Es mía."
+      },
+      {
+        "id": "s3",
+        "at": 6.3,
+        "text": "Mirá, me acerco a la linterna y mi sombra crece."
+      },
+      {
+        "id": "s4",
+        "at": 12.6,
+        "text": "Ahora me alejo y se achica."
+      },
+      {
+        "id": "s5",
+        "at": 18.3,
+        "text": "¡Hasta la sombra puede saludar!"
+      }
+    ]
+  },
+  "source": {
+    "title": "ACS — Adventures in Chemistry: S is for Shadow",
+    "url": "https://www.acs.org/education/whatischemistry/adventures-in-chemistry/science-abc/s-is-for-shadow.html"
+  },
+  "scienceCheck": "La sombra se proyecta detrás del personaje respecto de la luz. La distancia linterna–pared es fija; solo cambia la distancia linterna–personaje: más cerca de la luz = sombra más grande y más difusa; más lejos = más chica y más nítida.",
+  "firstFrameSuggested": "Fotograma 0: la silueta gigante (manos arriba, tres mechones) llenando la pared iluminada.",
+  "status": "FINAL (voz verificada técnicamente; falta tu escucha)",
+  "render": "renders/lupa-y-linterna_ep001_sombra-gigante_FINAL.mp4"
+}

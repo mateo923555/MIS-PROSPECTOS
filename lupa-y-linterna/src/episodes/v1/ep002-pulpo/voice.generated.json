@@ -1,0 +1,215 @@
+{
+  "model": "gpt-4o-mini-tts",
+  "voice": "coral",
+  "segments": [
+    {
+      "id": "s1",
+      "text": "Acá hay un pulpo escondido.",
+      "file": "audio/v1/ep002/s1.wav",
+      "offset": 0.3,
+      "duration": 3.55,
+      "voiceStart": 0.3,
+      "voiceEnd": 3.3799999237060545,
+      "words": [
+        {
+          "text": "Acá",
+          "start": 0.3,
+          "end": 0.96
+        },
+        {
+          "text": "hay",
+          "start": 0.96,
+          "end": 1.34
+        },
+        {
+          "text": "un",
+          "start": 1.34,
+          "end": 1.94
+        },
+        {
+          "text": "pulpo",
+          "start": 1.94,
+          "end": 2.44
+        },
+        {
+          "text": "escondido.",
+          "start": 2.44,
+          "end": 3.38
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "text": "¿Entre las algas o pegado a la roca?",
+      "file": "audio/v1/ep002/s2.wav",
+      "offset": 3.75,
+      "duration": 3.75,
+      "voiceStart": 3.75,
+      "voiceEnd": 7.0299999713897705,
+      "words": [
+        {
+          "text": "¿Entre",
+          "start": 3.75,
+          "end": 4.63
+        },
+        {
+          "text": "las",
+          "start": 4.63,
+          "end": 5.05
+        },
+        {
+          "text": "algas",
+          "start": 5.05,
+          "end": 5.39
+        },
+        {
+          "text": "o",
+          "start": 5.39,
+          "end": 6.11
+        },
+        {
+          "text": "pegado",
+          "start": 6.11,
+          "end": 6.49
+        },
+        {
+          "text": "a",
+          "start": 6.49,
+          "end": 6.63
+        },
+        {
+          "text": "la",
+          "start": 6.63,
+          "end": 6.95
+        },
+        {
+          "text": "roca?",
+          "start": 6.95,
+          "end": 7.03
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "text": "¡Ahí está! Cambió el color y la textura de su piel para parecerse a la roca.",
+      "file": "audio/v1/ep002/s3.wav",
+      "offset": 9.1,
+      "duration": 5.75,
+      "voiceStart": 9.1,
+      "voiceEnd": 14.44000015258789,
+      "words": [
+        {
+          "text": "¡Ahí",
+          "start": 9.1,
+          "end": 9.46
+        },
+        {
+          "text": "está!",
+          "start": 9.46,
+          "end": 9.86
+        },
+        {
+          "text": "Cambió",
+          "start": 10.6,
+          "end": 10.7
+        },
+        {
+          "text": "el",
+          "start": 10.7,
+          "end": 11.06
+        },
+        {
+          "text": "color",
+          "start": 11.06,
+          "end": 11.24
+        },
+        {
+          "text": "y",
+          "start": 11.24,
+          "end": 11.52
+        },
+        {
+          "text": "la",
+          "start": 11.52,
+          "end": 11.88
+        },
+        {
+          "text": "textura",
+          "start": 11.88,
+          "end": 12.14
+        },
+        {
+          "text": "de",
+          "start": 12.14,
+          "end": 12.34
+        },
+        {
+          "text": "su",
+          "start": 12.34,
+          "end": 12.58
+        },
+        {
+          "text": "piel",
+          "start": 12.58,
+          "end": 12.76
+        },
+        {
+          "text": "para",
+          "start": 12.76,
+          "end": 13.28
+        },
+        {
+          "text": "parecerse",
+          "start": 13.28,
+          "end": 14.04
+        },
+        {
+          "text": "a",
+          "start": 14.04,
+          "end": 14.1
+        },
+        {
+          "text": "la",
+          "start": 14.1,
+          "end": 14.34
+        },
+        {
+          "text": "roca.",
+          "start": 14.34,
+          "end": 14.44
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "text": "Mirá cómo se mueve.",
+      "file": "audio/v1/ep002/s4.wav",
+      "offset": 14.8,
+      "duration": 2.65,
+      "voiceStart": 14.8,
+      "voiceEnd": 16.280000019073487,
+      "words": [
+        {
+          "text": "Mirá",
+          "start": 14.8,
+          "end": 15.44
+        },
+        {
+          "text": "cómo",
+          "start": 15.44,
+          "end": 15.74
+        },
+        {
+          "text": "se",
+          "start": 15.74,
+          "end": 16.12
+        },
+        {
+          "text": "mueve.",
+          "start": 16.12,
+          "end": 16.28
+        }
+      ]
+    }
+  ]
+}

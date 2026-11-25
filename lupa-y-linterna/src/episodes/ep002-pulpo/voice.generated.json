@@ -4,210 +4,312 @@
   "segments": [
     {
       "id": "s1",
-      "text": "Acá hay un pulpo escondido.",
+      "text": "Quiero encontrar al pulpo.",
       "file": "audio/ep002/s1.wav",
       "offset": 0.3,
-      "duration": 3.55,
+      "duration": 2.4,
       "voiceStart": 0.3,
-      "voiceEnd": 3.3799999237060545,
+      "voiceEnd": 2.1600000143051146,
       "words": [
         {
-          "text": "Acá",
+          "text": "Quiero",
           "start": 0.3,
-          "end": 0.96
+          "end": 0.72
         },
         {
-          "text": "hay",
-          "start": 0.96,
-          "end": 1.34
+          "text": "encontrar",
+          "start": 0.72,
+          "end": 1.4
         },
         {
-          "text": "un",
-          "start": 1.34,
-          "end": 1.94
+          "text": "al",
+          "start": 1.4,
+          "end": 1.86
         },
         {
-          "text": "pulpo",
-          "start": 1.94,
-          "end": 2.44
-        },
-        {
-          "text": "escondido.",
-          "start": 2.44,
-          "end": 3.38
+          "text": "pulpo.",
+          "start": 1.86,
+          "end": 2.16
         }
       ]
     },
     {
       "id": "s2",
-      "text": "¿Entre las algas o pegado a la roca?",
+      "text": "¿Está entre las algas o en la roca?",
       "file": "audio/ep002/s2.wav",
-      "offset": 3.75,
-      "duration": 3.75,
-      "voiceStart": 3.75,
-      "voiceEnd": 7.0299999713897705,
+      "offset": 2.5,
+      "duration": 3.2,
+      "voiceStart": 2.5,
+      "voiceEnd": 5.2799999713897705,
       "words": [
         {
-          "text": "¿Entre",
-          "start": 3.75,
-          "end": 4.63
+          "text": "¿Está",
+          "start": 2.5,
+          "end": 3.1
+        },
+        {
+          "text": "entre",
+          "start": 3.1,
+          "end": 3.4
         },
         {
           "text": "las",
-          "start": 4.63,
-          "end": 5.05
+          "start": 3.4,
+          "end": 3.86
         },
         {
           "text": "algas",
-          "start": 5.05,
-          "end": 5.39
+          "start": 3.86,
+          "end": 4.18
         },
         {
           "text": "o",
-          "start": 5.39,
-          "end": 6.11
+          "start": 4.18,
+          "end": 4.78
         },
         {
-          "text": "pegado",
-          "start": 6.11,
-          "end": 6.49
-        },
-        {
-          "text": "a",
-          "start": 6.49,
-          "end": 6.63
+          "text": "en",
+          "start": 4.78,
+          "end": 4.84
         },
         {
           "text": "la",
-          "start": 6.63,
-          "end": 6.95
+          "start": 4.84,
+          "end": 5.2
         },
         {
           "text": "roca?",
-          "start": 6.95,
-          "end": 7.03
+          "start": 5.2,
+          "end": 5.28
         }
       ]
     },
     {
       "id": "s3",
-      "text": "¡Ahí está! Cambió el color y la textura de su piel para parecerse a la roca.",
+      "text": "¡Ahí está! Movió un brazo.",
       "file": "audio/ep002/s3.wav",
-      "offset": 9.1,
-      "duration": 5.75,
-      "voiceStart": 9.1,
-      "voiceEnd": 14.44000015258789,
+      "offset": 7.45,
+      "duration": 2.35,
+      "voiceStart": 7.45,
+      "voiceEnd": 9.610000085830688,
       "words": [
         {
           "text": "¡Ahí",
-          "start": 9.1,
-          "end": 9.46
+          "start": 7.45,
+          "end": 7.77
         },
         {
           "text": "está!",
-          "start": 9.46,
-          "end": 9.86
+          "start": 7.77,
+          "end": 8.13
         },
         {
-          "text": "Cambió",
-          "start": 10.6,
-          "end": 10.7
+          "text": "Movió",
+          "start": 8.81,
+          "end": 9.13
         },
         {
-          "text": "el",
-          "start": 10.7,
-          "end": 11.06
+          "text": "un",
+          "start": 9.13,
+          "end": 9.57
         },
         {
-          "text": "color",
-          "start": 11.06,
-          "end": 11.24
-        },
-        {
-          "text": "y",
-          "start": 11.24,
-          "end": 11.52
-        },
-        {
-          "text": "la",
-          "start": 11.52,
-          "end": 11.88
-        },
-        {
-          "text": "textura",
-          "start": 11.88,
-          "end": 12.14
-        },
-        {
-          "text": "de",
-          "start": 12.14,
-          "end": 12.34
-        },
-        {
-          "text": "su",
-          "start": 12.34,
-          "end": 12.58
-        },
-        {
-          "text": "piel",
-          "start": 12.58,
-          "end": 12.76
-        },
-        {
-          "text": "para",
-          "start": 12.76,
-          "end": 13.28
-        },
-        {
-          "text": "parecerse",
-          "start": 13.28,
-          "end": 14.04
-        },
-        {
-          "text": "a",
-          "start": 14.04,
-          "end": 14.1
-        },
-        {
-          "text": "la",
-          "start": 14.1,
-          "end": 14.34
-        },
-        {
-          "text": "roca.",
-          "start": 14.34,
-          "end": 14.44
+          "text": "brazo.",
+          "start": 9.57,
+          "end": 9.61
         }
       ]
     },
     {
       "id": "s4",
-      "text": "Mirá cómo se mueve.",
+      "text": "Ahora que lo viste, ¿cómo se esconde otra vez?",
       "file": "audio/ep002/s4.wav",
-      "offset": 14.8,
-      "duration": 2.65,
-      "voiceStart": 14.8,
-      "voiceEnd": 16.280000019073487,
+      "offset": 10,
+      "duration": 4.85,
+      "voiceStart": 10,
+      "voiceEnd": 13.259999990463257,
       "words": [
         {
-          "text": "Mirá",
-          "start": 14.8,
-          "end": 15.44
+          "text": "Ahora",
+          "start": 10,
+          "end": 10.52
         },
         {
-          "text": "cómo",
-          "start": 15.44,
-          "end": 15.74
+          "text": "que",
+          "start": 10.52,
+          "end": 10.68
+        },
+        {
+          "text": "lo",
+          "start": 10.68,
+          "end": 11.1
+        },
+        {
+          "text": "viste,",
+          "start": 11.1,
+          "end": 11.24
+        },
+        {
+          "text": "¿cómo",
+          "start": 11.52,
+          "end": 11.9
         },
         {
           "text": "se",
-          "start": 15.74,
-          "end": 16.12
+          "start": 11.9,
+          "end": 12.54
         },
         {
-          "text": "mueve.",
-          "start": 16.12,
-          "end": 16.28
+          "text": "esconde",
+          "start": 12.54,
+          "end": 12.62
+        },
+        {
+          "text": "otra",
+          "start": 12.62,
+          "end": 12.98
+        },
+        {
+          "text": "vez?",
+          "start": 12.98,
+          "end": 13.26
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "text": "Cambia el color y la textura de su piel, y se parece cada vez más a la roca.",
+      "file": "audio/ep002/s5.wav",
+      "offset": 14,
+      "duration": 6.35,
+      "voiceStart": 14,
+      "voiceEnd": 20.09999990463257,
+      "words": [
+        {
+          "text": "Cambia",
+          "start": 14,
+          "end": 14.56
+        },
+        {
+          "text": "el",
+          "start": 14.56,
+          "end": 15.04
+        },
+        {
+          "text": "color",
+          "start": 15.04,
+          "end": 15.32
+        },
+        {
+          "text": "y",
+          "start": 15.32,
+          "end": 15.64
+        },
+        {
+          "text": "la",
+          "start": 15.64,
+          "end": 15.96
+        },
+        {
+          "text": "textura",
+          "start": 15.96,
+          "end": 16.26
+        },
+        {
+          "text": "de",
+          "start": 16.26,
+          "end": 16.46
+        },
+        {
+          "text": "su",
+          "start": 16.46,
+          "end": 16.68
+        },
+        {
+          "text": "piel,",
+          "start": 16.68,
+          "end": 16.9
+        },
+        {
+          "text": "y",
+          "start": 16.9,
+          "end": 17.66
+        },
+        {
+          "text": "se",
+          "start": 17.66,
+          "end": 17.94
+        },
+        {
+          "text": "parece",
+          "start": 17.94,
+          "end": 18.18
+        },
+        {
+          "text": "cada",
+          "start": 18.18,
+          "end": 18.62
+        },
+        {
+          "text": "vez",
+          "start": 18.62,
+          "end": 18.86
+        },
+        {
+          "text": "más",
+          "start": 18.86,
+          "end": 19.28
+        },
+        {
+          "text": "a",
+          "start": 19.28,
+          "end": 19.66
+        },
+        {
+          "text": "la",
+          "start": 19.66,
+          "end": 19.88
+        },
+        {
+          "text": "roca.",
+          "start": 19.88,
+          "end": 20.1
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "text": "Pero un brazo lo delata.",
+      "file": "audio/ep002/s6.wav",
+      "offset": 20.5,
+      "duration": 2.5,
+      "voiceStart": 20.5,
+      "voiceEnd": 22.59999990463257,
+      "words": [
+        {
+          "text": "Pero",
+          "start": 20.5,
+          "end": 21
+        },
+        {
+          "text": "un",
+          "start": 21,
+          "end": 21.38
+        },
+        {
+          "text": "brazo",
+          "start": 21.38,
+          "end": 21.8
+        },
+        {
+          "text": "lo",
+          "start": 21.8,
+          "end": 22.28
+        },
+        {
+          "text": "delata.",
+          "start": 22.28,
+          "end": 22.6
         }
       ]
     }

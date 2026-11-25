@@ -36,10 +36,10 @@ const DOTS: Dot[] = (() => {
 })();
 
 const dotsMask = (p: number) => {
-  const R = 46;
+  const R = 22 + 26 * Math.min(1, Math.max(0, (p - 0.8) / 0.2)); // manchitas chicas al principio; al final se ensanchan y cubren todo
   const circles = DOTS.map((d) => {
-    const q = Math.min(1, Math.max(0, (p * 1.6 - d.delay * 0.6) / 1.0));
-    const r = R * q * q;
+    const q = Math.min(1, Math.max(0, (p - 0.8 * d.delay) / 0.2)); // cada manchita «salta» en su momento → el camuflaje avanza de a poco
+    const r = R * (1 - Math.pow(1 - q, 2));
     return r > 0.4 ? `<circle cx='${d.x.toFixed(0)}' cy='${d.y.toFixed(0)}' r='${r.toFixed(1)}' fill='white'/>` : "";
   }).join("");
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='${BW}' height='${BH}'>${circles}</svg>`;
@@ -84,9 +84,9 @@ const Ring: React.FC<{ clip: string; halo: number }> = ({ clip, halo }) => (
   </div>
 );
 
-type Props = { p: number; arm?: number; halo?: number; eyes?: number; scale?: number };
+type Props = { p: number; arm?: number; halo?: number; armCap?: number };
 /** p: 0 = coral, 1 = camuflado · arm: grados del brazo · halo: 0–1 contorno amarillo · eyes: 0 cerrados, 1 abiertos(coral) */
-export const Octopus: React.FC<Props> = ({ p, arm = 0, halo = 0 }) => {
+export const Octopus: React.FC<Props> = ({ p, arm = 0, halo = 0, armCap = 1 }) => {
   const piv = [ARM_PIVOT[0] * F, ARM_PIVOT[1] * F];
   // ojitos cerrados (rendijas) solo cuando está camuflado
   const slitOp = Math.max(0, (p - 0.6) / 0.4) * 0.4; // pista muy sutil: los ojitos cerrados
@@ -105,7 +105,7 @@ export const Octopus: React.FC<Props> = ({ p, arm = 0, halo = 0 }) => {
       {halo > 0 && <Ring clip={CLIP_BODY} halo={halo} />}
       <Skin p={p} clip={CLIP_BODY} />
       <div style={{ position: "absolute", inset: 0, transform: `rotate(${arm}deg)`, transformOrigin: `${piv[0]}px ${piv[1]}px` }}>
-        <Skin p={p} clip={CLIP_ARM} />
+        <Skin p={Math.min(p, armCap)} clip={CLIP_ARM} />
         {halo > 0 && <Ring clip={CLIP_ARM} halo={halo} />}
       </div>
       <svg width={BW} height={BH} style={{ position: "absolute", inset: 0, opacity: slitOp }}>
@@ -121,3 +121,12 @@ export const Octopus: React.FC<Props> = ({ p, arm = 0, halo = 0 }) => {
 export const SeaBackground: React.FC = () => (
   <Img src={staticFile("art/generated/bg_sea.png")} style={{ position: "absolute", left: BG.left, top: BG.top, width: BG.w, height: BG.h }} />
 );
+
+/** Posición (mundo 1080×1920) de una ventosa de la punta del brazo que se mueve, para marcarla y seguirla. */
+export const ARM_TIP: [number, number] = [1190, 212];
+export const armTipWorld = (deg: number) => {
+  const r = (deg * Math.PI) / 180;
+  const dx = ARM_TIP[0] - ARM_PIVOT[0], dy = ARM_TIP[1] - ARM_PIVOT[1];
+  const rx = dx * Math.cos(r) - dy * Math.sin(r), ry = dx * Math.sin(r) + dy * Math.cos(r);
+  return { x: OCT_LEFT + (ARM_PIVOT[0] + rx) * F, y: OCT_TOP + (ARM_PIVOT[1] + ry) * F };
+};

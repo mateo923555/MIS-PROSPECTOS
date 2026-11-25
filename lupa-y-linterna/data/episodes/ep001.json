@@ -1,37 +1,49 @@
 {
   "id": "ep001",
-  "file": "lupa-y-linterna_ep001_sombra-gigante",
+  "version": "v2",
+  "file": "lupa-y-linterna_ep001_sombra-gigante_v2",
   "format": "A",
   "formatName": "¿Por qué pasa esto?",
   "title": "¿Por qué mi sombra se hizo gigante?",
-  "durationTargetSec": 23,
+  "durationTargetSec": 21.9,
+  "narrative": {
+    "primerCuadro": "Una sombra gigante desborda el marco de la pared: sobra por arriba y por los costados. El bebé la mira con las manos arriba. Se entiende sin sonido: la sombra no entra.",
+    "quiere": "El bebé quiere que su sombra gigante entre justo dentro del marco de la pared (pregunta en voz: «¿Cómo hago para que entre?»).",
+    "aprende": "Cerca de la luz la sombra crece; lejos de la luz se achica. Con la linterna y la pared quietas, solo cambia dónde se para el bebé.",
+    "planoFinal": "El bebé, lejos de la linterna, hace que su sombra entre justo en el marco y la sombra saluda con él."
+  },
   "voice": {
     "person": "primera persona (el bebé)",
     "segments": [
       {
         "id": "s1",
         "at": 0.3,
-        "text": "¡Esa sombra es gigante! ¿De quién será?"
+        "text": "¡Mi sombra no entra en el marco!"
       },
       {
         "id": "s2",
-        "at": 4.7,
-        "text": "Es mía."
+        "at": 3.25,
+        "text": "¿Cómo hago para que entre?"
       },
       {
         "id": "s3",
-        "at": 6.3,
-        "text": "Mirá, me acerco a la linterna y mi sombra crece."
+        "at": 5.8,
+        "text": "Si me acerco a la linterna… ¡crece más!"
       },
       {
         "id": "s4",
-        "at": 12.6,
-        "text": "Ahora me alejo y se achica."
+        "at": 10.6,
+        "text": "Si me alejo… ¡se achica!"
       },
       {
         "id": "s5",
-        "at": 18.3,
-        "text": "¡Hasta la sombra puede saludar!"
+        "at": 13.9,
+        "text": "¡Entró justo! Lejos de la luz, la sombra es más chica."
+      },
+      {
+        "id": "s6",
+        "at": 19,
+        "text": "¡Hola, sombra!"
       }
     ]
   },
@@ -39,8 +51,9 @@
     "title": "ACS — Adventures in Chemistry: S is for Shadow",
     "url": "https://www.acs.org/education/whatischemistry/adventures-in-chemistry/science-abc/s-is-for-shadow.html"
   },
-  "scienceCheck": "La sombra se proyecta detrás del personaje respecto de la luz. La distancia linterna–pared es fija; solo cambia la distancia linterna–personaje: más cerca de la luz = sombra más grande y más difusa; más lejos = más chica y más nítida.",
-  "firstFrameSuggested": "Fotograma 0: la silueta gigante (manos arriba, tres mechones) llenando la pared iluminada.",
+  "scienceCheck": "La sombra se proyecta detrás del personaje respecto de la luz. Linterna y pared quedan fijas; solo cambia la distancia linterna–personaje: más cerca de la luz = sombra más grande y difusa; más lejos = más chica y nítida.",
+  "firstFrameSuggested": "Fotograma 0: la silueta gigante desbordando el marco de la pared, con el bebé y la linterna abajo.",
+  "contaElChico": "«El bebé quería que su sombra entrara en el marco: cuando se acercaba a la linterna la sombra se hacía más grande, y cuando se alejaba, más chica, hasta que entró justo.»",
   "status": "FINAL (voz verificada técnicamente; falta tu escucha)",
-  "render": "renders/lupa-y-linterna_ep001_sombra-gigante_FINAL.mp4"
+  "render": "renders/lupa-y-linterna_ep001_sombra-gigante_v2_FINAL.mp4"
 }

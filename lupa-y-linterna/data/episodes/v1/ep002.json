@@ -1,0 +1,45 @@
+{
+  "id": "ep002",
+  "file": "lupa-y-linterna_ep002_pulpo-escondido",
+  "format": "B",
+  "formatName": "¿Podés descubrirlo?",
+  "title": "¿Podés encontrar al pulpo escondido?",
+  "durationTargetSec": 24,
+  "voice": {
+    "person": "narradora",
+    "segments": [
+      {
+        "id": "s1",
+        "at": 0.3,
+        "text": "Acá hay un pulpo escondido."
+      },
+      {
+        "id": "s2",
+        "at": 3.75,
+        "text": "¿Entre las algas o pegado a la roca?"
+      },
+      {
+        "id": "s3",
+        "at": 9.1,
+        "text": "¡Ahí está! Cambió el color y la textura de su piel para parecerse a la roca."
+      },
+      {
+        "id": "s4",
+        "at": 14.8,
+        "text": "Mirá cómo se mueve."
+      }
+    ],
+    "guessPause": {
+      "afterSegment": "s2",
+      "minSeconds": 2
+    }
+  },
+  "source": {
+    "title": "Smithsonian Ocean — How Octopuses and Squids Change Color",
+    "url": "https://ocean.si.edu/ocean-life/invertebrates/how-octopuses-and-squids-change-color"
+  },
+  "scienceCheck": "El pulpo cambia el color y la textura de la piel para confundirse con el entorno (camuflaje). La roca y el pulpo siguen siendo cosas distintas: solo cambia la apariencia del pulpo.",
+  "firstFrameSuggested": "Fotograma 0: escena submarina completa, algas a la izquierda y roca a la derecha, sin pistas del pulpo.",
+  "status": "FINAL (voz verificada técnicamente; falta tu escucha)",
+  "render": "renders/lupa-y-linterna_ep002_pulpo-escondido_FINAL.mp4"
+}

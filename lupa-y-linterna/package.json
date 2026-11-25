@@ -14,6 +14,7 @@
     "render:all": "tsx scripts/render.ts ep001 ep002",
     "verify": "tsx scripts/verify.ts",
     "stills": "tsx scripts/stills.ts",
+    "check": "tsx scripts/check-geometry.ts",
     "master": "tsx scripts/master-audio.ts",
     "briefs": "tsx scripts/make-briefs.ts",
     "metrics": "tsx scripts/analyze-metrics.ts"

@@ -1,13 +1,13 @@
 {
   "ep": "ep001",
-  "file": "lupa-y-linterna_ep001_sombra-gigante_FINAL.mp4",
-  "checkedAt": "2026-11-25T13:12:25.843Z",
+  "file": "lupa-y-linterna_ep001_sombra-gigante_v2_FINAL.mp4",
+  "checkedAt": "2026-11-25T19:53:06.836Z",
   "ok": true,
   "checks": [
     {
       "name": "duración",
       "ok": true,
-      "detail": "23.00 s (objetivo 23 s, rango 20–25 s: ok)"
+      "detail": "21.90 s (objetivo 21.9 s, rango 20–25 s: ok)"
     },
     {
       "name": "dimensiones",
@@ -22,12 +22,12 @@
     {
       "name": "video",
       "ok": true,
-      "detail": "h264 yuv420p 4.4 Mb/s"
+      "detail": "h264 yuv420p 3.8 Mb/s"
     },
     {
       "name": "audio",
       "ok": true,
-      "detail": "aac 48000 Hz 2 ch 22.99 s"
+      "detail": "aac 48000 Hz 2 ch 21.89 s"
     },
     {
       "name": "picos",
@@ -37,37 +37,92 @@
     {
       "name": "loudness",
       "ok": true,
-      "detail": "-14.3 LUFS integrados (referencia para Shorts ≈ -14)"
+      "detail": "-15.2 LUFS integrados (referencia para Shorts ≈ -14)"
     },
     {
       "name": "margen final",
       "ok": true,
-      "detail": "1.76 s entre el fin de la voz y el fin del video (mín 0,3 s)"
+      "detail": "1.16 s entre el fin de la voz y el fin del video (mín 0,3 s)"
     },
     {
       "name": "oye \"s1\"",
       "ok": true,
-      "detail": "100% de las palabras de «¡Esa sombra es gigante! ¿De quién será?» se oyen en la mezcla final, dentro de su ventana"
+      "detail": "100% de las palabras de «¡Mi sombra no entra en el marco!» se oyen en la mezcla final, dentro de su ventana"
     },
     {
       "name": "oye \"s2\"",
       "ok": true,
-      "detail": "100% de las palabras de «Es mía.» se oyen en la mezcla final, dentro de su ventana"
+      "detail": "100% de las palabras de «¿Cómo hago para que entre?» se oyen en la mezcla final, dentro de su ventana"
     },
     {
       "name": "oye \"s3\"",
       "ok": true,
-      "detail": "100% de las palabras de «Mirá, me acerco a la linterna y mi sombra crece.» se oyen en la mezcla final, dentro de su ventana"
+      "detail": "100% de las palabras de «Si me acerco a la linterna… ¡crece más!» se oyen en la mezcla final, dentro de su ventana"
     },
     {
       "name": "oye \"s4\"",
       "ok": true,
-      "detail": "100% de las palabras de «Ahora me alejo y se achica.» se oyen en la mezcla final, dentro de su ventana"
+      "detail": "100% de las palabras de «Si me alejo… ¡se achica!» se oyen en la mezcla final, dentro de su ventana"
     },
     {
       "name": "oye \"s5\"",
       "ok": true,
-      "detail": "100% de las palabras de «¡Hasta la sombra puede saludar!» se oyen en la mezcla final, dentro de su ventana"
+      "detail": "100% de las palabras de «¡Entró justo! Lejos de la luz, la sombra es más chica.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s6\"",
+      "ok": true,
+      "detail": "100% de las palabras de «¡Hola, sombra!» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "narrativa · objetivo dicho antes del seg. 4",
+      "ok": true,
+      "detail": "la primera frase «¡Mi sombra no entra en el marco!» va de 0.3 a 3.0 s"
+    },
+    {
+      "name": "narrativa · cierre inmediato tras el remate",
+      "ok": true,
+      "detail": "1.16 s entre el fin de la última frase y el fin del video (0,3–1,5 s)"
+    },
+    {
+      "name": "narrativa · duración 20–25 s",
+      "ok": true,
+      "detail": "21.90 s"
+    },
+    {
+      "name": "narrativa · cuatro líneas narrativas escritas",
+      "ok": true,
+      "detail": "data/episodes/ep001.json → narrative + contaElChico"
+    },
+    {
+      "name": "narrativa · primer cuadro: la sombra desborda el marco",
+      "ok": true,
+      "detail": "69 % de la franja sobre el marco está en sombra (esperado > 30 %)"
+    },
+    {
+      "name": "narrativa · plano final: la sombra NO desborda",
+      "ok": true,
+      "detail": "franja sobre el marco en sombra: 0 % al entrar, 0 % al final (esperado < 5 %)"
+    },
+    {
+      "name": "narrativa · plano final: la sombra está dentro del marco",
+      "ok": true,
+      "detail": "47 % del interior del marco en sombra (esperado > 20 %)"
+    },
+    {
+      "name": "narrativa · acercarse agranda / alejarse achica",
+      "ok": true,
+      "detail": "pared en sombra: 39 % (cerca) vs 12 % (lejos)"
+    },
+    {
+      "name": "narrativa · saluda en el plano final",
+      "ok": true,
+      "detail": "«¡Hola, sombra!» empieza en 19.0 s"
+    },
+    {
+      "name": "narrativa · geometría (D fija, entra justo)",
+      "ok": true,
+      "detail": "7 chequeos de scripts/check-geometry.ts"
     }
   ]
 }

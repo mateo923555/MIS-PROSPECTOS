@@ -1,32 +1,49 @@
 {
   "id": "ep002",
-  "file": "lupa-y-linterna_ep002_pulpo-escondido",
+  "version": "v2",
+  "file": "lupa-y-linterna_ep002_pulpo-escondido_v2",
   "format": "B",
   "formatName": "¿Podés descubrirlo?",
   "title": "¿Podés encontrar al pulpo escondido?",
-  "durationTargetSec": 24,
+  "durationTargetSec": 23.7,
+  "narrative": {
+    "primerCuadro": "Dos escondites bien visibles —las algas y la roca— cada uno con un «?» que late, y el bebé con visor mirando de uno a otro. Se entiende sin sonido: hay algo escondido en uno de los dos.",
+    "quiere": "El bebé quiere encontrar al pulpo escondido («¿Está entre las algas o en la roca?»), y después saber cómo se esconde otra vez.",
+    "aprende": "El pulpo cambia el color y la textura de su piel para parecerse a lo que tiene alrededor (camuflaje): se esconde en la roca, pero si mueve un brazo se lo puede seguir.",
+    "planoFinal": "En el mismo encuadre, su piel pasó de coral y lisa a gris y rugosa, casi igual a la roca, y un brazo en movimiento (marcado con un aro en una ventosa) permite seguirlo hasta el último cuadro."
+  },
   "voice": {
     "person": "narradora",
     "segments": [
       {
         "id": "s1",
         "at": 0.3,
-        "text": "Acá hay un pulpo escondido."
+        "text": "Quiero encontrar al pulpo."
       },
       {
         "id": "s2",
-        "at": 3.75,
-        "text": "¿Entre las algas o pegado a la roca?"
+        "at": 2.5,
+        "text": "¿Está entre las algas o en la roca?"
       },
       {
         "id": "s3",
-        "at": 9.1,
-        "text": "¡Ahí está! Cambió el color y la textura de su piel para parecerse a la roca."
+        "at": 7.45,
+        "text": "¡Ahí está! Movió un brazo."
       },
       {
         "id": "s4",
-        "at": 14.8,
-        "text": "Mirá cómo se mueve."
+        "at": 10,
+        "text": "Ahora que lo viste, ¿cómo se esconde otra vez?"
+      },
+      {
+        "id": "s5",
+        "at": 14,
+        "text": "Cambia el color y la textura de su piel, y se parece cada vez más a la roca."
+      },
+      {
+        "id": "s6",
+        "at": 20.5,
+        "text": "Pero un brazo lo delata."
       }
     ],
     "guessPause": {
@@ -38,8 +55,9 @@
     "title": "Smithsonian Ocean — How Octopuses and Squids Change Color",
     "url": "https://ocean.si.edu/ocean-life/invertebrates/how-octopuses-and-squids-change-color"
   },
-  "scienceCheck": "El pulpo cambia el color y la textura de la piel para confundirse con el entorno (camuflaje). La roca y el pulpo siguen siendo cosas distintas: solo cambia la apariencia del pulpo.",
-  "firstFrameSuggested": "Fotograma 0: escena submarina completa, algas a la izquierda y roca a la derecha, sin pistas del pulpo.",
+  "scienceCheck": "El pulpo cambia el color y la textura de la piel para confundirse con el entorno. La roca y el pulpo siguen siendo cosas distintas: solo cambia la apariencia del pulpo.",
+  "firstFrameSuggested": "Fotograma 0: escena submarina con algas a la izquierda y roca a la derecha, un «?» sobre cada escondite.",
+  "contaElChico": "«El pulpo estaba escondido en la roca; lo encontré porque movió un brazo. Su piel cambia de color y se pone rugosa para parecerse a la roca.»",
   "status": "FINAL (voz verificada técnicamente; falta tu escucha)",
-  "render": "renders/lupa-y-linterna_ep002_pulpo-escondido_FINAL.mp4"
+  "render": "renders/lupa-y-linterna_ep002_pulpo-escondido_v2_FINAL.mp4"
 }

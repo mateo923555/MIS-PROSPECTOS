@@ -1,21 +1,301 @@
 {
   "_nota": "Cola editable de la primera semana (14 Shorts). Cambiá título/formato/visual libremente; `porVerificar` lista lo que HAY QUE confirmar con una fuente antes de producir. Los únicos renders de esta sesión son los del Día 1 (ep001 y ep002).",
-  "formatos": { "A": "¿Por qué pasa esto? — el fenómeno raro aparece en el primer cuadro y el bebé lo investiga", "B": "¿Podés descubrirlo? — el espectador elige entre dos opciones, piensa y ve la revelación" },
+  "formatos": {
+    "A": "¿Por qué pasa esto? — el fenómeno raro aparece en el primer cuadro y el bebé lo investiga",
+    "B": "¿Podés descubrirlo? — el espectador elige entre dos opciones, piensa y ve la revelación"
+  },
   "items": [
-    { "id": "ep001", "dia": 1, "formato": "A", "titulo": "¿Por qué mi sombra se hizo gigante?", "visual": "Sombra gigante en la pared; linterna y pared fijas, el bebé se acerca y se aleja.", "estado": "RENDERIZADO (data/episodes/ep001.json)", "fuente": "https://www.acs.org/education/whatischemistry/adventures-in-chemistry/science-abc/s-is-for-shadow.html", "porVerificar": [] },
-    { "id": "ep002", "dia": 1, "formato": "B", "titulo": "¿Podés encontrar al pulpo escondido?", "visual": "Escena submarina: algas vs. roca; el pulpo se camufla y un brazo lo delata.", "estado": "RENDERIZADO (data/episodes/ep002.json)", "fuente": "https://ocean.si.edu/ocean-life/invertebrates/how-octopuses-and-squids-change-color", "porVerificar": [] },
-    { "id": "ep003", "dia": 2, "formato": "A", "titulo": "La Luna parece seguirte", "visual": "Plano de auto/bicicleta de plastilina andando de noche; la Luna grande siempre en la ventanilla del bebé; contraste con un farol cercano que sí 've pasar'.", "estado": "IDEA", "fuente": "", "porVerificar": ["Explicación: la Luna está tan lejos (~384.000 km) que su dirección casi no cambia al movernos; los objetos cercanos sí cambian (paralaje).", "Buscar fuente institucional (NASA / Smithsonian / observatorio) antes de escribir el guion.", "Evitar prometer que 'la Luna sigue al bebé' como hecho: es una ilusión de distancia."] },
-    { "id": "ep004", "dia": 2, "formato": "B", "titulo": "¿Flota el barquito de aluminio?", "visual": "Dos objetos de aluminio sobre una palangana: una bolita apretada y una hoja doblada como barquito; el espectador elige cuál flota.", "estado": "IDEA", "fuente": "", "porVerificar": ["Resultado real: la bolita compacta se hunde; la hoja plegada en forma de barquito desplaza más agua y flota. Probarlo físicamente antes de animar.", "Usar el término simple 'ocupa más lugar en el agua' (sin 'densidad') salvo que la fuente lo avale para 5–8 años.", "Fuente educativa (museo de ciencias / ACS / NASA) a confirmar."] },
-    { "id": "ep005", "dia": 3, "formato": "A", "titulo": "El lápiz parece doblarse en el agua", "visual": "Vaso transparente con lápiz coral; el bebé mira de frente y de costado con la lupa; un hilito de luz se dobla al pasar del agua al aire.", "estado": "IDEA (también escena del horizontal)", "fuente": "", "porVerificar": ["Refracción: la luz cambia de dirección al pasar de agua a aire; el lápiz NO se dobla de verdad.", "Confirmar fuente y vocabulario apto (¿'se dobla la luz'?).", "Cuidar que el diagrama de rayos sea correcto (no inventar trayectorias)."] },
-    { "id": "ep006", "dia": 3, "formato": "B", "titulo": "¿Qué objeto atrae el imán?", "visual": "Mesa con 3–4 objetos (clip, goma, cuchara de metal, moneda); el imán se acerca a cada uno tras la pausa.", "estado": "IDEA", "fuente": "", "porVerificar": ["Elegir objetos cuyo resultado se verifique físicamente (clip de acero sí; muchas monedas depende del país; aluminio/cobre no).", "No mostrar imanes pequeños sueltos como juguete (riesgo de ingestión): sumar nota para adultos en la descripción.", "Fuente educativa a confirmar."] },
-    { "id": "ep007", "dia": 4, "formato": "A", "titulo": "El eco devuelve tu voz", "visual": "El bebé grita 'hola' frente a una pared de montaña de plastilina; ondas de sonido concéntricas rebotan y vuelven.", "estado": "IDEA", "fuente": "", "porVerificar": ["El eco es sonido que rebota; el eco claro necesita una superficie lejana (verificar distancia mínima ≈ 17 m con una fuente).", "Cuidar que las ondas dibujadas sean simbólicas y se aclare que no se ven en la vida real.", "Fuente (museo de ciencias / universidad / NASA) a confirmar."] },
-    { "id": "ep008", "dia": 4, "formato": "B", "titulo": "¿Dónde está el insecto palo?", "visual": "Rama con hojas; el insecto palo, camuflado, se mueve apenas tras la pausa.", "estado": "IDEA", "fuente": "", "porVerificar": ["Confirmar datos del insecto palo (orden Phasmatodea) y que el camuflaje es 'parecerse a una ramita'.", "Elegir una especie con ilustración fiel; evitar generalizaciones (por ej. 'todos viven en…').", "Fuente de museo/zoológico/universidad a confirmar."] },
-    { "id": "ep009", "dia": 5, "formato": "A", "titulo": "El globo atrae papelitos", "visual": "Globo frotado en el pelo de plastilina; los papelitos de colores saltan hacia él (sin tocarlo).", "estado": "IDEA", "fuente": "", "porVerificar": ["Electricidad estática: frotar carga el globo y atrae papelitos livianos. Verificar la explicación simple para chicos con una fuente.", "Funciona mejor con aire seco: aclarar que 'a veces no sale'.", "Seguridad: globos y niños pequeños (asfixia con globos rotos): nota a adultos."] },
-    { "id": "ep010", "dia": 5, "formato": "B", "titulo": "¿Qué pasa con la pimienta al tocar el agua con jabón?", "visual": "Plato con agua y pimienta; un dedo con jabón entra: la pimienta se aleja hacia los bordes. Opciones: ¿se hunde o se aleja?", "estado": "IDEA", "fuente": "", "porVerificar": ["Verificar la explicación (tensión superficial) y redactarla en palabras simples; probar el experimento físicamente.", "Confirmar fuente de ciencia educativa.", "Aclarar que el dedo debe tener jabón (si no, no pasa nada)."] },
-    { "id": "ep011", "dia": 6, "formato": "A", "titulo": "Cómo aparece un arcoíris en la niebla (¿o con gotitas?)", "visual": "Rocío fino de una regadera al sol con el bebé de espaldas al sol; aparece el arco de colores.", "estado": "IDEA (también escena del horizontal)", "fuente": "", "porVerificar": ["OJO: el arco en niebla densa suele verse casi blanco ('fogbow'): el arcoíris de colores se ve con gotas más grandes (lluvia, manguera/rocío).", "Posible retitulado: 'Cómo aparece un arcoíris con gotitas de agua'.", "Verificar con una fuente (NOAA / NASA / museo) la posición del sol y el ángulo del arco.", "Alternativa de producción: usar prisma/vaso de agua."] },
-    { "id": "ep012", "dia": 6, "formato": "B", "titulo": "¿Cuál de estas sombras será más grande?", "visual": "Tres linternas a distintas distancias del mismo osito de plastilina; tres sombras en la pared; el espectador elige cuál es la mayor.", "estado": "IDEA (reutiliza el sistema de sombra del ep001)", "fuente": "https://www.acs.org/education/whatischemistry/adventures-in-chemistry/science-abc/s-is-for-shadow.html", "porVerificar": ["Resolver con la misma regla del ep001 (más cerca de la luz → sombra más grande).", "Cuidar la configuración: misma pared, mismo objeto, distinta distancia a la luz."] },
-    { "id": "ep013", "dia": 7, "formato": "A", "titulo": "Por qué flota el hielo", "visual": "Vaso con agua y cubito de hielo flotando; cámara lenta a un 'corte' del vaso con burbujitas/forma del hielo.", "estado": "IDEA", "fuente": "", "porVerificar": ["El hielo flota porque ocupa más lugar que el agua líquida con la que se formó (menos denso). Verificar vocabulario con una fuente (USGS / NSIDC / museo).", "Evitar la imagen típica errónea de 'hielo con burbujas de aire que lo hacen flotar'.", "Proponer un 'cierre' visual simple y correcto."] },
-    { "id": "ep014", "dia": 7, "formato": "B", "titulo": "¿Qué animal dejó estas huellas?", "visual": "Barro de plastilina con huellas; tres siluetas de animales; tras la pausa se revela el animal.", "estado": "IDEA", "fuente": "", "porVerificar": ["Elegir 3 animales con huellas inconfundibles y datos verificables (idealmente de fauna latinoamericana).", "Dibujar las huellas con fidelidad (fuente: guía de rastros de una institución).", "Evitar animales peligrosos/idealizar el contacto con fauna silvestre."] }
+    {
+      "id": "ep001",
+      "dia": 1,
+      "formato": "A",
+      "titulo": "¿Por qué mi sombra se hizo gigante?",
+      "visual": "Sombra gigante en la pared; linterna y pared fijas, el bebé se acerca y se aleja.",
+      "estado": "RENDERIZADO v2 (v1 archivado en renders/v1)",
+      "fuente": "https://www.acs.org/education/whatischemistry/adventures-in-chemistry/science-abc/s-is-for-shadow.html",
+      "porVerificar": [],
+      "narrativa": {
+        "primerCuadro": "La sombra gigante desborda el marco de la pared.",
+        "quiere": "Que su sombra entre justo en el marco.",
+        "aprende": "Cerca de la luz la sombra crece; lejos, se achica.",
+        "planoFinal": "La sombra entra justo en el marco y saluda."
+      },
+      "contaElChico": "«El bebé quería que su sombra entrara en el marco: cuando se acercaba a la linterna crecía y cuando se alejaba se achicaba, hasta que entró justo.»"
+    },
+    {
+      "id": "ep002",
+      "dia": 1,
+      "formato": "B",
+      "titulo": "¿Podés encontrar al pulpo escondido?",
+      "visual": "Escena submarina: algas vs. roca; el pulpo se camufla y un brazo lo delata.",
+      "estado": "RENDERIZADO v2 (v1 archivado en renders/v1)",
+      "fuente": "https://ocean.si.edu/ocean-life/invertebrates/how-octopuses-and-squids-change-color",
+      "porVerificar": [],
+      "narrativa": {
+        "primerCuadro": "Dos escondites visibles (algas y roca), cada uno con un «?».",
+        "quiere": "Encontrar al pulpo y ver cómo se esconde otra vez.",
+        "aprende": "El pulpo cambia color y textura para parecerse a la roca, pero un brazo que se mueve lo delata.",
+        "planoFinal": "Mismo encuadre: su piel se parece cada vez más a la roca y un brazo en movimiento permite seguirlo."
+      },
+      "contaElChico": "«El pulpo estaba escondido en la roca; lo encontré porque movió un brazo. Su piel cambia de color y se pone rugosa para parecerse a la roca.»"
+    },
+    {
+      "id": "ep003",
+      "dia": 2,
+      "formato": "A",
+      "titulo": "La Luna parece seguirte",
+      "visual": "Plano de auto/bicicleta de plastilina andando de noche; la Luna grande siempre en la ventanilla del bebé; contraste con un farol cercano que sí 've pasar'.",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "Explicación: la Luna está tan lejos (~384.000 km) que su dirección casi no cambia al movernos; los objetos cercanos sí cambian (paralaje).",
+        "Buscar fuente institucional (NASA / Smithsonian / observatorio) antes de escribir el guion.",
+        "Evitar prometer que 'la Luna sigue al bebé' como hecho: es una ilusión de distancia."
+      ],
+      "narrativa": {
+        "primerCuadro": "Desde la ventanilla de un auto de noche: la Luna grande en el vidrio y un farol que pasa volando.",
+        "quiere": "El bebé quiere despistar a la Luna: acelerar para dejarla atrás.",
+        "aprende": "Lo cercano pasa rápido y lo lejanísimo (la Luna) casi no cambia de lugar, por eso parece seguirnos.",
+        "planoFinal": "En un mismo cuadro: farol y árboles pasan rápido y la Luna queda quieta en la ventanilla."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep004",
+      "dia": 2,
+      "formato": "B",
+      "titulo": "¿Flota el barquito de aluminio?",
+      "visual": "Dos objetos de aluminio sobre una palangana: una bolita apretada y una hoja doblada como barquito; el espectador elige cuál flota.",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "Resultado real: la bolita compacta se hunde; la hoja plegada en forma de barquito desplaza más agua y flota. Probarlo físicamente antes de animar.",
+        "Usar el término simple 'ocupa más lugar en el agua' (sin 'densidad') salvo que la fuente lo avale para 5–8 años.",
+        "Fuente educativa (museo de ciencias / ACS / NASA) a confirmar."
+      ],
+      "narrativa": {
+        "primerCuadro": "Una bolita de aluminio hundida en una palangana y una hoja de aluminio al lado, con un patito de plastilina esperando.",
+        "quiere": "Cruzar la palangana con el patito: necesita algo que flote.",
+        "aprende": "Una forma que ocupa más lugar en el agua (barquito) flota; la bolita apretada se hunde.",
+        "planoFinal": "El patito navega sobre el barquito mientras la bolita sigue en el fondo, en el mismo plano."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep005",
+      "dia": 3,
+      "formato": "A",
+      "titulo": "El lápiz parece doblarse en el agua",
+      "visual": "Vaso transparente con lápiz coral; el bebé mira de frente y de costado con la lupa; un hilito de luz se dobla al pasar del agua al aire.",
+      "estado": "IDEA (también escena del horizontal)",
+      "fuente": "",
+      "porVerificar": [
+        "Refracción: la luz cambia de dirección al pasar de agua a aire; el lápiz NO se dobla de verdad.",
+        "Confirmar fuente y vocabulario apto (¿'se dobla la luz'?).",
+        "Cuidar que el diagrama de rayos sea correcto (no inventar trayectorias)."
+      ],
+      "narrativa": {
+        "primerCuadro": "Un vaso con un lápiz que parece partido a la altura del agua.",
+        "quiere": "Arreglar el lápiz roto (¿se rompió?).",
+        "aprende": "La luz se dobla al pasar del agua al aire: el lápiz parece doblado pero sigue entero.",
+        "planoFinal": "El bebé saca el lápiz entero y lo muestra junto al vaso donde aún parece partido."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep006",
+      "dia": 3,
+      "formato": "B",
+      "titulo": "¿Qué objeto atrae el imán?",
+      "visual": "Mesa con 3–4 objetos (clip, goma, cuchara de metal, moneda); el imán se acerca a cada uno tras la pausa.",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "Elegir objetos cuyo resultado se verifique físicamente (clip de acero sí; muchas monedas depende del país; aluminio/cobre no).",
+        "No mostrar imanes pequeños sueltos como juguete (riesgo de ingestión): sumar nota para adultos en la descripción.",
+        "Fuente educativa a confirmar."
+      ],
+      "narrativa": {
+        "primerCuadro": "Una caja de tesoros con un clip, una goma y una cuchara, y un imán que se acerca.",
+        "quiere": "Pescar con el imán el objeto que se pega.",
+        "aprende": "El imán atrae solo algunos metales (como el hierro/acero), no todo lo brillante ni todo lo que parece metal.",
+        "planoFinal": "El imán sale con el clip colgando mientras la goma y el aluminio quedan en la mesa."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep007",
+      "dia": 4,
+      "formato": "A",
+      "titulo": "El eco devuelve tu voz",
+      "visual": "El bebé grita 'hola' frente a una pared de montaña de plastilina; ondas de sonido concéntricas rebotan y vuelven.",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "El eco es sonido que rebota; el eco claro necesita una superficie lejana (verificar distancia mínima ≈ 17 m con una fuente).",
+        "Cuidar que las ondas dibujadas sean simbólicas y se aclare que no se ven en la vida real.",
+        "Fuente (museo de ciencias / universidad / NASA) a confirmar."
+      ],
+      "narrativa": {
+        "primerCuadro": "El bebé frente a una montaña; sin que hable, sale una voz «hola» de la pared.",
+        "quiere": "Saber quién le contesta desde la montaña.",
+        "aprende": "El sonido rebota en una superficie lejana y vuelve: eso es el eco.",
+        "planoFinal": "Las ondas de su «hola» viajan a la pared, rebotan y vuelven a él en el mismo plano."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep008",
+      "dia": 4,
+      "formato": "B",
+      "titulo": "¿Dónde está el insecto palo?",
+      "visual": "Rama con hojas; el insecto palo, camuflado, se mueve apenas tras la pausa.",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "Confirmar datos del insecto palo (orden Phasmatodea) y que el camuflaje es 'parecerse a una ramita'.",
+        "Elegir una especie con ilustración fiel; evitar generalizaciones (por ej. 'todos viven en…').",
+        "Fuente de museo/zoológico/universidad a confirmar."
+      ],
+      "narrativa": {
+        "primerCuadro": "Una rama con hojas en la que parece no haber nadie.",
+        "quiere": "Encontrar al insecto palo para darle una hojita.",
+        "aprende": "El insecto palo se camufla parecido a una ramita.",
+        "planoFinal": "Se marca el contorno del insecto palo sobre la rama y una pata se mueve para seguirlo."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep009",
+      "dia": 5,
+      "formato": "A",
+      "titulo": "El globo atrae papelitos",
+      "visual": "Globo frotado en el pelo de plastilina; los papelitos de colores saltan hacia él (sin tocarlo).",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "Electricidad estática: frotar carga el globo y atrae papelitos livianos. Verificar la explicación simple para chicos con una fuente.",
+        "Funciona mejor con aire seco: aclarar que 'a veces no sale'.",
+        "Seguridad: globos y niños pequeños (asfixia con globos rotos): nota a adultos."
+      ],
+      "narrativa": {
+        "primerCuadro": "Papelitos de colores saltan solos hacia un globo, sin que nadie lo toque.",
+        "quiere": "Levantar los papelitos sin tocarlos.",
+        "aprende": "Frotar el globo lo carga y atrae papelitos livianos (a veces no sale si el aire es húmedo).",
+        "planoFinal": "El globo frotado levanta papelitos mientras uno sin frotar no levanta ninguno, lado a lado."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep010",
+      "dia": 5,
+      "formato": "B",
+      "titulo": "¿Qué pasa con la pimienta al tocar el agua con jabón?",
+      "visual": "Plato con agua y pimienta; un dedo con jabón entra: la pimienta se aleja hacia los bordes. Opciones: ¿se hunde o se aleja?",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "Verificar la explicación (tensión superficial) y redactarla en palabras simples; probar el experimento físicamente.",
+        "Confirmar fuente de ciencia educativa.",
+        "Aclarar que el dedo debe tener jabón (si no, no pasa nada)."
+      ],
+      "narrativa": {
+        "primerCuadro": "Un plato con agua y pimienta flotando quieta.",
+        "quiere": "Que la pimienta se vaya hacia el borde sin soplarla.",
+        "aprende": "El jabón cambia la superficie del agua y la pimienta se aleja; un dedo sin jabón no hace nada.",
+        "planoFinal": "El dedo con jabón toca el centro y la pimienta corre hacia el borde, en el mismo plato."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep011",
+      "dia": 6,
+      "formato": "A",
+      "titulo": "Cómo aparece un arcoíris en la niebla (¿o con gotitas?)",
+      "visual": "Rocío fino de una regadera al sol con el bebé de espaldas al sol; aparece el arco de colores.",
+      "estado": "IDEA (también escena del horizontal)",
+      "fuente": "",
+      "porVerificar": [
+        "OJO: el arco en niebla densa suele verse casi blanco ('fogbow'): el arcoíris de colores se ve con gotas más grandes (lluvia, manguera/rocío).",
+        "Posible retitulado: 'Cómo aparece un arcoíris con gotitas de agua'.",
+        "Verificar con una fuente (NOAA / NASA / museo) la posición del sol y el ángulo del arco.",
+        "Alternativa de producción: usar prisma/vaso de agua."
+      ],
+      "narrativa": {
+        "primerCuadro": "Gotitas de una regadera al sol y un jardín sin colores en el aire.",
+        "quiere": "Hacer aparecer un arcoíris en el jardín.",
+        "aprende": "La luz del sol con gotitas de agua se separa en colores; hay que tener el sol a la espalda.",
+        "planoFinal": "El arco de colores aparece completo sobre el bebé en el mismo cuadro."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep012",
+      "dia": 6,
+      "formato": "B",
+      "titulo": "¿Cuál de estas sombras será más grande?",
+      "visual": "Tres linternas a distintas distancias del mismo osito de plastilina; tres sombras en la pared; el espectador elige cuál es la mayor.",
+      "estado": "IDEA (reutiliza el sistema de sombra del ep001)",
+      "fuente": "https://www.acs.org/education/whatischemistry/adventures-in-chemistry/science-abc/s-is-for-shadow.html",
+      "porVerificar": [
+        "Resolver con la misma regla del ep001 (más cerca de la luz → sombra más grande).",
+        "Cuidar la configuración: misma pared, mismo objeto, distinta distancia a la luz."
+      ],
+      "narrativa": {
+        "primerCuadro": "Tres linternas a distintas distancias y tres sombras de distinto tamaño; un marco vacío.",
+        "quiere": "Elegir la sombra que llene el marco de su obra de títeres.",
+        "aprende": "Cuanto más cerca de la luz, más grande la sombra.",
+        "planoFinal": "La sombra elegida llena el marco justo y las otras se ven más chicas, en el mismo plano."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep013",
+      "dia": 7,
+      "formato": "A",
+      "titulo": "Por qué flota el hielo",
+      "visual": "Vaso con agua y cubito de hielo flotando; cámara lenta a un 'corte' del vaso con burbujitas/forma del hielo.",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "El hielo flota porque ocupa más lugar que el agua líquida con la que se formó (menos denso). Verificar vocabulario con una fuente (USGS / NSIDC / museo).",
+        "Evitar la imagen típica errónea de 'hielo con burbujas de aire que lo hacen flotar'.",
+        "Proponer un 'cierre' visual simple y correcto."
+      ],
+      "narrativa": {
+        "primerCuadro": "Un cubito de hielo flotando en un vaso con la punta afuera.",
+        "quiere": "Hundir el cubito hasta el fondo.",
+        "aprende": "El hielo flota porque ocupa más lugar que el agua con la que se formó.",
+        "planoFinal": "Al soltarlo, el cubito sube solo y flota; se ve cuánto sobresale."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    },
+    {
+      "id": "ep014",
+      "dia": 7,
+      "formato": "B",
+      "titulo": "¿Qué animal dejó estas huellas?",
+      "visual": "Barro de plastilina con huellas; tres siluetas de animales; tras la pausa se revela el animal.",
+      "estado": "IDEA",
+      "fuente": "",
+      "porVerificar": [
+        "Elegir 3 animales con huellas inconfundibles y datos verificables (idealmente de fauna latinoamericana).",
+        "Dibujar las huellas con fidelidad (fuente: guía de rastros de una institución).",
+        "Evitar animales peligrosos/idealizar el contacto con fauna silvestre."
+      ],
+      "narrativa": {
+        "primerCuadro": "Huellas en el barro y un gorrito olvidado a un costado.",
+        "quiere": "Saber quién pasó para devolverle el gorrito.",
+        "aprende": "Cada animal deja huellas distintas (dedos, almohadillas, garras).",
+        "planoFinal": "La huella encaja con las patas de uno de los dos animales, en el mismo plano."
+      },
+      "contaElChico": "(se completa al producirlo)"
+    }
   ],
-  "primerHorizontal": { "id": "h001", "titulo": "Tres misterios de luz con Lupa y Linterna", "brief": "briefs/h001-tres-misterios-de-luz.md" }
+  "primerHorizontal": {
+    "id": "h001",
+    "titulo": "Tres misterios de luz con Lupa y Linterna",
+    "brief": "briefs/h001-tres-misterios-de-luz.md"
+  },
+  "_regla": "Cada ítem lleva `narrativa` con las 4 líneas (ver briefs/BRIEF-BASE.md). Antes de producir: resolver `porVerificar`, ajustar las 4 líneas y confirmar que el objetivo se dice y se muestra antes del segundo 4."
 }
