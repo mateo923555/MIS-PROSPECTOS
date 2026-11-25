@@ -1,7 +1,7 @@
 {
   "id": "ep002",
-  "version": "v2",
-  "file": "lupa-y-linterna_ep002_pulpo-escondido_v2",
+  "version": "v3",
+  "file": "lupa-y-linterna_ep002_pulpo-escondido_v3",
   "format": "B",
   "formatName": "¿Podés descubrirlo?",
   "title": "¿Podés encontrar al pulpo escondido?",
@@ -10,7 +10,7 @@
     "primerCuadro": "Dos escondites bien visibles —las algas y la roca— cada uno con un «?» que late, y el bebé con visor mirando de uno a otro. Se entiende sin sonido: hay algo escondido en uno de los dos.",
     "quiere": "El bebé quiere encontrar al pulpo escondido («¿Está entre las algas o en la roca?»), y después saber cómo se esconde otra vez.",
     "aprende": "El pulpo cambia el color y la textura de su piel para parecerse a lo que tiene alrededor (camuflaje): se esconde en la roca, pero si mueve un brazo se lo puede seguir.",
-    "planoFinal": "En el mismo encuadre, su piel pasó de coral y lisa a gris y rugosa, casi igual a la roca, y un brazo en movimiento (marcado con un aro en una ventosa) permite seguirlo hasta el último cuadro."
+    "planoFinal": "En el mismo encuadre, su piel pasó de coral y lisa a gris y rugosa, casi igual a la roca; el contorno suave de su silueta y un brazo en movimiento (aro en una ventosa) permiten seguirlo hasta el último cuadro."
   },
   "voice": {
     "person": "narradora",
@@ -59,5 +59,14 @@
   "firstFrameSuggested": "Fotograma 0: escena submarina con algas a la izquierda y roca a la derecha, un «?» sobre cada escondite.",
   "contaElChico": "«El pulpo estaba escondido en la roca; lo encontré porque movió un brazo. Su piel cambia de color y se pone rugosa para parecerse a la roca.»",
   "status": "FINAL (voz verificada técnicamente; falta tu escucha)",
-  "render": "renders/lupa-y-linterna_ep002_pulpo-escondido_v2_FINAL.mp4"
+  "render": "renders/lupa-y-linterna_ep002_pulpo-escondido_v3_FINAL.mp4",
+  "creative": {
+    "siente": "Suspenso lúdico y ganas de adivinar; alegría al descubrir al pulpo; asombro y ternura al ver cómo se esconde otra vez.",
+    "curiosidad": "«¿Está entre las algas o en la roca?» Dos escondites con «?» en el primer cuadro; después, «¿cómo se esconde otra vez?».",
+    "intentaYOcurre": "El bebé observa con la mano en la frente, señala cada escondite, piensa durante la pausa de 2 s, descubre el brazo en movimiento y mira atento cómo cambia la piel del pulpo.",
+    "momentoSorprendente": "En la roca «aparece» el contorno de un pulpo que no se veía, se vuelve coral y vivo, y después se funde de nuevo con la piedra manchita por manchita.",
+    "aprendeYDemuestra": "El pulpo cambia color y textura para parecerse a lo que lo rodea (camuflaje). Se demuestra en el mismo encuadre: contorno de referencia, piel que pasa de coral a roca y un brazo que lo delata.",
+    "finalSatisfactorio": "El pulpo queda casi invisible pero se sigue su forma y su brazo; el bebé celebra y le manda corazoncitos."
+  },
+  "emocionYAprendizaje": "Emoción: suspenso → alegría de descubrir y ternura. Aprendizaje: el pulpo cambia color y textura para parecerse a la roca (camuflaje)."
 }

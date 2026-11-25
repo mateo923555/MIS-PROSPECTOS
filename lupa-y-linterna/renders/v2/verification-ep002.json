@@ -1,0 +1,138 @@
+{
+  "ep": "ep002",
+  "file": "lupa-y-linterna_ep002_pulpo-escondido_v2_PREVIEW.mp4",
+  "checkedAt": "2026-11-25T19:52:58.919Z",
+  "ok": true,
+  "checks": [
+    {
+      "name": "duración",
+      "ok": true,
+      "detail": "23.70 s (objetivo 23.7 s, rango 20–25 s: ok)"
+    },
+    {
+      "name": "dimensiones",
+      "ok": true,
+      "detail": "1080×1920"
+    },
+    {
+      "name": "fps",
+      "ok": true,
+      "detail": "30.00"
+    },
+    {
+      "name": "video",
+      "ok": true,
+      "detail": "h264 yuv420p 4.2 Mb/s"
+    },
+    {
+      "name": "audio",
+      "ok": true,
+      "detail": "aac 48000 Hz 2 ch 23.69 s"
+    },
+    {
+      "name": "picos",
+      "ok": true,
+      "detail": "pico -1.5 dBFS (sin clipping si < -0.3)"
+    },
+    {
+      "name": "loudness",
+      "ok": true,
+      "detail": "-14.8 LUFS integrados (referencia para Shorts ≈ -14)"
+    },
+    {
+      "name": "margen final",
+      "ok": true,
+      "detail": "1.10 s entre el fin de la voz y el fin del video (mín 0,3 s)"
+    },
+    {
+      "name": "pausa de adivinar",
+      "ok": true,
+      "detail": "2.17 s de silencio de voz tras la pregunta (mín 2 s)"
+    },
+    {
+      "name": "oye \"s1\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Quiero encontrar al pulpo.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s2\"",
+      "ok": true,
+      "detail": "100% de las palabras de «¿Está entre las algas o en la roca?» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s3\"",
+      "ok": true,
+      "detail": "100% de las palabras de «¡Ahí está! Movió un brazo.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s4\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Ahora que lo viste, ¿cómo se esconde otra vez?» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s5\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Cambia el color y la textura de su piel, y se parece cada vez más a la roca.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s6\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Pero un brazo lo delata.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "silencio en la pausa",
+      "ok": true,
+      "detail": "sin voz entre 5.43 s y 7.30 s"
+    },
+    {
+      "name": "narrativa · objetivo dicho antes del seg. 4",
+      "ok": true,
+      "detail": "la primera frase «Quiero encontrar al pulpo.» va de 0.3 a 2.2 s"
+    },
+    {
+      "name": "narrativa · cierre inmediato tras el remate",
+      "ok": true,
+      "detail": "1.10 s entre el fin de la última frase y el fin del video (0,3–1,5 s)"
+    },
+    {
+      "name": "narrativa · duración 20–25 s",
+      "ok": true,
+      "detail": "23.70 s"
+    },
+    {
+      "name": "narrativa · cuatro líneas narrativas escritas",
+      "ok": true,
+      "detail": "data/episodes/ep002.json → narrative + contaElChico"
+    },
+    {
+      "name": "narrativa · escondido de verdad: ningún píxel coral antes de la revelación",
+      "ok": true,
+      "detail": "fracción coral en la zona del pulpo: 0.000 % · 0.000 % · 0.000 % (esperado ≈ 0)"
+    },
+    {
+      "name": "narrativa · antes de la revelación no hay pista",
+      "ok": true,
+      "detail": "cambio medio entre dos cuadros previos: 2.4 (esperado < 6; solo burbujas)"
+    },
+    {
+      "name": "narrativa · la revelación se nota en el cuadro",
+      "ok": true,
+      "detail": "cambio medio al revelarse (contorno + brazo): 32.9 (esperado > 8)"
+    },
+    {
+      "name": "narrativa · color: se parece cada vez más a la roca",
+      "ok": true,
+      "detail": "saturación en la región del pulpo: 125 → 105 → 92 → 83 → 73 (decreciente)"
+    },
+    {
+      "name": "narrativa · el brazo se sigue moviendo hasta el último cuadro",
+      "ok": true,
+      "detail": "cambio medio en la punta del brazo en el último segundo: 30.7 (esperado > 3)"
+    },
+    {
+      "name": "narrativa · no hay repetición de cierre",
+      "ok": true,
+      "detail": "la última frase («Pero un brazo lo delata.») empieza en 20.5 s de 23.7 s"
+    }
+  ]
+}

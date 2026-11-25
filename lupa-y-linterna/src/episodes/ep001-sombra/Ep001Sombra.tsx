@@ -6,8 +6,10 @@ import { loadFonts } from "../../shared/Fonts";
 import { Subtitles } from "../../shared/Subtitles";
 import { MusicTrack, SfxTrack, VoiceTrack, type Sfx } from "../../shared/Sound";
 import { C, FONT, H, SAFE, W } from "../../shared/theme";
-import { hash, keys, pop, stepTime } from "../../shared/motion";
+import { hash, hops, keys, pop, stepTime } from "../../shared/motion";
+import { Hearts } from "../../shared/Hearts";
 import type { VoiceData, VoiceSegment } from "../../shared/voice";
+import { cameraAt } from "./camera";
 import { CX, D, D_FIT, D_NEAR, D_START, FRAME, LAMP_H, PW, WALL_Y } from "./geometry";
 import voiceJson from "./voice.generated.json";
 
@@ -28,6 +30,7 @@ const T = {
   s4End: seg("s4").voiceEnd,
   fit: seg("s5").voiceStart,
   hello: seg("s6").voiceStart,
+  helloEnd: seg("s6").voiceEnd,
 };
 
 const LAMP_X = 270;
@@ -41,14 +44,17 @@ const D_KEYS: Array<[number, number]> = [
   [T.s4End + 0.1, D_FIT], [30, D_FIT], // "me alejo… ¡se achica!" → entra justo
 ];
 
+/** Personalidad: observa/duda → prueba → se sorprende → celebra → ternura. Cada gesto ayuda a entender la historia. */
 const poseAt = (t: number): PoseName => {
-  if (t < T.question) return "surprised";
-  if (t < T.acerco - 0.1) return "point";
-  if (t < T.crece) return "neutral";
-  if (t < T.alejo - 0.3) return "surprised";
-  if (t < T.fit) return "neutral";
-  if (t < T.hello) return "chest";
-  return Math.floor(t * 5) % 2 === 0 ? "waveA" : "waveB";
+  if (t < T.question) return "surprised"; // se asombra: la sombra no entra
+  if (t < T.acerco - 0.1) return "think"; // se pregunta cómo hacer
+  if (t < T.crece) return "neutral"; // prueba: se acerca a la linterna
+  if (t < T.alejo - 0.3) return "surprised"; // ¡guau, crece más!
+  if (t < T.fit) return "neutral"; // prueba: se aleja y mira su sombra
+  if (t < T.fit + 1.5) return "cheer"; // ¡entró justo! festeja
+  if (t < T.hello) return "chest"; // orgulloso
+  if (t < T.helloEnd + 0.15) return Math.floor(t * 5) % 2 === 0 ? "waveA" : "waveB"; // saluda a su sombra
+  return "love"; // ternura final
 };
 
 const SFX: Sfx[] = [
@@ -79,14 +85,16 @@ export const Ep001Sombra: React.FC = () => {
   const lateral = XL * (1 - d / D); // mantiene la sombra centrada en la pared
   const babyX = CX + lateral * babyH;
   const jx = hash(1, step) * 3 + (moving ? 0 : hash(2, step) * 1.5);
-  const bob = moving ? Math.abs(Math.sin(step * 1.1)) * 16 : 0;
-  const rot = moving ? (step % 2 ? 3 : -3) : hash(3, step) * 0.9;
+  const hop = hops(tq, 0.35, 1, 0.45, 55) + hops(tq, T.crece - 0.05, 1, 0.45, 40) + hops(tq, T.fit, 3, 0.42, 60);
+  const bob = (moving ? Math.abs(Math.sin(step * 1.1)) * 16 : 0) + hop;
+  const thinking = tq >= T.question && tq < T.acerco - 0.1;
+  const rot = moving ? (step % 2 ? 3 : -3) : thinking ? Math.sin(tq * 2.6) * 5 : hash(3, step) * 0.9;
   const pose = poseAt(tq);
 
   // sombra: mismo sprite, mismo movimiento (geometría en ./geometry.ts)
   const s = D / d;
   const shH = s * PW;
-  const shBottomY = WALL_Y + LAMP_H * (s - 1) * PW;
+  const shBottomY = WALL_Y + LAMP_H * (s - 1) * PW - s * (hop / babyH) * PW; // si el bebé salta, su sombra también sube
   const shX = CX + s * (jx / babyH) * PW;
   const shBlur = 3 + (s - 1) * 2.4;
 
@@ -97,9 +105,12 @@ export const Ep001Sombra: React.FC = () => {
   const lampGlow = 0.8 + 0.2 * Math.sin(t * 6);
   const brandOp = keys(t, [[EP001_SECONDS - 0.9, 0], [EP001_SECONDS - 0.4, 1]]);
 
+  const cam = cameraAt(t, { question: T.question, acerco: T.acerco, crece: T.crece, alejo: T.alejo, s4End: T.s4End, fit: T.fit });
+  const camTf = `translate(${W / 2}px, ${H / 2}px) scale(${cam.scale}) translate(${-cam.cx}px, ${-cam.cy}px)`;
+
   return (
     <AbsoluteFill style={{ backgroundColor: C.petrolDeep }}>
-      <AbsoluteFill>
+      <AbsoluteFill style={{ transform: camTf, transformOrigin: "0 0" }}>
         {/* pared y piso */}
         <div style={{ position: "absolute", left: 0, top: 0, width: W, height: WALL_Y, overflow: "hidden" }}>
           <Img src={staticFile("art/generated/bg_room.png")} style={{ position: "absolute", left: 0, top: 0, width: W, height: 1360 }} />
@@ -160,6 +171,10 @@ export const Ep001Sombra: React.FC = () => {
 
         {/* bebé y, delante, la linterna (más cerca de cámara) */}
         <Character pose={pose} x={babyX + jx} y={footY - bob} h={babyH} rot={rot} />
+        <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, pointerEvents: "none" }}>
+          <Hearts t={t} start={T.hello} dur={1.6} x={babyX + 30} y={footY - babyH * 0.95} rise={230} n={4} />
+          <Hearts t={t} start={T.helloEnd + 0.15} dur={1.2} x={babyX} y={footY - babyH * 0.95} rise={200} n={5} size={1.15} color="#F6C945" />
+        </svg>
         <div style={{ position: "absolute", left: LAMP_X - 125, top: LAMP_Y - 281, width: 250, height: 281 }}>
           <Img src={staticFile("art/generated/flashlight.png")} style={{ width: "100%", height: "100%" }} />
         </div>

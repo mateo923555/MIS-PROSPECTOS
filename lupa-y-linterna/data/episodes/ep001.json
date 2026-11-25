@@ -1,7 +1,7 @@
 {
   "id": "ep001",
-  "version": "v2",
-  "file": "lupa-y-linterna_ep001_sombra-gigante_v2",
+  "version": "v3",
+  "file": "lupa-y-linterna_ep001_sombra-gigante_v3",
   "format": "A",
   "formatName": "¿Por qué pasa esto?",
   "title": "¿Por qué mi sombra se hizo gigante?",
@@ -55,5 +55,14 @@
   "firstFrameSuggested": "Fotograma 0: la silueta gigante desbordando el marco de la pared, con el bebé y la linterna abajo.",
   "contaElChico": "«El bebé quería que su sombra entrara en el marco: cuando se acercaba a la linterna la sombra se hacía más grande, y cuando se alejaba, más chica, hasta que entró justo.»",
   "status": "FINAL (voz verificada técnicamente; falta tu escucha)",
-  "render": "renders/lupa-y-linterna_ep001_sombra-gigante_v2_FINAL.mp4"
+  "render": "renders/lupa-y-linterna_ep001_sombra-gigante_v3_FINAL.mp4",
+  "creative": {
+    "siente": "Asombro divertido al ver su sombra gigante, un poquito de duda al pensar cómo hacer, y alegría y ternura cuando lo logra («¡yo puedo!»).",
+    "curiosidad": "«¿Por qué mi sombra no entra en el marco… y cómo hago para que entre?» La sombra desbordada en el primer cuadro lo plantea sin sonido.",
+    "intentaYOcurre": "El bebé observa, se pregunta (gesto pensativo) y prueba: se acerca a la linterna y la sombra crece todavía más (saltito de sorpresa); se aleja y la sombra se achica; ajusta hasta que entra.",
+    "momentoSorprendente": "La sombra enorme que se sale del marco en el cuadro 0 y, al acercarse, se vuelve aún más gigante; y el «¡entró justo!» con el marco brillando y estrellitas.",
+    "aprendeYDemuestra": "Cerca de la luz la sombra crece; lejos, se achica. Se demuestra con la linterna y la pared fijas y el mismo marco en plano abierto: solo cambia dónde se para el bebé.",
+    "finalSatisfactorio": "Festeja con saltitos, la sombra queda justo en el marco, saluda a su sombra con cariño (corazoncitos) y ella le devuelve el saludo."
+  },
+  "emocionYAprendizaje": "Emoción: asombro → orgullo tierno. Aprendizaje: cerca de la luz la sombra es más grande, lejos es más chica."
 }

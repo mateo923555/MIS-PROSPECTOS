@@ -36,9 +36,17 @@
 | `c_wave_a` / `c_wave_b` | saludo en dos cuadros (se alternan a 5 fps) |
 | `c_chest` | mano en el pecho («Es mía») |
 | `c_point` | señala a la derecha |
+| `c_think` | pensativo: dedo en el mentón, cabeza ladeada (duda / curiosidad) |
+| `c_cheer` | festejo: brazos arriba, risa, saltito |
+| `c_love` | ternura: manos junto a la mejilla, sonrisa suave |
+| `m_think`, `m_cheer` | con visor: pensativo y festejo |
 | `m_point`, `m_look`, `m_surprised` | con **visor de buceo** coral (ep002); `m_point` se espeja para señalar a la izquierda |
 
 Los factores de escala por pose están en `src/shared/Character.tsx` (`POSES[...].k`).
+
+## Personalidad: curioso · expresivo · cariñoso
+
+Observa (mano en la frente, dedo en el mentón) → hace una prueba → se sorprende (boca redonda + saltito) → celebra (brazos arriba, saltitos) → demuestra cariño (saluda, corazoncitos). Ver `briefs/BRIEF-BASE.md` (dirección creativa).
 
 ## Reglas de animación (stop motion)
 

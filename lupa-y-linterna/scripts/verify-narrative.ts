@@ -27,11 +27,15 @@ export function verifyNarrative(ep: string, mp4: string, meta: any, voice: any):
   const tail = dur - voice.segments[voice.segments.length - 1].voiceEnd;
   add("cierre inmediato tras el remate", tail >= 0.3 && tail <= 1.5, `${tail.toFixed(2)} s entre el fin de la última frase y el fin del video (0,3–1,5 s)`);
   add("duración 20–25 s", dur >= 20 && dur <= 25, `${dur.toFixed(2)} s`);
+  add("dirección creativa: 6 puntos escritos", ["siente", "curiosidad", "intentaYOcurre", "momentoSorprendente", "aprendeYDemuestra", "finalSatisfactorio"].every((k) => meta.creative?.[k]), "data/episodes/" + ep + ".json → creative");
   add("cuatro líneas narrativas escritas", ["primerCuadro", "quiere", "aprende", "planoFinal"].every((k) => meta.narrative?.[k]) && !!meta.contaElChico, "data/episodes/" + ep + ".json → narrative + contaElChico");
 
   if (ep === "ep001") {
     const tEnd = seg("s4").voiceEnd, tHello = seg("s6").voiceStart;
-    const f0 = frame(0.0, "primer-cuadro"), fFit = frame(tEnd + 0.8, "entra-justo"), fEnd = frame(dur - 0.5, "final"), fNear = frame(seg("s3").voiceEnd - 0.2, "mas-cerca"), fFar = frame(tEnd + 0.1, "mas-lejos");
+    const tFit = seg("s5").voiceStart;
+    // cuadros en plano general (zoom 1×): primer cuadro, antes del acercamiento de «crece», y después del descubrimiento
+    const f0 = frame(0.0, "primer-cuadro"), fFit = frame(tFit + 2.2, "entra-justo"), fEnd = frame(dur - 0.5, "final"), fNear = frame(seg("s3").voiceStart + 3.2, "mas-cerca"), fFar = frame(tFit + 2.2, "mas-lejos");
+    frame(1.4, "sorpresa-zoom"); frame(tFit + 0.7, "descubrimiento-zoom"); frame(seg("s3").voiceStart + 2.0, "explicacion-se-acerca"); frame(tEnd - 0.6, "explicacion-se-aleja");
     // franja de pared ARRIBA del marco (y 40–210, x 400–680): oscura si la cabeza de la sombra sobresale
     const over0 = stat("dark", f0, 400, 40, 680, 210, 50), overFit = stat("dark", fFit, 400, 40, 680, 210, 50), overEnd = stat("dark", fEnd, 400, 40, 680, 210, 50);
     add("primer cuadro: la sombra desborda el marco", over0 > 0.3, `${(over0 * 100).toFixed(0)} % de la franja sobre el marco está en sombra (esperado > 30 %)`);
@@ -52,13 +56,15 @@ export function verifyNarrative(ep: string, mp4: string, meta: any, voice: any):
     const pre1 = frame(ahi - 1.0, "oculto-a"), pre2 = frame(ahi - 0.4, "oculto-b"), rev = frame(ahi + 0.9, "revelado");
     const hid = [f0, pre1, pre2].map((f) => stat("coral", f, 480, 688, 970, 1073));
     add("escondido de verdad: ningún píxel coral antes de la revelación", Math.max(...hid) < 0.0005, `fracción coral en la zona del pulpo: ${hid.map((h) => (h * 100).toFixed(3) + " %").join(" · ")} (esperado ≈ 0)`);
-    const dHidden = stat("diff", pre1, pre2, 0, 700, 1080, 1200), dReveal = stat("diff", pre2, rev, ...box);
+    const dHidden = stat("diff", pre1, pre2, 480, 688, 1060, 1073), dReveal = stat("diff", pre2, rev, ...box);
     add("antes de la revelación no hay pista", dHidden < 6, `cambio medio entre dos cuadros previos: ${dHidden.toFixed(1)} (esperado < 6; solo burbujas)`);
     add("la revelación se nota en el cuadro", dReveal > 8, `cambio medio al revelarse (contorno + brazo): ${dReveal.toFixed(1)} (esperado > 8)`);
     const times = [0, 0.25, 0.5, 0.75, 1].map((q) => m0 + 0.3 + q * (m1 - m0 - 0.6));
     const sats = times.map((t, i) => stat("sat", frame(t, `camuflaje-${i}`), ...box));
     const mono = sats.every((s, i) => i === 0 || s <= sats[i - 1] + 4);
     add("color: se parece cada vez más a la roca", mono && sats[0] - sats[4] > 25, `saturación en la región del pulpo: ${sats.map((s) => s.toFixed(0)).join(" → ")} (decreciente)`);
+    const yel = [times[1], times[3], dur - 0.05].map((t, i) => stat("yellow", frame(t, `silueta-${i}`), ...box));
+    add("durante el camuflaje se sigue viendo la silueta (contorno)", yel.every((y) => y > 0.004), `fracción de contorno amarillo en la región del pulpo: ${yel.map((y) => (y * 100).toFixed(2) + " %").join(" · ")} (esperado > 0,4 %; la forma queda como referencia)`);
     const e1 = frame(dur - 0.9, "final-a"), e2 = frame(dur - 0.6, "final-b"), e3 = frame(dur - 0.05, "ultimo-cuadro");
     const tipBox = [770, 650, 930, 810];
     const mv = Math.max(stat("diff", e1, e2, ...tipBox), stat("diff", e2, e3, ...tipBox));

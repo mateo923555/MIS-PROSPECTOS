@@ -15,6 +15,11 @@ export const POSES = {
   point: { file: "art/character/c_point.png", ar: 557 / 935, k: 1.0 },
   maskPoint: { file: "art/character/m_point.png", ar: 734 / 1087, k: 1.0 },
   maskLook: { file: "art/character/m_look.png", ar: 847 / 1366, k: 1.0 },
+  think: { file: "art/character/c_think.png", ar: 492 / 1062, k: 1.0 },
+  cheer: { file: "art/character/c_cheer.png", ar: 697 / 1030, k: 1.0 },
+  love: { file: "art/character/c_love.png", ar: 443 / 1060, k: 1.0 },
+  maskThink: { file: "art/character/m_think.png", ar: 438 / 998, k: 1.0 },
+  maskCheer: { file: "art/character/m_cheer.png", ar: 778 / 1044, k: 1.0 },
   maskSurprised: { file: "art/character/m_surprised.png", ar: 732 / 1138, k: 1.0 },
 } as const;
 export type PoseName = keyof typeof POSES;

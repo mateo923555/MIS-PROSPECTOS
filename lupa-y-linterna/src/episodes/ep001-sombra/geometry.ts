@@ -11,7 +11,7 @@ export const WALL_Y = 768; // línea pared–piso en pantalla
 export const CX = W / 2;
 
 /** Hueco del marco en la pared (px). La sombra tiene que entrar justo ahí. */
-export const FRAME = { x0: 365, x1: 715, y0: 240, y1: WALL_Y };
+export const FRAME = { x0: 340, x1: 740, y0: 240, y1: WALL_Y };
 export const D_START = 1.8; // sombra desbordando el marco
 export const D_NEAR = 1.35; // lo más cerca de la linterna
 export const D_FIT = 2.7; // la sombra entra justo

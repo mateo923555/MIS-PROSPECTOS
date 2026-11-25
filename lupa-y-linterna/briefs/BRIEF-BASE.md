@@ -50,3 +50,45 @@ Y una quinta, para la ficha: **«Qué puede contar un chico después de verlo»*
 ## Ejemplos aplicados
 - **ep001 v2:** el bebé quiere que su sombra gigante entre en el marco; se acerca (crece), se aleja (se achica) y entra justo.
 - **ep002 v2:** el bebé quiere encontrar al pulpo; lo descubre por el brazo y después ve cómo se esconde otra vez, en el mismo encuadre.
+
+---
+
+# Dirección creativa (versión 3) — emoción y personalidad
+
+Objetivo: que cada Short genere **curiosidad, sorpresa y una pequeña emoción**, y que al terminar el chico haya aprendido algo que **pueda contarle a otra persona**. Esta sección se suma a la regla narrativa de arriba; no la reemplaza.
+
+## El bebé tiene personalidad: curioso · expresivo · cariñoso
+- **Curioso:** observa antes de actuar (mano en la frente, dedo en el mentón, cabeza ladeada), señala, se acerca.
+- **Expresivo:** cada emoción se ve en el cuerpo: asombro (boca redonda + saltito), duda (pose pensativa y balanceo), alegría (brazos arriba + saltitos), orgullo (mano en el pecho).
+- **Cariñoso:** celebra con ternura: saluda a lo que descubre, le manda corazoncitos, termina con un gesto tierno.
+- **Ritmo de gestos (obligatorio en cada Short):** **observa → hace una prueba → se sorprende → celebra el descubrimiento.** Los gestos y acciones ayudan a entender la historia (no son relleno).
+- Poses disponibles (`docs/personaje.md`): neutral, sorprendido, saludo (2 cuadros), mano en el pecho, señala, **pensativo, festejo, ternura**, y con visor: señala, mira, sorprendido, **pensativo, festejo**. Si falta una emoción, se genera una pose nueva a partir de la ficha maestra (`scripts/assets-manifest.ts`).
+
+## Seis definiciones ANTES de producir (`data/episodes/epXXX.json → creative`)
+1. **Qué queremos que sienta el chico.**
+2. **Qué pregunta o situación despierta su curiosidad.**
+3. **Qué intenta hacer el bebé y qué ocurre.**
+4. **Cuál es el momento visual sorprendente.**
+5. **Qué aprende el chico y cómo se demuestra.**
+6. **Cómo termina la historia de manera satisfactoria.**
+
+Además se escribe «emoción y aprendizaje en una línea» (`emocionYAprendizaje`) para la entrega, junto con las cuatro líneas narrativas y `contaElChico`.
+
+## Lenguaje de planos
+- **Planos cercanos** cuando ayudan a **sentir** la emoción: asombro inicial, duda/pensamiento, festejo. Duran ≈ 1 s y vuelven al plano abierto.
+- **Planos abiertos** cuando hace falta **entender la demostración**: durante la prueba se ve siempre toda la mecánica (p. ej. linterna + bebé + pared; escondite + pulpo). Zoom ≤ 1,2× en esos tramos.
+- En un encuadre cerrado sobre la acción, un **círculo de reacción** (primer plano del bebé) mantiene visible su emoción.
+- El primer cuadro es siempre un plano general que se entiende sin sonido.
+
+## Checklist de dirección creativa (antes de renderizar)
+- [ ] ¿El primer cuadro despierta curiosidad (algo raro, una pregunta en la imagen)?
+- [ ] ¿Las reacciones del bebé se entienden sin sonido (observa, prueba, se sorprende, celebra)?
+- [ ] ¿Hay al menos un momento visual sorprendente, con acercamiento que ayude a sentirlo?
+- [ ] ¿Durante la demostración el plano es abierto y claro?
+- [ ] ¿El final deja **una** idea clara y un cierre emocional breve (≤ ~1,2 s tras el remate)?
+- [ ] ¿La referencia de forma/posición se mantiene mientras algo cambia (p. ej. contorno del pulpo durante el camuflaje)?
+- [ ] Seis definiciones + cuatro líneas + `contaElChico` + `emocionYAprendizaje` escritos.
+
+## Aplicado en los pilotos
+- **ep001 «La sombra gigante»:** asombro → duda → prueba → festejo → ternura. Aprende: cerca de la luz, sombra más grande; lejos, más chica.
+- **ep002 «El pulpo escondido»:** suspenso → alegría de descubrir → asombro y ternura. Aprende: el pulpo cambia color y textura para parecerse a la roca.

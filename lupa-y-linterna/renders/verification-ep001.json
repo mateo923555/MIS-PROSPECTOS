@@ -1,7 +1,7 @@
 {
   "ep": "ep001",
-  "file": "lupa-y-linterna_ep001_sombra-gigante_v2_FINAL.mp4",
-  "checkedAt": "2026-11-25T19:53:06.836Z",
+  "file": "lupa-y-linterna_ep001_sombra-gigante_v3_PREVIEW.mp4",
+  "checkedAt": "2026-11-25T21:42:46.203Z",
   "ok": true,
   "checks": [
     {
@@ -22,7 +22,7 @@
     {
       "name": "video",
       "ok": true,
-      "detail": "h264 yuv420p 3.8 Mb/s"
+      "detail": "h264 yuv420p 5.5 Mb/s"
     },
     {
       "name": "audio",
@@ -90,6 +90,11 @@
       "detail": "21.90 s"
     },
     {
+      "name": "narrativa · dirección creativa: 6 puntos escritos",
+      "ok": true,
+      "detail": "data/episodes/ep001.json → creative"
+    },
+    {
       "name": "narrativa · cuatro líneas narrativas escritas",
       "ok": true,
       "detail": "data/episodes/ep001.json → narrative + contaElChico"
@@ -107,12 +112,12 @@
     {
       "name": "narrativa · plano final: la sombra está dentro del marco",
       "ok": true,
-      "detail": "47 % del interior del marco en sombra (esperado > 20 %)"
+      "detail": "46 % del interior del marco en sombra (esperado > 20 %)"
     },
     {
       "name": "narrativa · acercarse agranda / alejarse achica",
       "ok": true,
-      "detail": "pared en sombra: 39 % (cerca) vs 12 % (lejos)"
+      "detail": "pared en sombra: 34 % (cerca) vs 9 % (lejos)"
     },
     {
       "name": "narrativa · saluda en el plano final",
@@ -122,7 +127,7 @@
     {
       "name": "narrativa · geometría (D fija, entra justo)",
       "ok": true,
-      "detail": "7 chequeos de scripts/check-geometry.ts"
+      "detail": "13 chequeos de scripts/check-geometry.ts"
     }
   ]
 }

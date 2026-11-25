@@ -36,6 +36,17 @@ for (const ep of eps) {
 3. **¿Qué aprende el chico?** ${m.narrative.aprende}
 4. **¿Qué plano final lo demuestra?** ${m.narrative.planoFinal}
 
+## Dirección creativa (emoción y personalidad del bebé)
+
+1. **Qué queremos que sienta el chico:** ${m.creative.siente}
+2. **Qué despierta su curiosidad:** ${m.creative.curiosidad}
+3. **Qué intenta el bebé y qué ocurre:** ${m.creative.intentaYOcurre}
+4. **Momento visual sorprendente:** ${m.creative.momentoSorprendente}
+5. **Qué aprende y cómo se demuestra:** ${m.creative.aprendeYDemuestra}
+6. **Cómo termina, de forma satisfactoria:** ${m.creative.finalSatisfactorio}
+
+**Emoción y aprendizaje en una línea:** ${m.emocionYAprendizaje}
+
 **Qué puede contar un chico después de verlo:** ${m.contaElChico}
 
 ## Guion de voz (${m.voice.person})

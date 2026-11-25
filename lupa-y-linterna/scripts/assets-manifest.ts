@@ -43,6 +43,18 @@ export const ASSETS: AssetSpec[] = [
   { id: "m_surprised", out: "public/art/character/m_surprised.png", refs: [SHEET], key: true, size: "1024x1536", quality: "high",
     prompt: `${BASE_CHAR} ${MASK} Pose: front view, SURPRISED and delighted: mouth open in a happy round 'o', both arms raised with open hands.` },
 
+  // ---------- Personalidad: curioso · expresivo · cariñoso ----------
+  { id: "c_think", out: "public/art/character/c_think.png", refs: [SHEET], key: true, size: "1024x1536", quality: "high",
+    prompt: `${BASE_CHAR} Pose: front view, CURIOUS and thoughtful: head tilted a little to one side, one hand with a finger on its chin, eyebrows raised, eyes looking up and to the side, small 'hmm' mouth.` },
+  { id: "c_cheer", out: "public/art/character/c_cheer.png", refs: [SHEET], key: true, size: "1024x1536", quality: "high",
+    prompt: `${BASE_CHAR} Pose: front view, CELEBRATING a discovery: both arms raised high in the air with open hands, big open laughing mouth, eyes sparkling and happy, little jump with both feet slightly off the ground.` },
+  { id: "m_think", out: "public/art/character/m_think.png", refs: [SHEET], key: true, size: "1024x1536", quality: "high",
+    prompt: `${BASE_CHAR} ${MASK} Pose: front view, CURIOUS and thoughtful: head tilted to one side, one hand with a finger on its chin, eyebrows raised, small 'hmm' mouth.` },
+  { id: "m_cheer", out: "public/art/character/m_cheer.png", refs: [SHEET], key: true, size: "1024x1536", quality: "high",
+    prompt: `${BASE_CHAR} ${MASK} Pose: front view, CELEBRATING a discovery: both arms raised high with open hands, big open laughing mouth, joyful, little jump with feet slightly off the ground.` },
+  { id: "c_love", out: "public/art/character/c_love.png", refs: [SHEET], key: true, size: "1024x1536", quality: "high",
+    prompt: `${BASE_CHAR} Pose: front view, AFFECTIONATE and tender: both hands held together against its cheek, head tilted, soft warm closed-eye smile, rosy cheeks.` },
+
   // ---------- Escenarios y objetos ----------
   { id: "bg_room", out: "public/art/generated/bg_room.png", size: "1024x1792", quality: "high",
     prompt: `Empty plasticine diorama set seen straight on from the front: a back wall of smooth dusty teal-green clay (#4E8785) with subtle fingerprint texture, meeting a warm light-wood clay floor with soft plank lines at about 40% of the image height (the wall-floor line is perfectly horizontal and straight at exactly 40% from the top). The floor extends toward the camera in gentle perspective. Evenly lit, soft, NOTHING else on the wall or floor: no objects, no furniture, no characters, no shadows. ${STYLE}` },

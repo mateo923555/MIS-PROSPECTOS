@@ -185,3 +185,22 @@ npm run metrics
 **Resultados medidos (MP4 v2):** ep001 21,90 s · ep002 23,70 s · 1080×1920 · 30 fps · H.264 yuv420p · AAC · −15,2 / −14,8 LUFS · picos −1,5 dBFS · todas las frases al 100 % en la mezcla final · pausa de adivinar 2,17 s sin voz.
 
 **Pendiente / honestidad:** nadie escuchó las pistas (la voz se verificó con transcripción de la mezcla final). El ep002 v2 tiene al bebé parcialmente fuera de cuadro durante la zona de zoom; la ventosa que se sigue es un punto aproximado de la punta del brazo. Los datos científicos de las 12 ideas restantes siguen sin fuente confirmada.
+
+---
+
+# Actualización — versión 3: contorno del pulpo, acercamientos y dirección creativa
+
+**Pedidos:** (a) que el pulpo conserve una referencia de su silueta durante el camuflaje; (b) acercamientos en sorpresa y descubrimiento en ambos Shorts, con vista clara de linterna, bebé y pared durante la explicación de la sombra; (c) elevar la dirección creativa: el bebé curioso, expresivo y cariñoso, y seis definiciones por episodio.
+
+**Cambios**
+- **Archivo:** los MP4 v2 quedaron en `renders/v2/` (el código v2 está en el commit `d149f5b`). Las v1 siguen en `renders/v1/`.
+- **Poses nuevas** (generadas desde la ficha maestra, 5): `c_think`, `c_cheer`, `c_love`, `m_think`, `m_cheer`. Quedan registradas en `src/shared/Character.tsx` y `scripts/assets-manifest.ts`.
+- **Personalidad:** observa (mano en la frente / dedo en el mentón con balanceo de cabeza) → prueba → se sorprende (saltito) → celebra (saltitos con brazos arriba) → ternura (corazoncitos, `src/shared/Hearts.tsx`). En el ep001 la sombra también sube cuando el bebé salta (física coherente).
+- **ep001 v3:** primer plano de asombro (0,35–2,7 s) y de duda (al preguntar); durante «me acerco / me alejo» el zoom es ≤ 1,18× y se ven siempre linterna, bebé y pared; acercamiento de descubrimiento en «¡Entró justo!» (marco brillando, estrellitas, festejo); saludo y gesto tierno final. El marco se ensanchó (400 px) para que el festejo con brazos arriba también entre justo (márgenes 20–53 px).
+- **ep002 v3:** primer plano curioso al inicio; punch-in en «¡Ahí está!» y en la aparición del color; **el contorno del pulpo ya no se apaga**: queda como referencia (60 %) mientras la piel pasa de coral a roca; círculo de reacción del bebé (primer plano) mientras la cámara está sobre el pulpo; corazoncitos sobre el pulpo; el bebé piensa durante la pausa de 2 s y festeja al final.
+- **Brief base:** `briefs/BRIEF-BASE.md` suma «Dirección creativa (v3)»: personalidad del bebé, ritmo de gestos obligatorio, las seis definiciones previas (`creative` en cada ficha), lenguaje de planos (cercanos para sentir, abiertos para entender) y checklist. Las fichas `briefs/ep001.md` y `ep002.md` las incluyen; `scripts/verify-narrative.ts` comprueba que estén escritas.
+- **Verificación nueva:** `check-geometry` valida que durante la explicación los tres elementos estén en cuadro con zoom ≤ 1,2× y que haya acercamientos de sorpresa/descubrimiento; `verify-narrative` mide que el contorno amarillo siga visible durante el camuflaje (≈ 2 % de píxeles) y que la saturación baje (128 → 85).
+
+**Resultados medidos:** ep001 21,90 s · ep002 23,70 s · 1080×1920 · 30 fps · H.264 yuv420p · AAC · −15,2 / −14,8 LUFS · frases al 100 % en la mezcla final · pausa 2,17 s.
+
+**Honestidad:** nadie escuchó las voces; las 12 ideas restantes todavía no llevan los seis puntos creativos (solo las cuatro líneas); el círculo de reacción recorta la cabeza de forma aproximada.

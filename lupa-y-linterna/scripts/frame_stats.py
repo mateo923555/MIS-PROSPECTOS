@@ -3,6 +3,7 @@
   frame_stats.py dark  img x0 y0 x1 y1 [thr=50]   -> fracción de píxeles con luminancia < thr
   frame_stats.py diff  imgA imgB x0 y0 x1 y1      -> diferencia absoluta media (0-255)
   frame_stats.py sat   img x0 y0 x1 y1            -> saturación media (0-255)
+  frame_stats.py yellow img x0 y0 x1 y1           -> fracción de píxeles amarillos (contorno)
   frame_stats.py coral img x0 y0 x1 y1            -> fracción de píxeles coral/rojos"""
 import sys
 import numpy as np
@@ -21,3 +22,6 @@ elif cmd == "sat":
 elif cmd == "coral":
     a = load(sys.argv[2], sys.argv[3:7]); R, G, B = a[..., 0], a[..., 1], a[..., 2]
     print(float(((R > 170) & (G < 135) & (B < 125) & (R - G > 55)).mean()))
+elif cmd == "yellow":
+    a = load(sys.argv[2], sys.argv[3:7]); R, G, B = a[..., 0], a[..., 1], a[..., 2]
+    print(float(((R > 200) & (G > 170) & (B < 150) & (R - B > 90)).mean()))

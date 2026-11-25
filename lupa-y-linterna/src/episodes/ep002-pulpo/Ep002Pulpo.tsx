@@ -6,7 +6,8 @@ import { loadFonts } from "../../shared/Fonts";
 import { Subtitles } from "../../shared/Subtitles";
 import { MusicTrack, SfxTrack, VoiceTrack, type Sfx } from "../../shared/Sound";
 import { C, FONT, H, W } from "../../shared/theme";
-import { hash, keys, pop, stepTime } from "../../shared/motion";
+import { hash, hops, keys, pop, stepTime } from "../../shared/motion";
+import { Hearts } from "../../shared/Hearts";
 import type { VoiceData, VoiceSegment } from "../../shared/voice";
 import { armTipWorld, OCT_BOX, Octopus, SeaBackground } from "./Octopus";
 import voiceJson from "./voice.generated.json";
@@ -34,15 +35,21 @@ export const T = {
 const GUESS = T.ahi - T.qEnd; // pausa real (≥ 2 s)
 
 const BABY = { x: 330, y: 1295, h: 500 };
-const CAM = { s: 1.45, x: 670, y: 930 }; // encuadre fijo durante la transformación
+const CAM = { s: 1.45, x: 670, y: 930 }; // encuadre FIJO durante la transformación (acercamientos antes)
 
+/** Personalidad: curioso (observa, señala, piensa) → se sorprende → celebra → cariño. */
 const poseAt = (t: number): { pose: PoseName; flip: boolean } => {
-  if (t < T.algas - 0.5) return { pose: "maskLook", flip: false };
+  if (t < T.algas - 0.5) return { pose: "maskLook", flip: false }; // observa con la mano en la frente
   if (t < T.roca - 0.7) return { pose: "maskPoint", flip: true }; // señala las algas (izquierda)
   if (t < T.qEnd + 0.1) return { pose: "maskPoint", flip: false }; // señala la roca (derecha)
-  if (t < T.ahi) return { pose: "maskLook", flip: false }; // piensa
-  if (t < T.ahi + 1.4) return { pose: "maskSurprised", flip: false };
-  return { pose: "maskPoint", flip: false };
+  if (t < T.ahi) return { pose: "maskThink", flip: false }; // piensa (pausa de adivinar)
+  if (t < T.ahi + 0.9) return { pose: "maskSurprised", flip: false }; // ¡sorpresa!
+  if (t < T.ahi + 2.6) return { pose: "maskCheer", flip: false }; // ¡lo encontré! festeja
+  if (t < T.q2) return { pose: "maskPoint", flip: false };
+  if (t < T.morph0) return { pose: "maskThink", flip: false }; // se pregunta cómo se esconde
+  if (t < T.remate) return { pose: "maskLook", flip: false }; // mira atentamente
+  if (t < T.remate + 1.3) return { pose: "maskPoint", flip: false }; // «un brazo lo delata»
+  return { pose: "maskCheer", flip: false }; // alegría final
 };
 
 const SFX: Sfx[] = [
@@ -57,6 +64,8 @@ const SFX: Sfx[] = [
   { at: T.morph0 + 2.2, name: "morph", volume: 0.35 },
   { at: T.morph0 + 4.4, name: "morph", volume: 0.3 },
   { at: T.remate, name: "ding", volume: 0.4 },
+  { at: T.ahi + 0.9, name: "tada", volume: 0.3 },
+  { at: T.brazo + 0.3, name: "sparkle", volume: 0.25 },
 ];
 
 /** Piel: 1 = camuflado (escondido), 0 = coral. Se esconde → aparece → vuelve a esconderse GRADUALMENTE en el mismo encuadre. */
@@ -75,11 +84,10 @@ export const Ep002Pulpo: React.FC = () => {
   const tq = stepTime(frame, fps, 10);
   const step = Math.floor(tq * 10);
 
-  // cámara: general hasta la revelación; luego un encuadre fijo sobre el pulpo
-  const k = keys(t, [[T.ahi, 0], [T.ahi + 2.4, 1]]);
-  const camS = 1 + (CAM.s - 1) * k;
-  const camX = W / 2 + (CAM.x - W / 2) * k;
-  const camY = H / 2 + (CAM.y - H / 2) * k;
+  // cámara: general → ACERCAMIENTO en la sorpresa/descubrimiento («¡Ahí está!» y su color) → encuadre fijo para la transformación
+  const camS = keys(t, [[0, 1], [0.3, 1], [0.8, 1.5], [1.8, 1.5], [2.4, 1], [T.ahi - 0.1, 1], [T.ahi + 0.45, 1.75], [T.brazo - 0.1, 1.75], [T.brazo + 0.9, CAM.s]]);
+  const camX = keys(t, [[0, W / 2], [0.3, W / 2], [0.8, 370], [1.8, 370], [2.4, W / 2], [T.ahi - 0.1, W / 2], [T.ahi + 0.45, 700], [T.brazo - 0.1, 700], [T.brazo + 0.9, CAM.x]]);
+  const camY = keys(t, [[0, H / 2], [0.3, H / 2], [0.8, 880], [1.8, 880], [2.4, H / 2], [T.ahi - 0.1, H / 2], [T.ahi + 0.45, 900], [T.brazo - 0.1, 900], [T.brazo + 0.9, CAM.y]]);
   const camTf = `translate(${W / 2}px, ${H / 2}px) scale(${camS}) translate(${-camX}px, ${-camY}px)`;
 
   // pulpo
@@ -89,15 +97,17 @@ export const Ep002Pulpo: React.FC = () => {
   if (t >= T.ahi - 0.05 && t < T.ahi + 2.0) arm = wig(8, 1.6) * keys(t, [[T.ahi - 0.05, 0], [T.ahi + 0.25, 1]]);
   else if (t >= T.ahi + 2.0 && t < T.morph0) arm = wig(5, 1.1);
   else if (t >= T.morph0) arm = wig(7, 1.3) + (t >= T.remate ? wig(5, 2.3) : 0); // se sigue moviendo hasta el último cuadro
-  // contorno amarillo: muestra la silueta completa al descubrirlo y se apaga cuando empieza a esconderse otra vez
-  const halo = keys(t, [[T.ahi + 0.05, 0], [T.ahi + 0.5, 1]]) * keys(t, [[T.morph0, 1], [T.morph0 + 1.2, 0]]);
+  // contorno amarillo: aparece al descubrirlo y NO se apaga: queda más suave como referencia de su forma mientras se camufla
+  const halo = keys(t, [[T.ahi + 0.05, 0], [T.ahi + 0.5, 1]]) * keys(t, [[T.morph0, 1], [T.morph0 + 1.5, 0.6]]);
   // aro sobre una ventosa de la punta del brazo: permite seguirlo hasta el último cuadro
   const tip = armTipWorld(arm);
   const ringOn = keys(t, [[T.morph0 + 0.4, 0], [T.morph0 + 1.2, 1]]);
 
   // bebé
   const { pose, flip } = poseAt(tq);
-  const bob = Math.sin(t * 2.2) * 10 + hash(5, step) * 2;
+  const hop = hops(tq, T.ahi, 1, 0.4, 50) + hops(tq, T.ahi + 0.9, 3, 0.45, 55) + hops(tq, T.remate + 1.3, 2, 0.45, 45);
+  const bob = Math.sin(t * 2.2) * 10 + hash(5, step) * 2 + hop;
+  const tilt = pose === "maskLook" || pose === "maskThink" ? Math.sin(tq * 2.4) * 4 : 0;
 
   // temporizador «¡pensá!»
   const thinkP = Math.min(1, Math.max(0, (t - T.qEnd) / GUESS));
@@ -116,6 +126,11 @@ export const Ep002Pulpo: React.FC = () => {
       <AbsoluteFill style={{ transform: camTf, transformOrigin: "0 0" }}>
         <SeaBackground />
         <Octopus p={p} arm={arm} halo={halo} armCap={t >= T.morph0 ? 0.72 : 1} />
+
+        <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, pointerEvents: "none" }}>
+          <Hearts t={t} start={T.brazo + 0.3} dur={1.7} x={690} y={800} rise={230} n={4} />
+          <Hearts t={t} start={T.remate + 1.3} dur={1.3} x={690} y={760} rise={190} n={4} size={1.1} color="#F6C945" />
+        </svg>
 
         {ringOn > 0 && (
           <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, pointerEvents: "none", opacity: ringOn }}>
@@ -140,7 +155,7 @@ export const Ep002Pulpo: React.FC = () => {
 
         <div style={{ position: "absolute", inset: 0 }}>
           <div style={{ position: "absolute", left: BABY.x - 150, top: BABY.y - 18, width: 300, height: 50, borderRadius: "50%", background: "rgba(40,30,10,0.35)", filter: "blur(12px)" }} />
-          <Character pose={pose} flip={flip} x={BABY.x + hash(7, step) * 2} y={BABY.y + bob * 0.5} h={BABY.h} rot={hash(9, step) * 0.8} />
+          <Character pose={pose} flip={flip} x={BABY.x + hash(7, step) * 2} y={BABY.y + bob * 0.5} h={BABY.h} rot={hash(9, step) * 0.8 + tilt} />
         </div>
       </AbsoluteFill>
 
@@ -164,6 +179,15 @@ export const Ep002Pulpo: React.FC = () => {
             <circle cx={110} cy={110} r={R} fill="none" stroke={C.coral} strokeWidth={16} strokeLinecap="round" strokeDasharray={CIRC} strokeDashoffset={CIRC * (1 - thinkP)} transform="rotate(-90 110 110)" />
             <text x={110} y={142} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={110} fill={C.cream}>?</text>
           </svg>
+        </div>
+      )}
+
+      {/* reacción del bebé: círculo de primer plano mientras la cámara está sobre el pulpo */}
+      {t >= T.ahi + 0.3 && (
+        <div style={{ position: "absolute", left: 50, top: 245, width: 210, height: 210, borderRadius: "50%", overflow: "hidden", border: `9px solid ${C.coral}`, boxShadow: "0 8px 24px rgba(0,0,0,.4)", background: C.seaDeep, transform: `scale(${pop(t, T.ahi + 0.3, 0.3)})` }}>
+          <div style={{ position: "absolute", left: 0, top: 0, width: 210, height: 210 }}>
+            <Character pose={pose} flip={flip} x={105 + hash(11, step) * 2} y={105 - 0.22 * 560 + 560 + hop * 0.5} h={560} rot={tilt} />
+          </div>
         </div>
       )}
 

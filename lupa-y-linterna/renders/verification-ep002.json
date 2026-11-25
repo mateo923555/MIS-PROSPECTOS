@@ -1,7 +1,7 @@
 {
   "ep": "ep002",
-  "file": "lupa-y-linterna_ep002_pulpo-escondido_v2_PREVIEW.mp4",
-  "checkedAt": "2026-11-25T19:52:58.919Z",
+  "file": "lupa-y-linterna_ep002_pulpo-escondido_v3_PREVIEW.mp4",
+  "checkedAt": "2026-11-25T21:43:28.630Z",
   "ok": true,
   "checks": [
     {
@@ -22,7 +22,7 @@
     {
       "name": "video",
       "ok": true,
-      "detail": "h264 yuv420p 4.2 Mb/s"
+      "detail": "h264 yuv420p 5.1 Mb/s"
     },
     {
       "name": "audio",
@@ -100,6 +100,11 @@
       "detail": "23.70 s"
     },
     {
+      "name": "narrativa · dirección creativa: 6 puntos escritos",
+      "ok": true,
+      "detail": "data/episodes/ep002.json → creative"
+    },
+    {
       "name": "narrativa · cuatro líneas narrativas escritas",
       "ok": true,
       "detail": "data/episodes/ep002.json → narrative + contaElChico"
@@ -112,22 +117,27 @@
     {
       "name": "narrativa · antes de la revelación no hay pista",
       "ok": true,
-      "detail": "cambio medio entre dos cuadros previos: 2.4 (esperado < 6; solo burbujas)"
+      "detail": "cambio medio entre dos cuadros previos: 0.6 (esperado < 6; solo burbujas)"
     },
     {
       "name": "narrativa · la revelación se nota en el cuadro",
       "ok": true,
-      "detail": "cambio medio al revelarse (contorno + brazo): 32.9 (esperado > 8)"
+      "detail": "cambio medio al revelarse (contorno + brazo): 39.6 (esperado > 8)"
     },
     {
       "name": "narrativa · color: se parece cada vez más a la roca",
       "ok": true,
-      "detail": "saturación en la región del pulpo: 125 → 105 → 92 → 83 → 73 (decreciente)"
+      "detail": "saturación en la región del pulpo: 128 → 118 → 105 → 96 → 85 (decreciente)"
+    },
+    {
+      "name": "narrativa · durante el camuflaje se sigue viendo la silueta (contorno)",
+      "ok": true,
+      "detail": "fracción de contorno amarillo en la región del pulpo: 2.07 % · 1.74 % · 2.69 % (esperado > 0,4 %; la forma queda como referencia)"
     },
     {
       "name": "narrativa · el brazo se sigue moviendo hasta el último cuadro",
       "ok": true,
-      "detail": "cambio medio en la punta del brazo en el último segundo: 30.7 (esperado > 3)"
+      "detail": "cambio medio en la punta del brazo en el último segundo: 38.4 (esperado > 3)"
     },
     {
       "name": "narrativa · no hay repetición de cierre",

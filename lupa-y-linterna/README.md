@@ -6,16 +6,17 @@ Stack: **TypeScript + Remotion**, voz con la **API de OpenAI**, todo local. El r
 > Proyecto independiente (carpeta `lupa-y-linterna/`, con su propio `package.json`). No toca ni usa código, credenciales o configuración de YouTube de otros proyectos.
 > Si lo querés como repo aparte: `cp -r lupa-y-linterna ../lupa-y-linterna && cd ../lupa-y-linterna && git init`.
 
-## Dirección narrativa (v2) — leer primero
+## Dirección narrativa y creativa (v3) — leer primero
 
-Todos los Shorts siguen **`briefs/BRIEF-BASE.md`**: primer cuadro raro que se entiende sin sonido → objetivo del personaje claro **antes del seg. 4** → intento/pista/dos opciones (juego: **2 s reales** de pensar) → **prueba** que completa la historia → cierre enseguida tras el remate. Antes de animar se escriben **cuatro líneas** por episodio (`data/episodes/epXXX.json → narrative`: primer cuadro · qué quiere · qué aprende · plano final) y una frase de «qué puede contar un chico» (`contaElChico`). La cola de ideas con sus cuatro líneas está en `briefs/cola-semana-1.md` (`data/queue.json`).
+Todos los Shorts siguen **`briefs/BRIEF-BASE.md`**: primer cuadro raro que se entiende sin sonido → objetivo del personaje claro **antes del seg. 4** → intento/pista/dos opciones (juego: **2 s reales** de pensar) → **prueba** que completa la historia → cierre enseguida tras el remate. Antes de animar se escriben **cuatro líneas** por episodio (`data/episodes/epXXX.json → narrative`: primer cuadro · qué quiere · qué aprende · plano final) y una frase de «qué puede contar un chico» (`contaElChico`). **Dirección creativa:** el bebé es curioso, expresivo y cariñoso (observa → prueba → se sorprende → celebra) y cada episodio define 6 puntos (`creative`: qué siente el chico, curiosidad, qué intenta, momento sorprendente, qué aprende, final satisfactorio); planos cercanos para sentir, abiertos para entender. Detalle en `briefs/BRIEF-BASE.md`. La cola de ideas con sus cuatro líneas está en `briefs/cola-semana-1.md` (`data/queue.json`).
 
 ## Estado
 
 | Entregable | Ruta | Estado |
 |---|---|---|
-| Short 001 **v2** «La sombra gigante» (A) | `renders/lupa-y-linterna_ep001_sombra-gigante_v2_*.mp4` | ver `renders/verification-ep001.json` |
-| Short 002 **v2** «El pulpo escondido» (B) | `renders/lupa-y-linterna_ep002_pulpo-escondido_v2_*.mp4` | ver `renders/verification-ep002.json` |
+| Short 001 **v3** «La sombra gigante» (A) | `renders/lupa-y-linterna_ep001_sombra-gigante_v3_*.mp4` | ver `renders/verification-ep001.json` |
+| Short 002 **v3** «El pulpo escondido» (B) | `renders/lupa-y-linterna_ep002_pulpo-escondido_v3_*.mp4` | ver `renders/verification-ep002.json` |
+| Versiones **v2** (archivadas, solo MP4) | `renders/v2/` (el código v2 está en el commit `d149f5b`) | conservadas |
 | Versiones **v1** (archivadas) | `renders/v1/`, `data/episodes/v1/`, `src/episodes/v1/` (`Ep001SombraV1`, `Ep002PulpoV1`), `public/audio/v1/` | conservadas |
 | Ficha del personaje | `docs/personaje.md` + `public/art/character/ficha-maestra.png` | listo |
 | Brief base + cola (con 4 líneas) | `briefs/BRIEF-BASE.md`, `briefs/cola-semana-1.md`, `data/queue.json` | listo |
