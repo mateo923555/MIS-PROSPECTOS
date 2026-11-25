@@ -1,0 +1,78 @@
+{
+  "ep": "ep002",
+  "file": "lupa-y-linterna_ep002_pulpo-escondido_PREVIEW.mp4",
+  "checkedAt": "2026-11-25T13:12:28.888Z",
+  "ok": true,
+  "checks": [
+    {
+      "name": "duración",
+      "ok": true,
+      "detail": "24.00 s (objetivo 24 s, rango 20–25 s: ok)"
+    },
+    {
+      "name": "dimensiones",
+      "ok": true,
+      "detail": "1080×1920"
+    },
+    {
+      "name": "fps",
+      "ok": true,
+      "detail": "30.00"
+    },
+    {
+      "name": "video",
+      "ok": true,
+      "detail": "h264 yuv420p 5.0 Mb/s"
+    },
+    {
+      "name": "audio",
+      "ok": true,
+      "detail": "aac 48000 Hz 2 ch 24.00 s"
+    },
+    {
+      "name": "picos",
+      "ok": true,
+      "detail": "pico -1.5 dBFS (sin clipping si < -0.3)"
+    },
+    {
+      "name": "loudness",
+      "ok": true,
+      "detail": "-15 LUFS integrados (referencia para Shorts ≈ -14)"
+    },
+    {
+      "name": "margen final",
+      "ok": true,
+      "detail": "7.72 s entre el fin de la voz y el fin del video (mín 0,3 s)"
+    },
+    {
+      "name": "pausa de adivinar",
+      "ok": true,
+      "detail": "2.07 s de silencio de voz tras la pregunta (mín 2 s)"
+    },
+    {
+      "name": "oye \"s1\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Acá hay un pulpo escondido.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s2\"",
+      "ok": true,
+      "detail": "100% de las palabras de «¿Entre las algas o pegado a la roca?» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s3\"",
+      "ok": true,
+      "detail": "100% de las palabras de «¡Ahí está! Cambió el color y la textura de su piel para parecerse a la roca.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s4\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Mirá cómo se mueve.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "silencio en la pausa",
+      "ok": true,
+      "detail": "sin voz entre 7.18 s y 8.95 s"
+    }
+  ]
+}

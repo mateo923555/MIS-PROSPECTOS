@@ -1,0 +1,7 @@
+node_modules/
+art-raw/
+renders/frames/
+renders/.*
+*.tsbuildinfo
+.env
+.env.*

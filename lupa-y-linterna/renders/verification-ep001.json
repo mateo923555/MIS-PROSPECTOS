@@ -1,0 +1,73 @@
+{
+  "ep": "ep001",
+  "file": "lupa-y-linterna_ep001_sombra-gigante_FINAL.mp4",
+  "checkedAt": "2026-11-25T13:12:25.843Z",
+  "ok": true,
+  "checks": [
+    {
+      "name": "duración",
+      "ok": true,
+      "detail": "23.00 s (objetivo 23 s, rango 20–25 s: ok)"
+    },
+    {
+      "name": "dimensiones",
+      "ok": true,
+      "detail": "1080×1920"
+    },
+    {
+      "name": "fps",
+      "ok": true,
+      "detail": "30.00"
+    },
+    {
+      "name": "video",
+      "ok": true,
+      "detail": "h264 yuv420p 4.4 Mb/s"
+    },
+    {
+      "name": "audio",
+      "ok": true,
+      "detail": "aac 48000 Hz 2 ch 22.99 s"
+    },
+    {
+      "name": "picos",
+      "ok": true,
+      "detail": "pico -1.5 dBFS (sin clipping si < -0.3)"
+    },
+    {
+      "name": "loudness",
+      "ok": true,
+      "detail": "-14.3 LUFS integrados (referencia para Shorts ≈ -14)"
+    },
+    {
+      "name": "margen final",
+      "ok": true,
+      "detail": "1.76 s entre el fin de la voz y el fin del video (mín 0,3 s)"
+    },
+    {
+      "name": "oye \"s1\"",
+      "ok": true,
+      "detail": "100% de las palabras de «¡Esa sombra es gigante! ¿De quién será?» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s2\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Es mía.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s3\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Mirá, me acerco a la linterna y mi sombra crece.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s4\"",
+      "ok": true,
+      "detail": "100% de las palabras de «Ahora me alejo y se achica.» se oyen en la mezcla final, dentro de su ventana"
+    },
+    {
+      "name": "oye \"s5\"",
+      "ok": true,
+      "detail": "100% de las palabras de «¡Hasta la sombra puede saludar!» se oyen en la mezcla final, dentro de su ventana"
+    }
+  ]
+}

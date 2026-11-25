@@ -1,0 +1,211 @@
+{
+  "model": "gpt-4o-mini-tts",
+  "voice": "coral",
+  "segments": [
+    {
+      "id": "s1",
+      "text": "¡Esa sombra es gigante! ¿De quién será?",
+      "file": "audio/ep001/s1.wav",
+      "offset": 0.3,
+      "duration": 4.2,
+      "voiceStart": 0.3,
+      "voiceEnd": 4.240000057220459,
+      "words": [
+        {
+          "text": "¡Esa",
+          "start": 0.3,
+          "end": 1.12
+        },
+        {
+          "text": "sombra",
+          "start": 1.12,
+          "end": 1.56
+        },
+        {
+          "text": "es",
+          "start": 1.56,
+          "end": 2.1
+        },
+        {
+          "text": "gigante!",
+          "start": 2.1,
+          "end": 2.74
+        },
+        {
+          "text": "¿De",
+          "start": 3.34,
+          "end": 3.78
+        },
+        {
+          "text": "quién",
+          "start": 3.78,
+          "end": 3.94
+        },
+        {
+          "text": "será?",
+          "start": 3.94,
+          "end": 4.24
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "text": "Es mía.",
+      "file": "audio/ep001/s2.wav",
+      "offset": 4.7,
+      "duration": 3,
+      "voiceStart": 4.7,
+      "voiceEnd": 6.119999957084656,
+      "words": [
+        {
+          "text": "Es",
+          "start": 4.7,
+          "end": 5.44
+        },
+        {
+          "text": "mía.",
+          "start": 5.44,
+          "end": 6.12
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "text": "Mirá, me acerco a la linterna y mi sombra crece.",
+      "file": "audio/ep001/s3.wav",
+      "offset": 6.3,
+      "duration": 4.7,
+      "voiceStart": 6.3,
+      "voiceEnd": 10.45999984741211,
+      "words": [
+        {
+          "text": "Mirá,",
+          "start": 6.3,
+          "end": 6.68
+        },
+        {
+          "text": "me",
+          "start": 7.26,
+          "end": 7.56
+        },
+        {
+          "text": "acerco",
+          "start": 7.56,
+          "end": 7.9
+        },
+        {
+          "text": "a",
+          "start": 7.9,
+          "end": 8
+        },
+        {
+          "text": "la",
+          "start": 8,
+          "end": 8.26
+        },
+        {
+          "text": "linterna",
+          "start": 8.26,
+          "end": 8.72
+        },
+        {
+          "text": "y",
+          "start": 8.72,
+          "end": 9.28
+        },
+        {
+          "text": "mi",
+          "start": 9.28,
+          "end": 9.56
+        },
+        {
+          "text": "sombra",
+          "start": 9.56,
+          "end": 9.92
+        },
+        {
+          "text": "crece.",
+          "start": 9.92,
+          "end": 10.46
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "text": "Ahora me alejo y se achica.",
+      "file": "audio/ep001/s4.wav",
+      "offset": 12.6,
+      "duration": 3.05,
+      "voiceStart": 12.6,
+      "voiceEnd": 15.439999914169311,
+      "words": [
+        {
+          "text": "Ahora",
+          "start": 12.6,
+          "end": 13.34
+        },
+        {
+          "text": "me",
+          "start": 13.34,
+          "end": 13.62
+        },
+        {
+          "text": "alejo",
+          "start": 13.62,
+          "end": 14.14
+        },
+        {
+          "text": "y",
+          "start": 14.14,
+          "end": 14.9
+        },
+        {
+          "text": "se",
+          "start": 14.9,
+          "end": 15.14
+        },
+        {
+          "text": "achica.",
+          "start": 15.14,
+          "end": 15.44
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "text": "¡Hasta la sombra puede saludar!",
+      "file": "audio/ep001/s5.wav",
+      "offset": 18.3,
+      "duration": 3.4,
+      "voiceStart": 18.3,
+      "voiceEnd": 21.24000005722046,
+      "words": [
+        {
+          "text": "¡Hasta",
+          "start": 18.3,
+          "end": 18.86
+        },
+        {
+          "text": "la",
+          "start": 18.86,
+          "end": 19.66
+        },
+        {
+          "text": "sombra",
+          "start": 19.66,
+          "end": 19.86
+        },
+        {
+          "text": "puede",
+          "start": 19.86,
+          "end": 20.64
+        },
+        {
+          "text": "saludar!",
+          "start": 20.64,
+          "end": 21.24
+        }
+      ]
+    }
+  ]
+}
