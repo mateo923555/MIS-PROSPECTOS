@@ -15,6 +15,7 @@
     "verify": "tsx scripts/verify.ts",
     "stills": "tsx scripts/stills.ts",
     "check": "tsx scripts/check-geometry.ts",
+    "pruebas": "tsx scripts/render-pruebas.ts",
     "master": "tsx scripts/master-audio.ts",
     "briefs": "tsx scripts/make-briefs.ts",
     "metrics": "tsx scripts/analyze-metrics.ts"

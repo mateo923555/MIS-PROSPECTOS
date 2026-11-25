@@ -158,10 +158,56 @@ def sfx_think():
     mix_at(out, kalimba(hz("A5"), 1.4, 0.45), 1.4)
     return out
 
+
+# ------------------------------------------------------------------ Teresa y Timoteo
+def music_casita(dur=12.0, bpm=84):
+    """Pruebas de Teresa y Timoteo — música suave, tierna: Sol mayor, celesta/kalimba + colchón cálido."""
+    buf = np.zeros(int(dur * SR)); beat = 60 / bpm; bar = 4 * beat
+    prog = [("G2", ["G4","B4","D5"]), ("E2", ["E4","G4","B4"]), ("C3", ["C4","E4","G4"]), ("D3", ["D4","F#4","A4"])]
+    mel = ["G5","A5","B5","D6","E6","D6","B5","A5"]
+    k = 0; tcur = 0.0
+    while tcur < dur - 0.1:
+        root, tri = prog[k % 4]
+        mix_at(buf, pluck(hz(root), 2.0, 0.5, 0.8), tcur)
+        mix_at(buf, pluck(hz(root) * 2, 1.0, 0.4, 0.3), tcur + 2 * beat)
+        for i in range(8):
+            if i % 2 == 0 or rng.random() < 0.35:
+                mix_at(buf, kalimba(hz(mel[(i + k * 3) % len(mel)]), 1.3, 0.5), tcur + i * beat / 2)
+        for nt in tri: mix_at(buf, pad(hz(nt), bar + 0.5, 0.12), tcur)
+        tcur += bar; k += 1
+    fade = np.minimum(np.arange(len(buf))/SR/0.5, 1) * np.minimum((len(buf)-np.arange(len(buf)))/SR/1.2, 1)
+    return buf * fade
+def sfx_yip():
+    """Ladridito tierno: dos chirridos agudos con vibrato suave."""
+    out = np.zeros(int(0.5*SR))
+    for j, (f0, f1, at) in enumerate([(620, 980, 0.0), (700, 1100, 0.17)]):
+        tt = t(0.14); fr = f0 + (f1 - f0) * (tt / 0.14)
+        sig = np.sin(2*np.pi*np.cumsum(fr)/SR) + 0.3*np.sin(4*np.pi*np.cumsum(fr)/SR)
+        mix_at(out, sig * np.sin(np.pi*np.clip(tt/0.14,0,1)) * 0.8, at)
+    return out
+def sfx_woof():
+    tt = t(0.32); fr = 240 - 90 * (tt / 0.32)
+    return (np.sin(2*np.pi*np.cumsum(fr)/SR) + 0.4*np.sin(4*np.pi*np.cumsum(fr)/SR)) * np.exp(-tt*9) * np.minimum(tt/0.01, 1)
+def sfx_sniff():
+    out = np.zeros(int(0.8*SR))
+    for at in (0.0, 0.22, 0.46):
+        tt = t(0.14); n = lowpass(rng.normal(0, 1, len(tt)), 2600) * np.sin(np.pi*np.clip(tt/0.14,0,1))**2 * 0.7
+        mix_at(out, n, at)
+    return out
+def sfx_pawstep():
+    tt = t(0.09); return (np.sin(2*np.pi*110*tt) * np.exp(-tt*55) + rng.normal(0, 1, len(tt)) * np.exp(-tt*120) * 0.15)
+def sfx_heart():
+    out = np.zeros(int(0.9*SR))
+    mix_at(out, kalimba(hz("E6"), 0.6, 0.6), 0.0); mix_at(out, kalimba(hz("B6"), 0.7, 0.5), 0.12)
+    return out
+
 if __name__ == "__main__":
     m = os.path.join(ROOT, "public/audio/music"); s = os.path.join(ROOT, "public/audio/sfx")
     save(f"{m}/linterna.wav", music_linterna())
     save(f"{m}/mar.wav", music_mar())
     for name, fn in [("pop", sfx_pop), ("tap", sfx_tap), ("click", sfx_click), ("whoosh", sfx_whoosh), ("sparkle", sfx_sparkle),
                      ("tada", sfx_tada), ("discover", sfx_discover), ("morph", sfx_morph), ("bubbles", sfx_bubbles), ("ding", sfx_ding), ("think", sfx_think)]:
+        save(f"{s}/{name}.wav", fn())
+    save(f"{m}/casita.wav", music_casita())
+    for name, fn in [("yip", sfx_yip), ("woof", sfx_woof), ("sniff", sfx_sniff), ("pawstep", sfx_pawstep), ("heart", sfx_heart)]:
         save(f"{s}/{name}.wav", fn())

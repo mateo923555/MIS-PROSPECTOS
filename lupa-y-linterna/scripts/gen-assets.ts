@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { ASSETS, type AssetSpec } from "./assets-manifest";
+import { ASSETS, DOG_ASSETS, type AssetSpec } from "./assets-manifest";
 import { openaiForm, openaiJson, ensureDir } from "./lib/openai";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -44,12 +44,13 @@ async function gen(spec: AssetSpec) {
 }
 
 async function main() {
-  const todo = ASSETS.filter((a) => (only.length ? only.includes(a.id) : true)).filter(
+  const todo = [...ASSETS, ...DOG_ASSETS].filter((a) => (only.length ? only.includes(a.id) : true)).filter(
     (a) => force || !fs.existsSync(path.join(ROOT, a.out)),
   );
   console.log(`Generando ${todo.length} recurso(s) con ${MODEL}…`);
-  // Los que dependen de otro (c_wave_b usa c_wave_a) van después.
-  const deps = todo.filter((a) => a.refs?.some((r) => r.includes("c_wave_a")));
+  // Los que dependen de otro recurso que también se genera ahora (p. ej. poses → ficha) van después.
+  const outs = new Set(todo.map((t) => t.out));
+  const deps = todo.filter((a) => a.refs?.some((r) => outs.has(r)));
   const free = todo.filter((a) => !deps.includes(a));
   const queue = [...free];
   const workers = Array.from({ length: 3 }, async () => {
@@ -64,6 +65,7 @@ async function main() {
     }
   });
   await Promise.all(workers);
-  for (const s of deps) await gen(s);
+  const q2 = [...deps];
+  await Promise.all(Array.from({ length: 3 }, async () => { while (q2.length) { const s = q2.shift()!; for (let k = 1; k <= 3; k++) { try { await gen(s); break; } catch (e) { console.error(`✗ ${s.id} intento ${k}:`, (e as Error).message); if (k === 3) process.exitCode = 1; } } } }));
 }
 main();

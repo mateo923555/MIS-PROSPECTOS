@@ -65,3 +65,44 @@ export const ASSETS: AssetSpec[] = [
   { id: "octopus", out: "public/art/generated/octopus.png", key: true, size: "1536x1024", quality: "high",
     prompt: `A cute plasticine clay octopus seen from the front, coral-pink and warm orange skin with lighter bumpy spots, big round head, two large friendly dark eyes with highlights, all eight arms spread out wide and flat to both sides and downward, clearly separated from each other with curled tips, as if spread flat against a wall. ONLY the octopus: absolutely NO rock, NO seabed, NO plants, NO flowers, NO coral, NO props, NOTHING under or around it; the arms hang freely in the air against the plain background. Centered, full body visible with margin, no cast shadow. ${STYLE} Perfectly flat solid pure magenta (#FF00FF) background, no gradient.` },
 ];
+
+// ===================== TERESA Y TIMOTEO (mascotas) — pruebas animadas =====================
+const DOG_STYLE =
+  "Handmade plasticine claymation / warm 3D animated look, soft rounded volumes, visible fingerprints and soft clay texture, gentle warm studio lighting, tender expressive eyes. No text, no logos, no watermark.";
+const TERESA =
+  "TERESA: a female ENGLISH BULLDOG with pure WHITE fur, a robust stocky heavy body, a wide wrinkled face with deep skin folds, a BLACK snout/nose with PINK blotches (pink spots on the black muzzle), droopy rose ears, and ONE EAR with a DARK brown-black patch (the ear on the viewer's RIGHT side when she faces the camera; the other ear stays pure white), warm dark eyes.";
+const TIMOTEO =
+  "TIMOTEO: a male FRENCH BULLDOG with short fawn light-BROWN fur, compact smaller body, very LARGE ERECT upright bat ears, a DARK gray-black muzzle (only the muzzle is dark; the face around the eyes is plain golden-tan with NO dark mask or dark rings around the eyes), big EXPRESSIVE dark eyes with soft wrinkles on the forehead, and a small WHITE PATCH on the chest.";
+const DOG_BASE = (who: string, name: string) =>
+  `Using the attached character model sheet as the exact reference, draw ONLY the SAME dog (${name}): ${who} Keep identical face, colors, markings and clay material. Full body visible with generous margin, centered, no cast shadow, nothing else in the image. Perfectly flat solid pure magenta (#FF00FF) background with no gradient.`;
+const TS = "public/art/dogs/teresa-ficha.png";
+const MS = "public/art/dogs/timoteo-ficha.png";
+const dogPose = (id: string, who: "t" | "m", pose: string): AssetSpec => ({
+  id, out: `public/art/dogs/${id}.png`, refs: [who === "t" ? TS : MS], key: true, size: "1024x1024", quality: "high",
+  prompt: `${DOG_BASE(who === "t" ? TERESA : TIMOTEO, who === "t" ? "Teresa" : "Timoteo")} Pose: ${pose}`,
+});
+
+export const DOG_ASSETS: AssetSpec[] = [
+  { id: "teresa-ficha", out: TS, size: "1536x1024", quality: "high",
+    prompt: `Character model sheet of an original animated dog. ${TERESA} Four views in a row on a clean warm off-white background: front sitting, three-quarter view facing right, full side view standing facing right, and a close-up of the face smiling. Consistent design. ${DOG_STYLE}` },
+  { id: "timoteo-ficha", out: MS, size: "1536x1024", quality: "high",
+    prompt: `Character model sheet of an original animated dog. ${TIMOTEO} Four views in a row on a clean warm off-white background: front sitting, three-quarter view facing left, full side view standing facing left, and a close-up of the face with a head tilt. Consistent design. ${DOG_STYLE}` },
+  { id: "lupa", out: "public/art/generated/lupa.png", key: true, size: "1024x1024", quality: "high",
+    prompt: `A large plasticine clay magnifying glass standing UPRIGHT on a small round clay base, seen straight from the front: thick warm golden-yellow clay rim ring with a short chunky coral-red handle pointing down into the base. The lens area inside the ring is EMPTY (no glass, you can see the flat background right through the ring). Centered, no cast shadow. ${DOG_STYLE} Perfectly flat solid pure magenta (#FF00FF) background, no gradient.` },
+  dogPose("t_sit", "t", "sitting facing the camera, calm, gentle closed-mouth smile, looking at the viewer."),
+  dogPose("t_walk_a", "t", "side view facing RIGHT, walking with her front-left paw lifted mid-step, head level, relaxed."),
+  dogPose("t_walk_b", "t", "side view facing RIGHT, walking with her opposite front paw lifted mid-step (second frame of a walk cycle), head level."),
+  dogPose("t_sniff", "t", "side view facing RIGHT, head lowered forward sniffing curiously with nose close to the ground, ears forward."),
+  dogPose("t_curious", "t", "three-quarter view facing RIGHT, head tilted to one side, one ear raised, curious wide eyes looking at something ahead."),
+  dogPose("t_surprised", "t", "facing the camera, SURPRISED: eyes wide open, eyebrows up, mouth slightly open, body lifted a little."),
+  dogPose("t_lookup", "t", "facing the camera, head raised and turned looking UP and to the side with wide curious eyes."),
+  dogPose("t_happy", "t", "facing the camera, HAPPY and tender: big smile with tongue out a little, bright eyes, relaxed body."),
+  dogPose("m_sit", "m", "sitting facing the camera, big ears upright, calm, looking at the viewer with expressive eyes."),
+  dogPose("m_walk_a", "m", "side view facing LEFT, walking with a front paw lifted mid-step, ears upright."),
+  dogPose("m_walk_b", "m", "side view facing LEFT, walking with the opposite front paw lifted (second frame of a walk cycle), ears upright."),
+  dogPose("m_tilt", "m", "three-quarter view facing LEFT, head tilted to one side in a curious head tilt, ears upright, eyes wide."),
+  dogPose("m_peer", "m", "side view facing LEFT, leaning forward with head lowered a bit, one eye squinting as if peering carefully through a magnifying glass in front of him, concentrated."),
+  dogPose("m_surprised", "m", "facing the camera, SURPRISED: huge wide eyes, ears straight up and stiff, mouth slightly open, body jumped up a bit."),
+  dogPose("m_lookup", "m", "facing the camera sitting, head turned and raised looking UP and back over his shoulder with startled wide eyes, ears upright."),
+  dogPose("m_happy", "m", "facing the camera, HAPPY and tender: smiling mouth, bright eyes, ears upright, relaxed."),
+];
