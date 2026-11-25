@@ -35,3 +35,16 @@ export const hops = (t: number, t0: number, n: number, dur: number, h: number) =
   const f = u - Math.floor(u);
   return 4 * f * (1 - f) * h;
 };
+
+/** Salto con anticipación y aterrizaje: devuelve desplazamiento vertical (px) y escala vertical (squash & stretch). */
+export const hopSquash = (t: number, t0: number, dur: number, h: number) => {
+  const u = (t - t0) / dur;
+  if (u < 0 || u > 1) return { dy: 0, sy: 1 };
+  if (u < 0.25) return { dy: 0, sy: 1 - 0.14 * Math.sin((u / 0.25) * Math.PI / 2) }; // agacharse
+  if (u < 0.8) { const a = (u - 0.25) / 0.55; return { dy: 4 * a * (1 - a) * h, sy: 1 + 0.08 * Math.sin(a * Math.PI) }; } // en el aire (estirado)
+  const a = (u - 0.8) / 0.2; return { dy: 0, sy: 1 - 0.1 * Math.sin(a * Math.PI) }; // aterriza (aplastado)
+};
+/** Oscilación amortiguada (péndulo): ángulo en grados. */
+export const wobble = (t: number, t0: number, amp: number, freq = 3, damp = 3.2) => {
+  const d = t - t0; return d < 0 ? 0 : amp * Math.exp(-damp * d) * Math.sin(2 * Math.PI * freq * d);
+};

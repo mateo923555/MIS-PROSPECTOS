@@ -23,3 +23,11 @@
 2. Separar **cabeza, orejas, cuerpo, cola** en capas (generadas por pose) para animar inclinación de cabeza, orejas que se paran y cola.
 3. Para escenas clave, usar **video generativo imagen→video** (p. ej. Kling/Seedance vía Higgsfield, con las fotos reales como referencia) en clips de 3–5 s y componerlos en Remotion con audio y subtítulos propios; hay que revisar consistencia de rasgos cuadro a cuadro.
 4. Mantener Remotion para continuidad: fondos, luz y sombra físicas, cámara, textos, audio.
+
+---
+## Actualización — pruebas v2 (títere con vida propia, sin créditos nuevos)
+- **Títere** (`src/shared/PuppetDog.tsx`, articulaciones en `src/shared/rigs.json`, ajustables con `scripts/rig-debug.py`): cuerpo, cabeza, orejas y párpados por separado a partir de las vistas de las fichas → cabeza que se inclina, orejas que se mueven (espasmos y «orejas de conejo»), parpadeo, respiración, balanceo con retardo.
+- **Las sombras son la silueta del títere completo**: si Timoteo mueve una oreja, la sombra mueve la oreja (esa es la pista para Teresa).
+- **Dirección:** apertura en macro sobre la lente; gag de la nariz de Teresa que bambolea la lupa; plano «ojo gigante» de Timoteo mirando por la lente; saltos con anticipación y aplastamiento; primeros planos para sentir la emoción y planos abiertos para entender; luz, polvo, viñeta y cámara a pulso.
+- Las pruebas anteriores quedan en `renders/pruebas/v1/`. Las nuevas: 12,8 s y 13,0 s.
+- **Límites:** siguen siendo 4 vistas por perro (sin caminata real ni cola) y los párpados/orejas salen de recortes: se ven bien a tamaño Short, con costuras en primeros planos extremos. Para pasar al siguiente nivel hace falta regenerar poses/capas con crédito de imágenes.
