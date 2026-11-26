@@ -16,7 +16,7 @@ const INSTRUCTIONS =
   process.env.TTS_INSTRUCTIONS ??
   "Narradora de cuentos para chicos de 5 a 8 años. Español latinoamericano con un toque rioplatense suave (voseo natural, 'mirá', 'podés'; la 'y' y la 'll' suaves). Voz cálida, cercana y expresiva, sonrisa audible. Ritmo ágil y natural, sin apuro ni lentitud (como contando un cuento con energía), muy claro, con asombro en las exclamaciones y curiosidad en las preguntas. Pronunciá cada palabra completa, sin apurarte ni cortar el final de las frases.";
 
-type Seg = { id: string; at: number; text: string };
+type Seg = { id: string; at: number; text: string; voice?: string; instructions?: string; emotion?: string; speaker?: string };
 type Word = { text: string; start: number; end: number };
 
 const args = process.argv.slice(2);
@@ -87,12 +87,14 @@ async function main() {
       continue;
     }
     for (const s of segs) {
-      const hash = crypto.createHash("sha1").update(JSON.stringify([s.text, VOICE, MODEL, INSTRUCTIONS])).digest("hex").slice(0, 12);
+      const segVoice = s.voice ?? VOICE;
+      const segInstr = (s.instructions ?? INSTRUCTIONS) + (s.emotion ? ` Emoción de esta frase: ${s.emotion}.` : "");
+      const hash = crypto.createHash("sha1").update(JSON.stringify([s.text, segVoice, MODEL, segInstr])).digest("hex").slice(0, 12);
       const file = path.join(dir, `${s.id}.wav`);
       let entry = cache.segments[s.id];
       if (force || !entry || entry.hash !== hash || !fs.existsSync(file)) {
         console.log(`TTS ${ep}/${s.id}: "${s.text}"`);
-        const buf = await openaiBinary("/audio/speech", { model: MODEL, voice: VOICE, input: s.text, instructions: INSTRUCTIONS, response_format: "wav" });
+        const buf = await openaiBinary("/audio/speech", { model: MODEL, voice: segVoice, input: s.text, instructions: segInstr, response_format: "wav" });
         fs.writeFileSync(file, buf);
         const dur = wavDuration(file);
         const heard = await transcribeWords(file);
@@ -103,7 +105,7 @@ async function main() {
       // posición absoluta: el inicio de la VOZ cae en `at`
       const offset = s.at - entry.voiceStart;
       out.push({
-        id: s.id, text: s.text, file: `audio/${ep}/${s.id}.wav`, offset, duration: entry.duration,
+        id: s.id, speaker: s.speaker ?? null, text: s.text, file: `audio/${ep}/${s.id}.wav`, offset, duration: entry.duration,
         voiceStart: s.at, voiceEnd: s.at + (entry.voiceEnd - entry.voiceStart),
         words: entry.words.map((w: Word) => ({ text: w.text, start: +(w.start + offset).toFixed(3), end: +(w.end + offset).toFixed(3) })),
       });

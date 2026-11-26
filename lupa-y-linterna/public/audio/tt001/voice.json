@@ -1,0 +1,316 @@
+{
+  "segments": {
+    "s1": {
+      "hash": "bf094a9bc1a2",
+      "duration": 4.1,
+      "transcript": "¡Uy ¡Uy uy ¡Mi sombra es gigantísima",
+      "words": [
+        {
+          "text": "¡Uy,",
+          "start": 0,
+          "end": 0.7599999904632568
+        },
+        {
+          "text": "uy,",
+          "start": 0.7599999904632568,
+          "end": 1.2000000476837158
+        },
+        {
+          "text": "uy!",
+          "start": 1.340000033378601,
+          "end": 1.340000033378601
+        },
+        {
+          "text": "¡Mi",
+          "start": 1.6799999475479126,
+          "end": 2
+        },
+        {
+          "text": "sombra",
+          "start": 2,
+          "end": 2.380000114440918
+        },
+        {
+          "text": "es",
+          "start": 2.380000114440918,
+          "end": 2.7200000286102295
+        },
+        {
+          "text": "gigantísima!",
+          "start": 2.7200000286102295,
+          "end": 3.559999942779541
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 3.559999942779541
+    },
+    "s2": {
+      "hash": "fb34a8df1d4a",
+      "duration": 4.25,
+      "transcript": "NO ENTRA EN EL CUADRO TERE ¿QUÉ HAGO",
+      "words": [
+        {
+          "text": "¡No",
+          "start": 0,
+          "end": 0.4399999976158142
+        },
+        {
+          "text": "entra",
+          "start": 0.4399999976158142,
+          "end": 1.0800000429153442
+        },
+        {
+          "text": "en",
+          "start": 1.0800000429153442,
+          "end": 1.2200000286102295
+        },
+        {
+          "text": "el",
+          "start": 1.2200000286102295,
+          "end": 1.5
+        },
+        {
+          "text": "cuadro!",
+          "start": 1.5,
+          "end": 1.8600000143051147
+        },
+        {
+          "text": "Tere…",
+          "start": 2.8399999141693115,
+          "end": 3
+        },
+        {
+          "text": "¿qué",
+          "start": 3.559999942779541,
+          "end": 3.619999885559082
+        },
+        {
+          "text": "hago?",
+          "start": 3.619999885559082,
+          "end": 3.9200000762939453
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 3.9200000762939453
+    },
+    "s3": {
+      "hash": "8c0a9e2a88bd",
+      "duration": 3.65,
+      "transcript": "Mmm proba acercarte a la luz",
+      "words": [
+        {
+          "text": "Mmm…",
+          "start": 0,
+          "end": 0.8600000143051147
+        },
+        {
+          "text": "probá",
+          "start": 1.440000057220459,
+          "end": 1.8799999952316284
+        },
+        {
+          "text": "acercarte",
+          "start": 1.8799999952316284,
+          "end": 2.6600000858306885
+        },
+        {
+          "text": "a",
+          "start": 2.6600000858306885,
+          "end": 2.799999952316284
+        },
+        {
+          "text": "la",
+          "start": 2.799999952316284,
+          "end": 3.180000066757202
+        },
+        {
+          "text": "luz.",
+          "start": 3.180000066757202,
+          "end": 3.2200000286102295
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 3.2200000286102295
+    },
+    "s4": {
+      "hash": "0bb529aa2bc3",
+      "duration": 2.55,
+      "transcript": "AY AY CRECEMAS",
+      "words": [
+        {
+          "text": "¡Ay,",
+          "start": 0,
+          "end": 0.4840000152587891
+        },
+        {
+          "text": "ay!",
+          "start": 0.4840000152587891,
+          "end": 0.9680000305175782
+        },
+        {
+          "text": "¡Crece",
+          "start": 0.9680000305175782,
+          "end": 1.815000057220459
+        },
+        {
+          "text": "más!",
+          "start": 1.815000057220459,
+          "end": 2.4200000762939453
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.4200000762939453
+    },
+    "s5": {
+      "hash": "639f50c5bcfb",
+      "duration": 2.75,
+      "transcript": "Ahora alejate despacito",
+      "words": [
+        {
+          "text": "Ahora",
+          "start": 0,
+          "end": 0.7200000286102295
+        },
+        {
+          "text": "alejate,",
+          "start": 0.7799999713897705,
+          "end": 1.4800000190734863
+        },
+        {
+          "text": "despacito.",
+          "start": 1.940000057220459,
+          "end": 2.4800000190734863
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.4800000190734863
+    },
+    "s6": {
+      "hash": "73eebea6fec0",
+      "duration": 2.6,
+      "transcript": "Sea chica entró justo",
+      "words": [
+        {
+          "text": "¡Se",
+          "start": 0,
+          "end": 0.5799999833106995
+        },
+        {
+          "text": "achica!",
+          "start": 0.5799999833106995,
+          "end": 1.1799999475479126
+        },
+        {
+          "text": "¡Entró",
+          "start": 1.6799999475479126,
+          "end": 1.9600000381469727
+        },
+        {
+          "text": "justo!",
+          "start": 1.9600000381469727,
+          "end": 2.3399999141693115
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.3399999141693115
+    },
+    "s7": {
+      "hash": "40223682a8bf",
+      "duration": 4.75,
+      "transcript": "Cuanto más lejos de la luz más chica es la sombra",
+      "words": [
+        {
+          "text": "Cuanto",
+          "start": 0,
+          "end": 0.5
+        },
+        {
+          "text": "más",
+          "start": 0.5,
+          "end": 1.1399999856948853
+        },
+        {
+          "text": "lejos",
+          "start": 1.1399999856948853,
+          "end": 1.399999976158142
+        },
+        {
+          "text": "de",
+          "start": 1.399999976158142,
+          "end": 1.6399999856948853
+        },
+        {
+          "text": "la",
+          "start": 1.6399999856948853,
+          "end": 2.0399999618530273
+        },
+        {
+          "text": "luz,",
+          "start": 2.0399999618530273,
+          "end": 2.059999942779541
+        },
+        {
+          "text": "más",
+          "start": 2.9000000953674316,
+          "end": 3.059999942779541
+        },
+        {
+          "text": "chica",
+          "start": 3.059999942779541,
+          "end": 3.4600000381469727
+        },
+        {
+          "text": "es",
+          "start": 3.4600000381469727,
+          "end": 3.8399999141693115
+        },
+        {
+          "text": "la",
+          "start": 3.8399999141693115,
+          "end": 4.28000020980835
+        },
+        {
+          "text": "sombra.",
+          "start": 4.28000020980835,
+          "end": 4.400000095367432
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 4.400000095367432
+    },
+    "s8": {
+      "hash": "161596014402",
+      "duration": 3.2,
+      "transcript": "¡Gracias Tere ¡Sos la mejor",
+      "words": [
+        {
+          "text": "¡Gracias,",
+          "start": 0,
+          "end": 0.7799999713897705
+        },
+        {
+          "text": "Tere!",
+          "start": 0.9200000166893005,
+          "end": 1.2400000095367432
+        },
+        {
+          "text": "¡Sos",
+          "start": 1.7999999523162842,
+          "end": 2.240000009536743
+        },
+        {
+          "text": "la",
+          "start": 2.240000009536743,
+          "end": 2.5999999046325684
+        },
+        {
+          "text": "mejor!",
+          "start": 2.5999999046325684,
+          "end": 2.700000047683716
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.700000047683716
+    }
+  }
+}

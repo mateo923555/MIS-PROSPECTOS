@@ -19,10 +19,12 @@ export const TT001_SECONDS = Math.ceil((lastEnd + 1.2) * 10) / 10;
 
 // ── poses reales (ver public/art/mascotas/_manifest.json) ──
 const M = {
+  talk: "timoteo/base/timoteo_base_frente_01", bark: "timoteo/habla/timoteo_habla_frente_01",
   base: "timoteo/base/timoteo_base_frente_04", surp: "timoteo/emocion/timoteo_emocion_frente_07", think: "timoteo/mirada/timoteo_mirada_frente_01",
   up: "timoteo/mirada/timoteo_mirada_frente_02", jump: "timoteo/salto/timoteo_salto_frente_01", laugh: "timoteo/emocion/timoteo_emocion_frente_08", happy: "timoteo/emocion/timoteo_emocion_frente_04", blink: "timoteo/parpadeo/timoteo_parpadeo_frente_02",
 };
 const TE = {
+  talk: "teresa/base/teresa_base_frente_02",
   base: "teresa/base/teresa_base_frente_06", look: "teresa/mirada/teresa_mirada_izq_02", up: "teresa/mirada/teresa_mirada_frente_02", jump: "teresa/salto/teresa_salto_frente_01", bark: "teresa/habla/teresa_habla_frente_01", blink: "teresa/parpadeo/teresa_parpadeo_frente_02",
 };
 const meta = (k: string) => (META as any)[`art/mascotas/${k}.png`] as { w: number; h: number; top: number; bottom: number };
@@ -46,17 +48,19 @@ const Sprite: React.FC<{ k: string; ref_: { top: number; bottom: number }; x: nu
 const seg = (id: string): VoiceSegment => voice.segments.find((s) => s.id === id)!;
 const ws = (s: VoiceSegment, needle: string) => (s.words.find((w) => w.text.toLowerCase().includes(needle)) ?? s.words[0]).start;
 const T = {
-  question: seg("s2").voiceStart, acerco: ws(seg("s3"), "acerca"), crece: ws(seg("s3"), "crece"), s3End: seg("s3").voiceEnd,
-  alejo: ws(seg("s4"), "aleja"), s4End: seg("s4").voiceEnd, fit: seg("s5").voiceStart, hello: seg("s6").voiceStart, helloEnd: seg("s6").voiceEnd,
+  question: seg("s2").voiceStart, acerco: ws(seg("s3"), "acercarte"), crece: ws(seg("s4"), "crece"), s3End: seg("s3").voiceEnd,
+  alejo: ws(seg("s5"), "alejate"), s4End: ws(seg("s6"), "entr"), fit: ws(seg("s6"), "entr"), hello: seg("s8").voiceStart, helloEnd: seg("s8").voiceEnd,
 };
 const LAMP_X = 270, LAMP_Y = 1265;
 const XL = (LAMP_X - CX) / 520;
 const D_KEYS: Array<[number, number]> = [[0, D_START], [T.acerco - 0.1, D_START], [T.crece + 0.25, D_NEAR], [T.alejo - 0.15, D_NEAR], [T.s4End + 0.1, D_FIT], [30, D_FIT]];
 
+const speaking = (t: number, who: "timo" | "tere") => voice.segments.some((s) => (s as any).speaker === who && t >= s.voiceStart && t <= s.voiceEnd);
+const mouth = (t: number, a: string, b: string, c: string) => [a, b, c, b][Math.floor(t * 9) % 4];
 const timoPose = (t: number) => {
   if (t < T.question) return M.surp;
   if (t < T.acerco - 0.1) return M.think;
-  if (t < T.crece) return M.base;
+  if (t < T.crece) return speaking(t, "tere") ? M.up : M.base;
   if (t < T.alejo - 0.3) return M.surp;
   if (t < T.fit) return M.up;
   if (t < T.fit + 1.4) return M.jump;
@@ -66,9 +70,8 @@ const timoPose = (t: number) => {
 const terePose = (t: number) => {
   if (t < T.question) return TE.look;
   if (t < T.alejo - 0.3) return TE.base;
-  if (t < T.fit) return TE.up;
+  if (t < T.fit) return speaking(t, "tere") ? TE.base : TE.up;
   if (t < T.fit + 1.4) return TE.jump;
-  if (t < T.hello) return TE.bark;
   return TE.base;
 };
 
@@ -92,8 +95,10 @@ export const Tt001Sombra: React.FC = () => {
   const hop = hops(tq, 0.3, 1, 0.45, 55) + hops(tq, T.crece - 0.05, 1, 0.45, 40) + hops(tq, T.fit, 3, 0.42, 70);
   const bob = (moving ? Math.abs(Math.sin(step * 1.1)) * 14 : 0) + hop;
   const rot = moving ? (step % 2 ? 2.5 : -2.5) : Math.sin(tq * 2.2) * 1.2;
-  const pose = timoPose(tq) === M.base && [0.9, 2.7].some((b) => false) ? M.blink : timoPose(tq);
-  const blinkT = Math.floor(tq * 10) % 37 === 0 ? TE.blink : null;
+  const rawM = timoPose(tq);
+  const pose = rawM === M.base && speaking(tq, "timo") ? mouth(tq, M.base, M.talk, M.bark) : rawM;
+  const rawT = terePose(tq);
+  const tereK = rawT === TE.base && speaking(tq, "tere") ? mouth(tq, TE.base, TE.talk, TE.bark) : Math.floor(tq * 10) % 41 === 0 && rawT === TE.base ? TE.blink : rawT;
 
   const s = D / d;
   const shH = s * PW;
@@ -148,7 +153,7 @@ export const Tt001Sombra: React.FC = () => {
         )}
         {/* Tere, en primer plano a la derecha, mira y acompaña */}
         <div style={{ position: "absolute", left: 790, top: 1285, width: 250, height: 34, borderRadius: "50%", background: "rgba(0,0,0,0.4)", filter: "blur(10px)", opacity: Math.max(0.3, 1 + tereJump / 160) }} />
-        <Sprite k={blinkT ?? terePose(tq)} ref_={REF_T} x={905} footY={1300} h={390} rot={0} style={{ transform: `translateY(${tereJump}px)` }} />
+        <Sprite k={tereK} ref_={REF_T} x={905} footY={1300} h={390} rot={0} style={{ transform: `translateY(${tereJump}px)` }} />
         {/* contacto de Timo y Timo */}
         <div style={{ position: "absolute", left: timoX - timoH * 0.3, top: footY - timoH * 0.04, width: timoH * 0.6, height: timoH * 0.12, borderRadius: "50%", background: "rgba(0,0,0,0.38)", filter: "blur(10px)", opacity: Math.max(0.3, 1 - bob / 160) }} />
         <Sprite k={pose} ref_={REF_M} x={timoX} footY={footY - bob} h={timoH} rot={rot} />

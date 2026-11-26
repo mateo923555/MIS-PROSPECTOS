@@ -1,6 +1,11 @@
 {
-  "id": "tt001", "version": "v1", "file": "timo-y-tere_tt001_la-sombra-de-timo", "format": "A", "formatName": "¿Por qué pasa esto?",
-  "title": "¿Por qué la sombra de Timo es gigante?", "durationTargetSec": 21.5,
+  "id": "tt001",
+  "version": "v2",
+  "file": "timo-y-tere_tt001_la-sombra-de-timo_v2",
+  "format": "A",
+  "formatName": "¿Por qué pasa esto?",
+  "title": "¿Por qué la sombra de Timo es gigante?",
+  "durationTargetSec": 25,
   "narrative": {
     "primerCuadro": "La sombra gigante de las orejas de Timo se sale del cuadro de la pared; Timo mira asustado y Tere lo observa.",
     "quiere": "Que su sombra entre justo en el cuadro.",
@@ -15,16 +20,89 @@
     "aprendeYDemuestra": "Más lejos de la linterna = sombra más chica: se ve en la misma pared, con la linterna y el cuadro fijos.",
     "finalSatisfactorio": "Entra justo; Tere salta y ladra, Timo le agradece y salen corazones."
   },
-  "voice": { "person": "narradora en tercera persona", "segments": [
-    { "id": "s1", "at": 0.3, "text": "¡La sombra de Timo es gigante!" },
-    { "id": "s2", "at": 3.0, "text": "¿Cómo hará para que entre en el cuadro?" },
-    { "id": "s3", "at": 6.4, "text": "Si se acerca a la luz… ¡la sombra crece!" },
-    { "id": "s4", "at": 10.2, "text": "Si se aleja… ¡se achica!" },
-    { "id": "s5", "at": 13.2, "text": "¡Entró justo! Cuanto más lejos de la luz, más chica es la sombra." },
-    { "id": "s6", "at": 19.2, "text": "¡Gracias, Tere!" }
-  ] },
-  "source": { "title": "Science Buddies — Change the size of a shadow", "url": "https://www.sciencebuddies.org/stem-activities/change-the-size-of-a-shadow", "alt": "https://ontariosciencecentre.ca/science-at-home/diy-science-fun/summer-rays-and-shadow-play" },
+  "voice": {
+    "person": "diálogo: Timo (cedar) y Tere (marin)",
+    "segments": [
+      {
+        "id": "s1",
+        "at": 0.3,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Usá respiraciones cortas, pequeñas pausas para pensar, titubeos y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna, casi un hilito. Español rioplatense natural, con voseo, sin acento de locutor.",
+        "emotion": "susto y asombro, casi sin aire",
+        "text": "¡Uy, uy, uy! ¡Mi sombra es gigantísima!"
+      },
+      {
+        "id": "s2",
+        "at": 4.41,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Usá respiraciones cortas, pequeñas pausas para pensar, titubeos y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna, casi un hilito. Español rioplatense natural, con voseo, sin acento de locutor.",
+        "emotion": "preocupado, pidiendo ayuda con voz tierna",
+        "text": "¡No entra en el cuadro! Tere… ¿qué hago?"
+      },
+      {
+        "id": "s3",
+        "at": 8.68,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, cálida y muy cariñosa, hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha. Voz más grave y suave, ritmo calmo, pausas que dan seguridad, una risita tierna cuando él se asusta, y un tono de 'mirá lo que viene' cuando explica, como quien le cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor.",
+        "emotion": "calma, con una sonrisa; le propone un experimento",
+        "text": "Mmm… probá acercarte a la luz."
+      },
+      {
+        "id": "s4",
+        "at": 12.1,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Usá respiraciones cortas, pequeñas pausas para pensar, titubeos y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna, casi un hilito. Español rioplatense natural, con voseo, sin acento de locutor.",
+        "emotion": "alarma divertida, ojos grandes",
+        "text": "¡Ay, ay! ¡Crece más!"
+      },
+      {
+        "id": "s5",
+        "at": 14.72,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, cálida y muy cariñosa, hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha. Voz más grave y suave, ritmo calmo, pausas que dan seguridad, una risita tierna cuando él se asusta, y un tono de 'mirá lo que viene' cuando explica, como quien le cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor.",
+        "emotion": "tranquila, como guiándolo de la mano",
+        "text": "Ahora alejate, despacito."
+      },
+      {
+        "id": "s6",
+        "at": 17.4,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Usá respiraciones cortas, pequeñas pausas para pensar, titubeos y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna, casi un hilito. Español rioplatense natural, con voseo, sin acento de locutor.",
+        "emotion": "alegría desbordante, casi gritando de felicidad",
+        "text": "¡Se achica! ¡Entró justo!"
+      },
+      {
+        "id": "s7",
+        "at": 19.94,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, cálida y muy cariñosa, hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha. Voz más grave y suave, ritmo calmo, pausas que dan seguridad, una risita tierna cuando él se asusta, y un tono de 'mirá lo que viene' cuando explica, como quien le cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor.",
+        "emotion": "orgullosa y cálida; explica clarito, como un secreto lindo",
+        "text": "Cuanto más lejos de la luz, más chica es la sombra."
+      },
+      {
+        "id": "s8",
+        "at": 24.79,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Usá respiraciones cortas, pequeñas pausas para pensar, titubeos y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna, casi un hilito. Español rioplatense natural, con voseo, sin acento de locutor.",
+        "emotion": "ternura, agradecido, con la voz quebradita de emoción",
+        "text": "¡Gracias, Tere! ¡Sos la mejor!"
+      }
+    ]
+  },
+  "source": {
+    "title": "Science Buddies — Change the size of a shadow",
+    "url": "https://www.sciencebuddies.org/stem-activities/change-the-size-of-a-shadow",
+    "alt": "https://ontariosciencecentre.ca/science-at-home/diy-science-fun/summer-rays-and-shadow-play"
+  },
   "scienceCheck": "Verificado con dos fuentes: cuanto más cerca está un objeto de la fuente de luz, más grande es su sombra (el objeto bloquea una porción mayor de luz). Linterna y pared quedan fijas; solo cambia la distancia linterna–Timo.",
   "contaElChico": "«A Timo le salió una sombra gigante que no entraba en el cuadro. Cuando se acercaba a la linterna se hacía más grande y cuando se alejaba, más chica, hasta que entró justo.»",
-  "status": "PREVIEW (voz pendiente de crédito OpenAI)"
+  "status": "PREVIEW (voz generada: se verifica con transcripción)"
 }
