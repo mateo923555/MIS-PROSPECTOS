@@ -1,0 +1,371 @@
+{
+  "model": "gpt-4o-mini-tts",
+  "voice": "coral",
+  "segments": [
+    {
+      "id": "s1",
+      "speaker": "timo",
+      "text": "¡Tere! ¡Mi sombra ya no entra!",
+      "file": "audio/tt001v4/s1.wav",
+      "offset": 0.15,
+      "duration": 2.165083,
+      "voiceStart": 0.15,
+      "voiceEnd": 2.090000057220459,
+      "words": [
+        {
+          "text": "¡Tere!",
+          "start": 0.15,
+          "end": 0.51
+        },
+        {
+          "text": "¡Mi",
+          "start": 1.05,
+          "end": 1.21
+        },
+        {
+          "text": "sombra",
+          "start": 1.21,
+          "end": 1.49
+        },
+        {
+          "text": "ya",
+          "start": 1.49,
+          "end": 1.81
+        },
+        {
+          "text": "no",
+          "start": 1.81,
+          "end": 2.01
+        },
+        {
+          "text": "entra!",
+          "start": 2.01,
+          "end": 2.09
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "speaker": "tere",
+      "text": "Mmm… a ver. Probá acercarte a la linterna.",
+      "file": "audio/tt001v4/s2.wav",
+      "offset": 2.39,
+      "duration": 2.674625,
+      "voiceStart": 2.39,
+      "voiceEnd": 4.969999923706055,
+      "words": [
+        {
+          "text": "Mmm…",
+          "start": 2.39,
+          "end": 2.93
+        },
+        {
+          "text": "a",
+          "start": 3.27,
+          "end": 3.35
+        },
+        {
+          "text": "ver.",
+          "start": 3.35,
+          "end": 3.57
+        },
+        {
+          "text": "Probá",
+          "start": 3.89,
+          "end": 4.13
+        },
+        {
+          "text": "acercarte",
+          "start": 4.13,
+          "end": 4.47
+        },
+        {
+          "text": "a",
+          "start": 4.47,
+          "end": 4.55
+        },
+        {
+          "text": "la",
+          "start": 4.55,
+          "end": 4.69
+        },
+        {
+          "text": "linterna.",
+          "start": 4.69,
+          "end": 4.97
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "speaker": "timo",
+      "text": "¡Ay, no! ¡Crece y crece!",
+      "file": "audio/tt001v4/s3.wav",
+      "offset": 5.87,
+      "duration": 2.277542,
+      "voiceStart": 5.87,
+      "voiceEnd": 7.9699999046325685,
+      "words": [
+        {
+          "text": "¡Ay,",
+          "start": 5.87,
+          "end": 6.57
+        },
+        {
+          "text": "no!",
+          "start": 6.57,
+          "end": 6.89
+        },
+        {
+          "text": "¡Crece",
+          "start": 7.27,
+          "end": 7.53
+        },
+        {
+          "text": "y",
+          "start": 7.53,
+          "end": 7.73
+        },
+        {
+          "text": "crece!",
+          "start": 7.73,
+          "end": 7.97
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "speaker": "tere",
+      "text": "¡Uy! ¡Qué grande!",
+      "file": "audio/tt001v4/s4.wav",
+      "offset": 8.17,
+      "duration": 1.461167,
+      "voiceStart": 8.17,
+      "voiceEnd": 9.370000047683716,
+      "words": [
+        {
+          "text": "¡Uy!",
+          "start": 8.17,
+          "end": 8.77
+        },
+        {
+          "text": "¡Qué",
+          "start": 8.93,
+          "end": 9.09
+        },
+        {
+          "text": "grande!",
+          "start": 9.09,
+          "end": 9.37
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "speaker": "tere",
+      "text": "¿Y si hacemos lo contrario?",
+      "file": "audio/tt001v4/s5.wav",
+      "offset": 10.27,
+      "duration": 1.531625,
+      "voiceStart": 10.27,
+      "voiceEnd": 11.309999961853027,
+      "words": [
+        {
+          "text": "¿Y",
+          "start": 10.27,
+          "end": 10.51
+        },
+        {
+          "text": "si",
+          "start": 10.51,
+          "end": 10.65
+        },
+        {
+          "text": "hacemos",
+          "start": 10.65,
+          "end": 10.85
+        },
+        {
+          "text": "lo",
+          "start": 10.85,
+          "end": 11.09
+        },
+        {
+          "text": "contrario?",
+          "start": 11.09,
+          "end": 11.31
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "speaker": "timo",
+      "text": "¡Se achica! ¡Ya entra!",
+      "file": "audio/tt001v4/s6.wav",
+      "offset": 11.329999992847442,
+      "duration": 2.271458,
+      "voiceStart": 12.01,
+      "voiceEnd": 13.389999935626983,
+      "words": [
+        {
+          "text": "¡Se",
+          "start": 12.01,
+          "end": 12.39
+        },
+        {
+          "text": "achica!",
+          "start": 12.39,
+          "end": 12.59
+        },
+        {
+          "text": "¡Ya",
+          "start": 13.03,
+          "end": 13.21
+        },
+        {
+          "text": "entra!",
+          "start": 13.21,
+          "end": 13.39
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "speaker": "tere",
+      "text": "Más cerca de la luz, la sombra crece. Más lejos, se achica.",
+      "file": "audio/tt001v4/s7.wav",
+      "offset": 13.84,
+      "duration": 3.772833,
+      "voiceStart": 13.84,
+      "voiceEnd": 17.459999885559082,
+      "words": [
+        {
+          "text": "Más",
+          "start": 13.84,
+          "end": 14.14
+        },
+        {
+          "text": "cerca",
+          "start": 14.14,
+          "end": 14.4
+        },
+        {
+          "text": "de",
+          "start": 14.4,
+          "end": 14.5
+        },
+        {
+          "text": "la",
+          "start": 14.5,
+          "end": 14.76
+        },
+        {
+          "text": "luz,",
+          "start": 14.76,
+          "end": 14.8
+        },
+        {
+          "text": "la",
+          "start": 15.22,
+          "end": 15.38
+        },
+        {
+          "text": "sombra",
+          "start": 15.38,
+          "end": 15.56
+        },
+        {
+          "text": "crece.",
+          "start": 15.56,
+          "end": 16.08
+        },
+        {
+          "text": "Más",
+          "start": 16.46,
+          "end": 16.52
+        },
+        {
+          "text": "lejos,",
+          "start": 16.52,
+          "end": 16.84
+        },
+        {
+          "text": "se",
+          "start": 17.18,
+          "end": 17.26
+        },
+        {
+          "text": "achica.",
+          "start": 17.26,
+          "end": 17.46
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "speaker": "timo",
+      "text": "¡Gracias, Tere!",
+      "file": "audio/tt001v4/s8.wav",
+      "offset": 17.81,
+      "duration": 1.002667,
+      "voiceStart": 17.81,
+      "voiceEnd": 18.490000007152556,
+      "words": [
+        {
+          "text": "¡Gracias,",
+          "start": 17.81,
+          "end": 18.23
+        },
+        {
+          "text": "Tere!",
+          "start": 18.37,
+          "end": 18.49
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "speaker": "timo",
+      "text": "¡Hola, sombra!",
+      "file": "audio/tt001v4/s9.wav",
+      "offset": 18.84,
+      "duration": 1.266625,
+      "voiceStart": 18.84,
+      "voiceEnd": 19.64000001192093,
+      "words": [
+        {
+          "text": "¡Hola,",
+          "start": 18.84,
+          "end": 19.26
+        },
+        {
+          "text": "sombra!",
+          "start": 19.52,
+          "end": 19.64
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "speaker": "timo",
+      "text": "¡Me saludó!",
+      "file": "audio/tt001v4/s10.wav",
+      "offset": 20.94,
+      "duration": 1.477625,
+      "voiceStart": 20.94,
+      "voiceEnd": 22.300000014305116,
+      "words": [
+        {
+          "text": "¡Me",
+          "start": 20.94,
+          "end": 21.393
+        },
+        {
+          "text": "saludó!",
+          "start": 21.393,
+          "end": 22.3
+        }
+      ]
+    }
+  ]
+}
