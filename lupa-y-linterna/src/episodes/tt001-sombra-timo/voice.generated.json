@@ -1,0 +1,287 @@
+{
+  "model": "estimate",
+  "voice": "none",
+  "segments": [
+    {
+      "id": "s1",
+      "text": "¡La sombra de Timo es gigante!",
+      "file": null,
+      "offset": 0.3,
+      "duration": 2.025,
+      "voiceStart": 0.3,
+      "voiceEnd": 2.3249999999999997,
+      "words": [
+        {
+          "text": "¡La",
+          "start": 0.3,
+          "end": 0.6
+        },
+        {
+          "text": "sombra",
+          "start": 0.6,
+          "end": 1.05
+        },
+        {
+          "text": "de",
+          "start": 1.05,
+          "end": 1.2
+        },
+        {
+          "text": "Timo",
+          "start": 1.2,
+          "end": 1.5
+        },
+        {
+          "text": "es",
+          "start": 1.5,
+          "end": 1.65
+        },
+        {
+          "text": "gigante!",
+          "start": 1.65,
+          "end": 2.325
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "text": "¿Cómo hará para que entre en el cuadro?",
+      "file": null,
+      "offset": 3,
+      "duration": 2.55,
+      "voiceStart": 3,
+      "voiceEnd": 5.55,
+      "words": [
+        {
+          "text": "¿Cómo",
+          "start": 3,
+          "end": 3.45
+        },
+        {
+          "text": "hará",
+          "start": 3.45,
+          "end": 3.75
+        },
+        {
+          "text": "para",
+          "start": 3.75,
+          "end": 4.05
+        },
+        {
+          "text": "que",
+          "start": 4.05,
+          "end": 4.275
+        },
+        {
+          "text": "entre",
+          "start": 4.275,
+          "end": 4.65
+        },
+        {
+          "text": "en",
+          "start": 4.65,
+          "end": 4.8
+        },
+        {
+          "text": "el",
+          "start": 4.8,
+          "end": 4.95
+        },
+        {
+          "text": "cuadro?",
+          "start": 4.95,
+          "end": 5.55
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "text": "Si se acerca a la luz… ¡la sombra crece!",
+      "file": null,
+      "offset": 6.4,
+      "duration": 2.55,
+      "voiceStart": 6.4,
+      "voiceEnd": 8.95,
+      "words": [
+        {
+          "text": "Si",
+          "start": 6.4,
+          "end": 6.55
+        },
+        {
+          "text": "se",
+          "start": 6.55,
+          "end": 6.7
+        },
+        {
+          "text": "acerca",
+          "start": 6.7,
+          "end": 7.15
+        },
+        {
+          "text": "a",
+          "start": 7.15,
+          "end": 7.3
+        },
+        {
+          "text": "la",
+          "start": 7.3,
+          "end": 7.45
+        },
+        {
+          "text": "luz…",
+          "start": 7.45,
+          "end": 7.675
+        },
+        {
+          "text": "¡la",
+          "start": 7.675,
+          "end": 7.975
+        },
+        {
+          "text": "sombra",
+          "start": 7.975,
+          "end": 8.425
+        },
+        {
+          "text": "crece!",
+          "start": 8.425,
+          "end": 8.95
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "text": "Si se aleja… ¡se achica!",
+      "file": null,
+      "offset": 10.2,
+      "duration": 1.575,
+      "voiceStart": 10.2,
+      "voiceEnd": 11.774999999999999,
+      "words": [
+        {
+          "text": "Si",
+          "start": 10.2,
+          "end": 10.35
+        },
+        {
+          "text": "se",
+          "start": 10.35,
+          "end": 10.5
+        },
+        {
+          "text": "aleja…",
+          "start": 10.5,
+          "end": 10.875
+        },
+        {
+          "text": "¡se",
+          "start": 10.875,
+          "end": 11.175
+        },
+        {
+          "text": "achica!",
+          "start": 11.175,
+          "end": 11.775
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "text": "¡Entró justo! Cuanto más lejos de la luz, más chica es la sombra.",
+      "file": null,
+      "offset": 13.2,
+      "duration": 4.2749999999999995,
+      "voiceStart": 13.2,
+      "voiceEnd": 17.474999999999998,
+      "words": [
+        {
+          "text": "¡Entró",
+          "start": 13.2,
+          "end": 13.725
+        },
+        {
+          "text": "justo!",
+          "start": 13.725,
+          "end": 14.25
+        },
+        {
+          "text": "Cuanto",
+          "start": 14.25,
+          "end": 14.7
+        },
+        {
+          "text": "más",
+          "start": 14.7,
+          "end": 14.925
+        },
+        {
+          "text": "lejos",
+          "start": 14.925,
+          "end": 15.3
+        },
+        {
+          "text": "de",
+          "start": 15.3,
+          "end": 15.45
+        },
+        {
+          "text": "la",
+          "start": 15.45,
+          "end": 15.6
+        },
+        {
+          "text": "luz,",
+          "start": 15.6,
+          "end": 15.975
+        },
+        {
+          "text": "más",
+          "start": 15.975,
+          "end": 16.2
+        },
+        {
+          "text": "chica",
+          "start": 16.2,
+          "end": 16.575
+        },
+        {
+          "text": "es",
+          "start": 16.575,
+          "end": 16.725
+        },
+        {
+          "text": "la",
+          "start": 16.725,
+          "end": 16.875
+        },
+        {
+          "text": "sombra.",
+          "start": 16.875,
+          "end": 17.475
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "text": "¡Gracias, Tere!",
+      "file": null,
+      "offset": 19.2,
+      "duration": 1.125,
+      "voiceStart": 19.2,
+      "voiceEnd": 20.325,
+      "words": [
+        {
+          "text": "¡Gracias,",
+          "start": 19.2,
+          "end": 19.875
+        },
+        {
+          "text": "Tere!",
+          "start": 19.875,
+          "end": 20.325
+        }
+      ]
+    }
+  ]
+}

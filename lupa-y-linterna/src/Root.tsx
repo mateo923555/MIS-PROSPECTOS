@@ -6,6 +6,7 @@ import { Ep002Pulpo, EP002_SECONDS } from "./episodes/ep002-pulpo/Ep002Pulpo";
 import { RigTest } from "./pruebas/RigTest";
 import { PruebaSombra, PRUEBA_SOMBRA_SECONDS } from "./pruebas/PruebaSombra";
 import { PruebaLupa, PRUEBA_LUPA_SECONDS } from "./pruebas/PruebaLupa";
+import { Tt001Sombra, TT001_SECONDS } from "./episodes/tt001-sombra-timo/Tt001Sombra";
 import { PruebaMascotas, PRUEBA_MASCOTAS_SECONDS } from "./pruebas/PruebaMascotas";
 import { PruebaCaminaTeresa, T_CAMINA_SECONDS, PruebaCaminaTimoteo, M_CAMINA_SECONDS, PruebaReaccion, REACCION_SECONDS, PruebaParpadeo, PARPADEO_SECONDS } from "./pruebas/PruebasPoses";
 import { Ep001SombraV1, EP001V1_SECONDS } from "./episodes/v1/ep001-sombra/Ep001Sombra";
@@ -21,6 +22,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="PruebaCaminaTimoteo" component={PruebaCaminaTimoteo} durationInFrames={Math.round(M_CAMINA_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="PruebaReaccion" component={PruebaReaccion} durationInFrames={Math.round(REACCION_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="PruebaParpadeo" component={PruebaParpadeo} durationInFrames={Math.round(PARPADEO_SECONDS * FPS)} fps={FPS} width={W} height={H} />
+    <Composition id="Tt001Sombra" component={Tt001Sombra} durationInFrames={Math.round(TT001_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="PruebaMascotas" component={PruebaMascotas} durationInFrames={Math.round(PRUEBA_MASCOTAS_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="PruebaLupa" component={PruebaLupa} durationInFrames={Math.round(PRUEBA_LUPA_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="PruebaSombra" component={PruebaSombra} durationInFrames={Math.round(PRUEBA_SOMBRA_SECONDS * FPS)} fps={FPS} width={W} height={H} />

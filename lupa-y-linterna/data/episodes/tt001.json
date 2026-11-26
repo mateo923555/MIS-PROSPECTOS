@@ -1,0 +1,30 @@
+{
+  "id": "tt001", "version": "v1", "file": "timo-y-tere_tt001_la-sombra-de-timo", "format": "A", "formatName": "¿Por qué pasa esto?",
+  "title": "¿Por qué la sombra de Timo es gigante?", "durationTargetSec": 21.5,
+  "narrative": {
+    "primerCuadro": "La sombra gigante de las orejas de Timo se sale del cuadro de la pared; Timo mira asustado y Tere lo observa.",
+    "quiere": "Que su sombra entre justo en el cuadro.",
+    "aprende": "Cerca de la luz la sombra crece; lejos de la luz, se achica.",
+    "planoFinal": "La sombra de Timo entra justo en el cuadro; Timo y Tere celebran juntos."
+  },
+  "creative": {
+    "siente": "Asombro al principio y orgullo cariñoso al final.",
+    "curiosidad": "¿Por qué mi sombra es tan grande? ¿Cómo hago que entre en el cuadro?",
+    "intentaYOcurre": "Timo se acerca a la luz y la sombra crece; se aleja y se achica, hasta que entra justo.",
+    "momentoSorprendente": "La sombra gigante con orejas enormes desbordando el cuadro.",
+    "aprendeYDemuestra": "Más lejos de la linterna = sombra más chica: se ve en la misma pared, con la linterna y el cuadro fijos.",
+    "finalSatisfactorio": "Entra justo; Tere salta y ladra, Timo le agradece y salen corazones."
+  },
+  "voice": { "person": "narradora en tercera persona", "segments": [
+    { "id": "s1", "at": 0.3, "text": "¡La sombra de Timo es gigante!" },
+    { "id": "s2", "at": 3.0, "text": "¿Cómo hará para que entre en el cuadro?" },
+    { "id": "s3", "at": 6.4, "text": "Si se acerca a la luz… ¡la sombra crece!" },
+    { "id": "s4", "at": 10.2, "text": "Si se aleja… ¡se achica!" },
+    { "id": "s5", "at": 13.2, "text": "¡Entró justo! Cuanto más lejos de la luz, más chica es la sombra." },
+    { "id": "s6", "at": 19.2, "text": "¡Gracias, Tere!" }
+  ] },
+  "source": { "title": "Science Buddies — Change the size of a shadow", "url": "https://www.sciencebuddies.org/stem-activities/change-the-size-of-a-shadow", "alt": "https://ontariosciencecentre.ca/science-at-home/diy-science-fun/summer-rays-and-shadow-play" },
+  "scienceCheck": "Verificado con dos fuentes: cuanto más cerca está un objeto de la fuente de luz, más grande es su sombra (el objeto bloquea una porción mayor de luz). Linterna y pared quedan fijas; solo cambia la distancia linterna–Timo.",
+  "contaElChico": "«A Timo le salió una sombra gigante que no entraba en el cuadro. Cuando se acercaba a la linterna se hacía más grande y cuando se alejaba, más chica, hasta que entró justo.»",
+  "status": "PREVIEW (voz pendiente de crédito OpenAI)"
+}
