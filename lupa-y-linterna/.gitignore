@@ -5,3 +5,4 @@ renders/.*
 *.tsbuildinfo
 .env
 .env.*
+public/art/drive221/originales/
