@@ -18,8 +18,8 @@ const SZ: Record<string, [number, number]> = {
   m_corre: [1178, 1048], m_sorprendido: [923, 1122], m_curioso: [1016, 1185], m_juego: [1014, 1104],
   m_salto: [1113, 1163], m_triste: [1048, 901], m_olfatea: [1085, 1023],
 };
-const KT = 0.64, KM = 0.54; // Teresa es más grande que Timoteo
-const FLOOR_T = 1500, FLOOR_M = 1468;
+const KT = 0.58, KM = 0.49; // Teresa es más grande que Timoteo
+const FLOOR_T = 1490, FLOOR_M = 1460;
 
 type Fx = { dy: number; rot: number; sx: number; sy: number };
 type Seg = { a: number; b: number; pose: string; flip?: boolean; x: [number, number] | ((u: number) => number); fx?: (u: number, p: number, t: number) => Partial<Fx> };
@@ -37,30 +37,30 @@ const bounce2 = (u: number, d: number, h: number) => {
 };
 
 const T_SEGS: Seg[] = [
-  { a: 0, b: 2.0, pose: "t_olfatea", x: [270, 300], fx: (u, p, t) => ({ rot: Math.sin(t * 9) * 1.2, dy: Math.abs(Math.sin(t * 7)) * 5, sy: 1 - 0.012 * Math.sin(t * 7) }) },
-  { a: 2.0, b: 2.9, pose: "t_sorprendida", x: [300, 300], fx: (u) => ({ dy: hop(u, 0, 0.35, 70), sy: u < 0.12 ? 0.94 : 1, sx: u < 0.12 ? 1.04 : 1 }) },
-  { a: 2.9, b: 4.3, pose: "t_curiosa", x: [300, 300], fx: (u, p, t) => ({ rot: Math.sin(t * 2.6) * 3.2, sy: 1 + 0.01 * Math.sin(t * 4) }) },
-  { a: 4.3, b: 5.65, pose: "t_juego", x: [300, 300], fx: (u, p, t) => ({ rot: Math.sin(t * 13) * 3.5, sx: 1 + 0.03 * Math.sin(t * 13 + 1.4), sy: 1 - 0.03 * Math.sin(t * 13 + 1.4), dy: -Math.abs(Math.sin(t * 6.5)) * 10 }) },
-  { a: 5.65, b: 6.95, pose: "t_corre", x: (u) => lerp(300, -520, ease(Math.min(1, u / 1.3))), fx: (u, p, t) => run(7.5, 22)(t) },
+  { a: 0, b: 2.0, pose: "t_olfatea", x: [270, 290], fx: (u, p, t) => ({ rot: Math.sin(t * 9) * 1.2, dy: Math.abs(Math.sin(t * 7)) * 5, sy: 1 - 0.012 * Math.sin(t * 7) }) },
+  { a: 2.0, b: 2.9, pose: "t_sorprendida", x: [290, 290], fx: (u) => ({ dy: hop(u, 0, 0.35, 70), sy: u < 0.12 ? 0.94 : 1, sx: u < 0.12 ? 1.04 : 1 }) },
+  { a: 2.9, b: 4.3, pose: "t_curiosa", x: [290, 290], fx: (u, p, t) => ({ rot: Math.sin(t * 2.6) * 3.2, sy: 1 + 0.01 * Math.sin(t * 4) }) },
+  { a: 4.3, b: 5.65, pose: "t_juego", x: [290, 290], fx: (u, p, t) => ({ rot: Math.sin(t * 13) * 3.5, sx: 1 + 0.03 * Math.sin(t * 13 + 1.4), sy: 1 - 0.03 * Math.sin(t * 13 + 1.4), dy: -Math.abs(Math.sin(t * 6.5)) * 10 }) },
+  { a: 5.65, b: 6.95, pose: "t_corre", x: (u) => lerp(290, -520, ease(Math.min(1, u / 1.3))), fx: (u, p, t) => run(7.5, 22)(t) },
   { a: 6.95, b: 7.25, pose: "t_corre", flip: true, x: [-520, -520] },
-  { a: 7.25, b: 8.3, pose: "t_corre", flip: true, x: (u) => lerp(-520, 300, 1 - Math.pow(1 - Math.min(1, u / 1.05), 2.2)), fx: (u, p, t) => run(7.5, 22)(t) },
-  { a: 8.3, b: 8.6, pose: "t_juego", x: [300, 300], fx: () => ({ sy: 0.95, sx: 1.04 }) },
-  { a: 8.6, b: 9.5, pose: "t_salto", x: [300, 300], fx: (u) => bounce2(u, 0.9, 200) },
-  { a: 9.5, b: 10.6, pose: "t_triste", x: [300, 300], fx: (u, p, t) => ({ sy: 1 + 0.012 * Math.sin(t * 2.2), rot: Math.sin(t * 1.1) * 0.8 }) },
-  { a: 10.6, b: 12.0, pose: "t_juego", x: [300, 300], fx: (u, p, t) => ({ rot: Math.sin(t * 12) * 3.2, sx: 1 + 0.03 * Math.sin(t * 12 + 1.4), sy: 1 - 0.03 * Math.sin(t * 12 + 1.4), dy: -Math.abs(Math.sin(t * 6)) * 12 }) },
+  { a: 7.25, b: 8.3, pose: "t_corre", flip: true, x: (u) => lerp(-520, 290, 1 - Math.pow(1 - Math.min(1, u / 1.05), 2.2)), fx: (u, p, t) => run(7.5, 22)(t) },
+  { a: 8.3, b: 8.6, pose: "t_juego", x: [290, 290], fx: () => ({ sy: 0.95, sx: 1.04 }) },
+  { a: 8.6, b: 9.5, pose: "t_salto", x: [290, 290], fx: (u) => bounce2(u, 0.9, 200) },
+  { a: 9.5, b: 10.6, pose: "t_triste", x: [290, 290], fx: (u, p, t) => ({ sy: 1 + 0.012 * Math.sin(t * 2.2), rot: Math.sin(t * 1.1) * 0.8 }) },
+  { a: 10.6, b: 12.0, pose: "t_juego", x: [290, 290], fx: (u, p, t) => ({ rot: Math.sin(t * 12) * 3.2, sx: 1 + 0.03 * Math.sin(t * 12 + 1.4), sy: 1 - 0.03 * Math.sin(t * 12 + 1.4), dy: -Math.abs(Math.sin(t * 6)) * 12 }) },
 ];
 const M_SEGS: Seg[] = [
-  { a: 1.3, b: 2.0, pose: "m_corre", flip: true, x: (u) => lerp(1400, 850, 1 - Math.pow(1 - Math.min(1, u / 0.7), 2)), fx: (u, p, t) => run(8.5, 22)(t) },
-  { a: 2.0, b: 2.9, pose: "m_sorprendido", x: [850, 850], fx: (u) => ({ dy: hop(u, 0.05, 0.4, 90), sy: u < 0.12 ? 0.93 : 1, sx: u < 0.12 ? 1.05 : 1 }) },
-  { a: 2.9, b: 4.3, pose: "m_curioso", flip: true, x: [850, 850], fx: (u, p, t) => ({ rot: Math.sin(t * 2.8 + 1) * -3.5, sy: 1 + 0.01 * Math.sin(t * 4.5) }) },
-  { a: 4.3, b: 5.4, pose: "m_juego", x: [850, 850], fx: (u, p, t) => ({ rot: Math.sin(t * 14 + 2) * 3.5, sx: 1 + 0.03 * Math.sin(t * 14 + 3.2), sy: 1 - 0.03 * Math.sin(t * 14 + 3.2), dy: -Math.abs(Math.sin(t * 7 + 1)) * 12 }) },
-  { a: 5.4, b: 6.7, pose: "m_corre", flip: true, x: (u) => lerp(850, -460, ease(Math.min(1, u / 1.3))), fx: (u, p, t) => run(8.5, 22)(t) },
+  { a: 1.3, b: 2.0, pose: "m_corre", flip: true, x: (u) => lerp(1400, 790, 1 - Math.pow(1 - Math.min(1, u / 0.7), 2)), fx: (u, p, t) => run(8.5, 22)(t) },
+  { a: 2.0, b: 2.9, pose: "m_sorprendido", x: [790, 790], fx: (u) => ({ dy: hop(u, 0.05, 0.4, 90), sy: u < 0.12 ? 0.93 : 1, sx: u < 0.12 ? 1.05 : 1 }) },
+  { a: 2.9, b: 4.3, pose: "m_curioso", flip: true, x: [790, 790], fx: (u, p, t) => ({ rot: Math.sin(t * 2.8 + 1) * -3.5, sy: 1 + 0.01 * Math.sin(t * 4.5) }) },
+  { a: 4.3, b: 5.4, pose: "m_juego", x: [790, 790], fx: (u, p, t) => ({ rot: Math.sin(t * 14 + 2) * 3.5, sx: 1 + 0.03 * Math.sin(t * 14 + 3.2), sy: 1 - 0.03 * Math.sin(t * 14 + 3.2), dy: -Math.abs(Math.sin(t * 7 + 1)) * 12 }) },
+  { a: 5.4, b: 6.7, pose: "m_corre", flip: true, x: (u) => lerp(790, -460, ease(Math.min(1, u / 1.3))), fx: (u, p, t) => run(8.5, 22)(t) },
   { a: 6.7, b: 7.0, pose: "m_corre", x: [-460, -460] },
-  { a: 7.0, b: 8.0, pose: "m_corre", x: (u) => lerp(-460, 850, 1 - Math.pow(1 - Math.min(1, u / 1.0), 2.2)), fx: (u, p, t) => run(8.5, 22)(t) },
-  { a: 8.0, b: 8.5, pose: "m_juego", x: [850, 850], fx: () => ({ sy: 0.95, sx: 1.04 }) },
-  { a: 8.5, b: 9.5, pose: "m_salto", x: [850, 850], fx: (u) => bounce2(u, 1.0, 230) },
-  { a: 9.5, b: 10.6, pose: "m_triste", flip: true, x: [850, 850], fx: (u, p, t) => ({ sy: 1 + 0.012 * Math.sin(t * 2.4 + 1), rot: Math.sin(t * 1.3) * 0.8 }) },
-  { a: 10.6, b: 12.0, pose: "m_juego", x: [850, 850], fx: (u, p, t) => ({ rot: Math.sin(t * 13 + 2) * 3.2, sx: 1 + 0.03 * Math.sin(t * 13 + 3.2), sy: 1 - 0.03 * Math.sin(t * 13 + 3.2), dy: -Math.abs(Math.sin(t * 6.5 + 1)) * 12 }) },
+  { a: 7.0, b: 8.0, pose: "m_corre", x: (u) => lerp(-460, 790, 1 - Math.pow(1 - Math.min(1, u / 1.0), 2.2)), fx: (u, p, t) => run(8.5, 22)(t) },
+  { a: 8.0, b: 8.5, pose: "m_juego", x: [790, 790], fx: () => ({ sy: 0.95, sx: 1.04 }) },
+  { a: 8.5, b: 9.5, pose: "m_salto", x: [790, 790], fx: (u) => bounce2(u, 1.0, 230) },
+  { a: 9.5, b: 10.6, pose: "m_triste", flip: true, x: [790, 790], fx: (u, p, t) => ({ sy: 1 + 0.012 * Math.sin(t * 2.4 + 1), rot: Math.sin(t * 1.3) * 0.8 }) },
+  { a: 10.6, b: 12.0, pose: "m_juego", x: [790, 790], fx: (u, p, t) => ({ rot: Math.sin(t * 13 + 2) * 3.2, sx: 1 + 0.03 * Math.sin(t * 13 + 3.2), sy: 1 - 0.03 * Math.sin(t * 13 + 3.2), dy: -Math.abs(Math.sin(t * 6.5 + 1)) * 12 }) },
 ];
 
 type State = { pose: string; flip: boolean; x: number; fx: Fx; since: number } | null;
@@ -144,11 +144,11 @@ export const PruebaMascotas: React.FC = () => {
         <Sprite st={M} k={KM} floor={FLOOR_M} />
         <Sprite st={T} k={KT} floor={FLOOR_T} />
         <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0 }}>
-          <Mark t={t} a={2.05} b={2.9} x={560} y={700} ch="!" />
-          <Mark t={t} a={3.05} b={4.2} x={560} y={720} ch="?" color="#F2705B" />
+          <Mark t={t} a={2.05} b={2.9} x={540} y={760} ch="!" />
+          <Mark t={t} a={3.05} b={4.2} x={540} y={780} ch="?" color="#F2705B" />
           <Mark t={t} a={4.4} b={5.2} x={560} y={780} ch="♪" color="#F3E7C9" />
-          <Mark t={t} a={8.7} b={9.5} x={560} y={640} ch="¡!" />
-          <Hearts t={t} start={10.75} dur={1.4} x={570} y={1000} rise={300} n={5} size={1.1} />
+          <Mark t={t} a={8.7} b={9.5} x={540} y={700} ch="¡!" />
+          <Hearts t={t} start={10.75} dur={1.4} x={570} y={1000} rise={290} n={5} size={1.1} />
         </svg>
         <Dust t={t} opacity={0.3} />
       </AbsoluteFill>
