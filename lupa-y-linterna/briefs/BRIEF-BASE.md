@@ -106,3 +106,8 @@ Desde esta versión los protagonistas son **Timo (Timoteo)** y **Tere (Teresa)**
 - **Un momento tierno distinto por Short** (frente con frente, lametón, hombro con hombro, dormirse apoyados…).
 - **Poses:** cada episodio de `data/queue.json` lista las poses necesarias (`posesNecesarias`, códigos de los paquetes A–F del prompt de ChatGPT). No espejar a Tere: generar cada dirección como pose propia.
 - **Seguridad:** nada de perros comiendo objetos peligrosos ni con la cabeza afuera del auto; notas para adultos en la descripción.
+
+## Voces (preferencia fija de Mateo)
+- **Velocidad: 1.5x** para todas las voces (Timo, Tere y narración). Configuración en `data/voz-config.json` (`speed: 1.5`); `scripts/gen-voice.ts` la aplica con ffmpeg `atempo` (conserva el tono) sobre el TTS original (`sX.raw.wav`, que se guarda para no volver a pagar).
+- **Voces:** Timo = `cedar`, Tere = `marin`, modelo `gpt-4o-mini-tts` (el más barato). Cada frase lleva su `emotion` en el JSON del episodio.
+- **Costo:** unos 1,5 centavos de dólar por minuto de audio; caché por frase; Whisper solo para sincronizar subtítulos.

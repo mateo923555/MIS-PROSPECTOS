@@ -16,5 +16,5 @@ export const browserExecutable = (): string | null => {
 export const makeBundle = () => bundle({ entryPoint: p("src/index.ts"), publicDir: p("public") });
 export const outDir = () => { const d = p("renders"); fs.mkdirSync(d, { recursive: true }); return d; };
 export const epFile = (ep: string) => JSON.parse(fs.readFileSync(p("data/episodes", `${ep}.json`), "utf8"));
-export const COMP: Record<string, string> = { ep001: "Ep001Sombra", ep002: "Ep002Pulpo", ep001v1: "Ep001SombraV1", pruebalupa: "PruebaLupa", pruebamascotas: "PruebaMascotas", tt001: "Tt001Sombra", caminateresa: "PruebaCaminaTeresa", caminatimoteo: "PruebaCaminaTimoteo", reaccion: "PruebaReaccion", parpadeo: "PruebaParpadeo", rigtest: "RigTest", pruebasombra: "PruebaSombra", ep002v1: "Ep002PulpoV1" };
+export const COMP: Record<string, string> = { ep001: "Ep001Sombra", ep002: "Ep002Pulpo", ep001v1: "Ep001SombraV1", pruebalupa: "PruebaLupa", pruebamascotas: "PruebaMascotas", tt001: "Tt001Sombra", tt001v3: "Tt001v3Sombra", caminateresa: "PruebaCaminaTeresa", caminatimoteo: "PruebaCaminaTimoteo", reaccion: "PruebaReaccion", parpadeo: "PruebaParpadeo", rigtest: "RigTest", pruebasombra: "PruebaSombra", ep002v1: "Ep002PulpoV1" };
 export { path };

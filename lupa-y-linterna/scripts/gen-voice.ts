@@ -10,6 +10,7 @@ import { execFileSync } from "node:child_process";
 import { p } from "./lib/paths";
 import { openaiBinary, openaiForm, ensureDir } from "./lib/openai";
 
+const CFG = (() => { try { return JSON.parse(fs.readFileSync(p("data/voz-config.json"), "utf8")); } catch { return {}; } })();
 const MODEL = process.env.TTS_MODEL ?? "gpt-4o-mini-tts";
 const VOICE = process.env.TTS_VOICE ?? "coral";
 const INSTRUCTIONS =
@@ -89,17 +90,25 @@ async function main() {
     for (const s of segs) {
       const segVoice = s.voice ?? VOICE;
       const segInstr = (s.instructions ?? INSTRUCTIONS) + (s.emotion ? ` Emoción de esta frase: ${s.emotion}.` : "");
-      const hash = crypto.createHash("sha1").update(JSON.stringify([s.text, segVoice, MODEL, segInstr])).digest("hex").slice(0, 12);
+      const SPEED = Number(process.env.TTS_SPEED ?? (data.voice as any).speed ?? CFG.speed ?? 1);
+      const rawHash = crypto.createHash("sha1").update(JSON.stringify([s.text, segVoice, MODEL, segInstr])).digest("hex").slice(0, 12);
+      const hash = crypto.createHash("sha1").update(rawHash + "@" + SPEED).digest("hex").slice(0, 12);
       const file = path.join(dir, `${s.id}.wav`);
+      const raw = path.join(dir, `${s.id}.raw.wav`); // TTS original (velocidad 1.0); `file` es la versión acelerada
       let entry = cache.segments[s.id];
       if (force || !entry || entry.hash !== hash || !fs.existsSync(file)) {
-        console.log(`TTS ${ep}/${s.id}: "${s.text}"`);
-        const buf = await openaiBinary("/audio/speech", { model: MODEL, voice: segVoice, input: s.text, instructions: segInstr, response_format: "wav" });
-        fs.writeFileSync(file, buf);
+        if (force || !(entry?.rawHash === rawHash && fs.existsSync(raw))) {
+          console.log(`TTS ${ep}/${s.id}: "${s.text}"`);
+          const buf = await openaiBinary("/audio/speech", { model: MODEL, voice: segVoice, input: s.text, instructions: segInstr, response_format: "wav" });
+          fs.writeFileSync(raw, buf);
+        }
+        if (SPEED !== 1) execFileSync("ffmpeg", ["-y", "-v", "error", "-i", raw, "-filter:a", `atempo=${SPEED}`, file]);
+        else fs.copyFileSync(raw, file);
+        console.log(`  ${s.id} a ${SPEED}x`);
         const dur = wavDuration(file);
         const heard = await transcribeWords(file);
         const al = align(s.text, heard, dur);
-        entry = { hash, duration: dur, transcript: heard.map((w) => w.text).join(" "), ...al };
+        entry = { hash, rawHash, duration: dur, transcript: heard.map((w) => w.text).join(" "), ...al };
         cache.segments[s.id] = entry;
       } else console.log(`(caché) ${ep}/${s.id}`);
       // posición absoluta: el inicio de la VOZ cae en `at`

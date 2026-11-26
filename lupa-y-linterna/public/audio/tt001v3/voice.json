@@ -1,0 +1,349 @@
+{
+  "segments": {
+    "s1": {
+      "hash": "3d6624b1e025",
+      "rawHash": "c21c4f5a0a78",
+      "duration": 2.165083,
+      "transcript": "Tere mi sombra ya no entra",
+      "words": [
+        {
+          "text": "¡Tere!",
+          "start": 0,
+          "end": 0.36000001430511475
+        },
+        {
+          "text": "¡Mi",
+          "start": 0.8999999761581421,
+          "end": 1.059999942779541
+        },
+        {
+          "text": "sombra",
+          "start": 1.059999942779541,
+          "end": 1.340000033378601
+        },
+        {
+          "text": "ya",
+          "start": 1.340000033378601,
+          "end": 1.659999966621399
+        },
+        {
+          "text": "no",
+          "start": 1.659999966621399,
+          "end": 1.8600000143051147
+        },
+        {
+          "text": "entra!",
+          "start": 1.8600000143051147,
+          "end": 1.940000057220459
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 1.940000057220459
+    },
+    "s2": {
+      "hash": "720c82ab9334",
+      "rawHash": "25b3bda474d6",
+      "duration": 2.674625,
+      "transcript": "Mmm A ver proba acercarte a la linterna",
+      "words": [
+        {
+          "text": "Mmm…",
+          "start": 0,
+          "end": 0.5400000214576721
+        },
+        {
+          "text": "a",
+          "start": 0.8799999952316284,
+          "end": 0.9599999785423279
+        },
+        {
+          "text": "ver.",
+          "start": 0.9599999785423279,
+          "end": 1.1799999475479126
+        },
+        {
+          "text": "Probá",
+          "start": 1.5,
+          "end": 1.7400000095367432
+        },
+        {
+          "text": "acercarte",
+          "start": 1.7400000095367432,
+          "end": 2.0799999237060547
+        },
+        {
+          "text": "a",
+          "start": 2.0799999237060547,
+          "end": 2.1600000858306885
+        },
+        {
+          "text": "la",
+          "start": 2.1600000858306885,
+          "end": 2.299999952316284
+        },
+        {
+          "text": "linterna.",
+          "start": 2.299999952316284,
+          "end": 2.5799999237060547
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.5799999237060547
+    },
+    "s3": {
+      "hash": "512fd7a74abe",
+      "rawHash": "c4aeb6829ba0",
+      "duration": 2.277542,
+      "transcript": "¡Ay no ¡Crece y crece",
+      "words": [
+        {
+          "text": "¡Ay,",
+          "start": 0,
+          "end": 0.699999988079071
+        },
+        {
+          "text": "no!",
+          "start": 0.699999988079071,
+          "end": 1.0199999809265137
+        },
+        {
+          "text": "¡Crece",
+          "start": 1.399999976158142,
+          "end": 1.659999966621399
+        },
+        {
+          "text": "y",
+          "start": 1.659999966621399,
+          "end": 1.8600000143051147
+        },
+        {
+          "text": "crece!",
+          "start": 1.8600000143051147,
+          "end": 2.0999999046325684
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.0999999046325684
+    },
+    "s4": {
+      "hash": "a6d86a0477d1",
+      "rawHash": "f67ff7071349",
+      "duration": 1.461167,
+      "transcript": "¡Uy qué grande",
+      "words": [
+        {
+          "text": "¡Uy!",
+          "start": 0,
+          "end": 0.6000000238418579
+        },
+        {
+          "text": "¡Qué",
+          "start": 0.7599999904632568,
+          "end": 0.9200000166893005
+        },
+        {
+          "text": "grande!",
+          "start": 0.9200000166893005,
+          "end": 1.2000000476837158
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 1.2000000476837158
+    },
+    "s5": {
+      "hash": "3331af957686",
+      "rawHash": "0b8caf219ac0",
+      "duration": 1.531625,
+      "transcript": "¿Y si hacemos lo contrario",
+      "words": [
+        {
+          "text": "¿Y",
+          "start": 0,
+          "end": 0.23999999463558197
+        },
+        {
+          "text": "si",
+          "start": 0.23999999463558197,
+          "end": 0.3799999952316284
+        },
+        {
+          "text": "hacemos",
+          "start": 0.3799999952316284,
+          "end": 0.5799999833106995
+        },
+        {
+          "text": "lo",
+          "start": 0.5799999833106995,
+          "end": 0.8199999928474426
+        },
+        {
+          "text": "contrario?",
+          "start": 0.8199999928474426,
+          "end": 1.0399999618530273
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 1.0399999618530273
+    },
+    "s6": {
+      "hash": "41cc615aa8aa",
+      "rawHash": "094996e05558",
+      "duration": 2.271458,
+      "transcript": "¡Sea chica ya entra",
+      "words": [
+        {
+          "text": "¡Se",
+          "start": 0.6800000071525574,
+          "end": 1.059999942779541
+        },
+        {
+          "text": "achica!",
+          "start": 1.059999942779541,
+          "end": 1.2599999904632568
+        },
+        {
+          "text": "¡Ya",
+          "start": 1.7000000476837158,
+          "end": 1.8799999952316284
+        },
+        {
+          "text": "entra!",
+          "start": 1.8799999952316284,
+          "end": 2.059999942779541
+        }
+      ],
+      "voiceStart": 0.6800000071525574,
+      "voiceEnd": 2.059999942779541
+    },
+    "s7": {
+      "hash": "e07177ec28be",
+      "rawHash": "45346d826f6b",
+      "duration": 3.772833,
+      "transcript": "Más cerca de la luz la sombra crece Más lejos se achica",
+      "words": [
+        {
+          "text": "Más",
+          "start": 0,
+          "end": 0.30000001192092896
+        },
+        {
+          "text": "cerca",
+          "start": 0.30000001192092896,
+          "end": 0.5600000023841858
+        },
+        {
+          "text": "de",
+          "start": 0.5600000023841858,
+          "end": 0.6600000262260437
+        },
+        {
+          "text": "la",
+          "start": 0.6600000262260437,
+          "end": 0.9200000166893005
+        },
+        {
+          "text": "luz,",
+          "start": 0.9200000166893005,
+          "end": 0.9599999785423279
+        },
+        {
+          "text": "la",
+          "start": 1.3799999952316284,
+          "end": 1.5399999618530273
+        },
+        {
+          "text": "sombra",
+          "start": 1.5399999618530273,
+          "end": 1.7200000286102295
+        },
+        {
+          "text": "crece.",
+          "start": 1.7200000286102295,
+          "end": 2.240000009536743
+        },
+        {
+          "text": "Más",
+          "start": 2.619999885559082,
+          "end": 2.680000066757202
+        },
+        {
+          "text": "lejos,",
+          "start": 2.680000066757202,
+          "end": 3
+        },
+        {
+          "text": "se",
+          "start": 3.3399999141693115,
+          "end": 3.4200000762939453
+        },
+        {
+          "text": "achica.",
+          "start": 3.4200000762939453,
+          "end": 3.619999885559082
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 3.619999885559082
+    },
+    "s8": {
+      "hash": "678068afd15e",
+      "rawHash": "e35ec79a8235",
+      "duration": 1.002667,
+      "transcript": "Gracias Tere",
+      "words": [
+        {
+          "text": "¡Gracias,",
+          "start": 0,
+          "end": 0.41999998688697815
+        },
+        {
+          "text": "Tere!",
+          "start": 0.5600000023841858,
+          "end": 0.6800000071525574
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 0.6800000071525574
+    },
+    "s9": {
+      "hash": "f922fc34cee0",
+      "rawHash": "7b319a1b9fed",
+      "duration": 1.266625,
+      "transcript": "¡Hola sombra",
+      "words": [
+        {
+          "text": "¡Hola,",
+          "start": 0,
+          "end": 0.41999998688697815
+        },
+        {
+          "text": "sombra!",
+          "start": 0.6800000071525574,
+          "end": 0.800000011920929
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 0.800000011920929
+    },
+    "s10": {
+      "hash": "b70268964445",
+      "rawHash": "95f5ff2c052b",
+      "duration": 1.477625,
+      "transcript": "Me saludó Ja ja ja ja",
+      "words": [
+        {
+          "text": "¡Me",
+          "start": 0,
+          "end": 0.4533333381017049
+        },
+        {
+          "text": "saludó!",
+          "start": 0.4533333381017049,
+          "end": 1.3600000143051147
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 1.3600000143051147
+    }
+  }
+}

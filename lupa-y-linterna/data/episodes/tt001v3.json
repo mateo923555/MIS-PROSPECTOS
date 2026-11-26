@@ -1,0 +1,127 @@
+{
+  "id": "tt001v3",
+  "version": "v3",
+  "file": "timo-y-tere_tt001v3_la-sombra-de-timo",
+  "format": "A",
+  "formatName": "¿Por qué pasa esto?",
+  "title": "¿Por qué la sombra de Timo es gigante?",
+  "durationTargetSec": null,
+  "narrative": {
+    "primerCuadro": "Sombra gigante de Timo desbordando el marco de la pared; Timo preocupado y Tere a su lado.",
+    "quiere": "Que la sombra de Timo entre en el marco.",
+    "aprende": "Más cerca de la luz, la sombra crece; más lejos, se achica.",
+    "planoFinal": "La sombra entra en el marco, Timo saluda y su sombra lo saluda."
+  },
+  "creative": {
+    "siente": "Intriga (¿lo logrará?), sorpresa, alivio y ternura.",
+    "curiosidad": "¿Por qué no entra? ¿Qué pasa si se acerca? ¿Y si hace lo contrario?",
+    "intentaYOcurre": "Intento 1: se acerca a la linterna → la sombra crece. Intento 2 (lo contrario): se aleja → se achica y entra.",
+    "momentoSorprendente": "La sombra crece enorme al acercarse; al final la sombra saluda a Timo.",
+    "aprendeYDemuestra": "Tere lo dice mientras Timo repite el movimiento: cerca = más grande, lejos = más chica (linterna y pared fijas).",
+    "finalSatisfactorio": "Timo agradece, saluda y su sombra le devuelve el saludo."
+  },
+  "voice": {
+    "person": "diálogo: Timo (cedar) y Tere (marin)",
+    "segments": [
+      {
+        "id": "s1",
+        "at": 0.15,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "preocupación tierna, casi un hilito de voz, pidiendo ayuda",
+        "text": "¡Tere! ¡Mi sombra ya no entra!"
+      },
+      {
+        "id": "s2",
+        "at": 2.39,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "curiosa y dispuesta a ayudar, con una sonrisa; propone un experimento",
+        "text": "Mmm… a ver. Probá acercarte a la linterna."
+      },
+      {
+        "id": "s3",
+        "at": 5.87,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "sorpresa y susto, medio divertido",
+        "text": "¡Ay, no! ¡Crece y crece!"
+      },
+      {
+        "id": "s4",
+        "at": 8.17,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "sorprendida, con una risita nerviosa",
+        "text": "¡Uy! ¡Qué grande!"
+      },
+      {
+        "id": "s5",
+        "at": 10.27,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "una idea que se le acaba de ocurrir, con ilusión y curiosidad",
+        "text": "¿Y si hacemos lo contrario?"
+      },
+      {
+        "id": "s6",
+        "at": 12.01,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "alegría que crece, casi gritando de felicidad",
+        "text": "¡Se achica! ¡Ya entra!"
+      },
+      {
+        "id": "s7",
+        "at": 13.84,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "explica clarito y con calidez, marcando 'cerca' y 'lejos', como un secreto lindo",
+        "text": "Más cerca de la luz, la sombra crece. Más lejos, se achica."
+      },
+      {
+        "id": "s8",
+        "at": 17.81,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "ternura, agradecido, emocionado",
+        "text": "¡Gracias, Tere!"
+      },
+      {
+        "id": "s9",
+        "at": 18.84,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "simpático, saludando con entusiasmo",
+        "text": "¡Hola, sombra!"
+      },
+      {
+        "id": "s10",
+        "at": 20.94,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "asombro feliz, con una risita",
+        "text": "¡Me saludó!"
+      }
+    ],
+    "speed": 1.5
+  },
+  "source": {
+    "title": "Science Buddies — Change the size of a shadow",
+    "url": "https://www.sciencebuddies.org/stem-activities/change-the-size-of-a-shadow",
+    "alt": "https://ontariosciencecentre.ca/science-at-home/diy-science-fun/summer-rays-and-shadow-play"
+  },
+  "scienceCheck": "Verificado con dos fuentes: cuanto más cerca está un objeto de la fuente de luz, más grande es su sombra (el objeto bloquea una porción mayor de luz). Linterna y pared quedan fijas; solo cambia la distancia linterna–Timo.",
+  "contaElChico": "«A Timo le salió una sombra gigante que no entraba en el cuadro. Cuando se acercaba a la linterna se hacía más grande y cuando se alejaba, más chica, hasta que entró justo.»",
+  "status": "PREVIEW v3 (voz real, falta tu escucha)"
+}

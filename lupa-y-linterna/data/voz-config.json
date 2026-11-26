@@ -1,0 +1,5 @@
+{
+  "speed": 1.5,
+  "nota": "Preferencia de Mateo: TODAS las voces de Timo y Tere (y narración) a 1.5x de velocidad. Se aplica con ffmpeg atempo (conserva el tono) después de generar el TTS. Cambiar acá o con TTS_SPEED=1 para una prueba a velocidad normal.",
+  "voces": { "timo": "cedar", "tere": "marin", "modelo": "gpt-4o-mini-tts" }
+}
