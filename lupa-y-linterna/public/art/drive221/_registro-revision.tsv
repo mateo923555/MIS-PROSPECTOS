@@ -1,0 +1,141 @@
+idx	drive_id	blob	personaje	descripcion	calidad
+0	1WY5lHvwrGRkyPy7qt8Lu-54C80SbypIX	1795657802234-rvapks	M	frente, ojos cerrados, boca cerrada, cuerpo ligeramente girado	ok
+1	1JcHxJvB2GkmzbliMwFHHhf-L930dUs05	1795657802623-bx4530	M	tres cuartos mirando a la izquierda y arriba, ladrando/aullando	ok
+2	1GbCgPmHBJoVhr8Dzb8VMvQyGunVEiid5	1795657802981-yaoh75	M	frente de pie, ojos abiertos, boca apenas abierta (neutra)	ok-base
+3	1hWT2ZRko5ryP_TTcrEppqBkHaomSqpQi	1795657803373-eheh7d	M	frente de pie, ojos cerrados (misma pose que idx2)	ok-blink-de-2
+4	14D0UAL3gzIlVpgtHhypDz3B8Og8zfti8	1795657803779-jwgjvx	T	tres cuartos mirando a la derecha, ladrando	ok
+5	1hijxRb-wmXfY6dtAHpEv0HttrrDBQEzp	1795657804264-jyo3wk	T	tres cuartos mirando a la derecha, boca cerrada, atenta	ok
+6	106-6koBg51q2F5ETd-q1V1GW6wEdgzs5	1795657804696-9ktfuz	T	frente de pie, ojos cerrados	ok
+7	1JfNvY9vU9Bi0gEWZm8RLToYNMLRAz2-C	1795657805130-s1qq7j	M	frente de pie, boca cerrada, mirada seria	ok-base
+8	1aonbEQ-HHKGGuZ_DMDWNKs07Ru0jlJYF	1795657826409-oc2blc	M	tres cuartos mirando a la izquierda, boca cerrada, seria	ok
+9	1oyO8wo3mfC00ljACj-wQZapVWqvVYFb4	1795657826724-mlh5op	M	tres cuartos mirando a la derecha, ladrando	ok
+10	1S_IHpZ9cOxoexweeefJx5-4WnPlw7jOX	1795657827301-squajk	M	tres cuartos mirando a la derecha, boca cerrada	ok
+11	1SVOhQU1FaF_YvcWFZ791hltfl3Bf9yQM	1795657828023-a9du2e	T	tres cuartos mirando a la izquierda, ladrando	ok
+12	1o-viZjxw-_vkvA-9i3BmzGD3yV7Q9HL3	1795657827878-3f5wkk	T	frente de pie, boca cerrada, seria/tierna	ok-base
+13	19hCMgkd3qlP_1sKghnGWyojZFpwpzN8Y	1795657828109-jqrzqm	M	sentado de frente, ojos cerrados (dormido)	ok
+14	1DEazfE0toWNqLP_lQ-xw7yNb9UgDS8Sa	1795657828716-61syqs	M	perfil izquierda caminando, ojos cerrados	ok-pero-ojos-cerrados
+15	1g0exU_-L2w4T4Y_LaIqS4W7rwYm_jIug	1795657828957-rxrea4	M	frente de pie, ojos cerrados con ceño	ok-blink
+16	1Bd9Y3HMz46VTJWHaBK9MlFPpV-YYLWv8	1795657829298-9i8kq1	T	perfil izquierda caminando, ojos cerrados	ok-pero-ojos-cerrados
+17	1qmvROCnw_y4iHADVYB8hl31BKr5H0AN3	1795657829883-wt6du6	M	frente de pie, ojos cerrados sonriendo	ok-blink
+18	165HYk43vABKkX5fCWi50YuwNMVK1ER2U	1795657830193-2cptgp	M	frente de pie, ladrando	ok-habla
+19	1knRCvHmUclNt7Jvpdmdn1wUtbNpzEXc0	1795657830363-k9c3bc	M	sentado de frente, ojos abiertos, atento	ok
+20	1owEXEZOvCR1TbjLvjnDg76gHqkupMjsE	1795657856866-dizrx3	T	frente de pie, ojos cerrados	ok-blink
+21	1Ub-69pnxlt5mbbu6F-SPYkcRldEc1A-O	1795657857512-p188l5	M	perfil derecha sentado, boca cerrada	ok-muy-buena
+22	1aTfyfd5iKxs0gmTfGr9pto4qWGOvDN-f	1795657857790-h0vwvj	T	sentada de frente, ojos cerrados (dormida/pensando)	ok
+23	1pw8qTeUADe_9zW__jpSlkkE5y683LYtu	1795657858049-ys3cmy	T	frente de pie, ojos cerrados (casi igual a idx20)	duplicado-de-20
+24	1zLSPKG3fBo9G1HcphAOxVWZn5iMYONOl	1795657858338-ct3qu7	T	frente de pie, ojos abiertos, boca apenas abierta	ok-base-habla
+25	1YUBMAC1nZHgVbkYT0hG2ZQ_hCPAZ0p_6	1795657858869-uiazu5	M	perfil derecha olfateando (cabeza abajo)	ok-muy-buena
+26	1GQSr2m7G821mQ09nNoQQGWpFSD2_E_34	1795657859318-rmcpfl	M	perfil derecha reverencia de juego	ok-muy-buena
+27	1qhQTAqWY7WhUXt6lOPwS90LsLBgMV1_9	1795657859648-x6199z	T	tres cuartos izquierda reverencia de juego mirando arriba	DEFECTO-oreja-extra-sobre-la-cabeza
+28	1z91ukqYgOLVi-Vmk8e0unDDGnfCub24S	1795657879110-3n8bm9	M	frente sacudiendo la cabeza, orejas volando, ojos cerrados, rayitas de movimiento rosadas	ok-riesgo-key-rayitas
+29	16uh9V-iJKENGKUGrSy4merur6abQCmiK	1795657879257-yl04ib	T	tres cuartos derecha olfateando/lamiendo, lengua afuera	ok
+30	1FV5UbDjeklQ0sheFrIOtLqqnrcBYQRXu	1795657879669-sykkyz	M	echado de frente, atento	ok
+31	1V2z6uj3eyoHBVExmk7GzuUOKJ94QHSEn	1795657880205-rm28n9	M	salto/vuelo tres cuartos izquierda	ok-muy-buena
+32	1g6ziAlgaonf6j7M8x8bDU9OC0UUAS95o	1795657880535-7wc22l	M	durmiendo de perfil izquierda, echado	ok-muy-buena
+33	1n787Lmep_gWt7sDPUSFfLaND8wkRNcRF	1795657880593-8k0x5c	T	frente ladrando	ok-habla
+34	1qON07wBfQ6sWRz6yE65cmk92k36Ijlkx	1795657880922-0s0zzb	M	perfil derecha olfateando con lengua afuera	ok
+35	1Nvi0Vo9xQElN-mvSu4iQHeBTq9Gh0q-4	1795657881563-28nxnl	M	perfil/tres cuartos izquierda de pie mirando hacia arriba	ok-muy-buena
+36	1wly5Oivjdd6wwsvfIe1JpTzm5DyKqE-u	1795657902716-kj25ju	M	tres cuartos izquierda, rascándose la oreja con pata trasera, guiño	ok
+37	1KUueoAYisAo2oL5ThYJPhrQ8u_O57IBf	1795657902831-si3xvw	M	frente, pata delantera levantada señalando	ok
+38	1_rIao8NWehJhF9q5P-Kkkg4oXbPtk6PI	1795657903305-msy61v	T	frente, saltando con patas en el aire	ok-muy-buena
+39	1OS0wu4nG5JhFfjjHgcQrSQMrohs5Yb2X	1795657903402-69d89d	T	tres cuartos izquierda, girando/persiguiendo la cola, feliz	ok
+40	1CdwYQ0czoEs2xBglnpA1XFD8KE3-cEvm	1795657903783-mn19bd	T	perfil derecha olfateando, cabeza abajo, lengua	ok-muy-buena
+41	1y-hmfkpW2uIUKbIxfUThMC_tMglzGQ_H	1795657904303-sndwqg	M	tres cuartos izquierda reverencia de juego, lengua afuera, feliz	ok-muy-buena
+42	11rzusgbsTVJ89gCTB86sszH9ZRxS30N5	1795657904578-nhhs9c	T	tres cuartos izquierda rascándose oreja, guiño	ok
+43	1YsH1L_1MWiadLSKMCCppxCwRQJHMCj4T	1795657905189-2h3bsl	M	panza arriba patas al aire, feliz	ok
+44	1Ux5NgEmhnJCheFpdvLeYrdOEBBWKNdVB	1795657905596-njxthx	T	frente de pie, señalando a la derecha con pata	ok
+45	1Xz8V_fP52Dy2xM3KXZkyvREi5BsLSs19	1795657905690-y320tp	M	perfil derecha de pie mirando hacia arriba	ok-muy-buena
+46	1Ggio0fRwXoudtGhRzWFSYguWx_P9zq_M	1795657906194-6nvmsd	T	frente señalando derecha (muy parecida a 44)	casi-duplicado-de-44
+47	1gzuvU1RdGqfrjeSl7uOxdcsWNn1YD5Zy	1795657907279-7yndp1	M	tres cuartos derecha agachado acechando, ceño	ok
+48	1oTOzlAL2Bc1m4BKP-MGm8Ub4fBJNusxB	1795657948442-gny96q	M	perfil izquierda estirándose (reverencia larga)	ok-muy-buena
+49	1Wg-fdZA_EW2KtZIQD7X59afLy5-RbxTu	1795657948462-jjywt1	M	tres cuartos derecha en el aire (salto/vuelo)	ok-muy-buena
+50	1iDB_pc6iNxiAdVrYQCg3Kv3AfUy8FVtl	1795657949064-tutjz2	M	tres cuartos izquierda agachado acechando	ok
+51	1xT-iE2M1EFVN9aWxKNWRdvdSisufMPI9	1795657949275-xcyhmn	T	frente sacudiéndose, con rayitas de movimiento blancas alrededor	RIESGO-rayitas-en-recorte
+52	17waYeEafIoGG4t1-8S9pmO1yfxz1LiNh	1795657949902-6a99yu	M	tres cuartos derecha en dos patas, apoyado en pared, mirando arriba	ok
+53	13Gvx_pkDlD4x8o41-eDU8iY0ITUxp8eK	1795657950310-gzydxb	M	perfil izquierda olfateando suelo	ok-muy-buena
+54	1dXMQpGWDVUWBIEsd5rC6N_VbAXQsS8JJ	1795657950616-louxb2	M	perfil derecha olfateando, ojos cerrados, lengua	ok
+55	1jkHGZB4lHlyrt1Hze666Gk76kwBLV8PR	1795657951389-3cimhn	T	perfil izquierda de pie mirando arriba	ok-muy-buena
+56	1M0SirRyFC0pPL9JsClcKfHHp3essNy8u	1795657951089-kuj5zl	T	frente agachada, posición de juego	ok
+57	1frQ3A5g6e9N_nSt84bLY0t3fLq4uCWqI	1795657951471-fpa5rx	M	frente agachado, posición de juego	ok
+58	15E47RIYC6tK2FwXyb_ZdpYA5YQ273xc5	1795657951880-d5htm9	M	frente reverencia de juego pecho al piso, cola arriba	ok
+59	1roBO-t7o-KYyxss_Cy-NdCCc-wWfCwOS	1795657952442-mxaesp	M	tres cuartos izquierda girando, persiguiendo la cola, lengua	ok
+60	1PmdTKmL-GukOnlVYjONMyT9Bm0Qs-od_	1795657953011-9qtcuf	M	frente señalando a la izquierda con la pata	ok
+61	1wEuYzN4tMMJw6BKMKCErrHq24q7a5SLt	1795657953060-lp1q19	M	frente saltando, patas colgando	ok
+62	1RIkBz-61hUfWJFpAjsJPXMUsD7k1hq-X	1795657953505-b1u8jp	T	frente de pie, ojos cerrados	duplicado-de-20/23
+63	1Rz06kPUlKNau6gAD4RItW5cIm2JsFzHV	1795657953680-mlpw9u	T	frente de pie, ojos abiertos boca cerrada	ok-base-pareja-de-62
+64	1M6gU-aUlv8G7NAMGYVTDXTG0lSygNWpY	1795657986208-vrmqfz	M	sentado perfil izquierda, mirando de lado	ok-muy-buena
+65	1hHG9E3DyfydIXqU-UHg0agW0QoTAIgMi	1795657986450-ehimdn	M	perfil izquierda caminando, pata delantera levantada	ok-muy-buena-caminata
+66	1tzDaoaCDiX953OsO2WD5PiwcTokbtUao	1795657986994-durfse	T	frente reverencia de juego, cuerpo bajo	ok
+67	16e3uLTqaNdESzGNQi3RUfXpOa5km1eYJ	1795657987539-xargql	T	tres cuartos izquierda corriendo/galope en el aire	ok-muy-buena
+68	1IfYi6s_lKt9M7tZ2b9mXBTK9RCvWgz38	1795657987810-hi67jn	T	tres cuartos derecha en dos patas apoyada en pared	ok
+69	1b5bUFiSR7-EOqY7R8MyUFoMhd1cPsnUY	1795657988280-uu7alw	M	frente de pie, cabeza inclinada, curioso	ok-muy-buena
+70	1eK270CmTlY4qAM6HQqTXyy17X6sqWutZ	1795657988841-mxftg7	M	frente de pie, mirando hacia arriba con ojos	ok-muy-buena
+71	1WxUVJOgMLdNGDD-f4exeRaHvxvej0PD6	1795657989282-igg3pv	M	perfil izquierda agachado acechando/preparado	ok
+72	1aCXOIUfLHt_Q0YatC3G8hgCu0BBKQag7	1795657989403-9loi0a	M	tres cuartos derecha olfateando, nariz al piso	ok-pero-textura-distinta-mas-"cartoon"
+73	1nyUyFuG4H1QWVeg8GYWuNc4DJfhVtm8b	1795657990313-uujy7d	T	perfil derecha de pie mirando arriba	ok-muy-buena
+74	1P9RCDSVfoENSWJH0S5X0RrAKriYHrhxP	1795657990409-673z2t	M	tres cuartos derecha de pie, mirada seria	ok-muy-buena
+75	1lwAPCbRMATRpsazU0Egx2tUaYY6NXgZY	1795657990823-i3p3uy	M	tres cuartos izquierda cabeza inclinada, curioso	ok-muy-buena
+76	1-oD2mR3PaD7CEVpiGXCfz55Rnlnfu3C8	1795657991309-k5drut	M	perfil derecha de pie quieto	ok-muy-buena-base
+77	1Z9LkcpCV4KE9ytdGsA4QhtOfBF0OCXkm	1795657991568-yg7r1u	T	frente sentada, mirada de reojo, triste/desconfiada	ok-muy-buena
+78	1-aM0x7gESWdnxRU3F44ij8zcvYKuxlTb	1795657991941-ky3zt9	M	perfil derecha de pie, cabeza abajo, tímido	ok
+79	1kNQ249w_geayxm8rCBz3zl4JxOVutwTj	1795657992288-bw1k8u	T?	cuerpo de Teresa con collar VERDE y chapita "TIMOTEO"	DESCARTAR-identidad-mezclada
+80	1wyGJNyeB9zeRXSdhZgZ673ry_8Z3wUZZ	1795658042746-am8nto	T	perfil derecha caminando, boca con dientes (gruñona)	ok-muy-buena-caminata
+81	16CiRtvcUNupXAwJ8UuSTCp8TsdHsJ6ih	1795658043234-hreivf	T	tres cuartos derecha de pie mirando abajo, triste	ok-muy-buena
+82	1G168nmdmLQXPGRXzmWiNUtqbvj16dgAv	1795658044337-eqn1db	T	perfil izquierda galope en el aire	ok-muy-buena-carrera
+83	14FsfZcvY6AmJFobDUNr4YwduFWqO4N8D	1795658045255-iwyojb	-	banner antiguo "Lupa y Linterna" con el nene (NO es perro)	descartar-fuera-de-tema
+84	1aICTvQMeR9e3-hyewHpQzdLBZQWKqRL5	1795658044124-10plpg	M	frente sorprendido ojos enormes, textura estilo plastilina/cartoon (distinta al resto)	ok-pero-estilo-distinto
+85	1PM3ARf0AcskE9NSeUDCMHEoTzyswh2sh	1795658045417-yhuh1b	M	frente feliz lengua afuera	ok-muy-buena
+86	1RCDEM87RLGFqSrgeGmPc3KlNHQA5Wo0Y	1795658045405-zy76lj	M	tres cuartos derecha de pie cabeza inclinada	ok-muy-buena
+87	1xs4zZ3b0r8brVnB4WEKER4xKCoawC0Zt	1795658046115-eyr63q	M	perfil derecha caminando	ok-muy-buena-caminata
+88	1z5DOagHs2P-tyr63gouwykiFgILDpkTm	1795658046105-e8zvh4	M	frente de pie FOTORREALISTA, SIN collar ni chapita	DESCARTAR-sin-collar-estilo-foto
+89	1fFN0XhT-5YyQabisbizBnQNvscNNEefX	1795658046553-zpjyes	T	frente enojada, ceño fruncido	ok
+90	1QXg3q8UZigKozrWx0ys3UBoJ5_RzfV_g	1795658046966-ysjwpw	M	frente de pie cabeza inclinada	ok-muy-buena
+91	1DliYaTEQQ9eT4DQhKSRQxc2qST1dgq6S	1795658047318-f5opvj	T	perfil derecha trotando	ok-muy-buena-trote
+92	1FGEovgRN-3XhUx0Q9VjvisR2lzNvnjx5	1795658047500-v4eon2	T	frente triste cabeza baja, ojos entrecerrados	ok-muy-buena
+93	1dJqe9aYASW-5jiZT8l07I9FQg6-FC9WO	1795658048370-gyob5x	M	perfil izquierda caminando, otra fase de paso	ok-muy-buena-caminata
+94	1-_qqwpBGGHTYq-4l7DqLnADehBqcMw6d	1795658048249-ie0bz8	M	frente cabeza arriba ojos cerrados (olfateando/disfrutando)	ok
+95	1NiwipRx-RBUGi60DsU-B7UEEZEs8O-sv	1795658048599-fdjrds	M	perfil derecha corriendo/galope en el aire	ok-muy-buena-carrera
+96	1-n6D7surN7PERLJ6qHQ2R0TsybrREAHc	1795658100089-e6b22z	M	frente cabeza inclinada (casi igual a idx90)	casi-duplicado-de-90
+97	1LtUKHQHMTGi0epu25fp1oKxdQ7iZaPyw	1795658098143-pa7riv	T	perfil izquierda caminando, pata levantada, boca con dientes	ok-muy-buena-caminata
+98	1DnWJJb8QbyviGsuNCgIXF6XUqabyiHGO	1795658098393-so0732	T	durmiendo echada de perfil izquierda	ok-muy-buena
+99	1MRIM3rEsTO_wbHYg-BV9zIoauROVq1gm	1795658098840-h5yfxm	T	frente reverencia de juego, cola arriba	ok
+100	18wlkOt7TxEFoq70Uz9-XUaSb3MXVexqN	1795658099578-odvnqd	T	tres cuartos izquierda de pie, mirada seria/atenta	ok-muy-buena
+101	1nLria2zzTXBuCcTNdMCEJfnIEMTmuTFr	1795658099674-crcjx6	T	perfil derecha reverencia de juego, feliz	ok-muy-buena
+102	1UT7j6dwLwbIWAaPOtuQgVVLTaCx6WFd6	1795658100248-t3twus	M	perfil derecha trotando	ok-muy-buena-trote
+103	1NwilXnUxcgv3_KN-J9A5B5ZUISSXPw-f	1795658100691-m49ek7	M	perfil izquierda de pie quieto (base de caminata)	ok-muy-buena-base
+104	1TcoXEvBcULwR3jVUuLqOnQSCKssywMmt	1795658118084-7ekt6y	T	frente de pie bostezando, ojos entrecerrados	ok-muy-buena
+105	1yHSdts0C-mu6f1vwcVerx0vIDgxQIX5V	1795658118571-iu2nqr	T	frente agachada, ojos grandes tiernos, triste	ok-muy-buena
+106	1vSkx76snHCkxe36XjGwwKKFVQDlzIV-F	1795658119014-n5rt95	M	tres cuartos izquierda de pie, mira de reojo	ok-muy-buena
+107	1LfEOGZf66j2ikDFkAesI0LuMr5NLxeu7	1795658119364-0xffld	T	tres cuartos izquierda de pie, cabeza baja	ok
+108	1GTV9Z9nXJItgWiAnJ01uyVrCxPcPXCEJ	1795658119618-i64v2r	M	tres cuartos derecha de pie mirando arriba	ok-muy-buena
+109	1e4n1SFrUSQBN-Auw8-QjVm_7MRerko0n	1795658120027-chlfql	T	tres cuartos derecha agachada acechando/olfateando	ok
+110	1wN1Bv1E94Hii1xAgS6o_NJrCatRAvAKz	1795658120301-yecdo9	T	tres cuartos derecha de pie mirando arriba	ok-muy-buena
+111	19lAAvE1RxcNa9wLlp_QWWZvpn3n-aMMs	1795658120970-j4ay3s	M	perfil derecha caminando, SIN collar, proporciones de cachorro	DESCARTAR-sin-collar-proporciones-distintas
+112	1-IgJLgWScBEvxzu6Ed-ASflPp42V6bqI	1795658121228-ungg6c	M	perfil derecha caminando, otra fase de paso	ok-muy-buena-caminata
+113	1gzO9PUv_jO8W3vTFUM57soQ9cjtsF0OY	1795658121690-22019v	T	sentada de frente durmiendo	ok-muy-buena
+114	1cFuOpe8oQZTNyHEOlcV73Fp8yUIlBU1N	1795658122080-3hrvft	T	frente echada, atenta	ok-muy-buena
+115	1znl5Z4djvTtk6tJ655jxzP0BO68uGmzt	1795658123399-jygt7a	M	sentado de frente durmiendo, almohadillas visibles	ok-muy-buena
+116	15540capUP7NRR_yHif24JSDrxrr3N-M-	1795658122662-eov86k	T	frente de pie mirando hacia arriba de reojo, curiosa	ok-muy-buena
+117	1LyBx3OWvySodwudOZ4GmQRpJTS_cgc8G	1795658122973-t75fzm	T	frente de pie, boca cerrada, mirada atenta (base)	ok-muy-buena-base
+118	1gR87kv4ACtnBaO5TggCBonOpt-sRjVgA	1795658124159-9bpwod	T	perfil izquierda caminando, pata levantada, otra fase	ok-muy-buena-caminata
+119	1oiNFn80Ms7IRXAbb2i5tlnXKq87xB1Td	1795658123754-5gsok6	M	frente sentado asustado, orejas hacia atrás	ok-muy-buena
+120	17WnhjFPsfTCLwOcGy-WP4cSvkIM3ik1e	1795658189826-lzm1jn	T	perfil izquierda caminando, otra fase de paso	ok-muy-buena-caminata
+121	10M6kI8VRQZNms1vmqHXBPBZNUGHO7DoI	1795658190313-gbb4ch	T	tres cuartos derecha de pie, cabeza inclinada, curiosa	ok-muy-buena
+122	1yIfsVEl13KIn1CIMck3GZvyRe4Sp4qN9	1795658190716-7oixf8	T	perfil derecha galope en el aire	ok-muy-buena-carrera
+123	12M2dzMgHCCCaqeUhaPhMAlwLq-1bQ0xT	1795658190950-t8vqka	M	perfil derecha caminando, pata delantera levantada	ok-muy-buena-caminata
+124	1tiHiOkMTICHAypO5yYKSu73qnfrsTG1_	1795658191464-a4t2qd	T	perfil derecha agachada estirándose, arranque	ok
+125	1rT9MlSlZUPwl9QpQ0TifNgHVeNg3Fj8r	1795658191844-28h7d3	T	frente de pie mirando arriba	ok-muy-buena
+126	113LdM9cUfPeg0cImBk1A_G-1xJt99R6k	1795658192237-b9pigi	M	perfil izquierda caminando, pata delantera levantada	ok-muy-buena-caminata
+127	1mohGn2Nt4X6zCjYiy25A9JGWs3QbdpQJ	1795658192760-asptuq	T	perfil derecha galope, otra fase	ok-muy-buena-carrera
+128	1yF4JnZ8OZz83-l-JPqmy_uLWG6j3JAAM	1795658193172-017qvd	M	frente de pie triste, ojos tiernos	ok-muy-buena
+129	18OFT-9JPHMLlJ0Jqk2r_zsheZJmff2dd	1795658193682-oab5bx	T	frente de pie mirando a la izquierda de reojo	ok-muy-buena
+130	1cPkOKJyn7c7lOVDtsuADKE3wEAjbJtl8	1795658193880-runa20	M	tres cuartos derecha de pie atento	ok-muy-buena
+131	17AjQjeka-R8JyqpajzgvsNuribB9b8jV	1795658194405-k31mz0	M	frente reverencia de juego feliz lengua afuera	ok-muy-buena
+132	1mU9Csyxhqk9jPQO9AnCgnnGOY-iAsbbS	1795658195604-mxyrrh	M	frente de pie mirando arriba de reojo	ok-muy-buena
+133	1f0c9cM1DUNnqKNUv3ghiVguCHnOSt6Cs	1795658195093-ttkjh0	M	perfil derecha galope en el aire	ok-muy-buena-carrera
+134	1qMsQkhHa3jnVk_GtJlvY1KtuHdeonVth	1795658195381-xkqu6a	M	tres cuartos derecha saltando feliz, lengua afuera	ok-muy-buena
+135	1bR9nhQiKVdIj-4PHXecbzEbxvm3MPRI3	1795658195687-0h8b0i	M	frente de pie bostezando	ok-muy-buena
+136	1Qvw3Uj8Ik91w_1QJXvTWCqHWUWClzLCa	1795658196079-b2wmu7	M	frente de pie sorprendido, ojos enormes	ok-muy-buena
+137	1lUuQiM21OhiV_fEoWteSSwl2wKmJqDqF	1795658196507-gfvw9p	M	frente de pie riendo con cabeza hacia arriba	ok-muy-buena
+138	1fNaqONvVXyP_ap1ekkAcYcpq-IrhBaot	1795658197124-9vpprl	M	frente de pie, boca cerrada, mirada atenta (base)	ok-muy-buena-base
+139	1VZx3O5RFg8bdIVVg_MjVXnXKoQu8lydt	1795658197431-9tnatp	T	frente de pie SIN collar ni chapita	DESCARTAR-sin-collar
