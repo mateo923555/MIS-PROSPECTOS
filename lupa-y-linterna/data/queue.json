@@ -51,7 +51,7 @@
    ],
    "fuente": "https://www.acs.org/education/whatischemistry/adventures-in-chemistry/science-abc/s-is-for-shadow.html",
    "porVerificar": [],
-   "estado": "IDEA (la mecánica de sombra ya existe en la versión bebé: ep001 v3)",
+   "estado": "PREVIEW v4 (renders/timo-y-tere_tt001v4_la-sombra-de-timo_PREVIEW.mp4)",
    "contaElChico": "(se completa al producirlo)",
    "origen": "ep001"
   },
@@ -322,13 +322,9 @@
     "D01-D03 sentado",
     "B11-B12"
    ],
-   "fuente": "",
-   "porVerificar": [
-    "Verificar explicación (tensión superficial) y redactarla en palabras simples; probar el experimento.",
-    "Aclarar que sin jabón no pasa nada.",
-    "Nota para adultos: no acercar pimienta a mascotas ni a la cara de los chicos (irrita)."
-   ],
-   "estado": "IDEA",
+   "fuente": "https://www.fleetscience.org/activities-resources/pepper-and-soap",
+   "porVerificar": [],
+   "estado": "PREVIEW (renders/timo-y-tere_tt010_la-pimienta-y-el-jabon_PREVIEW.mp4)",
    "contaElChico": "(se completa al producirlo)",
    "origen": null
   },
@@ -414,13 +410,9 @@
     "C09 confundido",
     "C01 feliz"
    ],
-   "fuente": "",
-   "porVerificar": [
-    "El hielo flota porque ocupa más lugar que el agua líquida con la que se formó (menos denso). Verificar vocabulario con una fuente (USGS / NSIDC / museo).",
-    "Evitar la imagen errónea de 'burbujas de aire que lo hacen flotar'.",
-    "Cierre visual simple y correcto."
-   ],
-   "estado": "IDEA",
+   "fuente": "https://www.usgs.gov/water-science-school/science/water-density",
+   "porVerificar": [],
+   "estado": "PREVIEW (renders/timo-y-tere_tt013_por-que-flota-el-hielo_PREVIEW.mp4)",
    "contaElChico": "(se completa al producirlo)",
    "origen": null
   },

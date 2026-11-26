@@ -1,0 +1,100 @@
+{
+  "id": "tt010",
+  "version": "v1",
+  "file": "timo-y-tere_tt010_la-pimienta-y-el-jabon",
+  "format": "B",
+  "formatName": "¿Podés descubrirlo?",
+  "title": "¿Qué pasa con la pimienta si toca agua con jabón?",
+  "narrative": {
+    "primerCuadro": "Un plato con agua y pimienta flotando quietita; Timo y Tere miran.",
+    "quiere": "Descubrir qué le pasa a la pimienta cuando la toca el jabón.",
+    "aprende": "El jabón afloja el agua del centro y la pimienta se aleja hacia los bordes; sin jabón no pasa nada.",
+    "planoFinal": "El palito con jabón toca el centro y la pimienta corre hacia el borde del plato."
+  },
+  "creative": {
+    "siente": "Intriga, sorpresa y diversión.",
+    "curiosidad": "¿Se hunde o se aleja?",
+    "intentaYOcurre": "Primero un palito limpio (nada). Después uno con jabón (la pimienta se escapa).",
+    "momentoSorprendente": "La pimienta sale disparada hacia los bordes.",
+    "aprendeYDemuestra": "Tere lo explica mientras se ve el plato.",
+    "finalSatisfactorio": "Timo pide repetirlo, saltando de alegría."
+  },
+  "voice": {
+    "person": "diálogo: Timo (cedar) y Tere (marin)",
+    "speed": 1.5,
+    "segments": [
+      {
+        "id": "s1",
+        "at": 0.15,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "asombro curioso, con los ojos grandes",
+        "text": "¡Tere, mirá! ¡La pimienta flota quietita!"
+      },
+      {
+        "id": "s2",
+        "at": 2.67,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "tranquila, con ganas de experimentar",
+        "text": "Probemos con un palito limpio."
+      },
+      {
+        "id": "s3",
+        "at": 5.15,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "decepcionado pero divertido",
+        "text": "¡No pasó nada!"
+      },
+      {
+        "id": "s4",
+        "at": 6.45,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "misteriosa, como contando un secreto, con suspenso",
+        "text": "Ahora, un palito con jabón. ¿Se hunde… o se aleja?"
+      },
+      {
+        "id": "s5",
+        "at": 11.63,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "asombro total, casi gritando de emoción",
+        "text": "¡Se escapa! ¡Corre hacia los bordes!"
+      },
+      {
+        "id": "s6",
+        "at": 14.53,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "explica clarito y con calidez, como quien comparte un secreto lindo",
+        "text": "El jabón afloja el agua del centro, y el agua de los bordes se lleva la pimienta."
+      },
+      {
+        "id": "s7",
+        "at": 18.49,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "saltando de alegría, con una risita",
+        "text": "¡Otra vez, otra vez!"
+      }
+    ]
+  },
+  "source": {
+    "title": "Fleet Science Center — Pepper and Soap",
+    "url": "https://www.fleetscience.org/activities-resources/pepper-and-soap",
+    "alt": "https://www.sciencebuddies.org/stem-activities/dancing-spices-use-surface-tension-to-make-your-pepper-dance"
+  },
+  "scienceCheck": "El agua tiene una 'piel' (tensión superficial) que sostiene la pimienta. El jabón la debilita donde toca; el agua de los bordes, que todavía tiene su piel, tira hacia afuera y arrastra la pimienta. Sin jabón no pasa nada. Verificado con Fleet Science Center y Science Buddies.",
+  "contaElChico": "«Con un palito limpio no pasó nada, pero con jabón la pimienta se escapó a los bordes del plato.»",
+  "status": "PREVIEW",
+  "origen": "tt010"
+}

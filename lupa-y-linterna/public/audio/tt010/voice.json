@@ -1,0 +1,329 @@
+{
+  "segments": {
+    "s1": {
+      "hash": "cede4fdaa677",
+      "rawHash": "7e516f924f6d",
+      "duration": 2.408917,
+      "transcript": "¡Tere ¡Mirá ¡La pimienta flota quietita",
+      "words": [
+        {
+          "text": "¡Tere,",
+          "start": 0,
+          "end": 0.3799999952316284
+        },
+        {
+          "text": "mirá!",
+          "start": 0.6399999856948853,
+          "end": 0.8799999952316284
+        },
+        {
+          "text": "¡La",
+          "start": 1.0399999618530273,
+          "end": 1.2400000095367432
+        },
+        {
+          "text": "pimienta",
+          "start": 1.2400000095367432,
+          "end": 1.6399999856948853
+        },
+        {
+          "text": "flota",
+          "start": 1.6399999856948853,
+          "end": 1.7799999713897705
+        },
+        {
+          "text": "quietita!",
+          "start": 1.7799999713897705,
+          "end": 2.119999885559082
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.119999885559082
+    },
+    "s2": {
+      "hash": "4bdd0e25d540",
+      "rawHash": "e01268569260",
+      "duration": 1.706333,
+      "transcript": "Probemos con un palito limpio",
+      "words": [
+        {
+          "text": "Probemos",
+          "start": 0,
+          "end": 0.46000000834465027
+        },
+        {
+          "text": "con",
+          "start": 0.46000000834465027,
+          "end": 0.6600000262260437
+        },
+        {
+          "text": "un",
+          "start": 0.6600000262260437,
+          "end": 0.8199999928474426
+        },
+        {
+          "text": "palito",
+          "start": 0.8199999928474426,
+          "end": 1.059999942779541
+        },
+        {
+          "text": "limpio.",
+          "start": 1.059999942779541,
+          "end": 1.3799999952316284
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 1.3799999952316284
+    },
+    "s3": {
+      "hash": "1f5dc737a95d",
+      "rawHash": "96f10fc174c2",
+      "duration": 1.066667,
+      "transcript": "No pasó nada",
+      "words": [
+        {
+          "text": "¡No",
+          "start": 0,
+          "end": 0.23999999463558197
+        },
+        {
+          "text": "pasó",
+          "start": 0.23999999463558197,
+          "end": 0.5
+        },
+        {
+          "text": "nada!",
+          "start": 0.5,
+          "end": 0.800000011920929
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 0.800000011920929
+    },
+    "s4": {
+      "hash": "f650dcdf411b",
+      "rawHash": "37a2ec0efa27",
+      "duration": 3.004708,
+      "transcript": "Ahora un palito con jabón ¿Se hunde o se aleja",
+      "words": [
+        {
+          "text": "Ahora,",
+          "start": 0,
+          "end": 0.3799999952316284
+        },
+        {
+          "text": "un",
+          "start": 0.5,
+          "end": 0.699999988079071
+        },
+        {
+          "text": "palito",
+          "start": 0.699999988079071,
+          "end": 0.9399999976158142
+        },
+        {
+          "text": "con",
+          "start": 0.9399999976158142,
+          "end": 1.1399999856948853
+        },
+        {
+          "text": "jabón.",
+          "start": 1.1399999856948853,
+          "end": 1.399999976158142
+        },
+        {
+          "text": "¿Se",
+          "start": 1.8799999952316284,
+          "end": 2
+        },
+        {
+          "text": "hunde…",
+          "start": 2,
+          "end": 2.140000104904175
+        },
+        {
+          "text": "o",
+          "start": 2.140000104904175,
+          "end": 2.5399999618530273
+        },
+        {
+          "text": "se",
+          "start": 2.5399999618530273,
+          "end": 2.740000009536743
+        },
+        {
+          "text": "aleja?",
+          "start": 2.740000009536743,
+          "end": 2.880000114440918
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.880000114440918
+    },
+    "s5": {
+      "hash": "1dfbea4a561a",
+      "rawHash": "632ed96c266c",
+      "duration": 2.453333,
+      "transcript": "Se escapa Corre hacia los bordes",
+      "words": [
+        {
+          "text": "¡Se",
+          "start": 0,
+          "end": 0.47999998927116394
+        },
+        {
+          "text": "escapa!",
+          "start": 0.47999998927116394,
+          "end": 0.8999999761581421
+        },
+        {
+          "text": "¡Corre",
+          "start": 1.559999942779541,
+          "end": 1.6799999475479126
+        },
+        {
+          "text": "hacia",
+          "start": 1.6799999475479126,
+          "end": 1.8200000524520874
+        },
+        {
+          "text": "los",
+          "start": 1.8200000524520874,
+          "end": 2.0399999618530273
+        },
+        {
+          "text": "bordes!",
+          "start": 2.0399999618530273,
+          "end": 2.299999952316284
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 2.299999952316284
+    },
+    "s6": {
+      "hash": "dfaf59385320",
+      "rawHash": "15c62aeafd29",
+      "duration": 3.840125,
+      "transcript": "El jabón afloja el agua del centro y el agua de los bordes se lleva a la punienta",
+      "words": [
+        {
+          "text": "El",
+          "start": 0,
+          "end": 0.10176470700432272
+        },
+        {
+          "text": "jabón",
+          "start": 0.10176470700432272,
+          "end": 0.3561764745151295
+        },
+        {
+          "text": "afloja",
+          "start": 0.3561764745151295,
+          "end": 0.6614705955280976
+        },
+        {
+          "text": "el",
+          "start": 0.6614705955280976,
+          "end": 0.7632353025324204
+        },
+        {
+          "text": "agua",
+          "start": 0.7632353025324204,
+          "end": 0.9667647165410659
+        },
+        {
+          "text": "del",
+          "start": 0.9667647165410659,
+          "end": 1.11941177704755
+        },
+        {
+          "text": "centro,",
+          "start": 1.11941177704755,
+          "end": 1.526470605064841
+        },
+        {
+          "text": "y",
+          "start": 1.526470605064841,
+          "end": 1.6282353120691635
+        },
+        {
+          "text": "el",
+          "start": 1.6282353120691635,
+          "end": 1.7300000190734863
+        },
+        {
+          "text": "agua",
+          "start": 1.7300000190734863,
+          "end": 1.9335294330821318
+        },
+        {
+          "text": "de",
+          "start": 1.9335294330821318,
+          "end": 2.0352941400864544
+        },
+        {
+          "text": "los",
+          "start": 2.0352941400864544,
+          "end": 2.1879412005929386
+        },
+        {
+          "text": "bordes",
+          "start": 2.1879412005929386,
+          "end": 2.4932353216059067
+        },
+        {
+          "text": "se",
+          "start": 2.4932353216059067,
+          "end": 2.5950000286102295
+        },
+        {
+          "text": "lleva",
+          "start": 2.5950000286102295,
+          "end": 2.849411796121036
+        },
+        {
+          "text": "la",
+          "start": 2.849411796121036,
+          "end": 2.951176503125359
+        },
+        {
+          "text": "pimienta.",
+          "start": 2.951176503125359,
+          "end": 3.4600000381469727
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 3.4600000381469727
+    },
+    "s7": {
+      "hash": "0b2896d0efb7",
+      "rawHash": "6ccd014b5c36",
+      "duration": 1.233958,
+      "transcript": "Otra vez otra vez",
+      "words": [
+        {
+          "text": "¡Otra",
+          "start": 0,
+          "end": 0.25999999046325684
+        },
+        {
+          "text": "vez,",
+          "start": 0.25999999046325684,
+          "end": 0.4399999976158142
+        },
+        {
+          "text": "otra",
+          "start": 0.6800000071525574,
+          "end": 0.8199999928474426
+        },
+        {
+          "text": "vez!",
+          "start": 0.8199999928474426,
+          "end": 1
+        }
+      ],
+      "voiceStart": 0,
+      "voiceEnd": 1
+    }
+  }
+}

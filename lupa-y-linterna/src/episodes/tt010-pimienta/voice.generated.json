@@ -1,0 +1,345 @@
+{
+  "model": "gpt-4o-mini-tts",
+  "voice": "coral",
+  "segments": [
+    {
+      "id": "s1",
+      "speaker": "timo",
+      "text": "¡Tere, mirá! ¡La pimienta flota quietita!",
+      "file": "audio/tt010/s1.wav",
+      "offset": 0.15,
+      "duration": 2.408917,
+      "voiceStart": 0.15,
+      "voiceEnd": 2.269999885559082,
+      "words": [
+        {
+          "text": "¡Tere,",
+          "start": 0.15,
+          "end": 0.53
+        },
+        {
+          "text": "mirá!",
+          "start": 0.79,
+          "end": 1.03
+        },
+        {
+          "text": "¡La",
+          "start": 1.19,
+          "end": 1.39
+        },
+        {
+          "text": "pimienta",
+          "start": 1.39,
+          "end": 1.79
+        },
+        {
+          "text": "flota",
+          "start": 1.79,
+          "end": 1.93
+        },
+        {
+          "text": "quietita!",
+          "start": 1.93,
+          "end": 2.27
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "speaker": "tere",
+      "text": "Probemos con un palito limpio.",
+      "file": "audio/tt010/s2.wav",
+      "offset": 2.67,
+      "duration": 1.706333,
+      "voiceStart": 2.67,
+      "voiceEnd": 4.049999995231628,
+      "words": [
+        {
+          "text": "Probemos",
+          "start": 2.67,
+          "end": 3.13
+        },
+        {
+          "text": "con",
+          "start": 3.13,
+          "end": 3.33
+        },
+        {
+          "text": "un",
+          "start": 3.33,
+          "end": 3.49
+        },
+        {
+          "text": "palito",
+          "start": 3.49,
+          "end": 3.73
+        },
+        {
+          "text": "limpio.",
+          "start": 3.73,
+          "end": 4.05
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "speaker": "timo",
+      "text": "¡No pasó nada!",
+      "file": "audio/tt010/s3.wav",
+      "offset": 5.15,
+      "duration": 1.066667,
+      "voiceStart": 5.15,
+      "voiceEnd": 5.950000011920929,
+      "words": [
+        {
+          "text": "¡No",
+          "start": 5.15,
+          "end": 5.39
+        },
+        {
+          "text": "pasó",
+          "start": 5.39,
+          "end": 5.65
+        },
+        {
+          "text": "nada!",
+          "start": 5.65,
+          "end": 5.95
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "speaker": "tere",
+      "text": "Ahora, un palito con jabón. ¿Se hunde… o se aleja?",
+      "file": "audio/tt010/s4.wav",
+      "offset": 6.45,
+      "duration": 3.004708,
+      "voiceStart": 6.45,
+      "voiceEnd": 9.330000114440917,
+      "words": [
+        {
+          "text": "Ahora,",
+          "start": 6.45,
+          "end": 6.83
+        },
+        {
+          "text": "un",
+          "start": 6.95,
+          "end": 7.15
+        },
+        {
+          "text": "palito",
+          "start": 7.15,
+          "end": 7.39
+        },
+        {
+          "text": "con",
+          "start": 7.39,
+          "end": 7.59
+        },
+        {
+          "text": "jabón.",
+          "start": 7.59,
+          "end": 7.85
+        },
+        {
+          "text": "¿Se",
+          "start": 8.33,
+          "end": 8.45
+        },
+        {
+          "text": "hunde…",
+          "start": 8.45,
+          "end": 8.59
+        },
+        {
+          "text": "o",
+          "start": 8.59,
+          "end": 8.99
+        },
+        {
+          "text": "se",
+          "start": 8.99,
+          "end": 9.19
+        },
+        {
+          "text": "aleja?",
+          "start": 9.19,
+          "end": 9.33
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "speaker": "timo",
+      "text": "¡Se escapa! ¡Corre hacia los bordes!",
+      "file": "audio/tt010/s5.wav",
+      "offset": 11.63,
+      "duration": 2.453333,
+      "voiceStart": 11.63,
+      "voiceEnd": 13.929999952316285,
+      "words": [
+        {
+          "text": "¡Se",
+          "start": 11.63,
+          "end": 12.11
+        },
+        {
+          "text": "escapa!",
+          "start": 12.11,
+          "end": 12.53
+        },
+        {
+          "text": "¡Corre",
+          "start": 13.19,
+          "end": 13.31
+        },
+        {
+          "text": "hacia",
+          "start": 13.31,
+          "end": 13.45
+        },
+        {
+          "text": "los",
+          "start": 13.45,
+          "end": 13.67
+        },
+        {
+          "text": "bordes!",
+          "start": 13.67,
+          "end": 13.93
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "speaker": "tere",
+      "text": "El jabón afloja el agua del centro, y el agua de los bordes se lleva la pimienta.",
+      "file": "audio/tt010/s6.wav",
+      "offset": 14.53,
+      "duration": 3.840125,
+      "voiceStart": 14.53,
+      "voiceEnd": 17.990000038146974,
+      "words": [
+        {
+          "text": "El",
+          "start": 14.53,
+          "end": 14.632
+        },
+        {
+          "text": "jabón",
+          "start": 14.632,
+          "end": 14.886
+        },
+        {
+          "text": "afloja",
+          "start": 14.886,
+          "end": 15.191
+        },
+        {
+          "text": "el",
+          "start": 15.191,
+          "end": 15.293
+        },
+        {
+          "text": "agua",
+          "start": 15.293,
+          "end": 15.497
+        },
+        {
+          "text": "del",
+          "start": 15.497,
+          "end": 15.649
+        },
+        {
+          "text": "centro,",
+          "start": 15.649,
+          "end": 16.056
+        },
+        {
+          "text": "y",
+          "start": 16.056,
+          "end": 16.158
+        },
+        {
+          "text": "el",
+          "start": 16.158,
+          "end": 16.26
+        },
+        {
+          "text": "agua",
+          "start": 16.26,
+          "end": 16.464
+        },
+        {
+          "text": "de",
+          "start": 16.464,
+          "end": 16.565
+        },
+        {
+          "text": "los",
+          "start": 16.565,
+          "end": 16.718
+        },
+        {
+          "text": "bordes",
+          "start": 16.718,
+          "end": 17.023
+        },
+        {
+          "text": "se",
+          "start": 17.023,
+          "end": 17.125
+        },
+        {
+          "text": "lleva",
+          "start": 17.125,
+          "end": 17.379
+        },
+        {
+          "text": "la",
+          "start": 17.379,
+          "end": 17.481
+        },
+        {
+          "text": "pimienta.",
+          "start": 17.481,
+          "end": 17.99
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "speaker": "timo",
+      "text": "¡Otra vez, otra vez!",
+      "file": "audio/tt010/s7.wav",
+      "offset": 18.49,
+      "duration": 1.233958,
+      "voiceStart": 18.49,
+      "voiceEnd": 19.49,
+      "words": [
+        {
+          "text": "¡Otra",
+          "start": 18.49,
+          "end": 18.75
+        },
+        {
+          "text": "vez,",
+          "start": 18.75,
+          "end": 18.93
+        },
+        {
+          "text": "otra",
+          "start": 19.17,
+          "end": 19.31
+        },
+        {
+          "text": "vez!",
+          "start": 19.31,
+          "end": 19.49
+        }
+      ]
+    }
+  ]
+}

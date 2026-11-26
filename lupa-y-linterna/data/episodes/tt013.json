@@ -1,0 +1,109 @@
+{
+  "id": "tt013",
+  "version": "v1",
+  "file": "timo-y-tere_tt013_por-que-flota-el-hielo",
+  "format": "A",
+  "formatName": "¿Por qué pasa esto?",
+  "title": "¿Por qué flota el hielo?",
+  "narrative": {
+    "primerCuadro": "Un cubito de hielo flotando en un vaso con la puntita afuera; Timo quiere hundirlo.",
+    "quiere": "Hundir el hielo hasta el fondo.",
+    "aprende": "El hielo es más liviano que el agua, por eso flota con un poquito afuera.",
+    "planoFinal": "El hielo vuelve a subir solo y flota, con casi todo adentro y un poquito afuera."
+  },
+  "creative": {
+    "siente": "Travesura, sorpresa y orgullo.",
+    "curiosidad": "¿Por qué sube solo?",
+    "intentaYOcurre": "Timo lo hunde con la cuchara; al soltarlo, sube.",
+    "momentoSorprendente": "El hielo sale del fondo y vuelve a flotar.",
+    "aprendeYDemuestra": "Una balanza compara el mismo tamaño de agua y de hielo: el hielo pesa menos.",
+    "finalSatisfactorio": "Timo agradece a Tere."
+  },
+  "voice": {
+    "person": "diálogo: Timo (cedar) y Tere (marin)",
+    "speed": 1.5,
+    "segments": [
+      {
+        "id": "s1",
+        "at": 0.15,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "decidido y travieso",
+        "text": "¡Tere! ¡Quiero hundir el hielo!"
+      },
+      {
+        "id": "s2",
+        "at": 1.77,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "animándolo con una sonrisa",
+        "text": "Dale, probá con la cuchara."
+      },
+      {
+        "id": "s3",
+        "at": 4.73,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "orgulloso y triunfante",
+        "text": "¡Ya está! ¡Se hundió!"
+      },
+      {
+        "id": "s4",
+        "at": 6.65,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "sorpresa y risa",
+        "text": "¡Ay, no! ¡Volvió a subir!"
+      },
+      {
+        "id": "s5",
+        "at": 9.05,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "intriga, con curiosidad y misterio",
+        "text": "Mirá bien. ¿Por qué el hielo flota?"
+      },
+      {
+        "id": "s6",
+        "at": 12.07,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "explica clarito y con calidez",
+        "text": "Porque el hielo es más liviano que el agua."
+      },
+      {
+        "id": "s7",
+        "at": 14.93,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "divertida, como contando un dato curioso",
+        "text": "Casi todo queda adentro… ¡y un poquito asoma!"
+      },
+      {
+        "id": "s8",
+        "at": 17.77,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "ternura, agradecido",
+        "text": "¡Gracias, Tere! ¡Sos la mejor!"
+      }
+    ]
+  },
+  "source": {
+    "title": "USGS Water Science School — Water density",
+    "url": "https://www.usgs.gov/water-science-school/science/water-density",
+    "alt": "https://www.childrensmuseum.org/stories/why-does-ice-float"
+  },
+  "scienceCheck": "Al congelarse, el agua ocupa más lugar: el hielo es unos 9% menos denso que el agua líquida, por eso es más liviano que el mismo tamaño de agua y flota, con la mayor parte debajo de la superficie. Verificado con USGS.",
+  "contaElChico": "«El hielo es más liviano que el agua: por eso, aunque lo hundas, sube y flota con un poquito afuera.»",
+  "status": "PREVIEW",
+  "origen": "tt013"
+}

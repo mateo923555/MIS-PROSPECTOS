@@ -1,0 +1,342 @@
+{
+  "model": "gpt-4o-mini-tts",
+  "voice": "coral",
+  "segments": [
+    {
+      "id": "s1",
+      "speaker": "timo",
+      "text": "¡Tere! ¡Quiero hundir el hielo!",
+      "file": "audio/tt013/s1.wav",
+      "offset": -0.25000000596046446,
+      "duration": 1.736,
+      "voiceStart": 0.15,
+      "voiceEnd": 1.369999998807907,
+      "words": [
+        {
+          "text": "¡Tere!",
+          "start": 0.15,
+          "end": 0.51
+        },
+        {
+          "text": "¡Quiero",
+          "start": 0.81,
+          "end": 0.89
+        },
+        {
+          "text": "hundir",
+          "start": 0.89,
+          "end": 1.07
+        },
+        {
+          "text": "el",
+          "start": 1.07,
+          "end": 1.25
+        },
+        {
+          "text": "hielo!",
+          "start": 1.25,
+          "end": 1.37
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "speaker": "tere",
+      "text": "Dale, probá con la cuchara.",
+      "file": "audio/tt013/s2.wav",
+      "offset": 1.77,
+      "duration": 1.766625,
+      "voiceStart": 1.77,
+      "voiceEnd": 3.2300000381469727,
+      "words": [
+        {
+          "text": "Dale,",
+          "start": 1.77,
+          "end": 2.47
+        },
+        {
+          "text": "probá",
+          "start": 2.59,
+          "end": 2.81
+        },
+        {
+          "text": "con",
+          "start": 2.81,
+          "end": 2.93
+        },
+        {
+          "text": "la",
+          "start": 2.93,
+          "end": 3.11
+        },
+        {
+          "text": "cuchara.",
+          "start": 3.11,
+          "end": 3.23
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "speaker": "timo",
+      "text": "¡Ya está! ¡Se hundió!",
+      "file": "audio/tt013/s3.wav",
+      "offset": 4.73,
+      "duration": 1.230125,
+      "voiceStart": 4.73,
+      "voiceEnd": 5.650000016689301,
+      "words": [
+        {
+          "text": "¡Ya",
+          "start": 4.73,
+          "end": 4.89
+        },
+        {
+          "text": "está!",
+          "start": 4.89,
+          "end": 5.11
+        },
+        {
+          "text": "¡Se",
+          "start": 5.37,
+          "end": 5.55
+        },
+        {
+          "text": "hundió!",
+          "start": 5.55,
+          "end": 5.65
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "speaker": "timo",
+      "text": "¡Ay, no! ¡Volvió a subir!",
+      "file": "audio/tt013/s4.wav",
+      "offset": 6.65,
+      "duration": 2.179333,
+      "voiceStart": 6.65,
+      "voiceEnd": 8.449999952316285,
+      "words": [
+        {
+          "text": "¡Ay,",
+          "start": 6.65,
+          "end": 7.03
+        },
+        {
+          "text": "no!",
+          "start": 7.15,
+          "end": 7.63
+        },
+        {
+          "text": "¡Volvió",
+          "start": 7.75,
+          "end": 8.19
+        },
+        {
+          "text": "a",
+          "start": 8.19,
+          "end": 8.45
+        },
+        {
+          "text": "subir!",
+          "start": 8.45,
+          "end": 8.45
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "speaker": "tere",
+      "text": "Mirá bien. ¿Por qué el hielo flota?",
+      "file": "audio/tt013/s5.wav",
+      "offset": 9.05,
+      "duration": 2.24,
+      "voiceStart": 9.05,
+      "voiceEnd": 10.77000002861023,
+      "words": [
+        {
+          "text": "Mirá",
+          "start": 9.05,
+          "end": 9.27
+        },
+        {
+          "text": "bien.",
+          "start": 9.27,
+          "end": 9.51
+        },
+        {
+          "text": "¿Por",
+          "start": 9.75,
+          "end": 10.03
+        },
+        {
+          "text": "qué",
+          "start": 10.03,
+          "end": 10.11
+        },
+        {
+          "text": "el",
+          "start": 10.11,
+          "end": 10.39
+        },
+        {
+          "text": "hielo",
+          "start": 10.39,
+          "end": 10.57
+        },
+        {
+          "text": "flota?",
+          "start": 10.57,
+          "end": 10.77
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "speaker": "tere",
+      "text": "Porque el hielo es más liviano que el agua.",
+      "file": "audio/tt013/s6.wav",
+      "offset": 12.07,
+      "duration": 2.772167,
+      "voiceStart": 12.07,
+      "voiceEnd": 14.230000085830689,
+      "words": [
+        {
+          "text": "Porque",
+          "start": 12.07,
+          "end": 12.35
+        },
+        {
+          "text": "el",
+          "start": 12.35,
+          "end": 12.73
+        },
+        {
+          "text": "hielo",
+          "start": 12.73,
+          "end": 12.97
+        },
+        {
+          "text": "es",
+          "start": 12.97,
+          "end": 13.29
+        },
+        {
+          "text": "más",
+          "start": 13.29,
+          "end": 13.49
+        },
+        {
+          "text": "liviano",
+          "start": 13.49,
+          "end": 13.77
+        },
+        {
+          "text": "que",
+          "start": 13.77,
+          "end": 14.01
+        },
+        {
+          "text": "el",
+          "start": 14.01,
+          "end": 14.19
+        },
+        {
+          "text": "agua.",
+          "start": 14.19,
+          "end": 14.23
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "speaker": "tere",
+      "text": "Casi todo queda adentro… ¡y un poquito asoma!",
+      "file": "audio/tt013/s7.wav",
+      "offset": 14.93,
+      "duration": 2.735042,
+      "voiceStart": 14.93,
+      "voiceEnd": 17.26999991416931,
+      "words": [
+        {
+          "text": "Casi",
+          "start": 14.93,
+          "end": 15.33
+        },
+        {
+          "text": "todo",
+          "start": 15.33,
+          "end": 15.59
+        },
+        {
+          "text": "queda",
+          "start": 15.59,
+          "end": 15.77
+        },
+        {
+          "text": "adentro…",
+          "start": 15.77,
+          "end": 16.09
+        },
+        {
+          "text": "¡y",
+          "start": 16.09,
+          "end": 16.57
+        },
+        {
+          "text": "un",
+          "start": 16.57,
+          "end": 16.75
+        },
+        {
+          "text": "poquito",
+          "start": 16.75,
+          "end": 16.97
+        },
+        {
+          "text": "asoma!",
+          "start": 16.97,
+          "end": 17.27
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "speaker": "timo",
+      "text": "¡Gracias, Tere! ¡Sos la mejor!",
+      "file": "audio/tt013/s8.wav",
+      "offset": 17.77,
+      "duration": 2.167875,
+      "voiceStart": 17.77,
+      "voiceEnd": 19.409999985694885,
+      "words": [
+        {
+          "text": "¡Gracias,",
+          "start": 17.77,
+          "end": 18.31
+        },
+        {
+          "text": "Tere!",
+          "start": 18.47,
+          "end": 18.61
+        },
+        {
+          "text": "¡Sos",
+          "start": 18.99,
+          "end": 19.13
+        },
+        {
+          "text": "la",
+          "start": 19.13,
+          "end": 19.31
+        },
+        {
+          "text": "mejor!",
+          "start": 19.31,
+          "end": 19.41
+        }
+      ]
+    }
+  ]
+}
