@@ -1,0 +1,27 @@
+<!doctype html><meta charset=utf-8><style>
+@font-face{font-family:F;src:url(fredoka-latin-700-normal.woff2)}
+*{margin:0;box-sizing:border-box}body{width:2560px;height:1440px;overflow:hidden;position:relative;font-family:F;background:#1F5F63}
+.wall{position:absolute;inset:0 0 560px 0;background:radial-gradient(ellipse at 50% 55%,#2B8087 0%,#1F6A6E 45%,#144a4f 100%)}
+.floor{position:absolute;left:0;right:0;bottom:0;height:560px;background:repeating-linear-gradient(90deg,#D9A66B 0 230px,#CF9A5E 230px 236px),#D9A66B;box-shadow:inset 0 30px 40px rgba(0,0,0,.28)}
+.floor:after{content:"";position:absolute;inset:0;background:linear-gradient(#0000,#0003)}
+.rug{position:absolute;left:380px;top:1000px;width:1800px;height:300px;border-radius:50%;background:radial-gradient(ellipse at 50% 45%,#E08E70,#C9735A 70%,#B05F4A);box-shadow:0 14px 34px #0005,inset 0 0 0 10px #ffe9d255}
+.dog{position:absolute;height:410px}
+.shadow{position:absolute;height:44px;border-radius:50%;background:#0006;filter:blur(6px)}
+.t{position:absolute;left:0;width:2560px;text-align:center}
+h1{font-size:160px;line-height:1;color:#F3E7C9;-webkit-text-stroke:0;text-shadow:0 8px 0 #F2705B,0 16px 0 #123C40,0 24px 30px #0006;letter-spacing:2px}
+h1 span{color:#F6C945}
+h2{font-size:66px;color:#fff;top:775px;letter-spacing:3px;text-shadow:0 5px 0 #123C40}
+h2 b{background:#F2705B;padding:6px 34px;border-radius:50px;font-weight:700;box-shadow:0 6px 0 #123C40}
+.star{position:absolute;color:#F6C945;text-shadow:0 4px 0 #123C4066}
+.beam{position:absolute;left:0;top:0;width:2560px;height:1020px;background:conic-gradient(from 160deg at 6% 0%,#0000 0 6deg,#fff3 6deg 22deg,#0000 22deg);}
+.lupa{position:absolute;height:420px;left:60px;top:560px;transform:rotate(-18deg);filter:drop-shadow(0 12px 14px #0006)}
+</style>
+<div class=wall></div><div class=beam></div><div class=floor></div><div class=rug></div>
+<img class=lupa src=lupa.png>
+<div class=shadow style="left:500px;top:915px;width:340px"></div><div class=shadow style="left:1710px;top:915px;width:340px"></div>
+<img class=dog src=t_sorprendida.png style="left:545px;top:511px;height:420px"><img class=dog src=m_sorprendido.png style="left:1750px;top:511px;height:420px">
+<div class=t style="top:565px"><h1>Timo <span>y</span> Tere</h1></div>
+<div class=t style="top:770px"><h2><b>Ciencia para chicos</b></h2></div>
+<div class=star style="left:300px;top:200px;font-size:120px">★</div><div class=star style="left:2200px;top:240px;font-size:150px">★</div>
+<div class=star style="left:2330px;top:640px;font-size:90px">✦</div><div class=star style="left:180px;top:420px;font-size:80px">✦</div>
+<div class=star style="left:1250px;top:150px;font-size:100px;opacity:.9">✦</div>

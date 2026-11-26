@@ -13,12 +13,12 @@ export const PRUEBA_MASCOTAS_SECONDS = 12.0;
 
 // tamaños (px) de las poses ya recortadas
 const SZ: Record<string, [number, number]> = {
-  t_olfatea: [1072, 1026], t_sorprendida: [936, 1130], t_curiosa: [927, 1140], t_juego: [1009, 1078],
-  t_corre: [1214, 992], t_salto: [1139, 1061], t_triste: [1016, 947],
-  m_corre: [1178, 1048], m_sorprendido: [923, 1122], m_curioso: [1016, 1185], m_juego: [1014, 1104],
-  m_salto: [1113, 1163], m_triste: [1048, 901], m_olfatea: [1085, 1023],
+  t_olfatea: [936, 759], t_sorprendida: [599, 986], t_curiosa: [727, 1008], t_juego: [790, 871],
+  t_corre: [1174, 610], t_salto: [1024, 803], t_triste: [747, 717],
+  m_corre: [1112, 713], m_sorprendido: [608, 977], m_curioso: [824, 1040], m_juego: [787, 910],
+  m_salto: [991, 936], m_triste: [820, 639], m_olfatea: [948, 753],
 };
-const KT = 0.58, KM = 0.49; // Teresa es más grande que Timoteo
+const KT = 0.60, KM = 0.50; // Teresa es más grande que Timoteo
 const FLOOR_T = 1490, FLOOR_M = 1460;
 
 type Fx = { dy: number; rot: number; sx: number; sy: number };
@@ -94,7 +94,7 @@ const Shadow: React.FC<{ st: State; k: number; floor: number }> = ({ st, k, floo
   if (!st) return null;
   const [w] = SZ[st.pose];
   const lift = Math.max(0, -st.fx.dy);
-  const rx = Math.min(w * k, 640 * k * 1.1) * 0.42 * (1 - Math.min(0.4, lift / 500));
+  const rx = Math.min(w * k, 700 * k) * 0.45 * (1 - Math.min(0.4, lift / 500));
   return <ellipse cx={st.x} cy={floor - 4} rx={rx} ry={rx * 0.16} fill="rgba(20,10,5,0.35)" opacity={Math.max(0.35, 1 - lift / 320)} />;
 };
 

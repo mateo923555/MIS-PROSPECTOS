@@ -36,7 +36,7 @@ for ch in (0, 2):
 
 rgba = np.dstack([out, alpha * 255]).astype(np.uint8)
 img = Image.fromarray(rgba, "RGBA")
-bbox = img.getchannel("A").point(lambda v: 255 if v > 24 else 0).getbbox()
+bbox = img.getchannel("A").point(lambda v: 255 if v > 128 else 0).getbbox()
 if bbox:
     l, t, r, b = bbox
     img = img.crop((max(0, l - pad), max(0, t - pad), min(w, r + pad), min(h, b + pad)))
