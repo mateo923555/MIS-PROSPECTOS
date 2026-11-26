@@ -92,3 +92,17 @@ Además se escribe «emoción y aprendizaje en una línea» (`emocionYAprendizaj
 ## Aplicado en los pilotos
 - **ep001 «La sombra gigante»:** asombro → duda → prueba → festejo → ternura. Aprende: cerca de la luz, sombra más grande; lejos, más chica.
 - **ep002 «El pulpo escondido»:** suspenso → alegría de descubrir → asombro y ternura. Aprende: el pulpo cambia color y textura para parecerse a la roca.
+
+---
+
+# Dirección creativa (versión 4) — canal «Timo y Tere»
+
+Desde esta versión los protagonistas son **Timo (Timoteo)** y **Tere (Teresa)**, los bulldogs reales del canal. El bebé queda como versión archivada (`data/queue-bebe.json`, `renders/`). La regla narrativa (4 líneas, objetivo antes del seg. 4, prueba, cierre rápido) y las 6 definiciones creativas siguen vigentes.
+
+- **Timo** (francés, chiquito, orejas enormes): siente primero, se asusta, se emociona, nota los detalles. Hace las preguntas con el cuerpo.
+- **Tere** (inglés, grande, tranquila): prueba con paciencia, empuja, espera, consuela.
+- **Dinámica fija:** Timo nota/se asusta → Tere prueba con calma → los dos se sorprenden → celebran con cariño.
+- **Sin diálogos ni manos:** todo se cuenta con cuerpo, ojos, orejas, ladridos y objetos movidos con el hocico o la pata.
+- **Un momento tierno distinto por Short** (frente con frente, lametón, hombro con hombro, dormirse apoyados…).
+- **Poses:** cada episodio de `data/queue.json` lista las poses necesarias (`posesNecesarias`, códigos de los paquetes A–F del prompt de ChatGPT). No espejar a Tere: generar cada dirección como pose propia.
+- **Seguridad:** nada de perros comiendo objetos peligrosos ni con la cabeza afuera del auto; notas para adultos en la descripción.
