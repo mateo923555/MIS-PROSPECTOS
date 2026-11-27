@@ -12,6 +12,8 @@ import { Tt001v4Sombra, TT001V4_SECONDS } from "./episodes/tt001v4-sombra-timo/T
 import { Tt010Pimienta, TT010_SECONDS } from "./episodes/tt010-pimienta/Tt010Pimienta";
 import { Tt013Hielo, TT013_SECONDS } from "./episodes/tt013-hielo/Tt013Hielo";
 import { Tt020Luna, TT020_SECONDS } from "./episodes/tt020-luna/Tt020Luna";
+import { Tt013v2Hielo, TT013V2_SECONDS } from "./episodes/tt013v2-hielo/Tt013v2Hielo";
+import { Tt010v2Pimienta, TT010V2_SECONDS } from "./episodes/tt010v2-pimienta/Tt010v2Pimienta";
 import { PruebaMascotas, PRUEBA_MASCOTAS_SECONDS } from "./pruebas/PruebaMascotas";
 import { PruebaCaminaTeresa, T_CAMINA_SECONDS, PruebaCaminaTimoteo, M_CAMINA_SECONDS, PruebaReaccion, REACCION_SECONDS, PruebaParpadeo, PARPADEO_SECONDS } from "./pruebas/PruebasPoses";
 import { Ep001SombraV1, EP001V1_SECONDS } from "./episodes/v1/ep001-sombra/Ep001Sombra";
@@ -33,6 +35,8 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Tt010Pimienta" component={Tt010Pimienta} durationInFrames={Math.round(TT010_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="Tt013Hielo" component={Tt013Hielo} durationInFrames={Math.round(TT013_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="Tt020Luna" component={Tt020Luna} durationInFrames={Math.round(TT020_SECONDS * FPS)} fps={FPS} width={W} height={H} />
+    <Composition id="Tt013v2Hielo" component={Tt013v2Hielo} durationInFrames={Math.round(TT013V2_SECONDS * FPS)} fps={FPS} width={W} height={H} />
+    <Composition id="Tt010v2Pimienta" component={Tt010v2Pimienta} durationInFrames={Math.round(TT010V2_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="PruebaMascotas" component={PruebaMascotas} durationInFrames={Math.round(PRUEBA_MASCOTAS_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="PruebaLupa" component={PruebaLupa} durationInFrames={Math.round(PRUEBA_LUPA_SECONDS * FPS)} fps={FPS} width={W} height={H} />
     <Composition id="PruebaSombra" component={PruebaSombra} durationInFrames={Math.round(PRUEBA_SOMBRA_SECONDS * FPS)} fps={FPS} width={W} height={H} />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Img, staticFile } from "remotion";
+import { Audio, Img, staticFile, useVideoConfig } from "remotion";
 import META from "./petMeta.json";
 import { C, FONT, H, W } from "./theme";
 import { RoomBg } from "./Room";
@@ -105,3 +105,43 @@ export const BRAND = (text: string, op: number) => (
     <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 50, color: C.cream, background: "rgba(18,60,64,0.8)", padding: "8px 30px 12px", borderRadius: 40 }}>{text}</div>
   </div>
 );
+
+// ───────── botón que aprietan los perros (acción con autor) ─────────
+export const PUSH_M = "timoteo/accion/timoteo_accion_der_01", PUSH_T = "teresa/accion/teresa_accion_der_02";
+/** Punto de las patas delanteras en una pose "empujando" (fracciones medidas sobre el recorte). */
+export const pawPoint = (k: string, ref_: { top: number; bottom: number }, x: number, footY: number, h: number, fx: number, fy: number) => {
+  const m = meta(k); const sc = h / (ref_.bottom - ref_.top);
+  return { x: x - (m.w / 2) * sc + fx * m.w * sc, y: footY - m.bottom * sc + fy * m.h * sc };
+};
+export const pressAmt = (t: number, a: number, b: number) => ease((t - a) / 0.16) * (1 - ease((t - b) / 0.22));
+export const PushButton: React.FC<{ x: number; y: number; floorY: number; press: number; color: string; label: string; showLabel?: boolean }> = ({ x, y, floorY, press, color, label, showLabel = true }) => (
+  <g>
+    <rect x={x - 10} y={y + 52} width={20} height={floorY - y - 52} fill="#5C6470" />
+    <rect x={x - 56} y={floorY - 14} width={112} height={14} rx={6} fill="#3E444F" />
+    <rect x={x - 46} y={y - 62} width={92} height={118} rx={18} fill="#8B94A3" stroke="#fff" strokeWidth={4} />
+    <circle cx={x} cy={y - 8 + press * 10} r={30} fill={color} stroke="#fff" strokeWidth={5} />
+    <circle cx={x - 8} cy={y - 18 + press * 10} r={8} fill="#fff" opacity={0.6 - press * 0.4} />
+    {showLabel && <text x={x} y={y + 44} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={20} fill="#fff">{label}</text>}
+  </g>
+);
+/** Cable desde el botón hasta la máquina (con una "señal" que viaja cuando se aprieta). */
+export const Cable: React.FC<{ pts: Array<[number, number]>; t: number; t0: number }> = ({ pts, t, t0 }) => {
+  const d = pts.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
+  const seg = pts.slice(1).map((p, i) => ({ a: pts[i], b: p, len: Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]) }));
+  const total = seg.reduce((s, q) => s + q.len, 0); const u = (t - t0) / 0.55;
+  let dot: { x: number; y: number } | null = null;
+  if (u >= 0 && u <= 1) { let d0 = u * total; for (const q of seg) { if (d0 <= q.len) { const f = d0 / q.len; dot = { x: q.a[0] + (q.b[0] - q.a[0]) * f, y: q.a[1] + (q.b[1] - q.a[1]) * f }; break; } d0 -= q.len; } }
+  return (<g><path d={d} fill="none" stroke="#2B2F38" strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" /><path d={d} fill="none" stroke="#FFC93C" strokeWidth={3} strokeDasharray="2 14" strokeLinecap="round" />{dot && <circle cx={dot.x} cy={dot.y} r={13} fill="#FFE27A" stroke="#fff" strokeWidth={3} />}</g>);
+};
+
+/** Música en bucle (si el video dura más que el archivo), con bajada bajo la voz y fundido corto al final. */
+export const LoopMusic: React.FC<{ src: string; voice: VoiceData; totalSec: number; base?: number; duckTo?: number }> = ({ src, voice, totalSec, base = 0.2, duckTo = 0.09 }) => {
+  const { fps } = useVideoConfig();
+  return (
+    <Audio src={staticFile(src)} loop volume={(f) => {
+      const tt = f / fps; let v = base;
+      for (const s of voice.segments) if (tt > s.voiceStart - 0.15 && tt < s.voiceEnd + 0.25) v = duckTo;
+      return v * Math.min(1, tt / 0.5) * Math.min(1, Math.max(0, (totalSec - 0.15 - tt) / 0.9));
+    }} />
+  );
+};

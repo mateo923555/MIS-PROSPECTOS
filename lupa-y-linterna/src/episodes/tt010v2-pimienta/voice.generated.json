@@ -1,0 +1,439 @@
+{
+  "model": "gpt-4o-mini-tts",
+  "voice": "coral",
+  "segments": [
+    {
+      "id": "s1",
+      "speaker": "timo",
+      "text": "¡Tere, mirá! ¡La pimienta flota quietita!",
+      "file": "audio/tt010v2/s1.wav",
+      "offset": 0.15,
+      "duration": 2.574708,
+      "voiceStart": 0.15,
+      "voiceEnd": 2.4099999904632567,
+      "words": [
+        {
+          "text": "¡Tere,",
+          "start": 0.15,
+          "end": 0.43
+        },
+        {
+          "text": "mirá!",
+          "start": 0.69,
+          "end": 1.13
+        },
+        {
+          "text": "¡La",
+          "start": 1.15,
+          "end": 1.53
+        },
+        {
+          "text": "pimienta",
+          "start": 1.53,
+          "end": 1.91
+        },
+        {
+          "text": "flota",
+          "start": 1.91,
+          "end": 2.05
+        },
+        {
+          "text": "quietita!",
+          "start": 2.05,
+          "end": 2.41
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "speaker": "tere",
+      "text": "Primero, una gota de agua. ¡Apretá el botón azul, Timo!",
+      "file": "audio/tt010v2/s2.wav",
+      "offset": 2.81,
+      "duration": 3.267625,
+      "voiceStart": 2.81,
+      "voiceEnd": 5.970000085830689,
+      "words": [
+        {
+          "text": "Primero,",
+          "start": 2.81,
+          "end": 3.17
+        },
+        {
+          "text": "una",
+          "start": 3.61,
+          "end": 3.77
+        },
+        {
+          "text": "gota",
+          "start": 3.77,
+          "end": 3.97
+        },
+        {
+          "text": "de",
+          "start": 3.97,
+          "end": 4.27
+        },
+        {
+          "text": "agua.",
+          "start": 4.27,
+          "end": 4.27
+        },
+        {
+          "text": "¡Apretá",
+          "start": 4.87,
+          "end": 4.99
+        },
+        {
+          "text": "el",
+          "start": 4.99,
+          "end": 5.17
+        },
+        {
+          "text": "botón",
+          "start": 5.17,
+          "end": 5.27
+        },
+        {
+          "text": "azul,",
+          "start": 5.27,
+          "end": 5.53
+        },
+        {
+          "text": "Timo!",
+          "start": 5.89,
+          "end": 5.97
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "speaker": "timo",
+      "text": "¡No pasó nada!",
+      "file": "audio/tt010v2/s3.wav",
+      "offset": 7.47,
+      "duration": 1.536,
+      "voiceStart": 7.47,
+      "voiceEnd": 8.349999995231627,
+      "words": [
+        {
+          "text": "¡No",
+          "start": 7.47,
+          "end": 7.77
+        },
+        {
+          "text": "pasó",
+          "start": 7.77,
+          "end": 8.05
+        },
+        {
+          "text": "nada!",
+          "start": 8.05,
+          "end": 8.35
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "speaker": "tere",
+      "text": "Ahora, una gota de jabón. Yo creo que se hunde.",
+      "file": "audio/tt010v2/s4.wav",
+      "offset": 8.85,
+      "duration": 2.966125,
+      "voiceStart": 8.85,
+      "voiceEnd": 11.550000047683715,
+      "words": [
+        {
+          "text": "Ahora,",
+          "start": 8.85,
+          "end": 9.37
+        },
+        {
+          "text": "una",
+          "start": 9.39,
+          "end": 9.69
+        },
+        {
+          "text": "gota",
+          "start": 9.69,
+          "end": 9.87
+        },
+        {
+          "text": "de",
+          "start": 9.87,
+          "end": 10.05
+        },
+        {
+          "text": "jabón.",
+          "start": 10.05,
+          "end": 10.25
+        },
+        {
+          "text": "Yo",
+          "start": 10.95,
+          "end": 11.05
+        },
+        {
+          "text": "creo",
+          "start": 11.05,
+          "end": 11.13
+        },
+        {
+          "text": "que",
+          "start": 11.13,
+          "end": 11.27
+        },
+        {
+          "text": "se",
+          "start": 11.27,
+          "end": 11.53
+        },
+        {
+          "text": "hunde.",
+          "start": 11.53,
+          "end": 11.55
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "speaker": "timo",
+      "text": "¡Se aleja! ¡Corre hacia los bordes!",
+      "file": "audio/tt010v2/s5.wav",
+      "offset": 12.75,
+      "duration": 2.301167,
+      "voiceStart": 12.75,
+      "voiceEnd": 14.809999942779541,
+      "words": [
+        {
+          "text": "¡Se",
+          "start": 12.75,
+          "end": 12.97
+        },
+        {
+          "text": "aleja!",
+          "start": 12.97,
+          "end": 13.49
+        },
+        {
+          "text": "¡Corre",
+          "start": 14.11,
+          "end": 14.11
+        },
+        {
+          "text": "hacia",
+          "start": 14.11,
+          "end": 14.33
+        },
+        {
+          "text": "los",
+          "start": 14.33,
+          "end": 14.61
+        },
+        {
+          "text": "bordes!",
+          "start": 14.61,
+          "end": 14.81
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "speaker": "tere",
+      "text": "¡Uy! ¡Me equivoqué!",
+      "file": "audio/tt010v2/s6.wav",
+      "offset": 15.01,
+      "duration": 1.338833,
+      "voiceStart": 15.01,
+      "voiceEnd": 15.969999978542328,
+      "words": [
+        {
+          "text": "¡Uy!",
+          "start": 15.01,
+          "end": 15.43
+        },
+        {
+          "text": "¡Me",
+          "start": 15.63,
+          "end": 15.71
+        },
+        {
+          "text": "equivoqué!",
+          "start": 15.71,
+          "end": 15.97
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "speaker": "tere",
+      "text": "El jabón hace que la superficie del agua tire menos en el centro.",
+      "file": "audio/tt010v2/s7.wav",
+      "offset": 16.47,
+      "duration": 3.508958,
+      "voiceStart": 16.47,
+      "voiceEnd": 19.789999933242797,
+      "words": [
+        {
+          "text": "El",
+          "start": 16.47,
+          "end": 16.59
+        },
+        {
+          "text": "jabón",
+          "start": 16.59,
+          "end": 16.97
+        },
+        {
+          "text": "hace",
+          "start": 16.97,
+          "end": 17.29
+        },
+        {
+          "text": "que",
+          "start": 17.29,
+          "end": 17.51
+        },
+        {
+          "text": "la",
+          "start": 17.51,
+          "end": 17.61
+        },
+        {
+          "text": "superficie",
+          "start": 17.61,
+          "end": 18.11
+        },
+        {
+          "text": "del",
+          "start": 18.11,
+          "end": 18.21
+        },
+        {
+          "text": "agua",
+          "start": 18.21,
+          "end": 18.45
+        },
+        {
+          "text": "tire",
+          "start": 18.45,
+          "end": 18.85
+        },
+        {
+          "text": "menos",
+          "start": 18.85,
+          "end": 19.19
+        },
+        {
+          "text": "en",
+          "start": 19.19,
+          "end": 19.41
+        },
+        {
+          "text": "el",
+          "start": 19.41,
+          "end": 19.53
+        },
+        {
+          "text": "centro.",
+          "start": 19.53,
+          "end": 19.79
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "speaker": "tere",
+      "text": "En los bordes sigue tirando fuerte, y arrastra la pimienta.",
+      "file": "audio/tt010v2/s8.wav",
+      "offset": 20.19,
+      "duration": 4.005583,
+      "voiceStart": 20.19,
+      "voiceEnd": 24.049999895095826,
+      "words": [
+        {
+          "text": "En",
+          "start": 20.19,
+          "end": 20.49
+        },
+        {
+          "text": "los",
+          "start": 20.49,
+          "end": 20.93
+        },
+        {
+          "text": "bordes",
+          "start": 20.93,
+          "end": 21.29
+        },
+        {
+          "text": "sigue",
+          "start": 21.29,
+          "end": 21.73
+        },
+        {
+          "text": "tirando",
+          "start": 21.73,
+          "end": 22.07
+        },
+        {
+          "text": "fuerte,",
+          "start": 22.07,
+          "end": 22.43
+        },
+        {
+          "text": "y",
+          "start": 22.43,
+          "end": 23.15
+        },
+        {
+          "text": "arrastra",
+          "start": 23.15,
+          "end": 23.55
+        },
+        {
+          "text": "la",
+          "start": 23.55,
+          "end": 23.77
+        },
+        {
+          "text": "pimienta.",
+          "start": 23.77,
+          "end": 24.05
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "speaker": "timo",
+      "text": "¡Otra vez, otra vez!",
+      "file": "audio/tt010v2/s9.wav",
+      "offset": 24.85,
+      "duration": 1.506958,
+      "voiceStart": 24.85,
+      "voiceEnd": 26.129999971389772,
+      "words": [
+        {
+          "text": "¡Otra",
+          "start": 24.85,
+          "end": 25.15
+        },
+        {
+          "text": "vez,",
+          "start": 25.15,
+          "end": 25.37
+        },
+        {
+          "text": "otra",
+          "start": 25.77,
+          "end": 25.95
+        },
+        {
+          "text": "vez!",
+          "start": 25.95,
+          "end": 26.13
+        }
+      ]
+    }
+  ]
+}
