@@ -115,7 +115,7 @@ export const Tt010Pimienta: React.FC = () => {
       {BRAND("Timo y Tere", brandOp)}
       <Subtitles segments={voice.segments} />
       <VoiceTrack voice={voice} />
-      <MusicTrack src="audio/music/casita.wav" voice={voice} totalSec={TT010_SECONDS} base={0.2} duckTo={0.09} />
+      <MusicTrack src="audio/music/linterna.wav" voice={voice} totalSec={TT010_SECONDS} base={0.2} duckTo={0.09} />
       <SfxTrack cues={SFX} />
     </AbsoluteFill>
   );

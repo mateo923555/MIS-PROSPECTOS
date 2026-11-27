@@ -1,0 +1,126 @@
+{
+  "id": "tt020",
+  "version": "v1",
+  "file": "timo-y-tere_tt020_la-luna-perdio-un-pedazo",
+  "format": "A",
+  "formatName": "¿Por qué pasa esto?",
+  "title": "¡Tere, la Luna perdió un pedazo!",
+  "narrative": {
+    "primerCuadro": "Primer plano de Timo mirando una Luna que parece incompleta, con Tere al lado.",
+    "quiere": "Saber si la Luna perdió un pedazo.",
+    "aprende": "La Luna siempre tiene una mitad iluminada por el Sol; según dónde está en su órbita, desde la Tierra vemos más o menos de esa mitad.",
+    "planoFinal": "Vuelve la noche del inicio: la Luna entera (la parte oscura se insinúa) y Timo la saluda; el plano final repite el inicial."
+  },
+  "creative": {
+    "siente": "Preocupación → curiosidad → alivio tierno.",
+    "curiosidad": "¿Se rompió la Luna? ¿Se la comió una nube?",
+    "intentaYOcurre": "Descartan la nube; miran la Luna desde arriba y la ven dar la vuelta a la Tierra mientras el Sol ilumina siempre una mitad.",
+    "momentoSorprendente": "La Luna 'desaparece' (luna nueva) pero sigue ahí; después vuelve a crecer.",
+    "aprendeYDemuestra": "Diagrama visto desde arriba con el Sol fijo + panel 'así la vemos' sincronizado con la órbita.",
+    "finalSatisfactorio": "Timo se despide de la Luna con ternura y el último plano repite el primero."
+  },
+  "voice": {
+    "person": "diálogo: Timo (cedar) y Tere (marin)",
+    "speed": 1.5,
+    "segments": [
+      {
+        "id": "s1",
+        "at": 0.15,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "preocupación tierna y asombro, con la voz un poco achicada",
+        "text": "¡Tere, la Luna perdió un pedazo!"
+      },
+      {
+        "id": "s2",
+        "at": 1.93,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "sorprendida y juguetona, con una risita nerviosa",
+        "text": "¡Es verdad! ¿Se la habrá comido una nube?"
+      },
+      {
+        "id": "s3",
+        "at": 4.1,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "desconcertado y divertido",
+        "text": "¡Pero no hay ni una nube!"
+      },
+      {
+        "id": "s4",
+        "at": 6.78,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "curiosa y cálida, como proponiendo una aventura; marca 'siempre' y 'una mitad'",
+        "text": "Entonces miremos desde arriba. El Sol siempre alumbra una mitad de la Luna."
+      },
+      {
+        "id": "s5",
+        "at": 10.76,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "intriga genuina, como un nene que pregunta",
+        "text": "¿Y por qué yo la veo incompleta?"
+      },
+      {
+        "id": "s6",
+        "at": 12.98,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "explica clarito y con calidez, ritmo parejo, como contando un secreto lindo",
+        "text": "Porque la Luna da vueltas alrededor de la Tierra, y desde acá vemos más o menos de esa mitad."
+      },
+      {
+        "id": "s7",
+        "at": 20.66,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "asombro feliz, casi gritando",
+        "text": "¡Mirá! ¡Cambia lo que se ve!"
+      },
+      {
+        "id": "s8",
+        "at": 24.22,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "alivio y alegría, con una risita",
+        "text": "¡Entonces no perdió nada!"
+      },
+      {
+        "id": "s9",
+        "at": 26.38,
+        "speaker": "tere",
+        "voice": "marin",
+        "instructions": "Actuá como Teresa, una perra bulldog grande, curiosa, cálida y dispuesta a ayudar; hermana mayor de Timoteo. NO leas: conversá con él como si lo tuvieras al lado, con una sonrisa que se escucha y ganas de resolverlo juntos. Voz más grave y suave, ritmo calmo pero ágil, pausas que dan seguridad, una risita tierna cuando él se asusta y un tono de 'mirá lo que viene' cuando explica, como quien cuenta un secreto lindo a un nene. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra y hablá a buen ritmo.",
+        "emotion": "tierna y tranquila, con una sonrisa que se escucha",
+        "text": "Nada. Está entera. Hoy vemos solo una parte."
+      },
+      {
+        "id": "s10",
+        "at": 29.7,
+        "speaker": "timo",
+        "voice": "cedar",
+        "instructions": "Actuá como Timoteo, un perrito de 6 años, chiquito, curioso y muy emocional. NO leas: hablá como un nene de verdad que se asusta, se emociona y se queda sin aire. Voz clara y brillante, medio aguda, con energía que sube y baja. Respiraciones cortas, pequeñas pausas para pensar y un susto genuino en los '¡uy!'. Cuando pide ayuda, la voz se achica y se vuelve tierna. Español rioplatense natural, con voseo, sin acento de locutor. Pronunciá clarísimo cada palabra, incluso emocionado, y hablá a buen ritmo, sin arrastrar las sílabas.",
+        "emotion": "ternura, en voz bajita, con un bostezo suave al final",
+        "text": "Buenas noches, Luna."
+      }
+    ]
+  },
+  "source": {
+    "title": "NASA Space Place — What Are the Moon's Phases?",
+    "url": "https://spaceplace.nasa.gov/moon-phases/en/",
+    "alt": "https://spaceplace.nasa.gov/all-about-the-moon/en/"
+  },
+  "scienceCheck": "La Luna no produce luz: refleja la del Sol, que siempre ilumina la mitad que lo mira. Las fases son cuánto de esa mitad iluminada vemos desde la Tierra según la posición de la Luna en su órbita. Una vuelta completa de fase a fase (luna nueva a luna nueva) dura unos 29,5 días. Verificado con NASA Space Place.",
+  "contaElChico": "«La Luna no perdió nada: el Sol siempre ilumina la mitad que lo mira y, a medida que la Luna da la vuelta a la Tierra, vemos más o menos de esa mitad.»",
+  "status": "PREVIEW"
+}

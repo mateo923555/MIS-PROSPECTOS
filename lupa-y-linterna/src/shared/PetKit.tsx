@@ -92,10 +92,10 @@ export const Mark: React.FC<{ t: number; a: number; b: number; x: number; y: num
 };
 
 /** Etiqueta redonda (para opciones, cerca/lejos, etc.). */
-export const Chip: React.FC<{ x: number; y: number; text: string; color: string; scale?: number; w?: number }> = ({ x, y, text, color, scale = 1, w = 250 }) => (
+export const Chip: React.FC<{ x: number; y: number; text: string; color: string; scale?: number; w?: number; fs?: number }> = ({ x, y, text, color, scale = 1, w = 250, fs = 46 }) => (
   <g transform={`translate(${x} ${y}) scale(${scale})`}>
     <rect x={-w / 2} y={-38} width={w} height={76} rx={38} fill={color} stroke="#fff" strokeWidth={6} />
-    <text x={0} y={17} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={46} fill="#fff">{text}</text>
+    <text x={0} y={17} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={fs} fill="#fff">{text}</text>
   </g>
 );
 
