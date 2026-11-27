@@ -130,7 +130,6 @@ export const Tt010v2Pimienta: React.FC = () => {
           {arrowsOn > 0.02 && (
             <g opacity={arrowsOn}>
               {Array.from({ length: 14 }, (_, i) => { const th = (i / 14) * Math.PI * 2 + 0.2; const x1 = PL.cx + Math.cos(th) * WA.rx * 0.78, y1 = PL.cy + Math.sin(th) * WA.ry * 0.78; const len = 0.2 + 0.05 * pulse; return <line key={i} x1={x1} y1={y1} x2={PL.cx + Math.cos(th) * WA.rx * (0.78 + len)} y2={PL.cy + Math.sin(th) * WA.ry * (0.78 + len)} stroke="#FF6B3D" strokeWidth={9} strokeLinecap="round" markerEnd="url(#ah)" />; })}
-              <Chip x={PL.cx} y={PL.cy + 130} text="BORDES: TIRAN FUERTE" color="#FF6B3D" w={500} fs={36} />
             </g>
           )}
           {/* botones */}
@@ -140,6 +139,7 @@ export const Tt010v2Pimienta: React.FC = () => {
         <Sprite k={tereK} ref_={REF_T} x={TERE_X} footY={DOG_FOOT.tere + tereHop} h={DOG_H.tere} />
         <Sprite k={timoK} ref_={REF_M} x={TIMO_X} footY={DOG_FOOT.timo + timoHop} h={DOG_H.timo} />
         <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, pointerEvents: "none" }}>
+          {arrowsOn > 0.02 && <g opacity={arrowsOn}><Chip x={290} y={PL.cy + 122} text="BORDES: TIRAN FUERTE" color="#FF6B3D" w={470} fs={32} /></g>}
           <Mark t={t} a={LAND_B + 0.1} b={LAND_B + 1.2} x={TIMO_X + 10} y={DOG_FOOT.timo - DOG_H.timo * 1.12} ch="!" />
           <Mark t={t} a={S.s6.voiceStart} b={S.s6.voiceEnd + 0.4} x={TERE_X} y={DOG_FOOT.tere - DOG_H.tere * 1.1} ch="!" color="#F2705B" />
           <Hearts t={t} start={S.s9.voiceStart + 0.3} dur={1.4} x={TIMO_X + 40} y={DOG_FOOT.timo - DOG_H.timo * 0.95} rise={230} n={5} size={1.1} />
